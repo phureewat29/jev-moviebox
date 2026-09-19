@@ -8,13 +8,7 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
-    "catalog": "node scripts/catalog.ts",
-    "label": "node scripts/label.ts",
-    "probe": "node scripts/probe.ts",
-    "spotcheck": "node scripts/spotcheck.ts",
-    "accuracy": "node scripts/accuracy.ts",
-    "tune": "node scripts/tune.ts"
+    "test": "vitest run"
   },
   "dependencies": {
     "@effect/platform": "^0.97.2",

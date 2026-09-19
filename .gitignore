@@ -53,4 +53,5 @@ src/data/reads.cache.json
 scripts/
 
 src/data/golden.json
+test/__snapshots__/golden.json
 src/data/.labels.jsonl
