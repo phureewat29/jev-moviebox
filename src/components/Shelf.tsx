@@ -1,5 +1,6 @@
 "use client";
 
+import { PackageOpen } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useState } from "react";
 import { posterUrl } from "@/core/Film";
@@ -15,20 +16,20 @@ export function Shelf({ rows, pending }: { rows: readonly Ranked[]; pending: boo
   if (pending) {
     return (
       <section className={GRID}>
-        {Array.from({ length: 8 }, (_, i) => (
-          <div key={i} className="flex flex-col gap-2.5">
-            <div className="sleeve relative aspect-[2/3] overflow-hidden rounded-sm ring-1 ring-edge/60" />
-            <div className="h-3.5 w-3/4 rounded-sm bg-edge/50" />
-          </div>
-        ))}
+        <Sleeves still={false} />
       </section>
     );
   }
 
+  // the same eight sleeves, gone still: the shelf keeps its shape, so nothing below it moves
   if (rows.length === 0) {
     return (
-      <section className={`${GRID} text-center`}>
-        <p className="col-span-full text-base text-ink-dim">nothing in the box fits that.</p>
+      <section className={`${GRID} relative`}>
+        <Sleeves still />
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 pt-12 pb-24 text-center sm:pt-16">
+          <PackageOpen size={28} strokeWidth={1.5} className="text-ink-faint" aria-hidden />
+          <p className="text-base text-ink-dim">nothing in the box fits that.</p>
+        </div>
       </section>
     );
   }
@@ -40,6 +41,19 @@ export function Shelf({ rows, pending }: { rows: readonly Ranked[]; pending: boo
       ))}
     </section>
   );
+}
+
+/** Eight empty sleeves: the shelf while it waits and, gone still and dim, the shelf when nothing fits. */
+function Sleeves({ still }: { still: boolean }) {
+  return Array.from({ length: 8 }, (_, i) => (
+    <div key={i} className={`flex flex-col gap-2.5 ${still ? "opacity-30" : ""}`}>
+      <div
+        className="sleeve relative aspect-[2/3] overflow-hidden rounded-sm ring-1 ring-edge/60"
+        data-loaded={still || undefined}
+      />
+      <div className="h-3.5 w-3/4 rounded-sm bg-edge/50" />
+    </div>
+  ));
 }
 
 function Tile({ row: { film }, place }: { row: Ranked; place: number }) {
