@@ -21,12 +21,12 @@ export function Shelf({ rows, pending }: { rows: readonly Ranked[]; pending: boo
     );
   }
 
-  // the same eight sleeves, gone still: the shelf keeps its shape, so nothing below it moves
+  // the same eight sleeves, gone still, so nothing below the shelf moves; the message sits in the first screen of them
   if (rows.length === 0) {
     return (
       <section className={`${GRID} relative`}>
         <Sleeves still />
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 pt-12 pb-24 text-center sm:pt-16">
+        <div className="absolute inset-x-0 top-0 flex h-[60vh] max-h-full flex-col items-center justify-center gap-3 pt-12 text-center sm:pt-16">
           <PackageOpen size={28} strokeWidth={1.5} className="text-ink-faint" aria-hidden />
           <p className="text-base text-ink-dim">nothing in the box fits that.</p>
         </div>
@@ -46,7 +46,7 @@ export function Shelf({ rows, pending }: { rows: readonly Ranked[]; pending: boo
 /** Eight empty sleeves: the shelf while it waits and, gone still and dim, the shelf when nothing fits. */
 function Sleeves({ still }: { still: boolean }) {
   return Array.from({ length: 8 }, (_, i) => (
-    <div key={i} className={`flex flex-col gap-2.5 ${still ? "opacity-30" : ""}`}>
+    <div key={i} className={`flex flex-col gap-2.5 ${still ? "opacity-40" : ""}`}>
       <div
         className="sleeve relative aspect-[2/3] overflow-hidden rounded-sm ring-1 ring-edge/60"
         data-loaded={still || undefined}
