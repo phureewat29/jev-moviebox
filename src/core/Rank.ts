@@ -80,8 +80,14 @@ export const KIDS_SAFE_THRESHOLD = 0.6;
 export const TOPICAL = 3;
 /** Above this the Choice is pointing at a title; below it is the tail of a distribution that must sum to one. */
 export const SEED_FLOOR = 0.08;
-/** Subject scores are scaled so the leader is always 1. Measured: mood queries sit at 0.04–0.11, subject queries at 0.19 and up. */
-export const COMMITTED = 0.15;
+/**
+ * Subject scores are scaled so the leader is always 1, so this gate is on the weight: how much
+ * of the answer landed in a title at all. Re-measured at 2,061 titles — mood queries run
+ * 0.03–0.17 and subject queries 0.21 and up. The bands drift upward as the catalog grows,
+ * because a larger shelf always holds something that merely sounds like what was said, so this
+ * needs re-measuring whenever it grows again.
+ */
+export const COMMITTED = 0.2;
 const DIFFUSE = 0.35;
 
 export const COUNTRY_MIN = 4;
