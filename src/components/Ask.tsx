@@ -86,10 +86,10 @@ export function Ask({
   onCompany: (value: Company | null) => void;
   onSubmit: () => void;
 }) {
-  /** A line that says who is watching sets the pill too; one that does not leaves it alone. */
+  /** A suggestion is a whole preset: a line that names no audience clears the pill rather than keeping a stale one. */
   const pick = (suggestion: Suggestion) => {
     onSaid(suggestion.said);
-    if (suggestion.company !== null) onCompany(suggestion.company);
+    onCompany(suggestion.company);
   };
 
   return (
