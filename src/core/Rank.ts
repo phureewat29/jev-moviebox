@@ -227,13 +227,20 @@ const narrow = (pool: readonly FilmCard[], keep: (film: FilmCard) => boolean): F
 
 const insist = (kept: readonly FilmCard[]): Facet => ({ pool: kept, outcome: kept.length > 0 ? "kept" : "empty" });
 
-const admitted = (films: readonly FilmCard[], labels: ReadonlyMap<string, FilmLabels>, childrenWatching: boolean) => {
+/** A tapped "kids" is the most stated facet there is, so it narrows the shelf and counts as one. */
+const admitted = (
+  films: readonly FilmCard[],
+  labels: ReadonlyMap<string, FilmLabels>,
+  childrenWatching: boolean,
+): Facet => {
   const labelled = films.filter((film) => labels.has(film.id));
-  if (!childrenWatching) return labelled;
-  return labelled.filter(
-    (film) =>
-      !ADULT_RATINGS.has(film.rated) &&
-      labels.get(film.id)!.facts.kids_safe >= KIDS_SAFE_THRESHOLD,
+  if (!childrenWatching) return unasked(labelled);
+  return insist(
+    labelled.filter(
+      (film) =>
+        !ADULT_RATINGS.has(film.rated) &&
+        labels.get(film.id)!.facts.kids_safe >= KIDS_SAFE_THRESHOLD,
+    ),
   );
 };
 
@@ -253,12 +260,18 @@ const inCountry = (pool: readonly FilmCard[], country: CountryId | null): Facet 
  * Only a stated genre filters — "jail breaking" implies Crime, and filtering on that lost The
  * Shawshank Redemption. Several stated genres mean all of them while the shelf has enough, and a
  * stated genre never falls back: for a scary Thai film with a child in the room, none is the answer.
+ * A genre the pool holds none of is that same answer whether or not it was named outright. The
+ * kid-safe shelf carries no Crime, no Horror and no Thriller at all, so "crime" with a child in
+ * the room is empty rather than twelve nature documentaries, and `genre_named` no longer decides
+ * whether the contradiction is noticed — only whether the shelf is narrowed.
  */
 const inGenre = (pool: readonly FilmCard[], person: PersonRead): Facet => {
-  if (!person.genreNamed || person.genres.length === 0) return unasked(pool);
+  if (person.genres.length === 0) return unasked(pool);
+  const some = pool.filter((film) => person.genres.some((genre) => film.genres.includes(genre)));
+  if (some.length === 0) return insist(some);
+  if (!person.genreNamed) return unasked(pool);
   const every = pool.filter((film) => person.genres.every((genre) => film.genres.includes(genre)));
-  if (every.length >= GENRE_MIN) return insist(every);
-  return insist(pool.filter((film) => person.genres.some((genre) => film.genres.includes(genre))));
+  return insist(every.length >= GENRE_MIN ? every : some);
 };
 
 const inDecade = (pool: readonly FilmCard[], decade: DecadeId): Facet =>
@@ -270,11 +283,12 @@ const allKept = (facets: readonly Facet[]) => {
 };
 
 const poolOf = ({ person, films, labels }: RankInput, anchorId: string | null): Pool => {
-  const eligible = admitted(films, labels, person.childrenWatching).filter((film) => film.id !== anchorId);
+  const admit = admitted(films, labels, person.childrenWatching);
+  const eligible = admit.pool.filter((film) => film.id !== anchorId);
   const country = inCountry(ofKind(eligible, person.wants), person.country);
   const genre = inGenre(country.pool, person);
   const decade = inDecade(genre.pool, person.decade);
-  return { films: decade.pool, faceted: allKept([country, genre, decade]) };
+  return { films: decade.pool, faceted: allKept([admit, country, genre, decade]) };
 };
 
 /** Weights */
@@ -295,13 +309,21 @@ type Weights = {
   readonly askedFor: number;
 };
 
-/** An axis counts only as far as the person spoke to it: a confident "no romance" from someone who never raised romance steers nothing. */
+/**
+ * An axis counts only as far as the person spoke to it: a confident "no romance" from someone who
+ * never raised romance steers nothing. Relevance is the only signal that says so. Over the cached
+ * reads it tells a stated axis from an unraised one at AUC 0.98 where confidence manages 0.53 —
+ * an unraised axis still gets a confident fallback level, and romance reads above 0.7 confidence
+ * in 70% of the sentences that never mention it. Squaring is where the exponent sweep lands:
+ * under 1.75 "horny" still returns a sitcom, over 2 "a prestige tv drama" loses its shelf.
+ * Confidence stays, and stays first-power: it is the sharpness of the level, not the ask.
+ */
 const weightsOf = (person: PersonRead): Weights => {
   const wants = AXIS_IDS.map((axis) => ({
     axis,
     normalized: normalize(person.axes[axis].probabilities),
     mass: MASS[AXES[axis].kind],
-    weight: person.axes[axis].relevance * person.axes[axis].confidence,
+    weight: person.axes[axis].relevance ** 2 * person.axes[axis].confidence,
   })).filter((want) => want.weight > WANT_MIN);
 
   const stated =
