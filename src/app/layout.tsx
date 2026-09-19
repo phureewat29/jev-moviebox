@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import type { CSSProperties } from "react";
 import { Archivo, Bebas_Neue } from "next/font/google";
 import { Footer } from "@/components/Footer";
-import { SITE } from "@/core/Site";
+import { assetUrl, SITE } from "@/core/Site";
 import "./globals.css";
 
 /**
@@ -20,7 +21,10 @@ const bebas = Bebas_Neue({
 
 const DESCRIPTION = "Say how the day went. Jev reads it; the box is ranked for it.";
 /** A stable path rather than the file convention, so the card can be linked from anywhere. */
-const CARD = { url: "/assets/og.jpg", width: 1200, height: 630, alt: "Movie Box" };
+const CARD = { url: assetUrl("/assets/og.jpg"), width: 1200, height: 630, alt: "Movie Box" };
+
+/** A stylesheet cannot call a function, so the one asset it names arrives as a variable. */
+const SHELF = { "--shelf": `url("${assetUrl("/assets/shelf.jpg")}")` } as CSSProperties;
 
 export const metadata: Metadata = {
   metadataBase: SITE,
@@ -53,7 +57,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${archivo.variable} ${bebas.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col font-sans text-ink">
+      <body className="flex min-h-full flex-col font-sans text-ink" style={SHELF}>
         {children}
         <Footer />
       </body>

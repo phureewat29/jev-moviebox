@@ -69,7 +69,7 @@ body::before {
   background:
     linear-gradient(to bottom, var(--color-screen), transparent 44%),
     linear-gradient(to right, transparent, var(--veil) 28%, var(--veil) 72%, transparent),
-    url("/assets/shelf.jpg") center bottom / cover no-repeat;
+    var(--shelf, url("/assets/shelf.jpg")) center bottom / cover no-repeat;
 }
 
 /**
