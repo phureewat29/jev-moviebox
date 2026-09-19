@@ -49,6 +49,30 @@ body {
 }
 
 /**
+ * A rental shelf behind the page: greyed and dimmed in the file itself, then shaped here. It
+ * reads down both walls, sits under a veil through the middle so it never competes with the
+ * words, and fades out at the top so a phone's status bar and the lockup meet clean black.
+ *
+ * Gradients in the page's own colour painted over the photo, not a mask. A mask would need
+ * `mask-composite` and its webkit spelling to intersect two layers; this is one background
+ * shorthand and behaves the same everywhere. Fixed, so it holds while the results scroll.
+ */
+body::before {
+  --veil: color-mix(in srgb, var(--color-screen) 68%, transparent);
+
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+  background:
+    linear-gradient(to bottom, var(--color-screen), transparent 44%),
+    linear-gradient(to right, transparent, var(--veil) 28%, var(--veil) 72%, transparent),
+    url("/assets/shelf.jpg") center bottom / cover no-repeat;
+}
+
+/**
  * Film grain. Every frame ever projected had it, and its absence is most of why a dark page
  * reads as software. Fixed so it sits still while the shelf scrolls under it, and faint enough
  * that you only notice it when it is gone.
