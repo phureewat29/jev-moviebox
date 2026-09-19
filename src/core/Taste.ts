@@ -4,8 +4,8 @@
  * distributions the ranker can lay on top of each other.
  *
  * This module holds data only. It imports nothing, so the browser can read a level's text for a
- * reason chip without pulling the model SDK into the bundle; the questions themselves are built
- * in Questions.ts, which the server and the scripts own.
+ * reason chip; the decisions built from it live in Decisions.ts, which the server and the
+ * scripts own.
  */
 
 export type Levels = readonly [string, string, string, string];
@@ -202,10 +202,26 @@ export const FILM_FACTS = {
       false: "Explicit, harrowing, or so demanding that talking over it would ruin it.",
     },
   },
-  true_events: { instructions: "Does this film retell events that really happened?" },
-  franchise_entry: { instructions: "Is this film part of a series or franchise?" },
+  true_events: {
+    instructions: "Does this film retell events that really happened?",
+    criteria: {
+      true: "It dramatises real people and real events, however freely.",
+      false: "Its story is invented, even where the setting is historical.",
+    },
+  },
+  franchise_entry: {
+    instructions: "Is this film part of a series or franchise?",
+    criteria: {
+      true: "It is one of several films sharing characters, a world or a title.",
+      false: "It stands alone.",
+    },
+  },
   needs_predecessor: {
     instructions: "Would a viewer be lost in this film without having seen an earlier one first?",
+    criteria: {
+      true: "It picks up characters and events an earlier film established and does not re-explain them.",
+      false: "It can be watched first; anything it relies on, it tells you.",
+    },
   },
   famous_twist: {
     instructions: "Does this film turn on a famous twist that is spoiled by knowing it in advance?",
@@ -218,11 +234,7 @@ export const FILM_FACTS = {
 export type FilmFactId = keyof typeof FILM_FACTS;
 export const FILM_FACT_IDS = Object.keys(FILM_FACTS) as readonly FilmFactId[];
 
-/**
- * What the person said, read as facts rather than taste. `names_reference` points at `said` on
- * purpose: asked loosely it reads a tapped poster in `loved` as a named reference and answers
- * 0.95 when the honest answer is nothing of the sort.
- */
+/** What the person said, read as facts rather than taste. */
 export const PERSON_SIGNALS = {
   children_watching: {
     instructions: "Are children going to be watching along with this person tonight?",
@@ -249,7 +261,7 @@ export const PERSON_SIGNALS = {
     instructions: "In `said`, does the person name a particular film they want tonight's pick to resemble?",
     criteria: {
       true: 'The text of `said` names a film and asks for something like it, as in "something like Interstellar but shorter".',
-      false: "The text of `said` names no film, or names one without asking for anything similar to it. Titles listed under `loved`, `seen` or `not_for_me` were tapped from a poster wall rather than spoken, and never make this true.",
+      false: "The text of `said` names no film, or names one without asking for anything similar to it.",
     },
   },
 } as const;
@@ -288,7 +300,7 @@ export const WANTS_QUESTION = "Is this person asking for a film or for a series?
  * from there.
  *
  * Country and genre are on every catalog row, so Jev only has to recognise which one was asked
- * for and code does the filtering. Asking a 254-option title Choice to enumerate every Thai
+ * for and code does the filtering. Asking a 254-title classify decision to enumerate every Thai
  * film instead collapses onto one winner: it answers "which one", not "which ones".
  *
  * Both lists are the values that actually earn a place in the catalog — countries with at least
@@ -300,7 +312,7 @@ export type CountryId = (typeof COUNTRIES)[number];
 export const COUNTRY_QUESTION =
   "Which country's or region's films or series is this person asking for? Only answer with a country if they actually named one, or named a language, a people or a film industry that means one.";
 
-/** One noul each, because genre is multi-valued: "something funny about war" is two answers. */
+/** One probability each, because genre is multi-valued: "something funny about war" is two answers. */
 export const GENRES = ["Drama", "Comedy", "Crime", "Action", "Adventure", "Mystery", "Animation", "Thriller", "Romance", "Fantasy", "Sci-Fi", "Biography", "War", "Horror", "History", "Documentary", "Family", "Music", "Musical", "Sport", "Western"] as const;
 export type GenreId = (typeof GENRES)[number];
 

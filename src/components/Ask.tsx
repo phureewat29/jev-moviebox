@@ -2,7 +2,7 @@
 
 import { Baby, Heart, House, Play, Search, User, Users } from "lucide-react";
 import { useEffect, useState } from "react";
-import type { Company } from "@/server/read";
+import { SAID_LIMIT, type Company } from "@/core/Company";
 
 /**
  * Who is watching is the one thing the person knows for certain and the model can only guess
@@ -282,7 +282,6 @@ function Rotating({
   );
 }
 
-export const SAID_LIMIT = 200;
 
 export function Ask({
   said,

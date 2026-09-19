@@ -1,10 +1,10 @@
-import { Effect, Schema } from "effect";
+import { Result, Schema } from "effect";
 import type { NextRequest } from "next/server";
-import { allow } from "@/server/RateLimiter";
 import { Catalog } from "@/core/Film";
-import { makeReader, ReadRequest } from "@/server/read";
-import catalog from "@/data/catalog.json";
+import { allow } from "@/server/RateLimiter";
+import { makeReader, ReadRequest, readOrNull } from "@/server/read";
 import { runtime } from "@/server/runtime";
+import catalog from "@/data/catalog.json";
 
 const callerOf = (request: NextRequest) =>
   request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "local";
@@ -13,9 +13,10 @@ const callerOf = (request: NextRequest) =>
 const read = makeReader(Schema.decodeUnknownSync(Catalog)(catalog));
 
 /**
- * A failed read answers 200 with `{ read: null }`, not an error status. The grid is useful
- * without Jev — it just stays in its current order — so a model outage is a quieter page, not
- * a broken one.
+ * A failed read answers 200 with `{ read: null }`: the page shows an empty shelf, not an error.
+ * That covers a failure to build the runtime too — a missing key is logged and answered the
+ * same way, never a 500 per request. It is logged with `console` on purpose: when the runtime
+ * itself failed to build there is no Effect logger to log into.
  */
 export async function POST(request: NextRequest) {
   const limit = allow(callerOf(request));
@@ -25,17 +26,14 @@ export async function POST(request: NextRequest) {
       { status: 429, headers: { "retry-after": String(limit.retryAfter) } },
     );
   }
-
   const body = await request.json().catch(() => null);
-  const parsed = Schema.decodeUnknownEither(ReadRequest)(body);
-  if (parsed._tag === "Left") return Response.json({ read: null, error: "bad_request" }, { status: 400 });
-
-  const started = Date.now();
-  const person = await runtime.runPromise(
-    read(parsed.right).pipe(
-      Effect.timeoutTo({ duration: "12 seconds", onTimeout: () => null, onSuccess: (value) => value }),
-      Effect.catchAll(() => Effect.succeed(null)),
-    ),
-  );
-  return Response.json({ read: person, ms: Date.now() - started });
+  const parsed = Schema.decodeUnknownResult(ReadRequest)(body);
+  if (Result.isFailure(parsed)) {
+    return Response.json({ read: null, error: "bad_request" }, { status: 400 });
+  }
+  const person = await runtime.runPromise(readOrNull(read, parsed.success)).catch((error: unknown) => {
+    console.error(error);
+    return null;
+  });
+  return Response.json({ read: person });
 }

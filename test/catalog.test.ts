@@ -1,6 +1,6 @@
 import { Schema } from "effect";
 import { describe, expect, it } from "vitest";
-import { subjectQuestions } from "@/core/Questions";
+import { subjectShards } from "@/core/Decisions";
 import {
   Cards,
   Catalog,
@@ -90,19 +90,16 @@ describe("the generated catalog", () => {
     }
   });
 
-  /**
-   * The ceiling is per Choice, not per kind. Asserting it against the kind was what capped the
-   * shelf at 254 films and left La La Land, Titanic and most of Marvel off it.
-   */
+  // the ceiling is per Choice, not per kind; asserting it per kind once capped the shelf at 254 films
   it("splits the catalog into Choices that each fit inside the 255-option ceiling", () => {
-    const shards = subjectQuestions(films);
+    const shards = subjectShards(films);
     expect(Object.keys(shards).length).toBeGreaterThan(2);
-    for (const [id, question] of Object.entries(shards)) {
-      expect(Object.keys(question.criteria).length, id).toBeLessThanOrEqual(255);
+    for (const [id, shard] of Object.entries(shards)) {
+      expect(Object.keys(shard.criteria).length, id).toBeLessThanOrEqual(255);
     }
-    /** Every title reaches exactly one shard, so nothing silently falls off the shelf. */
-    const offered = Object.values(shards).flatMap((question) =>
-      Object.keys(question.criteria).filter((key) => key !== "none"),
+    // every title reaches exactly one shard, so nothing silently falls off the shelf
+    const offered = Object.values(shards).flatMap((shard) =>
+      Object.keys(shard.criteria).filter((key) => key !== "none"),
     );
     expect(new Set(offered).size).toBe(films.length);
   });
@@ -123,7 +120,7 @@ describe("the generated catalog", () => {
     for (const film of films) {
       expect(film.title.length, film.id).toBeGreaterThan(0);
       expect(film.year, film.title).toBeGreaterThan(1900);
-      /** Fifteen series have no runtime in OMDb; the ranker reads 0 as unknown. */
+      // some series carry no runtime in OMDb; the ranker reads 0 as unknown
       expect(film.runtime, film.title).toBeGreaterThanOrEqual(0);
       expect(film.imdbRating, film.title).toBeGreaterThan(0);
       expect(film.genres.length, film.title).toBeGreaterThan(0);

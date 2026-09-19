@@ -1,38 +1,36 @@
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
 import { Schema } from "effect";
 import { describe, expect, it } from "vitest";
 import { Catalog, toState } from "@/core/Film";
 import { Labels } from "@/core/Labels";
+import { PINNED_MODEL } from "@/server/JevModel";
 import { AXIS_IDS, canonicalRubric, ENDING_IDS, FILM_FACT_IDS } from "@/core/Taste";
 import catalog from "@/data/catalog.json";
 import labels from "@/data/labels.json";
 
 const decoded = Schema.decodeUnknownSync(Labels)(labels);
+const shortHash = (text: string) => createHash("sha256").update(text).digest("hex").slice(0, 12);
 const films = Schema.decodeUnknownSync(Catalog)(catalog);
 const byId = new Map(films.map((film) => [film.id, film]));
 const titleOf = (id: string) => byId.get(id)?.title ?? id;
 
 describe("the generated labels", () => {
   it("answers the rubric that is in the tree right now", () => {
-    const hash = createHash("sha256").update(canonicalRubric()).digest("hex").slice(0, 12);
     expect(
       decoded.rubricHash,
-      "labels.json answers an older rubric — re-run `pnpm label`",
-    ).toBe(hash);
+      "labels.json answers an older rubric — re-run `node scripts/label.ts`",
+    ).toBe(shortHash(canonicalRubric()));
   });
 
-  it("records which model version answered, not the alias", () => {
-    expect(decoded.model).toMatch(/^jev-\d+\.\d+/);
+  it("was made with the model the server reads people with", () => {
+    expect(decoded.model).toBe(PINNED_MODEL);
   });
 
   it("records the catalog the answers describe, so a re-fetched plot shows up as stale", () => {
-    const hash = createHash("sha256")
-      /** Only the fields put to the model, so an added column does not fake a stale label. */
-      .update(JSON.stringify(films.map(toState)))
-      .digest("hex")
-      .slice(0, 12);
-    expect(decoded.catalogHash, "re-run `pnpm label` after `pnpm catalog`").toBe(hash);
+    // only the fields put to the model, so an added column does not fake a stale label
+    expect(decoded.catalogHash, "re-run `node scripts/label.ts` after the catalog").toBe(
+      shortHash(JSON.stringify(films.map(toState))),
+    );
   });
 
   it("covers every title once, in catalog order", () => {
@@ -46,13 +44,9 @@ describe("the generated labels", () => {
         const distribution = row.axes[axis];
         expect(distribution, `${titleOf(row.id)} ${axis}`).toHaveLength(4);
         for (const p of distribution) expect(p).toBeGreaterThanOrEqual(0);
-        /**
-         * Jev's own probabilities come back summing to 0.99 or 1.00, so the ranker normalizes
-         * rather than trusting the total. This only guards against a shape that is far off.
-         */
+        // renormalized on the wire by JevModel; what is left is round3 noise, and no more than that
         const total = distribution.reduce((sum, p) => sum + p, 0);
-        expect(total, `${titleOf(row.id)} ${axis}`).toBeGreaterThan(0.95);
-        expect(total, `${titleOf(row.id)} ${axis}`).toBeLessThan(1.05);
+        expect(Math.abs(total - 1), `${titleOf(row.id)} ${axis}`).toBeLessThanOrEqual(0.005);
       }
       expect(Object.keys(row.ending.probabilities).sort()).toEqual([...ENDING_IDS].sort());
       expect(row.ending.confidence).toBeGreaterThanOrEqual(0);

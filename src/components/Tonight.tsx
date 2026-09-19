@@ -7,7 +7,7 @@ import { Shelf } from "@/components/Shelf";
 import type { FilmCard } from "@/core/Film";
 import type { Labels } from "@/core/Labels";
 import { rank, shortlist, type PersonRead } from "@/core/Rank";
-import type { Company } from "@/server/read";
+import type { Company } from "@/core/Company";
 import labelsFile from "@/data/labels.json";
 
 const labels = new Map((labelsFile as unknown as Labels).films.map((row) => [row.id, row]));

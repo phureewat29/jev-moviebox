@@ -1,4 +1,4 @@
-import { Schema } from "effect";
+import { Schema, Struct } from "effect";
 
 /** The fields this project reads from an OMDb movie record. OMDb writes every value as a string. */
 export const OmdbMovie = Schema.Struct({
@@ -21,7 +21,8 @@ export const OmdbMovie = Schema.Struct({
 });
 export type OmdbMovie = typeof OmdbMovie.Type;
 
-export const Kind = Schema.Literal("movie", "series");
+export const KINDS = ["movie", "series"] as const;
+export const Kind = Schema.Literals(KINDS);
 export type Kind = typeof Kind.Type;
 
 export const Film = Schema.Struct({
@@ -55,23 +56,8 @@ export type Film = typeof Film.Type;
 export const Catalog = Schema.Array(Film);
 
 /** What the browser needs to rank and draw a tile. Plot and credits stay on the server. */
-export const FilmCard = Film.pick(
-  "id",
-  "kind",
-  "imdbRank",
-  "title",
-  "year",
-  "rated",
-  "runtime",
-  "genres",
-  /** The browser filters on these, so they ride along with the card. */
-  "countries",
-  /** Two films by one director are alike in a way no genre tag records. */
-  "director",
-  "posterBase",
-  "imdbRating",
-  "imdbVotes",
-  "seasons",
+export const FilmCard = Schema.Struct(
+  Struct.pick(Film.fields, ["id", "kind", "imdbRank", "title", "year", "rated", "runtime", "genres", "countries", "director", "posterBase", "imdbRating", "imdbVotes", "seasons"]),
 );
 export type FilmCard = typeof FilmCard.Type;
 
@@ -134,11 +120,7 @@ export const fromOmdb = (raw: OmdbMovie, rank: number): Film => ({
   studio: undefined,
 });
 
-/**
- * Exactly what `FILM_STATE_FIELDS` names, and the only thing the model is ever told about a
- * film. Lives here rather than in the labelling script so a test can hash it without running
- * the job, and so the list and its realization cannot drift apart.
- */
+/** The only thing the model is ever told about a film: the shape of `Decisions.FilmState`. */
 export const toState = (film: Film) => ({
   film: {
     title: film.title,
