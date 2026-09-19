@@ -5,13 +5,16 @@ import { useCallback, useState } from "react";
 import { posterUrl } from "@/core/Film";
 import type { Ranked } from "@/core/Rank";
 
+/** One geometry for waiting, empty and full, so swapping states moves nothing around the shelf. */
+const GRID = "grid grid-cols-2 gap-x-4 gap-y-8 pt-12 pb-24 sm:grid-cols-3 sm:pt-16 lg:grid-cols-4";
+
 const minutes = (runtime: number) =>
   runtime >= 60 ? `${Math.floor(runtime / 60)}h ${runtime % 60}m` : `${runtime}m`;
 
 export function Shelf({ rows, pending }: { rows: readonly Ranked[]; pending: boolean }) {
   if (pending) {
     return (
-      <section className="grid grid-cols-2 gap-x-4 gap-y-8 pt-10 pb-24 sm:grid-cols-3 sm:pt-14 lg:grid-cols-4">
+      <section className={GRID}>
         {Array.from({ length: 8 }, (_, i) => (
           <div key={i} className="flex flex-col gap-2.5">
             <div className="sleeve relative aspect-[2/3] overflow-hidden rounded-sm ring-1 ring-edge/60" />
@@ -24,14 +27,14 @@ export function Shelf({ rows, pending }: { rows: readonly Ranked[]; pending: boo
 
   if (rows.length === 0) {
     return (
-      <section className="pt-20 pb-28 text-center">
-        <p className="text-base text-ink-dim">nothing in the box fits that.</p>
+      <section className={`${GRID} text-center`}>
+        <p className="col-span-full text-base text-ink-dim">nothing in the box fits that.</p>
       </section>
     );
   }
 
   return (
-    <section className="grid grid-cols-2 gap-x-4 gap-y-8 pt-12 pb-24 sm:grid-cols-3 sm:pt-16 lg:grid-cols-4">
+    <section className={GRID}>
       {rows.map((row, index) => (
         <Tile key={row.film.id} row={row} place={index + 1} />
       ))}
