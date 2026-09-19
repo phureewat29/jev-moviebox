@@ -1,0 +1,2125 @@
+{
+  "comment": "Hand-curated additions to the IMDb Top 250. Year disambiguates titles that collide with international films; `expect` is asserted after resolution so a wrong match fails the job rather than landing silently in the catalog.",
+  "series": [
+    {
+      "title": "Breaking Bad"
+    },
+    {
+      "title": "The Wire"
+    },
+    {
+      "title": "The Sopranos"
+    },
+    {
+      "title": "Game of Thrones"
+    },
+    {
+      "title": "Chernobyl",
+      "year": 2019
+    },
+    {
+      "title": "Band of Brothers"
+    },
+    {
+      "title": "The Office",
+      "year": 2005
+    },
+    {
+      "title": "Friends",
+      "year": 1994
+    },
+    {
+      "title": "Seinfeld"
+    },
+    {
+      "title": "The Simpsons"
+    },
+    {
+      "title": "Twin Peaks",
+      "year": 1990
+    },
+    {
+      "title": "Mad Men"
+    },
+    {
+      "title": "Better Call Saul"
+    },
+    {
+      "title": "True Detective"
+    },
+    {
+      "title": "Fargo",
+      "year": 2014
+    },
+    {
+      "title": "Sherlock"
+    },
+    {
+      "title": "Black Mirror"
+    },
+    {
+      "title": "Stranger Things"
+    },
+    {
+      "title": "The Crown"
+    },
+    {
+      "title": "Succession"
+    },
+    {
+      "title": "Fleabag"
+    },
+    {
+      "title": "Arcane"
+    },
+    {
+      "title": "Dark",
+      "year": 2017
+    },
+    {
+      "title": "Squid Game"
+    },
+    {
+      "title": "Money Heist"
+    },
+    {
+      "title": "Narcos"
+    },
+    {
+      "title": "Peaky Blinders"
+    },
+    {
+      "title": "The Mandalorian"
+    },
+    {
+      "title": "Westworld"
+    },
+    {
+      "title": "Rick and Morty"
+    },
+    {
+      "title": "BoJack Horseman"
+    },
+    {
+      "title": "Avatar: The Last Airbender"
+    },
+    {
+      "title": "Cowboy Bebop",
+      "year": 1998
+    },
+    {
+      "title": "Death Note"
+    },
+    {
+      "title": "Attack on Titan"
+    },
+    {
+      "title": "Fullmetal Alchemist: Brotherhood"
+    },
+    {
+      "title": "One-Punch Man"
+    },
+    {
+      "title": "Neon Genesis Evangelion"
+    },
+    {
+      "title": "Planet Earth",
+      "year": 2006
+    },
+    {
+      "title": "Planet Earth II"
+    },
+    {
+      "title": "Blue Planet II"
+    },
+    {
+      "title": "The Last of Us"
+    },
+    {
+      "title": "Severance"
+    },
+    {
+      "title": "Ted Lasso"
+    },
+    {
+      "title": "The Bear"
+    },
+    {
+      "title": "Barry"
+    },
+    {
+      "title": "Atlanta"
+    },
+    {
+      "title": "Watchmen",
+      "year": 2019
+    },
+    {
+      "title": "Mindhunter"
+    },
+    {
+      "title": "House of Cards",
+      "year": 2013
+    },
+    {
+      "title": "Downton Abbey",
+      "year": 2010
+    },
+    {
+      "title": "Sex Education"
+    },
+    {
+      "title": "Normal People"
+    },
+    {
+      "title": "Killing Eve"
+    },
+    {
+      "title": "The Handmaid's Tale"
+    },
+    {
+      "title": "Big Little Lies"
+    },
+    {
+      "title": "Euphoria",
+      "year": 2019
+    },
+    {
+      "title": "Yellowstone"
+    },
+    {
+      "title": "Ozark"
+    },
+    {
+      "title": "Dexter"
+    },
+    {
+      "title": "Lost",
+      "year": 2004
+    },
+    {
+      "title": "House",
+      "year": 2004
+    },
+    {
+      "title": "Scrubs"
+    },
+    {
+      "title": "The X-Files"
+    },
+    {
+      "title": "Star Trek: The Next Generation"
+    },
+    {
+      "title": "Battlestar Galactica",
+      "year": 2004
+    },
+    {
+      "title": "Firefly"
+    },
+    {
+      "title": "Buffy the Vampire Slayer"
+    },
+    {
+      "title": "The Twilight Zone",
+      "year": 1959
+    },
+    {
+      "title": "Columbo"
+    },
+    {
+      "title": "Monty Python's Flying Circus"
+    },
+    {
+      "title": "Fawlty Towers"
+    },
+    {
+      "title": "Blackadder"
+    },
+    {
+      "title": "The Thick of It"
+    },
+    {
+      "title": "Yes Minister"
+    },
+    {
+      "title": "Curb Your Enthusiasm"
+    },
+    {
+      "title": "Arrested Development"
+    },
+    {
+      "title": "Parks and Recreation"
+    },
+    {
+      "title": "30 Rock"
+    },
+    {
+      "title": "Community"
+    },
+    {
+      "title": "It's Always Sunny in Philadelphia"
+    },
+    {
+      "title": "Veep"
+    },
+    {
+      "title": "Silicon Valley"
+    },
+    {
+      "title": "The Good Place"
+    },
+    {
+      "title": "Schitt's Creek"
+    },
+    {
+      "title": "Brooklyn Nine-Nine"
+    },
+    {
+      "title": "Modern Family"
+    },
+    {
+      "title": "How I Met Your Mother"
+    },
+    {
+      "title": "The Big Bang Theory"
+    },
+    {
+      "title": "Frasier"
+    },
+    {
+      "title": "Cheers"
+    },
+    {
+      "title": "M*A*S*H"
+    },
+    {
+      "title": "Deadwood"
+    },
+    {
+      "title": "Rome"
+    },
+    {
+      "title": "Vikings"
+    },
+    {
+      "title": "The Boys"
+    },
+    {
+      "title": "Daredevil",
+      "year": 2015
+    },
+    {
+      "title": "WandaVision"
+    },
+    {
+      "title": "Loki"
+    },
+    {
+      "title": "Andor"
+    },
+    {
+      "title": "The Expanse"
+    },
+    {
+      "title": "Doctor Who",
+      "year": 2005
+    },
+    {
+      "title": "Broadchurch"
+    },
+    {
+      "title": "Line of Duty"
+    },
+    {
+      "title": "Happy Valley"
+    },
+    {
+      "title": "Bodyguard"
+    },
+    {
+      "title": "The Night Of"
+    },
+    {
+      "title": "When They See Us"
+    },
+    {
+      "title": "Unbelievable"
+    },
+    {
+      "title": "The Queen's Gambit"
+    },
+    {
+      "title": "Beef",
+      "year": 2023
+    },
+    {
+      "title": "Shogun",
+      "year": 2024
+    },
+    {
+      "title": "Pachinko"
+    },
+    {
+      "title": "Tokyo Vice"
+    },
+    {
+      "title": "Kingdom",
+      "year": 2019
+    },
+    {
+      "title": "My Mister"
+    },
+    {
+      "title": "Reply 1988"
+    },
+    {
+      "title": "Signal",
+      "year": 2016
+    },
+    {
+      "title": "Crash Landing on You"
+    },
+    {
+      "title": "Alice in Borderland"
+    },
+    {
+      "title": "Demon Slayer: Kimetsu no Yaiba"
+    },
+    {
+      "title": "Jujutsu Kaisen"
+    },
+    {
+      "title": "Spy x Family"
+    },
+    {
+      "title": "Vinland Saga"
+    },
+    {
+      "title": "Monster",
+      "year": 2004
+    },
+    {
+      "title": "Steins;Gate"
+    },
+    {
+      "title": "Code Geass"
+    },
+    {
+      "title": "Hunter x Hunter",
+      "year": 2011
+    },
+    {
+      "title": "Mushishi"
+    },
+    {
+      "title": "Samurai Champloo"
+    },
+    {
+      "title": "Chef's Table"
+    },
+    {
+      "title": "Making a Murderer"
+    },
+    {
+      "title": "Wild Wild Country"
+    },
+    {
+      "title": "Our Planet"
+    },
+    {
+      "title": "The Last Dance"
+    },
+    {
+      "title": "Hannibal",
+      "year": 2013
+    },
+    {
+      "title": "Person of Interest"
+    },
+    {
+      "title": "Prison Break"
+    },
+    {
+      "title": "24"
+    },
+    {
+      "title": "The Shield"
+    },
+    {
+      "title": "Oz",
+      "year": 1997
+    },
+    {
+      "title": "Six Feet Under"
+    },
+    {
+      "title": "The West Wing"
+    },
+    {
+      "title": "Boardwalk Empire"
+    },
+    {
+      "title": "Spartacus",
+      "year": 2010
+    },
+    {
+      "title": "Gomorrah"
+    },
+    {
+      "title": "Babylon Berlin"
+    },
+    {
+      "title": "Lupin",
+      "year": 2021
+    },
+    {
+      "title": "Borgen"
+    },
+    {
+      "title": "The Killing",
+      "year": 2007
+    },
+    {
+      "title": "Girl from Nowhere",
+      "expect": "Thailand"
+    },
+    {
+      "title": "I Told Sunset About You",
+      "expect": "Thailand"
+    },
+    {
+      "title": "Bangkok Breaking",
+      "expect": "Thailand"
+    },
+    {
+      "title": "Hormones",
+      "year": 2013,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Delete",
+      "year": 2023,
+      "expect": "Thailand"
+    },
+    {
+      "title": "The Gifted",
+      "year": 2018,
+      "expect": "Thailand"
+    },
+    {
+      "title": "Sleepless Society",
+      "expect": "Thailand"
+    },
+    {
+      "title": "Master of the House",
+      "year": 2024,
+      "expect": "Thailand"
+    },
+    {
+      "title": "The Leftovers"
+    },
+    {
+      "title": "The Americans"
+    },
+    {
+      "title": "Halt and Catch Fire"
+    },
+    {
+      "title": "Rectify"
+    },
+    {
+      "title": "Justified"
+    },
+    {
+      "title": "Homeland"
+    },
+    {
+      "title": "Mr. Robot"
+    },
+    {
+      "title": "The White Lotus"
+    },
+    {
+      "title": "Mare of Easttown"
+    },
+    {
+      "title": "Sharp Objects"
+    },
+    {
+      "title": "Station Eleven"
+    },
+    {
+      "title": "The Underground Railroad"
+    },
+    {
+      "title": "I May Destroy You"
+    },
+    {
+      "title": "Slow Horses"
+    },
+    {
+      "title": "The Diplomat"
+    },
+    {
+      "title": "Bosch"
+    },
+    {
+      "title": "The Good Wife"
+    },
+    {
+      "title": "Derry Girls"
+    },
+    {
+      "title": "After Life"
+    },
+    {
+      "title": "Detectorists"
+    },
+    {
+      "title": "Peep Show"
+    },
+    {
+      "title": "The IT Crowd"
+    },
+    {
+      "title": "Spaced"
+    },
+    {
+      "title": "The Inbetweeners"
+    },
+    {
+      "title": "Only Fools and Horses"
+    },
+    {
+      "title": "Red Dwarf"
+    },
+    {
+      "title": "Father Ted"
+    },
+    {
+      "title": "Black Books"
+    },
+    {
+      "title": "Luther"
+    },
+    {
+      "title": "The Fall"
+    },
+    {
+      "title": "Prime Suspect"
+    },
+    {
+      "title": "Inspector Morse"
+    },
+    {
+      "title": "Endeavour"
+    },
+    {
+      "title": "Shetland"
+    },
+    {
+      "title": "Utopia"
+    },
+    {
+      "title": "Misfits"
+    },
+    {
+      "title": "Skins"
+    },
+    {
+      "title": "This Is Going to Hurt"
+    },
+    {
+      "title": "Ghosts"
+    },
+    {
+      "title": "Deutschland 83"
+    },
+    {
+      "title": "1899"
+    },
+    {
+      "title": "Kleo"
+    },
+    {
+      "title": "Elite"
+    },
+    {
+      "title": "The Returned"
+    },
+    {
+      "title": "Trapped"
+    },
+    {
+      "title": "Ragnarok"
+    },
+    {
+      "title": "Norsemen",
+      "year": 2016
+    },
+    {
+      "title": "Beck"
+    },
+    {
+      "title": "Generation War"
+    },
+    {
+      "title": "Fauda"
+    },
+    {
+      "title": "Shtisel"
+    },
+    {
+      "title": "Tehran"
+    },
+    {
+      "title": "Sweet Home"
+    },
+    {
+      "title": "Hellbound"
+    },
+    {
+      "title": "All of Us Are Dead"
+    },
+    {
+      "title": "The Glory"
+    },
+    {
+      "title": "Extraordinary Attorney Woo"
+    },
+    {
+      "title": "Hospital Playlist"
+    },
+    {
+      "title": "Prison Playbook"
+    },
+    {
+      "title": "Misaeng"
+    },
+    {
+      "title": "Stranger"
+    },
+    {
+      "title": "Vincenzo"
+    },
+    {
+      "title": "Itaewon Class"
+    },
+    {
+      "title": "SKY Castle"
+    },
+    {
+      "title": "Mr. Sunshine"
+    },
+    {
+      "title": "Goblin"
+    },
+    {
+      "title": "Twenty-Five Twenty-One"
+    },
+    {
+      "title": "Move to Heaven"
+    },
+    {
+      "title": "D.P."
+    },
+    {
+      "title": "Mask Girl"
+    },
+    {
+      "title": "Berserk"
+    },
+    {
+      "title": "Trigun"
+    },
+    {
+      "title": "Ghost in the Shell: Stand Alone Complex"
+    },
+    {
+      "title": "Serial Experiments Lain"
+    },
+    {
+      "title": "Paranoia Agent"
+    },
+    {
+      "title": "Gurren Lagann"
+    },
+    {
+      "title": "Your Lie in April"
+    },
+    {
+      "title": "March Comes in Like a Lion"
+    },
+    {
+      "title": "Haikyu!!"
+    },
+    {
+      "title": "Ping Pong the Animation"
+    },
+    {
+      "title": "Great Pretender"
+    },
+    {
+      "title": "Odd Taxi"
+    },
+    {
+      "title": "Chainsaw Man"
+    },
+    {
+      "title": "Bocchi the Rock!"
+    },
+    {
+      "title": "One Piece"
+    },
+    {
+      "title": "Gintama"
+    },
+    {
+      "title": "JoJo's Bizarre Adventure"
+    },
+    {
+      "title": "Parasyte -the maxim-"
+    },
+    {
+      "title": "Erased"
+    },
+    {
+      "title": "Terror in Resonance"
+    },
+    {
+      "title": "Psycho-Pass"
+    },
+    {
+      "title": "Made in Abyss"
+    },
+    {
+      "title": "Violet Evergarden"
+    },
+    {
+      "title": "Anohana: The Flower We Saw That Day"
+    },
+    {
+      "title": "Toradora!"
+    },
+    {
+      "title": "Nichijou"
+    },
+    {
+      "title": "Mob Psycho 100"
+    },
+    {
+      "title": "Dr. Stone"
+    },
+    {
+      "title": "My Hero Academia"
+    },
+    {
+      "title": "Tokyo Ghoul"
+    },
+    {
+      "title": "Oshi no Ko"
+    },
+    {
+      "title": "Frieren: Beyond Journey's End"
+    },
+    {
+      "title": "Flight of the Conchords"
+    },
+    {
+      "title": "Documentary Now!"
+    },
+    {
+      "title": "Nathan for You"
+    },
+    {
+      "title": "I Think You Should Leave with Tim Robinson"
+    },
+    {
+      "title": "Key & Peele"
+    },
+    {
+      "title": "Chappelle's Show"
+    },
+    {
+      "title": "Last Week Tonight with John Oliver"
+    },
+    {
+      "title": "Better Things"
+    },
+    {
+      "title": "Planet Earth III"
+    },
+    {
+      "title": "Frozen Planet"
+    },
+    {
+      "title": "Life"
+    },
+    {
+      "title": "Cosmos: A Spacetime Odyssey"
+    },
+    {
+      "title": "The Vietnam War"
+    },
+    {
+      "title": "Anthony Bourdain: Parts Unknown"
+    },
+    {
+      "title": "The Great British Bake Off"
+    },
+    {
+      "title": "Queer Eye"
+    },
+    {
+      "title": "Salt Fat Acid Heat"
+    },
+    {
+      "title": "Silo"
+    },
+    {
+      "title": "Foundation"
+    },
+    {
+      "title": "Fallout"
+    },
+    {
+      "title": "His Dark Materials"
+    },
+    {
+      "title": "Good Omens"
+    },
+    {
+      "title": "The Sandman"
+    },
+    {
+      "title": "Fringe"
+    },
+    {
+      "title": "Alias"
+    },
+    {
+      "title": "Midnight Diner"
+    },
+    {
+      "title": "First Love"
+    },
+    {
+      "title": "Reacher"
+    },
+    {
+      "title": "The Walking Dead"
+    },
+    {
+      "title": "Monk"
+    },
+    {
+      "title": "Psych"
+    },
+    {
+      "title": "Suits"
+    },
+    {
+      "title": "True Blood"
+    },
+    {
+      "title": "Stranger Things",
+      "year": 2016
+    },
+    {
+      "title": "Squid Game",
+      "year": 2021
+    },
+    {
+      "title": "Money Heist",
+      "year": 2017
+    },
+    {
+      "title": "Peaky Blinders",
+      "year": 2013
+    },
+    {
+      "title": "Sherlock",
+      "year": 2010
+    },
+    {
+      "title": "Grey's Anatomy",
+      "year": 2005
+    },
+    {
+      "title": "Suits",
+      "year": 2011
+    },
+    {
+      "title": "Black Mirror",
+      "year": 2011
+    },
+    {
+      "title": "The Mandalorian",
+      "year": 2019
+    },
+    {
+      "title": "The Last of Us",
+      "year": 2023
+    },
+    {
+      "title": "Wednesday",
+      "year": 2022
+    },
+    {
+      "title": "Bridgerton",
+      "year": 2020
+    },
+    {
+      "title": "The Witcher",
+      "year": 2019
+    },
+    {
+      "title": "Narcos",
+      "year": 2015
+    },
+    {
+      "title": "Ozark",
+      "year": 2017
+    },
+    {
+      "title": "The Boys",
+      "year": 2019
+    },
+    {
+      "title": "Invincible",
+      "year": 2021
+    },
+    {
+      "title": "Arcane",
+      "year": 2021
+    },
+    {
+      "title": "BoJack Horseman",
+      "year": 2014
+    },
+    {
+      "title": "Community",
+      "year": 2009
+    },
+    {
+      "title": "How I Met Your Mother",
+      "year": 2005
+    },
+    {
+      "title": "The Big Bang Theory",
+      "year": 2007
+    },
+    {
+      "title": "Ted Lasso",
+      "year": 2020
+    },
+    {
+      "title": "Severance",
+      "year": 2022
+    },
+    {
+      "title": "Sex Education",
+      "year": 2019
+    },
+    {
+      "title": "Heartstopper",
+      "year": 2022
+    },
+    {
+      "title": "Alice in Borderland",
+      "year": 2020
+    },
+    {
+      "title": "Sweet Home",
+      "year": 2020
+    },
+    {
+      "title": "Itaewon Class",
+      "year": 2020
+    },
+    {
+      "title": "Goblin",
+      "year": 2016
+    },
+    {
+      "title": "Descendants of the Sun",
+      "year": 2016
+    },
+    {
+      "title": "Start-Up",
+      "year": 2020
+    },
+    {
+      "title": "My Mister",
+      "year": 2018
+    },
+    {
+      "title": "Extraordinary Attorney Woo",
+      "year": 2022
+    },
+    {
+      "title": "The Glory",
+      "year": 2022
+    },
+    {
+      "title": "Squid Game: The Challenge",
+      "year": 2023
+    },
+    {
+      "title": "Physical: 100",
+      "year": 2023
+    },
+    {
+      "title": "Dark Desire",
+      "year": 2020
+    },
+    {
+      "title": "Elite",
+      "year": 2018
+    },
+    {
+      "title": "The Umbrella Academy",
+      "year": 2019
+    },
+    {
+      "title": "Loki",
+      "year": 2021
+    },
+    {
+      "title": "WandaVision",
+      "year": 2021
+    },
+    {
+      "title": "The Walking Dead",
+      "year": 2010
+    },
+    {
+      "title": "Vikings",
+      "year": 2013
+    },
+    {
+      "title": "The Tudors",
+      "year": 2007
+    },
+    {
+      "title": "Rome",
+      "year": 2005
+    },
+    {
+      "title": "Outlander",
+      "year": 2014
+    },
+    {
+      "title": "Gilmore Girls",
+      "year": 2000
+    },
+    {
+      "title": "Desperate Housewives",
+      "year": 2004
+    },
+    {
+      "title": "Prison Break",
+      "year": 2005
+    },
+    {
+      "title": "24",
+      "year": 2001
+    },
+    {
+      "title": "Homeland",
+      "year": 2011
+    },
+    {
+      "title": "The Blacklist",
+      "year": 2013
+    },
+    {
+      "title": "Person of Interest",
+      "year": 2011
+    },
+    {
+      "title": "Lie to Me",
+      "year": 2009
+    },
+    {
+      "title": "Castle",
+      "year": 2009
+    },
+    {
+      "title": "Bones",
+      "year": 2005
+    },
+    {
+      "title": "Supernatural",
+      "year": 2005
+    },
+    {
+      "title": "The Vampire Diaries",
+      "year": 2009
+    },
+    {
+      "title": "Gossip Girl",
+      "year": 2007
+    },
+    {
+      "title": "Pretty Little Liars",
+      "year": 2010
+    },
+    {
+      "title": "Riverdale",
+      "year": 2017
+    },
+    {
+      "title": "13 Reasons Why",
+      "year": 2017
+    },
+    {
+      "title": "Never Have I Ever",
+      "year": 2020
+    },
+    {
+      "title": "Emily in Paris",
+      "year": 2020
+    },
+    {
+      "title": "The Queen's Gambit",
+      "year": 2020
+    },
+    {
+      "title": "Unorthodox",
+      "year": 2020
+    },
+    {
+      "title": "When They See Us",
+      "year": 2019
+    },
+    {
+      "title": "Band of Brothers",
+      "year": 2001
+    },
+    {
+      "title": "The Pacific",
+      "year": 2010
+    },
+    {
+      "title": "Fleabag",
+      "year": 2016
+    },
+    {
+      "title": "After Life",
+      "year": 2019
+    },
+    {
+      "title": "The Good Place",
+      "year": 2016
+    },
+    {
+      "title": "Schitt's Creek",
+      "year": 2015
+    },
+    {
+      "title": "New Girl",
+      "year": 2011
+    },
+    {
+      "title": "Scrubs",
+      "year": 2001
+    },
+    {
+      "title": "Malcolm in the Middle",
+      "year": 2000
+    },
+    {
+      "title": "Everybody Loves Raymond",
+      "year": 1996
+    },
+    {
+      "title": "Two and a Half Men",
+      "year": 2003
+    },
+    {
+      "title": "That '70s Show",
+      "year": 1998
+    },
+    {
+      "title": "Frasier",
+      "year": 1993
+    },
+    {
+      "title": "Cheers",
+      "year": 1982
+    },
+    {
+      "title": "Mad About You",
+      "year": 1992
+    },
+    {
+      "title": "Avatar: The Last Airbender",
+      "year": 2005
+    },
+    {
+      "title": "Naruto",
+      "year": 2002
+    },
+    {
+      "title": "One Punch Man",
+      "year": 2015
+    },
+    {
+      "title": "Tokyo Ghoul",
+      "year": 2014
+    },
+    {
+      "title": "Sword Art Online",
+      "year": 2012
+    },
+    {
+      "title": "Haikyu!!",
+      "year": 2014
+    },
+    {
+      "title": "Spy x Family",
+      "year": 2022
+    },
+    {
+      "title": "Chainsaw Man",
+      "year": 2022
+    },
+    {
+      "title": "Blue Lock",
+      "year": 2022
+    }
+  ],
+  "movies": [
+    {
+      "title": "Bad Genius",
+      "year": 2017,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Pee Mak",
+      "year": 2013,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Shutter",
+      "year": 2004,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "How to Make Millions Before Grandma Dies",
+      "year": 2024,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "The Medium",
+      "year": 2021,
+      "expect": "Thailand"
+    },
+    {
+      "title": "Ong-Bak",
+      "year": 2003,
+      "expect": "Thailand"
+    },
+    {
+      "title": "Uncle Boonmee Who Can Recall His Past Lives",
+      "year": 2010,
+      "expect": "Thailand"
+    },
+    {
+      "title": "Teacher's Diary",
+      "year": 2014,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Friend Zone",
+      "year": 2019,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Happy Old Year",
+      "year": 2019,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Nang Nak",
+      "year": 1999,
+      "expect": "Thailand"
+    },
+    {
+      "title": "SuckSeed",
+      "year": 2011,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "ATM: Er Rak Error",
+      "year": 2012,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "4bia",
+      "year": 2008,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "One Day",
+      "year": 2016,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Freelance",
+      "year": 2015,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Fast & Feel Love",
+      "year": 2022,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Homestay",
+      "year": 2018,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Where We Belong",
+      "year": 2019,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Tropical Malady",
+      "year": 2004,
+      "expect": "Thailand"
+    },
+    {
+      "title": "Last Life in the Universe",
+      "year": 2003,
+      "expect": "Thailand"
+    },
+    {
+      "title": "Tears of the Black Tiger",
+      "year": 2000,
+      "expect": "Thailand"
+    },
+    {
+      "title": "Bang Rajan",
+      "year": 2000,
+      "expect": "Thailand"
+    },
+    {
+      "title": "Tom-Yum-Goong",
+      "year": 2005,
+      "expect": "Thailand"
+    },
+    {
+      "title": "My Girl",
+      "year": 2003,
+      "expect": "Thailand",
+      "studio": "GDH 559 (formerly GTH), Thailand"
+    },
+    {
+      "title": "Hunger",
+      "year": 2023,
+      "expect": "Thailand"
+    },
+    {
+      "title": "Mon Rak Transistor",
+      "year": 2001,
+      "expect": "Thailand"
+    },
+    {
+      "title": "Love of Siam",
+      "year": 2007,
+      "expect": "Thailand"
+    },
+    {
+      "title": "Titanic",
+      "year": 1997
+    },
+    {
+      "title": "La La Land",
+      "year": 2016
+    },
+    {
+      "title": "300",
+      "year": 2006
+    },
+    {
+      "title": "Troy",
+      "year": 2004
+    },
+    {
+      "title": "Avatar",
+      "year": 2009
+    },
+    {
+      "title": "Avatar: The Way of Water",
+      "year": 2022
+    },
+    {
+      "title": "The Avengers",
+      "year": 2012
+    },
+    {
+      "title": "Iron Man",
+      "year": 2008
+    },
+    {
+      "title": "Guardians of the Galaxy",
+      "year": 2014
+    },
+    {
+      "title": "Black Panther",
+      "year": 2018
+    },
+    {
+      "title": "Thor: Ragnarok",
+      "year": 2017
+    },
+    {
+      "title": "Captain America: The Winter Soldier",
+      "year": 2014
+    },
+    {
+      "title": "Doctor Strange",
+      "year": 2016
+    },
+    {
+      "title": "Spider-Man: No Way Home",
+      "year": 2021
+    },
+    {
+      "title": "Spider-Man 2",
+      "year": 2004
+    },
+    {
+      "title": "Deadpool",
+      "year": 2016
+    },
+    {
+      "title": "Dune",
+      "year": 2021
+    },
+    {
+      "title": "Dune: Part Two",
+      "year": 2024
+    },
+    {
+      "title": "Wonder Woman",
+      "year": 2017
+    },
+    {
+      "title": "Man of Steel",
+      "year": 2013
+    },
+    {
+      "title": "The Batman",
+      "year": 2022
+    },
+    {
+      "title": "Superman",
+      "year": 1978
+    },
+    {
+      "title": "Batman",
+      "year": 1989
+    },
+    {
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "year": 2001
+    },
+    {
+      "title": "Harry Potter and the Deathly Hallows: Part 2",
+      "year": 2011
+    },
+    {
+      "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+      "year": 2003
+    },
+    {
+      "title": "The Fast and the Furious",
+      "year": 2001
+    },
+    {
+      "title": "Furious 7",
+      "year": 2015
+    },
+    {
+      "title": "Transformers",
+      "year": 2007
+    },
+    {
+      "title": "Jurassic World",
+      "year": 2015
+    },
+    {
+      "title": "The Hunger Games",
+      "year": 2012
+    },
+    {
+      "title": "Twilight",
+      "year": 2008
+    },
+    {
+      "title": "The Hobbit: An Unexpected Journey",
+      "year": 2012
+    },
+    {
+      "title": "Top Gun",
+      "year": 1986
+    },
+    {
+      "title": "Top Gun: Maverick",
+      "year": 2022
+    },
+    {
+      "title": "John Wick",
+      "year": 2014
+    },
+    {
+      "title": "Mission: Impossible",
+      "year": 1996
+    },
+    {
+      "title": "Mission: Impossible - Fallout",
+      "year": 2018
+    },
+    {
+      "title": "Skyfall",
+      "year": 2012
+    },
+    {
+      "title": "Casino Royale",
+      "year": 2006
+    },
+    {
+      "title": "Goldfinger",
+      "year": 1964
+    },
+    {
+      "title": "Ocean's Eleven",
+      "year": 2001
+    },
+    {
+      "title": "Kill Bill: Vol. 1",
+      "year": 2003
+    },
+    {
+      "title": "Independence Day",
+      "year": 1996
+    },
+    {
+      "title": "Men in Black",
+      "year": 1997
+    },
+    {
+      "title": "Ghostbusters",
+      "year": 1984
+    },
+    {
+      "title": "Jumanji",
+      "year": 1995
+    },
+    {
+      "title": "Home Alone",
+      "year": 1990
+    },
+    {
+      "title": "Rocky",
+      "year": 1976
+    },
+    {
+      "title": "First Blood",
+      "year": 1982
+    },
+    {
+      "title": "The Mummy",
+      "year": 1999
+    },
+    {
+      "title": "National Treasure",
+      "year": 2004
+    },
+    {
+      "title": "Armageddon",
+      "year": 1998
+    },
+    {
+      "title": "Speed",
+      "year": 1994
+    },
+    {
+      "title": "Die Hard",
+      "year": 1988
+    },
+    {
+      "title": "Oppenheimer",
+      "year": 2023
+    },
+    {
+      "title": "Barbie",
+      "year": 2023
+    },
+    {
+      "title": "Everything Everywhere All at Once",
+      "year": 2022
+    },
+    {
+      "title": "The Revenant",
+      "year": 2015
+    },
+    {
+      "title": "Birdman",
+      "year": 2014
+    },
+    {
+      "title": "Moonlight",
+      "year": 2016
+    },
+    {
+      "title": "Get Out",
+      "year": 2017
+    },
+    {
+      "title": "A Star Is Born",
+      "year": 2018
+    },
+    {
+      "title": "Bohemian Rhapsody",
+      "year": 2018
+    },
+    {
+      "title": "Rocketman",
+      "year": 2019
+    },
+    {
+      "title": "The Greatest Showman",
+      "year": 2017
+    },
+    {
+      "title": "The Shape of Water",
+      "year": 2017
+    },
+    {
+      "title": "Green Book",
+      "year": 2018
+    },
+    {
+      "title": "Nomadland",
+      "year": 2020
+    },
+    {
+      "title": "CODA",
+      "year": 2021
+    },
+    {
+      "title": "Call Me by Your Name",
+      "year": 2017
+    },
+    {
+      "title": "Portrait of a Lady on Fire",
+      "year": 2019
+    },
+    {
+      "title": "Marriage Story",
+      "year": 2019
+    },
+    {
+      "title": "Little Women",
+      "year": 2019
+    },
+    {
+      "title": "Dead Poets Society",
+      "year": 1989
+    },
+    {
+      "title": "Rain Man",
+      "year": 1988
+    },
+    {
+      "title": "American Beauty",
+      "year": 1999
+    },
+    {
+      "title": "Slumdog Millionaire",
+      "year": 2008
+    },
+    {
+      "title": "Life of Pi",
+      "year": 2012
+    },
+    {
+      "title": "Scarface",
+      "year": 1983
+    },
+    {
+      "title": "The Truman Show",
+      "year": 1998
+    },
+    {
+      "title": "Erin Brockovich",
+      "year": 2000
+    },
+    {
+      "title": "Philadelphia",
+      "year": 1993
+    },
+    {
+      "title": "The Notebook",
+      "year": 2004
+    },
+    {
+      "title": "Pretty Woman",
+      "year": 1990
+    },
+    {
+      "title": "Notting Hill",
+      "year": 1999
+    },
+    {
+      "title": "Love Actually",
+      "year": 2003
+    },
+    {
+      "title": "Four Weddings and a Funeral",
+      "year": 1994
+    },
+    {
+      "title": "Sleepless in Seattle",
+      "year": 1993
+    },
+    {
+      "title": "When Harry Met Sally...",
+      "year": 1989
+    },
+    {
+      "title": "Dirty Dancing",
+      "year": 1987
+    },
+    {
+      "title": "Grease",
+      "year": 1978
+    },
+    {
+      "title": "Mamma Mia!",
+      "year": 2008
+    },
+    {
+      "title": "Les Mis\u00e9rables",
+      "year": 2012
+    },
+    {
+      "title": "Chicago",
+      "year": 2002
+    },
+    {
+      "title": "Moulin Rouge!",
+      "year": 2001
+    },
+    {
+      "title": "The Devil Wears Prada",
+      "year": 2006
+    },
+    {
+      "title": "Mean Girls",
+      "year": 2004
+    },
+    {
+      "title": "Legally Blonde",
+      "year": 2001
+    },
+    {
+      "title": "Bridget Jones's Diary",
+      "year": 2001
+    },
+    {
+      "title": "Crazy Rich Asians",
+      "year": 2018
+    },
+    {
+      "title": "The Hangover",
+      "year": 2009
+    },
+    {
+      "title": "Superbad",
+      "year": 2007
+    },
+    {
+      "title": "Bridesmaids",
+      "year": 2011
+    },
+    {
+      "title": "Ferris Bueller's Day Off",
+      "year": 1986
+    },
+    {
+      "title": "The Breakfast Club",
+      "year": 1985
+    },
+    {
+      "title": "Clueless",
+      "year": 1995
+    },
+    {
+      "title": "10 Things I Hate About You",
+      "year": 1999
+    },
+    {
+      "title": "Frozen",
+      "year": 2013
+    },
+    {
+      "title": "Moana",
+      "year": 2016
+    },
+    {
+      "title": "Encanto",
+      "year": 2021
+    },
+    {
+      "title": "Zootopia",
+      "year": 2016
+    },
+    {
+      "title": "Shrek",
+      "year": 2001
+    },
+    {
+      "title": "Beauty and the Beast",
+      "year": 1991
+    },
+    {
+      "title": "Aladdin",
+      "year": 1992
+    },
+    {
+      "title": "Mulan",
+      "year": 1998
+    },
+    {
+      "title": "The Little Mermaid",
+      "year": 1989
+    },
+    {
+      "title": "Kung Fu Panda",
+      "year": 2008
+    },
+    {
+      "title": "Madagascar",
+      "year": 2005
+    },
+    {
+      "title": "Despicable Me",
+      "year": 2010
+    },
+    {
+      "title": "Sing",
+      "year": 2016
+    },
+    {
+      "title": "Tangled",
+      "year": 2010
+    },
+    {
+      "title": "Brave",
+      "year": 2012
+    },
+    {
+      "title": "Big Hero 6",
+      "year": 2014
+    },
+    {
+      "title": "Turning Red",
+      "year": 2022
+    },
+    {
+      "title": "Mary Poppins",
+      "year": 1964
+    },
+    {
+      "title": "The Sound of Music",
+      "year": 1965
+    },
+    {
+      "title": "RRR",
+      "year": 2022
+    },
+    {
+      "title": "Baahubali: The Beginning",
+      "year": 2015
+    },
+    {
+      "title": "Dangal",
+      "year": 2016
+    },
+    {
+      "title": "PK",
+      "year": 2014
+    },
+    {
+      "title": "Lagaan: Once Upon a Time in India",
+      "year": 2001
+    },
+    {
+      "title": "Kabhi Khushi Kabhie Gham...",
+      "year": 2001
+    },
+    {
+      "title": "Train to Busan",
+      "year": 2016
+    },
+    {
+      "title": "The Handmaiden",
+      "year": 2016
+    },
+    {
+      "title": "Burning",
+      "year": 2018
+    },
+    {
+      "title": "Snowpiercer",
+      "year": 2013
+    },
+    {
+      "title": "The Wailing",
+      "year": 2016
+    },
+    {
+      "title": "A Taxi Driver",
+      "year": 2017
+    },
+    {
+      "title": "Crouching Tiger, Hidden Dragon",
+      "year": 2000
+    },
+    {
+      "title": "Hero",
+      "year": 2002
+    },
+    {
+      "title": "Ip Man",
+      "year": 2008
+    },
+    {
+      "title": "Kung Fu Hustle",
+      "year": 2004
+    },
+    {
+      "title": "Shaolin Soccer",
+      "year": 2001
+    },
+    {
+      "title": "The Raid",
+      "year": 2011
+    },
+    {
+      "title": "Infernal Affairs",
+      "year": 2002
+    },
+    {
+      "title": "In the Mood for Love",
+      "year": 2000
+    },
+    {
+      "title": "Weathering with You",
+      "year": 2019
+    },
+    {
+      "title": "Suzume",
+      "year": 2022
+    },
+    {
+      "title": "Demon Slayer the Movie: Mugen Train",
+      "year": 2020
+    },
+    {
+      "title": "A Silent Voice",
+      "year": 2016
+    },
+    {
+      "title": "Perfect Blue",
+      "year": 1997
+    },
+    {
+      "title": "Akira",
+      "year": 1988
+    },
+    {
+      "title": "Ghost in the Shell",
+      "year": 1995
+    },
+    {
+      "title": "La Haine",
+      "year": 1995
+    },
+    {
+      "title": "Run Lola Run",
+      "year": 1998
+    },
+    {
+      "title": "Roma",
+      "year": 2018
+    },
+    {
+      "title": "Y Tu Mam\u00e1 Tambi\u00e9n",
+      "year": 2001
+    },
+    {
+      "title": "Volver",
+      "year": 2006
+    },
+    {
+      "title": "Talk to Her",
+      "year": 2002
+    },
+    {
+      "title": "Wild Tales",
+      "year": 2014
+    },
+    {
+      "title": "The Secret in Their Eyes",
+      "year": 2009
+    },
+    {
+      "title": "A Separation",
+      "year": 2011
+    },
+    {
+      "title": "Another Round",
+      "year": 2020
+    },
+    {
+      "title": "The Worst Person in the World",
+      "year": 2021
+    },
+    {
+      "title": "Persepolis",
+      "year": 2007
+    },
+    {
+      "title": "Amores Perros",
+      "year": 2000
+    },
+    {
+      "title": "Central Station",
+      "year": 1998
+    }
+  ]
+}
