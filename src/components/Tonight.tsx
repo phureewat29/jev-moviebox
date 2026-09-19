@@ -6,6 +6,7 @@ import { Mark } from "@/components/Mark";
 import { Shelf } from "@/components/Shelf";
 import type { Company } from "@/core/Company";
 import type { FilmCard } from "@/core/Film";
+import type { Suggestion } from "@/core/Suggestions";
 import type { Labels } from "@/core/Labels";
 import { rank, shortlist, type PersonRead } from "@/core/Rank";
 import labelsFile from "@/data/labels.json";
@@ -38,7 +39,13 @@ const TROUBLE: Record<"failed" | "throttled", (retryAfter: number) => string> = 
   throttled: (retryAfter) => `too many tries — try again in ${retryAfter}s.`,
 };
 
-export function Tonight({ films }: { films: readonly FilmCard[] }) {
+export function Tonight({
+  films,
+  suggestions,
+}: {
+  films: readonly FilmCard[];
+  suggestions: readonly Suggestion[];
+}) {
   const [said, setSaid] = useState("");
   const [company, setCompany] = useState<Company | null>(null);
   const [result, setResult] = useState<Result>(null);
@@ -102,6 +109,7 @@ export function Tonight({ films }: { films: readonly FilmCard[] }) {
               said={said}
               company={company}
               pending={pending}
+              suggestions={suggestions}
               onSaid={setSaid}
               onCompany={setCompany}
               onSubmit={() => void recommend()}
