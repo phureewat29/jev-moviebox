@@ -123,13 +123,8 @@ body::after {
 }
 
 /**
- * A poster slot before its poster arrives: a strip of film standing in the sleeve — perforated
- * margins down both edges, an Academy leader ring in the middle, and a marquee bulb travelling
- * across the plastic.
- *
- * It sits *under* the image rather than in place of it, so the worst a mistimed load can do is
- * leave it hidden behind something opaque, and a poster that never arrives leaves a film strip
- * rather than a broken tile.
+ * A poster slot before its poster arrives. It sits under the image, not in place of it: a
+ * mistimed load fails invisibly and a missing poster leaves a film strip, not a broken tile.
  */
 .sleeve {
   --strip: color-mix(in srgb, var(--color-screen) 65%, #000);
@@ -155,7 +150,7 @@ body::after {
     16px 100%;
 }
 
-/** The leader ring: a circle with the frame's crosshair in it, clipped to the circle by its radius. */
+/** The leader ring; the crosshair is a background, so the radius clips it to the circle. */
 .sleeve::before {
   content: "";
   position: absolute;
@@ -171,7 +166,7 @@ body::after {
     linear-gradient(var(--hair), var(--hair)) center / 100% 1px no-repeat;
 }
 
-/** Slow on purpose: a spinner says wait, this says film. Parked off to the left when it stops. */
+/** Parked off-screen left when stopped, so a stopped sleeve shows no streak. */
 .sleeve::after {
   content: "";
   position: absolute;
@@ -186,7 +181,7 @@ body::after {
   animation: sheen 2.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
-/** Once the poster is up the sleeve is behind it, so the bulb has nothing left to light. */
+/** Hidden behind the poster by then; twelve invisible layers need not animate. */
 .sleeve[data-loaded]::after {
   animation: none;
 }
