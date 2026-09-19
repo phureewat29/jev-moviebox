@@ -62,18 +62,6 @@ The catalog and its labels are committed, so a clone needs no OMDb key and runs 
 scripts that *build* them are deliberately not in this repository: they hold credentials and
 only ever run on one machine.
 
-## Deploy
-
-| variable | | |
-| --- | --- | --- |
-| `TYPESAFE_API_KEY` | required | the only secret; every model call is server-side |
-| `TYPESAFE_TIMEOUT_MS` | `12000` | the whole budget for one read; past it the shelf comes back empty |
-| `NEXT_PUBLIC_CDN_URL` | optional | serves the card and the background from a bucket instead of the app |
-
-Unset the last one and both files come from `public/`, which is what every clone and every
-local run does. Set it and it has to end with the prefix the assets were pushed under, because
-`assetUrl` in `src/core/Site.ts` is nothing but a prefix on a root-relative path.
-
 ## Licence
 
 [MIT](LICENSE) © 2026 Phureewat A
