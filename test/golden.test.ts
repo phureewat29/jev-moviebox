@@ -24,25 +24,17 @@ const cache = existsSync(CACHE)
   ? (JSON.parse(readFileSync(CACHE, "utf8")) as readonly Cached[])
   : [];
 
-const TIER: Record<number, string> = { 2: "named", 1: "kept", 0: "rest" };
-
 describe.skipIf(cache.length === 0)("the golden shelves", () => {
   it("are what the cached reads still produce", async () => {
     const snapshot = Object.fromEntries(
       cache.map((row) => {
-        const ranked = rank({ person: row.read, films, labels });
-        const shelf = shortlist(ranked).map((r) => r.film.id);
-        const mode = ranked.some((r) => r.tier === 2 && r.qualifies)
-          ? "named"
-          : ranked[0]?.browsing === true
-            ? "browse"
-            : "ranked";
+        const ranking = rank({ person: row.read, films, labels });
         return [
           `${row.said}|${row.company ?? ""}`,
           {
-            mode,
-            shelf,
-            rows: ranked.map((r) => [r.film.id, TIER[r.tier], r.qualifies, r.match, r.fit]),
+            mode: ranking.mode,
+            shelf: shortlist(ranking).map((r) => r.film.id),
+            rows: ranking.rows.map((r) => [r.film.id, r.tier, r.qualifies, r.match, r.fit]),
           },
         ];
       }),

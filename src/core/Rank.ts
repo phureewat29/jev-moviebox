@@ -1,4 +1,4 @@
-import type { FilmCard } from "./Film.ts";
+import type { FilmCard, Kind } from "./Film.ts";
 import type { FilmLabels } from "./Labels.ts";
 import {
   AXES,
@@ -6,6 +6,7 @@ import {
   decadeOf,
   runtimeBand,
   type AxisId,
+  type AxisKind,
   type CountryId,
   type DecadeId,
   type GenreId,
@@ -14,50 +15,36 @@ import {
 } from "./Taste.ts";
 
 /**
- * Ranking, in pure code. Jev supplies every judgment; everything here is arithmetic the model
- * is explicitly bad at, so nothing in this file calls it.
- *
- * A film carries two scores. `match` is how well it answers what was actually asked, and only
- * that. `fit` adds the reputation prior and is what the order is drawn from. Keeping them apart
- * is what lets the shelf come back empty: a famous film answering none of the question scores
- * near zero on `match`, however high its `fit` would otherwise have been.
+ * Ranking, in pure code: Jev supplies every judgment, this file does the arithmetic. It reads
+ * top to bottom as the pipeline runs — who is eligible, what was asked, how each film answers,
+ * the order, the cut. `match` says how well a film answers what was asked and decides whether it
+ * reaches the shelf; `fit` adds reputation and only breaks ties. Kept apart so the shelf can be empty.
  */
+
+/** Types */
 
 export type Dist = readonly number[];
 
-export type Axis = {
+export type AxisRead = {
   readonly probabilities: Dist;
-  /** How sure Jev was of the level. */
   readonly confidence: number;
-  /** Whether the person said anything bearing on this axis at all. */
   readonly relevance: number;
 };
 
 export type Subject = {
-  /** Scaled so the leader is 1 and an uninformative probability is 0. Ratios are preserved. */
+  /** Scaled so the leader is 1 and an uninformative probability is 0. */
   readonly scores: Readonly<Record<string, number>>;
-  /**
-   * How far the Choice committed, from 0 to 1. Built from the mass on its top three against
-   * the mass on `none`, discounted by its own confidence. The top *three* because a franchise
-   * splits mass across its films, and that is a committed answer, not an uncertain one.
-   */
   readonly weight: number;
-  /**
-   * How concentrated that answer was. "Batman" lands on one film; "anime" spreads across
-   * dozens, and a category naming dozens of right answers wants a list, not a single tile.
-   */
   readonly concentration: number;
 };
 
 export type PersonRead = {
-  readonly axes: Readonly<Record<AxisId, Axis>>;
-  readonly runtime: Axis;
+  readonly axes: Readonly<Record<AxisId, AxisRead>>;
+  readonly runtime: AxisRead;
   readonly subject: Subject;
   readonly country: CountryId | null;
   readonly genres: readonly GenreId[];
-  /** Whether the person said a genre outright. Only a stated genre may filter the shelf. */
   readonly genreNamed: boolean;
-  /** Whether they asked for something *like* a title, in which case that title is not an answer. */
   readonly wantsSimilar: boolean;
   readonly wants: WantsId;
   readonly ordering: OrderingId;
@@ -65,640 +52,498 @@ export type PersonRead = {
   readonly childrenWatching: boolean;
 };
 
+export type Tier = "named" | "kept" | "rest";
+
 export type Ranked = {
   readonly film: FilmCard;
   readonly fit: number;
   readonly match: number;
-  /** False when the film misses something the person plainly asked for. */
   readonly qualifies: boolean;
-  /** 2 when Jev named it, 1 when a stated facet kept it, 0 otherwise. */
-  readonly tier: number;
-  /**
-   * True when the question was about the shelf rather than about a film — a decade, or an
-   * ordering. Those want a list to look through, so the shortlist does not trim them hard.
-   */
-  readonly browsing: boolean;
+  readonly tier: Tier;
 };
 
-/** The ratings that veto a film for children outright, film and television alike. */
-const ADULT_RATINGS = new Set(["R", "NC-17", "X", "TV-MA"]);
+export type Mode = "named" | "browse" | "ranked";
 
-/** A film reaches a child only if Jev says so and the rating does not veto it. */
+export type Ranking = { readonly rows: readonly Ranked[]; readonly mode: Mode };
+
+export type RankInput = {
+  readonly person: PersonRead;
+  readonly films: readonly FilmCard[];
+  readonly labels: ReadonlyMap<string, FilmLabels>;
+};
+
+/** Tuning */
+
+export const ADULT_RATINGS: ReadonlySet<string> = new Set(["R", "NC-17", "X", "TV-MA"]);
 export const KIDS_SAFE_THRESHOLD = 0.6;
 
-/** How hard a named subject outweighs mood. "batman" has to beat every mood consideration. */
 export const TOPICAL = 3;
-
-/**
- * Above this the Choice is pointing at a title rather than leaving it alone. Jev's answer to
- * "which of these did they mean" is the answer to the question; everything below is the tail
- * of a distribution that has to sum to one.
- */
+/** Above this the Choice is pointing at a title; below it is the tail of a distribution that must sum to one. */
 export const SEED_FLOOR = 0.08;
-
-/**
- * How far the Choice has to have committed before its answer counts as a named title at all.
- * The scores are scaled so the leader is always 1, so every query has a top title however little
- * the Choice meant it — and "wreck me" duly came back holding Fight Club. Measured across the
- * suite, mood queries land at 0.04 to 0.11 and genuine subject queries at 0.19 and up.
- */
+/** Subject scores are scaled so the leader is always 1. Measured: mood queries sit at 0.04–0.11, subject queries at 0.19 and up. */
 export const COMMITTED = 0.15;
+const DIFFUSE = 0.35;
 
-/** A country filter prefers the country that actually made the film, while it still has this many. */
 export const COUNTRY_MIN = 4;
-
-/** Several stated genres mean all of them, while the shelf holds at least this many such titles. */
 export const GENRE_MIN = 3;
 
-/** Reputation breaks ties between films that already answer the question; it never qualifies one. */
 export const PRIOR = 0.4;
-
-/** Below this a film answers too little of what was asked to be worth a slot. */
 export const FLOOR = 0.3;
-
 /**
- * An axis carrying at least this share of everything the person asked for is a must-have, not a
- * preference. Ask to be scared with children in the room and tension carries a quarter of the
- * weight while every kid-safe film scores zero on it — so the shelf comes back empty instead of
- * offering Toy Story. A total score cannot catch this: the contradiction still scores 0.47
- * against 0.49 for a query that genuinely works.
+ * "Scare me" with children watching: tension carries a quarter of the weight and every kid-safe
+ * film scores zero on it. A total score cannot catch that — it scores 0.47 against 0.49 for a
+ * query that works — so an axis carrying this share of the ask is a must-have, not a preference.
  */
 export const DEALBREAKER_SHARE = 0.15;
 export const DEALBREAKER_FIT = 0.25;
-
-/**
- * How far behind the leader still earns a slot, as a fraction of the spread across the top 50.
- * A fixed gap cuts arbitrarily: past the leader, scores can sit 0.004 apart.
- */
+/** Past the leader, `match` values sit about 0.004 apart, so a fixed gap cuts arbitrarily; this is a fraction of the spread across the top fifty. */
 export const GAP_OF_SPREAD = 0.35;
-
+/** The floor under that fraction, for when the top fifty are flat. */
+const MIN_GAP = 0.05;
+const SPREAD_ROW = 49;
 export const MAX_RESULTS = 12;
-
-/**
- * Below this the person has not asked for enough to rank on. `match` is a ratio, so a tiny
- * denominator turns noise into a confident-looking score: an empty box once returned twelve
- * films at 0.47. Under this much signal the shelf just stays as it was.
- */
+/** `match` is a ratio; below this much ask, a tiny denominator turns noise into a score. */
 export const MIN_ASKED = 0.8;
-
-/** How hard "the best rated" pulls, once Jev says that is what was asked. */
 export const ORDERING_WEIGHT = 4;
-
-/**
- * A length the person stated pulls as hard as a subject they named. Left at its bare relevance
- * it was worth 0.6 against a subject's 2.3, so "like Interstellar, but shorter" ordered on
- * resemblance and led with a 149-minute film.
- */
+/** A stated length pulls as hard as a named subject: at its bare relevance it was worth 0.6 against a subject's 2.3, and "like Interstellar, but shorter" led with a 149-minute film. */
 export const RUNTIME_STATED = 3;
+const STATED_RELEVANCE = 0.7;
+const STATED_CONFIDENCE = 0.5;
+const WANT_MIN = 0.01;
+const UNKNOWN_RUNTIME = 0.5;
 
-/**
- * "The best thing on this shelf" sorted on the raw IMDb rating and returned Planet Earth, because
- * nine of the twelve highest-rated titles here are series and a nature documentary is rated by
- * the people who went looking for it. IMDb's own weighting fixes it: shrink each rating toward
- * the catalog mean by how few people voted, with the catalog's median vote count as the weight.
- */
-const weightedRating = (film: FilmCard, mean: number, median: number) =>
-  (film.imdbVotes * film.imdbRating + median * mean) / (film.imdbVotes + median);
+/** Distributions */
 
-/**
- * Jev's probabilities come back summing to 0.99 or 1.00, so every comparison normalizes rather
- * than trusting the total.
- */
-const normalize = (distribution: Dist, levels: number): number[] => {
+const LEVELS = 4;
+
+const normalize = (distribution: Dist, levels = LEVELS): Dist => {
   const total = distribution.reduce((sum, p) => sum + p, 0);
   if (total <= 0) return Array.from({ length: levels }, () => 1 / levels);
   return Array.from({ length: levels }, (_, i) => (distribution[i] ?? 0) / total);
 };
 
-/**
- * Shared probability mass: 1 when the two agree exactly, 0 when they have nothing in common.
- * Iterates the rubric's own level count, so mass the person put on a level the film's answer
- * omits still counts against them.
- */
-export const overlap = (person: Dist, film: Dist, levels: number): number => {
-  const p = normalize(person, levels);
-  const q = normalize(film, levels);
-  let shared = 0;
-  for (let i = 0; i < levels; i += 1) shared += Math.min(p[i], q[i]);
-  return shared;
+type Mass = (person: Dist, film: Dist) => number;
+
+const sharedMass: Mass = (person, film) => {
+  let mass = 0;
+  for (let i = 0; i < LEVELS; i += 1) mass += Math.min(person[i], film[i]);
+  return mass;
 };
 
-/**
- * For an axis that is a budget rather than a target. The person states the most they can take;
- * a film asking less is just as welcome, so only asking *more* costs anything. Without this,
- * "I'm fully recharged" would push every easy film to the bottom, which nobody means.
- */
-export const ceilingFit = (person: Dist, film: Dist, levels: number): number => {
-  const p = normalize(person, levels);
-  const q = normalize(film, levels);
+/** A budget, not a target: a film asking less than the person can take is as welcome as one asking exactly that. */
+const ceilingMass: Mass = (person, film) => {
   let fit = 0;
   let budget = 1;
-  for (let asked = 0; asked < levels; asked += 1) {
-    fit += q[asked] * budget;
-    budget -= p[asked];
-  }
-  return Math.max(0, Math.min(1, fit));
-};
-
-const axisFit = (axis: AxisId, person: Dist, film: Dist) =>
-  AXES[axis].kind === "ceiling" ? ceilingFit(person, film, 4) : overlap(person, film, 4);
-
-export type RankInput = {
-  readonly person: PersonRead | null;
-  readonly films: readonly FilmCard[];
-  readonly labels: ReadonlyMap<string, FilmLabels>;
-  readonly excluded?: ReadonlySet<string>;
-};
-
-const oneHot = (level: number, levels = 4): Dist =>
-  Array.from({ length: levels }, (_, i) => (i === level ? 1 : 0));
-
-/**
- * Reputation, per kind. Ranks restart at 1 for films and for series, so the count has to be
- * the count of that kind or every series would look more famous than it is.
- */
-const priorOf = (film: FilmCard, countOfKind: number) =>
-  1 - (film.imdbRank - 1) / Math.max(1, countOfKind);
-
-/**
- * The shelf's average distribution per axis. It describes the catalog, not the query, so it is
- * computed once per label set rather than once per press: folded into `rank` it cost 7ms of a
- * 16ms frame on every "something like X", which is a dropped frame at exactly the moment the
- * results animate in.
- */
-const MEANS = new WeakMap<ReadonlyMap<string, FilmLabels>, ReadonlyMap<AxisId, Dist>>();
-
-/**
- * Every film's axis distributions, normalized once. `overlap` normalizes both sides on every
- * call and allocates two arrays doing it; comparing one anchor against 744 films across ten
- * axes ran that 7,440 times per press. The labels never change, so this is done per label set.
- */
-const NORMALIZED = new WeakMap<
-  ReadonlyMap<string, FilmLabels>,
-  ReadonlyMap<string, Readonly<Record<AxisId, Dist>>>
->();
-
-const normalizedAxes = (
-  labels: ReadonlyMap<string, FilmLabels>,
-): ReadonlyMap<string, Readonly<Record<AxisId, Dist>>> => {
-  const cached = NORMALIZED.get(labels);
-  if (cached !== undefined) return cached;
-  const table = new Map<string, Record<AxisId, Dist>>();
-  for (const [id, label] of labels) {
-    const row = {} as Record<AxisId, Dist>;
-    for (const axis of AXIS_IDS) row[axis] = normalize(label.axes[axis], 4);
-    table.set(id, row);
-  }
-  NORMALIZED.set(labels, table);
-  return table;
-};
-
-/**
- * How much a shared genre actually tells you, by how rare it is on this shelf. Counting genres
- * equally made Avengers: Endgame and The Lord of the Rings the films most like Interstellar, on
- * the strength of Drama and Adventure. A property of the catalog, so it is counted once.
- */
-const RARITY = new WeakMap<readonly FilmCard[], (genre: string) => number>();
-
-const rarityOf = (films: readonly FilmCard[]) => {
-  const cached = RARITY.get(films);
-  if (cached !== undefined) return cached;
-  const seen = new Map<string, number>();
-  for (const film of films) {
-    for (const genre of film.genres) seen.set(genre, (seen.get(genre) ?? 0) + 1);
-  }
-  const weights = new Map<string, number>();
-  for (const [genre, count] of seen) weights.set(genre, Math.log(films.length / Math.max(1, count)));
-  const tells = (genre: string) => weights.get(genre) ?? 0;
-  RARITY.set(films, tells);
-  return tells;
-};
-
-/** The four one-hot runtime bands, built once rather than per film. */
-const ONE_HOT: readonly Dist[] = [0, 1, 2, 3].map((level) =>
-  Array.from({ length: 4 }, (_, i) => (i === level ? 1 : 0)),
-);
-
-/** A budget rather than a target, both sides already normalized. */
-const ceilingMass = (person: Dist, film: Dist) => {
-  let fit = 0;
-  let budget = 1;
-  for (let asked = 0; asked < 4; asked += 1) {
+  for (let asked = 0; asked < LEVELS; asked += 1) {
     fit += film[asked] * budget;
     budget -= person[asked];
   }
   return fit < 0 ? 0 : fit > 1 ? 1 : fit;
 };
 
-/** Shared probability mass, both sides already normalized. The inner loop of every comparison. */
-const sharedMass = (p: Dist, q: Dist) => {
-  let mass = 0;
-  for (let i = 0; i < 4; i += 1) mass += Math.min(p[i], q[i]);
-  return mass;
+const MASS: Record<AxisKind, Mass> = { match: sharedMass, ceiling: ceilingMass };
+
+export const overlap = (person: Dist, film: Dist, levels = LEVELS) =>
+  sharedMass(normalize(person, levels), normalize(film, levels));
+
+export const ceilingFit = (person: Dist, film: Dist, levels = LEVELS) =>
+  ceilingMass(normalize(person, levels), normalize(film, levels));
+
+const ONE_HOT: readonly Dist[] = Array.from({ length: LEVELS }, (_, level) =>
+  Array.from({ length: LEVELS }, (_, i) => (i === level ? 1 : 0)),
+);
+
+/** Catalog tables — properties of the catalog, cached on its identity; rebuilt per press they cost half a frame. */
+
+type Normalized = ReadonlyMap<string, Readonly<Record<AxisId, Dist>>>;
+const NORMALIZED = new WeakMap<ReadonlyMap<string, FilmLabels>, Normalized>();
+const MEANS = new WeakMap<ReadonlyMap<string, FilmLabels>, Readonly<Record<AxisId, Dist>>>();
+const RARITY = new WeakMap<readonly FilmCard[], (genre: string) => number>();
+
+/** The one cast in the file, in one place: a record over a closed set of ids. */
+const byAxis = <T,>(of: (axis: AxisId) => T): Readonly<Record<AxisId, T>> =>
+  Object.fromEntries(AXIS_IDS.map((axis) => [axis, of(axis)])) as Record<AxisId, T>;
+
+const normalizedAxes = (labels: ReadonlyMap<string, FilmLabels>): Normalized => {
+  const cached = NORMALIZED.get(labels);
+  if (cached !== undefined) return cached;
+  const table = new Map(
+    [...labels].map(([id, label]) => [id, byAxis((axis) => normalize(label.axes[axis]))]),
+  );
+  NORMALIZED.set(labels, table);
+  return table;
 };
 
-const meanOf = (labels: ReadonlyMap<string, FilmLabels>): ReadonlyMap<AxisId, Dist> => {
+const meanOf = (labels: ReadonlyMap<string, FilmLabels>): Readonly<Record<AxisId, Dist>> => {
   const cached = MEANS.get(labels);
   if (cached !== undefined) return cached;
-  const means = new Map<AxisId, Dist>();
-  for (const axis of AXIS_IDS) {
-    const sum = [0, 0, 0, 0];
-    let seen = 0;
-    for (const label of labels.values()) {
-      const level = label.axes[axis];
-      if (level === undefined) continue;
-      for (let i = 0; i < 4; i += 1) sum[i] += level[i] ?? 0;
-      seen += 1;
-    }
-    means.set(axis, seen === 0 ? [0.25, 0.25, 0.25, 0.25] : sum.map((v) => v / seen));
-  }
+  const rows = [...labels.values()];
+  const means = byAxis((axis) => {
+    const sum = rows.reduce((acc, label) => acc.map((v, i) => v + (label.axes[axis][i] ?? 0)), [0, 0, 0, 0]);
+    return rows.length === 0 ? normalize([]) : sum.map((v) => v / rows.length);
+  });
   MEANS.set(labels, means);
   return means;
 };
 
-export const rank = ({
-  person,
-  films,
-  labels,
-  excluded = new Set(),
-}: RankInput): readonly Ranked[] => {
-  const pool = films.filter((film) => !excluded.has(film.id) && labels.has(film.id));
-  const admitted =
-    person?.childrenWatching === true
-      ? pool.filter(
-          (film) =>
-            !ADULT_RATINGS.has(film.rated) &&
-            (labels.get(film.id)?.facts.kids_safe ?? 0) >= KIDS_SAFE_THRESHOLD,
-        )
-      : pool;
-
-  /**
-   * An axis counts only as far as the person spoke to it. A confident "no romance wanted" from
-   * someone who never raised romance is certainty about a question nobody asked.
-   */
-  /**
-   * Normalized once here rather than inside the per-film comparison. Scoring four hundred films
-   * against ten axes re-normalized the same person distribution four hundred times over and
-   * allocated an array each time, which is most of what the ranking cost.
-   */
-  const wants = person
-    ? AXIS_IDS.map((axis) => ({
-        axis,
-        distribution: person.axes[axis].probabilities,
-        normalized: normalize(person.axes[axis].probabilities, 4),
-        ceiling: AXES[axis].kind === "ceiling",
-        weight: person.axes[axis].relevance * person.axes[axis].confidence,
-      })).filter((want) => want.weight > 0.01)
-    : [];
-  const runtimeWanted = person ? normalize(person.runtime.probabilities, 4) : ONE_HOT[0];
-
-  const runtimeStated =
-    person !== null && person.runtime.relevance >= 0.7 && person.runtime.confidence >= 0.5;
-  const runtimeWeight = person
-    ? person.runtime.relevance * person.runtime.confidence * (runtimeStated ? RUNTIME_STATED : 1)
-    : 0;
-  const topicalWeight = person ? TOPICAL * person.subject.weight : 0;
-  const orderingWeight = person && person.ordering !== "none" ? ORDERING_WEIGHT : 0;
-  /**
-   * Genre is not a term in the score. As one it diluted every other weight — which is how
-   * "scare me" with children watching stopped coming back empty — and at any weight large
-   * enough to matter it outvoted the subject. It filters, or it breaks ties. Nothing else.
-   */
-  const genreFit = (film: FilmCard) =>
-    person === null || person.genres.length === 0
-      ? 0
-      : person.genres.filter((g) => film.genres.includes(g)).length / person.genres.length;
-  const askedFor =
-    wants.reduce((sum, want) => sum + want.weight, 0) +
-    runtimeWeight +
-    topicalWeight +
-    orderingWeight;
-
-  /**
-   * "Something like Interstellar" names a reference, not a request. The Choice can only answer
-   * which title was named, so the shelf showed Interstellar itself — and for "but shorter" it
-   * showed a 169-minute film. The named title is the yardstick, never an answer.
-   */
-  const anchorId =
-    person !== null && person.wantsSimilar && person.subject.weight >= COMMITTED
-      ? (Object.entries(person.subject.scores).sort(([, a], [, b]) => b - a)[0]?.[0] ?? null)
-      : null;
-
-  /** Asked for a series, a film is not a near miss; it is the wrong thing. Same the other way. */
-  const referenced = anchorId === null ? admitted : admitted.filter((film) => film.id !== anchorId);
-  const ofKind =
-    person && person.wants !== "either"
-      ? referenced.filter((film) => film.kind === person.wants)
-      : referenced;
-  const inKind = ofKind.length > 0 ? ofKind : referenced;
-
-  /**
-   * Facets are filters over data, not preferences. Asked for Thai films, a French one is not a
-   * near miss. Each falls back if it would empty the shelf, so a wrong guess costs nothing.
-   */
-  /**
-   * A filter that matched nothing falls back rather than emptying the shelf, but it is then
-   * unsatisfied, and an unsatisfied filter must not buy a pass on the floor. Tracking this as
-   * one OR served two gentle Thai dramas to "a scary thai film" with a child in the room.
-   */
-  const fired: boolean[] = [];
-  const narrow = <T,>(pool: readonly T[], keep: (item: T) => boolean) => {
-    const kept = pool.filter(keep);
-    fired.push(kept.length > 0);
-    return kept.length > 0 ? kept : pool;
-  };
-
-  /**
-   * The country that made it, not every country on the credits. OMDb lists co-producers and
-   * distributors, so `includes` called WALL·E Japanese and Terminator 2 French, and "french
-   * cinema" answered with Planet Earth II. Falling back to the looser field keeps small
-   * countries usable.
-   */
-  const inCountry =
-    person?.country != null
-      ? narrow(inKind, (film) =>
-          inKind.filter((row) => row.countries[0] === person.country).length >= COUNTRY_MIN
-            ? film.countries[0] === person.country
-            : film.countries.includes(person.country!),
-        )
-      : inKind;
-
-  /**
-   * A genre filters only when the person said one. "A western" states it, so a film that is not
-   * a western is simply wrong. "Jail breaking" merely implies Crime, and filtering on that threw
-   * away The Shawshank Redemption, which is tagged Drama. Jev draws the line, not a threshold.
-   */
-  const named = person !== null && person.genreNamed && person.genres.length > 0;
-  /**
-   * "Something funny about war" names two, and means both. Taking either filled the shelf with
-   * sitcoms — Last Week Tonight is a comedy. Taking both is right while the shelf holds enough
-   * of them, and falls back to either when it does not, so a pair of rare genres still answers.
-   */
-  const everyGenre = named
-    ? inCountry.filter((film) => person.genres.every((genre) => film.genres.includes(genre)))
-    : inCountry;
-  const inGenre = !named
-    ? inCountry
-    : everyGenre.length >= GENRE_MIN
-      ? everyGenre
-      : inCountry.filter((film) => person.genres.some((genre) => film.genres.includes(genre)));
-  /**
-   * A stated genre does not fall back. Asked for a scary Thai film with a child in the room,
-   * the shelf holds none, and the honest answer is none rather than two gentle Thai dramas.
-   */
-  if (named) fired.push(inGenre.length > 0);
-
-  const pool2 =
-    person && person.decade !== "none"
-      ? narrow(inGenre, (film) => decadeOf(film.year) === person.decade)
-      : inGenre;
-
-  /**
-   * Only a filter that actually kept something counts. A filter that matched nothing fell back
-   * to the whole pool, so it narrowed nothing and must not buy a pass on the floor: "scare me"
-   * with children watching finds no kid-safe horror, and the honest answer is still none.
-   */
-  const faceted = fired.length > 0 && fired.every(Boolean);
-
-  const countOfKind = { movie: 0, series: 0 };
-  for (const film of films) countOfKind[film.kind] += 1;
-
-  /**
-   * What the Choice actually answered. "Jail breaking" returns Shawshank 1.00, Prison Break 0.75
-   * and The Great Escape 0.30 — the answer, already ranked. Feeding that into a weighted average
-   * where a genre tag and a reputation prior could outvote it is what lost the right film.
-   */
-  const seedOf = (film: FilmCard) =>
-    person === null || person.subject.weight < COMMITTED ? 0 : (person.subject.scores[film.id] ?? 0);
-
-  /** The reference film's own labels become the taste to match. */
-  const anchor = anchorId === null ? null : (labels.get(anchorId) ?? null);
-  const anchorCard = anchorId === null ? null : (films.find((film) => film.id === anchorId) ?? null);
-
-  const tells = rarityOf(films);
-
-  /**
-   * What is unusual about the reference film, axis by axis, measured against the shelf's own
-   * average. Interstellar is ordinary on romance and remarkable on scale, so scale should decide
-   * what counts as being like it. Averaging all ten equally let a superhero film look closer to
-   * it than 2001 does.
-   */
-  const shelfMean = anchor === null ? new Map<AxisId, Dist>() : meanOf(labels);
-  const normalized = normalizedAxes(labels);
-  const anchorAxes = anchorId === null ? undefined : normalized.get(anchorId);
-  const unusual = new Map<AxisId, number>();
-  for (const axis of AXIS_IDS) {
-    unusual.set(
-      axis,
-      anchor === null ? 0 : 1 - overlap(anchor.axes[axis], shelfMean.get(axis)!, 4),
-    );
+/** Sharing Sci-Fi says a lot, sharing Drama almost nothing. */
+const rarityOf = (films: readonly FilmCard[]) => {
+  const cached = RARITY.get(films);
+  if (cached !== undefined) return cached;
+  const counts = new Map<string, number>();
+  for (const film of films) {
+    for (const genre of film.genres) counts.set(genre, (counts.get(genre) ?? 0) + 1);
   }
-  const unusualTotal = AXIS_IDS.reduce((sum, axis) => sum + (unusual.get(axis) ?? 0), 0);
-  /** The same pairs as a flat array, so the per-film loop does no map lookups at all. */
-  const weighted: readonly (readonly [AxisId, number])[] = AXIS_IDS.map((axis) => [
-    axis,
-    unusual.get(axis) ?? 0,
-  ]);
+  const weights = new Map([...counts].map(([genre, count]) => [genre, Math.log(films.length / count)]));
+  const tells = (genre: string) => weights.get(genre) ?? 0;
+  RARITY.set(films, tells);
+  return tells;
+};
 
-  /** Everything about the anchor that does not change from film to film, worked out once. */
-  const anchorGenres = anchorCard === null ? null : new Set(anchorCard.genres);
-  const anchorGenreTotal =
-    anchorCard === null ? 0 : anchorCard.genres.reduce((sum, genre) => sum + tells(genre), 0);
+/** Pool */
 
-  /**
-   * How much a film is like the one the person named.
-   *
-   * Genre carries most of it, squared: on an even split The Lion King came fourth for "something
-   * like Interstellar" by matching its emotional shape while sharing only Drama and Adventure,
-   * and squaring makes half the genres in common worth a quarter rather than a half.
-   *
-   * The director is the tiebreak that genre cannot supply. Every candidate shares Adventure and
-   * Sci-Fi with Interstellar, so genre could not tell 2001 from Black Panther. It is the term
-   * that puts Inception first.
-   */
-  const resembles = (film: FilmCard) => {
-    if (anchor === null || anchorAxes === undefined || anchorCard === null) return 0;
-    const mine = normalized.get(film.id);
-    let onAxes = 0;
-    if (unusualTotal > 0 && mine !== undefined) {
-      let sum = 0;
-      for (const [axis, weight] of weighted) sum += weight * sharedMass(anchorAxes[axis], mine[axis]);
-      onAxes = sum / unusualTotal;
-    }
-    let inCommon = 0;
-    for (const genre of film.genres) if (anchorGenres!.has(genre)) inCommon += tells(genre);
-    const onGenre = anchorGenreTotal === 0 ? 0 : inCommon / anchorGenreTotal;
-    const sameHand = anchorCard.director !== "" && film.director === anchorCard.director ? 1 : 0;
-    return 0.35 * onAxes + 0.45 * onGenre * onGenre + 0.2 * sameHand;
-  };
+/** A filter that matched nothing and fell back has narrowed nothing, and must not buy a pass on the floor. */
+type Outcome = "unasked" | "kept" | "empty";
+type Facet = { readonly pool: readonly FilmCard[]; readonly outcome: Outcome };
+type Pool = { readonly films: readonly FilmCard[]; readonly faceted: boolean };
 
-  const ratings = pool2.map((film) => film.imdbRating);
-  const meanRating = ratings.reduce((sum, r) => sum + r, 0) / Math.max(1, ratings.length);
-  const medianVotes =
-    [...pool2.map((film) => film.imdbVotes)].sort((a, b) => a - b)[Math.floor(pool2.length / 2)] ??
-    0;
+const unasked = (pool: readonly FilmCard[]): Facet => ({ pool, outcome: "unasked" });
 
-  const years = pool2.map((film) => film.year);
-  const oldest = Math.min(...years, 0);
-  const newest = Math.max(...years, 1);
-  const browsing =
-    orderingWeight > 0 ||
-    faceted ||
-    (person?.decade ?? "none") !== "none" ||
-    /**
-     * A broad category is a browse request wearing a subject's clothes — but only once the
-     * Choice has actually committed. A barely-there subject is diffuse by definition, so this
-     * fired on "scare me" with children in the room and waved the shelf straight past the
-     * dealbreaker that was supposed to send it back empty.
-     */
-    (person !== null &&
-      person.subject.weight >= COMMITTED &&
-      person.subject.concentration < 0.35);
-  const orderingScore = (film: FilmCard) =>
-    person?.ordering === "best_rated"
-      ? Math.max(0, Math.min(1, (weightedRating(film, meanRating, medianVotes) - 7.5) / 1.8))
-      : person?.ordering === "newest"
-        ? (film.year - oldest) / Math.max(1, newest - oldest)
-        : person?.ordering === "oldest"
-          ? (newest - film.year) / Math.max(1, newest - oldest)
-          : 0;
+const narrow = (pool: readonly FilmCard[], keep: (film: FilmCard) => boolean): Facet => {
+  const kept = pool.filter(keep);
+  return kept.length > 0 ? { pool: kept, outcome: "kept" } : { pool, outcome: "empty" };
+};
 
-  /**
-   * Share of everything asked for. Measuring against the mood budget alone looked tidier but
-   * armed the rule far too hard: on a subject query the mood budget is small, so several axes
-   * became must-haves and disqualified the right answer.
-   */
-  const mustHave = wants.filter(
-    (want) => askedFor > 0 && want.weight / askedFor >= DEALBREAKER_SHARE,
+const insist = (kept: readonly FilmCard[]): Facet => ({ pool: kept, outcome: kept.length > 0 ? "kept" : "empty" });
+
+const admitted = (films: readonly FilmCard[], labels: ReadonlyMap<string, FilmLabels>, childrenWatching: boolean) => {
+  const labelled = films.filter((film) => labels.has(film.id));
+  if (!childrenWatching) return labelled;
+  return labelled.filter(
+    (film) =>
+      !ADULT_RATINGS.has(film.rated) &&
+      labels.get(film.id)!.facts.kids_safe >= KIDS_SAFE_THRESHOLD,
   );
-  /**
-   * A stated length is a constraint, not a preference. Weighing its share against everything
-   * else asked for let resemblance outvote it — "something like Interstellar, but shorter"
-   * answered with Avengers: Endgame at 181 minutes while Jev had two thirds of its mass under
-   * two hours. Relevance already answers the only question that matters: did they say so.
-   */
-  const runtimeMustHave = runtimeStated;
+};
 
-  return pool2
-    .map((film) => {
-      const label = labels.get(film.id)!;
-      const mineAxes = normalized.get(film.id)!;
-      const fits = wants.map((want) => ({
-        want,
-        value: want.ceiling
-          ? ceilingMass(want.normalized, mineAxes[want.axis])
-          : sharedMass(want.normalized, mineAxes[want.axis]),
-      }));
-      const mood = fits.reduce((sum, { want, value }) => sum + want.weight * value, 0);
-      const withinLength =
-        !runtimeMustHave ||
-        film.runtime === 0 ||
-        ceilingMass(runtimeWanted, ONE_HOT[runtimeBand(film.runtime)]) >= DEALBREAKER_FIT;
-      const qualifies =
-        withinLength &&
-        mustHave.every(
-          (want) => (fits.find((f) => f.want.axis === want.axis)?.value ?? 0) >= DEALBREAKER_FIT,
-        );
-      /** Fifteen series carry no runtime; they are neither short nor long, so they neither win nor lose on it. */
-      const runtime =
-        runtimeWeight > 0
-          ? runtimeWeight *
-            (film.runtime === 0 ? 0.5 : ceilingMass(runtimeWanted, ONE_HOT[runtimeBand(film.runtime)]))
-          : 0;
-      /** Anchored, the tail of the Choice and a resemblance to the named film both count. */
-      const seed = anchorId === null ? seedOf(film) : Math.max(seedOf(film), resembles(film));
-      const topical = topicalWeight * seed;
-      const ordered = orderingWeight * orderingScore(film);
-      const asked = mood + runtime + topical + ordered;
-      const match = askedFor >= MIN_ASKED ? asked / askedFor : 0;
-      const fit = (asked + PRIOR * priorOf(film, countOfKind[film.kind])) / (askedFor + PRIOR);
-      /**
-       * Three bands, applied before any score. A title the Choice named answers the question by
-       * construction; a title a stated facet kept is at least the right kind of thing; the rest
-       * are there to fill a browse. Sorting bands first is what stops an average from burying an
-       * answer Jev gave outright.
-       *
-       * An anchored query has no named band: the one title Jev named is the reference and has
-       * already been removed, so the shelf is ranked on resemblance rather than on a tail of the
-       * Choice that happened to clear the floor. That tail once left the shelf holding "Life".
-       */
-      const tier =
-        anchorId === null && seedOf(film) >= SEED_FLOOR ? 2 : faceted || anchorId !== null ? 1 : 0;
-      return {
-        film,
-        fit,
-        match,
-        qualifies,
-        browsing,
-        tier,
-        sortKey: orderingScore(film),
-        seed,
-        genreFit: genreFit(film),
-      };
-    })
-    /**
-     * An ordering request is a sort, not a preference. Someone asking for the newest wants them
-     * in year order, not the newest-ish film that also happens to suit their mood.
-     */
-    .sort(
-      (a, b) =>
-        (orderingWeight > 0 ? round(b.sortKey) - round(a.sortKey) : 0) ||
-        /** A named title outranks a merely suitable one, whatever the averages say. */
-        (orderingWeight > 0 ? 0 : b.tier - a.tier) ||
-        (orderingWeight > 0 ? 0 : round(b.seed) - round(a.seed)) ||
-        round(b.genreFit) - round(a.genreFit) ||
-        round(b.fit) - round(a.fit) ||
-        a.film.imdbRank - b.film.imdbRank ||
-        /** Ranks restart per kind, so an id keeps the order total and reproducible. */
-        a.film.id.localeCompare(b.film.id),
-    )
-    .map(({ sortKey: _sortKey, seed: _seed, genreFit: _genreFit, ...row }) => row);
+/** Dropping the outcome is the rule: the kind always falls back and never counts toward `faceted`, unlike a stated genre. */
+const ofKind = (pool: readonly FilmCard[], wants: WantsId) =>
+  wants === "either" ? pool : narrow(pool, (film) => film.kind === wants).pool;
+
+/** Primary country first: OMDb lists co-producers too, and `includes` called WALL·E Japanese. */
+const inCountry = (pool: readonly FilmCard[], country: CountryId | null): Facet => {
+  if (country === null) return unasked(pool);
+  const primary = pool.filter((film) => film.countries[0] === country);
+  if (primary.length >= COUNTRY_MIN) return { pool: primary, outcome: "kept" };
+  return narrow(pool, (film) => film.countries.includes(country));
 };
 
 /**
- * What reaches the shelf. A sharp query returns three films, a vague one a dozen, and a query
- * nothing answers returns nothing rather than the least-bad thing in stock. "Scare me" with
- * children watching is the case that matters: the kid-safe pool's highest frightening
- * probability is 0.02, so the honest answer is none.
+ * Only a stated genre filters — "jail breaking" implies Crime, and filtering on that lost The
+ * Shawshank Redemption. Several stated genres mean all of them while the shelf has enough, and a
+ * stated genre never falls back: for a scary Thai film with a child in the room, none is the answer.
  */
-export const shortlist = (ranked: readonly Ranked[]): readonly Ranked[] => {
-  /**
-   * Titles Jev named outright. They are the answer to the question that was asked, so they are
-   * not put through a floor built for scoring films nobody mentioned — that floor is what left
-   * "jail breaking" holding Prison Break while The Shawshank Redemption sat at 1.00.
-   */
-  /**
-   * Being named does not excuse a constraint the person stated outright. Without `qualifies`
-   * here, "something like Interstellar, but shorter" led with Avengers: Endgame at 181 minutes.
-   */
-  const named = ranked.filter((row) => row.tier === 2 && row.qualifies);
-
-  /**
-   * A stated facet has already narrowed the shelf to the right kind of thing, so it may fill the
-   * rest of the page. Without one, a named answer stands alone rather than dragging eleven
-   * unrelated titles along behind it.
-   */
-  if (named.length > 0) {
-    const fill = ranked[0]?.browsing === true ? ranked.filter((row) => row.tier === 1) : [];
-    return [...named, ...fill].slice(0, MAX_RESULTS);
-  }
-
-  /**
-   * A facet narrows the shelf to the right kind of thing; it does not excuse a contradiction.
-   * Without `qualifies` here, "a scary thai film" with a child in the room answered with two
-   * gentle Thai dramas that the dealbreaker had already marked as not qualifying.
-   */
-  if (ranked[0]?.browsing === true) {
-    return ranked.filter((row) => row.qualifies).slice(0, MAX_RESULTS);
-  }
-
-  const qualified = ranked.filter((row) => row.qualifies && row.match >= FLOOR);
-  if (qualified.length === 0) return [];
-  const leader = qualified[0].match;
-  const spread = leader - (qualified[49]?.match ?? qualified.at(-1)!.match);
-  const gap = Math.max(0.05, GAP_OF_SPREAD * spread);
-  return qualified.filter((row) => row.match >= leader - gap).slice(0, MAX_RESULTS);
+const inGenre = (pool: readonly FilmCard[], person: PersonRead): Facet => {
+  if (!person.genreNamed || person.genres.length === 0) return unasked(pool);
+  const every = pool.filter((film) => person.genres.every((genre) => film.genres.includes(genre)));
+  if (every.length >= GENRE_MIN) return insist(every);
+  return insist(pool.filter((film) => person.genres.some((genre) => film.genres.includes(genre))));
 };
 
-/** Float noise must not outrank the reputation tiebreak, so compare where people can see. */
+const inDecade = (pool: readonly FilmCard[], decade: DecadeId): Facet =>
+  decade === "none" ? unasked(pool) : narrow(pool, (film) => decadeOf(film.year) === decade);
+
+const allKept = (facets: readonly Facet[]) => {
+  const asked = facets.filter((facet) => facet.outcome !== "unasked");
+  return asked.length > 0 && asked.every((facet) => facet.outcome === "kept");
+};
+
+const poolOf = ({ person, films, labels }: RankInput, anchorId: string | null): Pool => {
+  const eligible = admitted(films, labels, person.childrenWatching).filter((film) => film.id !== anchorId);
+  const country = inCountry(ofKind(eligible, person.wants), person.country);
+  const genre = inGenre(country.pool, person);
+  const decade = inDecade(genre.pool, person.decade);
+  return { films: decade.pool, faceted: allKept([country, genre, decade]) };
+};
+
+/** Weights */
+
+type Want = {
+  readonly axis: AxisId;
+  readonly normalized: Dist;
+  readonly mass: Mass;
+  readonly weight: number;
+};
+
+type Weights = {
+  readonly wants: readonly Want[];
+  readonly mustHave: readonly Want[];
+  readonly runtime: { readonly wanted: Dist; readonly weight: number; readonly stated: boolean };
+  readonly topical: number;
+  readonly ordering: number;
+  readonly askedFor: number;
+};
+
+/** An axis counts only as far as the person spoke to it: a confident "no romance" from someone who never raised romance steers nothing. */
+const weightsOf = (person: PersonRead): Weights => {
+  const wants = AXIS_IDS.map((axis) => ({
+    axis,
+    normalized: normalize(person.axes[axis].probabilities),
+    mass: MASS[AXES[axis].kind],
+    weight: person.axes[axis].relevance * person.axes[axis].confidence,
+  })).filter((want) => want.weight > WANT_MIN);
+
+  const stated =
+    person.runtime.relevance >= STATED_RELEVANCE && person.runtime.confidence >= STATED_CONFIDENCE;
+  const runtime = {
+    wanted: normalize(person.runtime.probabilities),
+    weight: person.runtime.relevance * person.runtime.confidence * (stated ? RUNTIME_STATED : 1),
+    stated,
+  };
+  const topical = TOPICAL * person.subject.weight;
+  const ordering = person.ordering === "none" ? 0 : ORDERING_WEIGHT;
+  const askedFor = wants.reduce((sum, want) => sum + want.weight, 0) + runtime.weight + topical + ordering;
+  const mustHave = wants.filter((want) => askedFor > 0 && want.weight / askedFor >= DEALBREAKER_SHARE);
+  return { wants, mustHave, runtime, topical, ordering, askedFor };
+};
+
+const seedsOf = (person: PersonRead): Readonly<Record<string, number>> =>
+  person.subject.weight < COMMITTED ? {} : person.subject.scores;
+
+/** "Something like Interstellar" names a yardstick, not an answer. */
+const anchorOf = (person: PersonRead): string | null =>
+  person.wantsSimilar && person.subject.weight >= COMMITTED
+    ? (Object.entries(person.subject.scores).sort(([, a], [, b]) => b - a)[0]?.[0] ?? null)
+    : null;
+
+/** Resemblance */
+
+type Resemblance = (film: FilmCard) => number;
+
+const weightedOverlap = (weights: readonly (readonly [AxisId, number])[], total: number, a: Readonly<Record<AxisId, Dist>>, b: Readonly<Record<AxisId, Dist>>) => {
+  if (total <= 0) return 0;
+  let sum = 0;
+  for (const [axis, weight] of weights) sum += weight * sharedMass(a[axis], b[axis]);
+  return sum / total;
+};
+
+/**
+ * Genre carries most of it, by rarity and squared, so half the genres in common is worth a
+ * quarter. The axes count where the reference is unusual against the shelf's average — or a
+ * superhero film looks closer to Interstellar than 2001 does. The director is the tiebreak genre
+ * cannot give: every candidate shares Adventure and Sci-Fi with Interstellar; Inception is first
+ * because of who made it.
+ */
+const resemblanceTo = (anchorId: string | null, films: readonly FilmCard[], labels: ReadonlyMap<string, FilmLabels>): Resemblance => {
+  if (anchorId === null) return () => 0;
+  const normalized = normalizedAxes(labels);
+  const anchor = labels.get(anchorId);
+  const anchorAxes = normalized.get(anchorId);
+  const card = films.find((film) => film.id === anchorId);
+  if (anchor === undefined || card === undefined || anchorAxes === undefined) return () => 0;
+
+  const mean = meanOf(labels);
+  const tells = rarityOf(films);
+  const unusual = AXIS_IDS.map((axis) => [axis, 1 - overlap(anchor.axes[axis], mean[axis])] as const);
+  const unusualTotal = unusual.reduce((sum, [, weight]) => sum + weight, 0);
+  const anchorGenres = new Set(card.genres);
+  const genreTotal = card.genres.reduce((sum, genre) => sum + tells(genre), 0);
+
+  return (film) => {
+    const mine = normalized.get(film.id);
+    const onAxes = mine === undefined ? 0 : weightedOverlap(unusual, unusualTotal, anchorAxes, mine);
+    let inCommon = 0;
+    for (const genre of film.genres) if (anchorGenres.has(genre)) inCommon += tells(genre);
+    const onGenre = genreTotal === 0 ? 0 : inCommon / genreTotal;
+    const sameHand = card.director !== "" && film.director === card.director ? 1 : 0;
+    return 0.35 * onAxes + 0.45 * onGenre * onGenre + 0.2 * sameHand;
+  };
+};
+
+/** Ordering */
+
+type OrderingScore = (film: FilmCard) => number;
+
+/** IMDb's own shrinkage toward the mean: on the raw rating, "the best thing on this shelf" was Planet Earth. */
+const weightedRating = (film: FilmCard, mean: number, median: number) =>
+  (film.imdbVotes * film.imdbRating + median * mean) / (film.imdbVotes + median);
+
+const RATING_FLOOR = 7.5;
+const RATING_SPAN = 1.8;
+
+const yearSpan = (pool: readonly FilmCard[]) => {
+  const years = pool.map((film) => film.year);
+  return { oldest: Math.min(...years), newest: Math.max(...years) };
+};
+
+/** An ordering is a sort, not a preference; stats are computed for the ordering asked, only. */
+const SCORERS: Record<OrderingId, (pool: readonly FilmCard[]) => OrderingScore> = {
+  none: () => () => 0,
+  best_rated: (pool) => {
+    const ratings = pool.map((film) => film.imdbRating);
+    const mean = ratings.reduce((sum, r) => sum + r, 0) / Math.max(1, ratings.length);
+    const median = pool.map((film) => film.imdbVotes).sort((a, b) => a - b)[Math.floor(pool.length / 2)] ?? 0;
+    return (film) => Math.max(0, Math.min(1, (weightedRating(film, mean, median) - RATING_FLOOR) / RATING_SPAN));
+  },
+  newest: (pool) => {
+    const { oldest, newest } = yearSpan(pool);
+    return (film) => (film.year - oldest) / Math.max(1, newest - oldest);
+  },
+  oldest: (pool) => {
+    const { oldest, newest } = yearSpan(pool);
+    return (film) => (newest - film.year) / Math.max(1, newest - oldest);
+  },
+};
+
+/** Score */
+
+type Scored = Ranked & { readonly seed: number; readonly genreFit: number; readonly sortKey: number };
+
+type Scoring = {
+  readonly labels: ReadonlyMap<string, FilmLabels>;
+  readonly weights: Weights;
+  readonly seeds: Readonly<Record<string, number>>;
+  readonly genres: readonly GenreId[];
+  readonly anchored: boolean;
+  readonly faceted: boolean;
+  readonly resembles: Resemblance;
+  readonly orderingScore: OrderingScore;
+  readonly countOfKind: Readonly<Record<Kind, number>>;
+};
+
+const priorOf = (film: FilmCard, countOfKind: number) => 1 - (film.imdbRank - 1) / Math.max(1, countOfKind);
+
+const countOfKind = (films: readonly FilmCard[]): Record<Kind, number> => {
+  const counts = { movie: 0, series: 0 };
+  for (const film of films) counts[film.kind] += 1;
+  return counts;
+};
+
+const scoreFilm =
+  ({ labels, weights, seeds, genres, anchored, faceted, resembles, orderingScore, countOfKind }: Scoring) =>
+  (film: FilmCard): Scored => {
+    const mine = normalizedAxes(labels).get(film.id)!;
+
+    let mood = 0;
+    for (const want of weights.wants) mood += want.weight * want.mass(want.normalized, mine[want.axis]);
+    const qualifiesOnMood = weights.mustHave.every(
+      (want) => want.mass(want.normalized, mine[want.axis]) >= DEALBREAKER_FIT,
+    );
+
+    const lengthFit = film.runtime === 0 ? UNKNOWN_RUNTIME : ceilingMass(weights.runtime.wanted, ONE_HOT[runtimeBand(film.runtime)]);
+    const runtime = weights.runtime.weight > 0 ? weights.runtime.weight * lengthFit : 0;
+    // an unknown runtime passes because UNKNOWN_RUNTIME sits above DEALBREAKER_FIT
+    const withinLength = !weights.runtime.stated || lengthFit >= DEALBREAKER_FIT;
+
+    const named = seeds[film.id] ?? 0;
+    const seed = anchored ? Math.max(named, resembles(film)) : named;
+    const sortKey = orderingScore(film);
+    const asked = mood + runtime + weights.topical * seed + weights.ordering * sortKey;
+    const match = weights.askedFor >= MIN_ASKED ? asked / weights.askedFor : 0;
+    const fit = (asked + PRIOR * priorOf(film, countOfKind[film.kind])) / (weights.askedFor + PRIOR);
+
+    // an anchored query has no named band: the one title Jev named is the yardstick and is already gone
+    const tier: Tier = !anchored && named >= SEED_FLOOR ? "named" : anchored || faceted ? "kept" : "rest";
+    const genreFit = genres.length === 0 ? 0 : genres.filter((genre) => film.genres.includes(genre)).length / genres.length;
+    return { film, fit, match, qualifies: withinLength && qualifiesOnMood, tier, seed, genreFit, sortKey };
+  };
+
+/** Sort */
+
+type Compare = (a: Scored, b: Scored) => number;
+
+/** Compared at six places, so float noise cannot outrank the reputation tiebreak. */
 const round = (value: number) => Math.round(value * 1e6) / 1e6;
+const TIER_ORDER: Record<Tier, number> = { named: 2, kept: 1, rest: 0 };
+const byTier: Compare = (a, b) => TIER_ORDER[b.tier] - TIER_ORDER[a.tier];
+const bySortKey: Compare = (a, b) => round(b.sortKey) - round(a.sortKey);
+const bySeed: Compare = (a, b) => round(b.seed) - round(a.seed);
+const byGenreFit: Compare = (a, b) => round(b.genreFit) - round(a.genreFit);
+const byFit: Compare = (a, b) => round(b.fit) - round(a.fit);
+const byReputation: Compare = (a, b) => a.film.imdbRank - b.film.imdbRank;
+const byId: Compare = (a, b) => a.film.id.localeCompare(b.film.id);
+
+/** An ordering request replaces the bands and the seeds outright. */
+const ORDERED: readonly Compare[] = [bySortKey, byGenreFit, byFit, byReputation, byId];
+const MATCHED: readonly Compare[] = [byTier, bySeed, byGenreFit, byFit, byReputation, byId];
+
+const lexicographic =
+  (keys: readonly Compare[]): Compare =>
+  (a, b) => {
+    for (const key of keys) {
+      const delta = key(a, b);
+      if (delta !== 0) return delta;
+    }
+    return 0;
+  };
+
+const toRanked = ({ film, fit, match, qualifies, tier }: Scored): Ranked => ({ film, fit, match, qualifies, tier });
+
+/** Rank */
+
+/**
+ * A question about the shelf rather than about a film wants a list, not a cut. The last
+ * conjunct needs both halves: a barely-there subject is diffuse by definition, so on
+ * concentration alone this fired for "scare me" with children in the room and waved the shelf
+ * past the dealbreaker that was supposed to send it back empty.
+ */
+const browsing = (person: PersonRead, weights: Weights, pool: Pool) =>
+  weights.ordering > 0 ||
+  pool.faceted ||
+  person.decade !== "none" ||
+  (person.subject.weight >= COMMITTED && person.subject.concentration < DIFFUSE);
+
+const isNamed = (row: Ranked) => row.tier === "named" && row.qualifies;
+
+const modeOf = (rows: readonly Ranked[], browse: boolean): Mode =>
+  rows.some(isNamed) ? "named" : browse ? "browse" : "ranked";
+
+export const rank = (input: RankInput): Ranking => {
+  const { person, films, labels } = input;
+  const anchorId = anchorOf(person);
+  const pool = poolOf(input, anchorId);
+  const weights = weightsOf(person);
+  const rows = pool.films
+    .map(
+      scoreFilm({
+        labels,
+        weights,
+        seeds: seedsOf(person),
+        genres: person.genres,
+        anchored: anchorId !== null,
+        faceted: pool.faceted,
+        resembles: resemblanceTo(anchorId, films, labels),
+        orderingScore: SCORERS[person.ordering](pool.films),
+        countOfKind: countOfKind(films),
+      }),
+    )
+    .sort(lexicographic(weights.ordering > 0 ? ORDERED : MATCHED))
+    .map(toRanked);
+  return { rows, mode: modeOf(rows, browsing(person, weights, pool)) };
+};
+
+/** Shortlist */
+
+/** A sharp query returns three films, a vague one a dozen, and one nothing answers returns nothing. */
+const aboveFloor = (rows: readonly Ranked[]) => {
+  const qualified = rows.filter((row) => row.qualifies && row.match >= FLOOR);
+  if (qualified.length === 0) return [];
+  const leader = qualified[0].match;
+  const spread = leader - qualified[Math.min(SPREAD_ROW, qualified.length - 1)].match;
+  const gap = Math.max(MIN_GAP, GAP_OF_SPREAD * spread);
+  return qualified.filter((row) => row.match >= leader - gap);
+};
+
+/**
+ * A named title still has to pass `qualifies`; the fill behind it does not, because a `kept`
+ * tier already means a stated facet narrowed the shelf. That is also why the fill needs no
+ * browse check: `kept` and `named` can only coexist when a facet fired.
+ */
+const CUTS: Record<Mode, (rows: readonly Ranked[]) => readonly Ranked[]> = {
+  named: (rows) => [...rows.filter(isNamed), ...rows.filter((row) => row.tier === "kept")],
+  browse: (rows) => rows.filter((row) => row.qualifies),
+  ranked: aboveFloor,
+};
+
+export const shortlist = ({ rows, mode }: Ranking): readonly Ranked[] =>
+  CUTS[mode](rows).slice(0, MAX_RESULTS);

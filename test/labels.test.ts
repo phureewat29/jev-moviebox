@@ -3,6 +3,7 @@ import { Schema } from "effect";
 import { describe, expect, it } from "vitest";
 import { Catalog, toState } from "@/core/Film";
 import { Labels } from "@/core/Labels";
+import { ADULT_RATINGS, KIDS_SAFE_THRESHOLD } from "@/core/Rank";
 import { PINNED_MODEL } from "@/server/JevModel";
 import { AXIS_IDS, canonicalRubric, ENDING_IDS, FILM_FACT_IDS } from "@/core/Taste";
 import catalog from "@/data/catalog.json";
@@ -73,10 +74,9 @@ describe("the generated labels", () => {
  * defence and the Noul has to carry it.
  */
 describe("the kids gate", () => {
-  const ADULT = new Set(["R", "NC-17", "X", "TV-MA"]);
   const admits = (id: string) => {
     const row = decoded.films.find((film) => film.id === id)!;
-    return row.facts.kids_safe >= 0.6 && !ADULT.has(byId.get(id)!.rated);
+    return row.facts.kids_safe >= KIDS_SAFE_THRESHOLD && !ADULT_RATINGS.has(byId.get(id)!.rated);
   };
   const idOf = (title: string) => films.find((film) => film.title === title)?.id;
 

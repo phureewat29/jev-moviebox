@@ -3,8 +3,9 @@ import { describe, expect, it } from "vitest";
 import { Cards, type FilmCard } from "@/core/Film";
 import { Labels, type FilmLabels } from "@/core/Labels";
 import {
+  ADULT_RATINGS,
   ceilingFit,
-  FLOOR,
+  KIDS_SAFE_THRESHOLD,
   overlap,
   rank,
   shortlist,
@@ -117,9 +118,12 @@ describe("ceilingFit", () => {
   });
 });
 
+/** A read in which nothing was said: every axis unspoken, no subject, no facet. What the app ranks on when the model has nothing. */
+const silent = person({});
+
 describe("rank", () => {
   it("falls back to IMDb order when nobody has said anything", () => {
-    const ranked = rank({ person: null, films, labels });
+    const ranked = rank({ person: silent, films, labels }).rows;
     expect(ranked).toHaveLength(films.length);
     /** Reputation is per kind, so the two lists interleave; each stays in its own order. */
     for (const kind of ["movie", "series"] as const) {
@@ -130,25 +134,25 @@ describe("rank", () => {
 
   it("is deterministic and leaves its inputs alone", () => {
     const frozen = Object.freeze([...films]);
-    const once = rank({ person: null, films: frozen, labels });
-    const twice = rank({ person: null, films: frozen, labels });
+    const once = rank({ person: silent, films: frozen, labels }).rows;
+    const twice = rank({ person: silent, films: frozen, labels }).rows;
     expect(once.map((r) => r.film.id)).toEqual(twice.map((r) => r.film.id));
     expect(films[0].imdbRank).toBe(1);
   });
 
   it("does not depend on the order films arrive in", () => {
     const shuffled = [...films].reverse();
-    const a = rank({ person: person({ warmth: { probabilities: at(3), confidence: 0.9 } }), films, labels });
+    const a = rank({ person: person({ warmth: { probabilities: at(3), confidence: 0.9 } }), films, labels }).rows;
     const b = rank({
       person: person({ warmth: { probabilities: at(3), confidence: 0.9 } }),
       films: shuffled,
       labels,
-    });
+    }).rows;
     expect(a.map((r) => r.film.id)).toEqual(b.map((r) => r.film.id));
   });
 
   it("gives every film a finite fit in [0,1], even with a flat read", () => {
-    const ranked = rank({ person: person({}), films, labels });
+    const ranked = rank({ person: silent, films, labels }).rows;
     for (const row of ranked) {
       expect(Number.isFinite(row.fit), row.film.title).toBe(true);
       expect(row.fit).toBeGreaterThanOrEqual(0);
@@ -161,17 +165,10 @@ describe("rank", () => {
       person: person({ warmth: { probabilities: at(3), confidence: 0 } }),
       films,
       labels,
-    });
+    }).rows;
     expect(withZero.map((r) => r.film.id)).toEqual(
-      rank({ person: null, films, labels }).map((r) => r.film.id),
+      rank({ person: silent, films, labels }).rows.map((r) => r.film.id),
     );
-  });
-
-  it("drops what the person has seen or waved away", () => {
-    const excluded = new Set([films[0].id, films[1].id]);
-    const ranked = rank({ person: null, films, labels, excluded });
-    expect(ranked).toHaveLength(films.length - 2);
-    expect(ranked.some((row) => excluded.has(row.film.id))).toBe(false);
   });
 
   it("puts warm films on top for someone who asked for warmth", () => {
@@ -179,7 +176,7 @@ describe("rank", () => {
       person: person({ warmth: { probabilities: at(3), confidence: 0.9 } }),
       films,
       labels,
-    });
+    }).rows;
     const warmthOf = (id: string) => labels.get(id)!.axes.warmth[3];
     const top = ranked.slice(0, 10).reduce((sum, r) => sum + warmthOf(r.film.id), 0) / 10;
     const bottom = ranked.slice(-10).reduce((sum, r) => sum + warmthOf(r.film.id), 0) / 10;
@@ -191,7 +188,7 @@ describe("rank", () => {
       person: person({ attention: { probabilities: at(3), confidence: 0.9 } }),
       films,
       labels,
-    });
+    }).rows;
     const easy = byTitle("Toy Story");
     const position = recharged.findIndex((row) => row.film.id === easy.id);
     /** Proportional, so the assertion keeps its meaning as the shelf grows. */
@@ -199,11 +196,11 @@ describe("rank", () => {
   });
 
   it("locks out everything unsafe once children are watching", () => {
-    const ranked = rank({ person: person({}, { childrenWatching: true }), films, labels });
+    const ranked = rank({ person: person({}, { childrenWatching: true }), films, labels }).rows;
     expect(ranked.length).toBeGreaterThanOrEqual(30);
     for (const row of ranked) {
-      expect(["R", "NC-17", "X"], row.film.title).not.toContain(row.film.rated);
-      expect(labels.get(row.film.id)!.facts.kids_safe, row.film.title).toBeGreaterThanOrEqual(0.6);
+      expect(ADULT_RATINGS.has(row.film.rated), row.film.title).toBe(false);
+      expect(labels.get(row.film.id)!.facts.kids_safe, row.film.title).toBeGreaterThanOrEqual(KIDS_SAFE_THRESHOLD);
     }
     for (const title of ["Come and See", "Grave of the Fireflies", "Oldboy"]) {
       expect(ranked.some((row) => row.film.title === title), title).toBe(false);
@@ -211,7 +208,7 @@ describe("rank", () => {
   });
 
   it("ignores an axis the person never raised, however sure Jev was of it", () => {
-    const base = rank({ person: person({}), films, labels });
+    const base = rank({ person: silent, films, labels }).rows;
     const confidentButUnspoken = rank({
       person: person({}, {
         axes: Object.fromEntries(
@@ -223,7 +220,7 @@ describe("rank", () => {
       }),
       films,
       labels,
-    });
+    }).rows;
     expect(confidentButUnspoken.map((r) => r.film.id)).toEqual(base.map((r) => r.film.id));
   });
 
@@ -236,7 +233,7 @@ describe("rank", () => {
       ),
       films,
       labels,
-    });
+    }).rows;
     expect(ranked[0].film.title).toBe("The Dark Knight");
   });
 
@@ -246,17 +243,175 @@ describe("rank", () => {
       person: { ...moodOnly, subject: { scores: {}, weight: 0, concentration: 0 } },
       films,
       labels,
-    });
+    }).rows;
     expect(withEmptySubject.map((r) => r.film.id)).toEqual(
-      rank({ person: moodOnly, films, labels }).map((r) => r.film.id),
+      rank({ person: moodOnly, films, labels }).rows.map((r) => r.film.id),
     );
   });
 
-  it("ranks 250 films fast enough to feel instant", () => {
+  it("spreads an ordering by year across the real span, not from year zero", () => {
+    const rows = rank({ person: person({}, { ordering: "newest" }), films, labels }).rows;
+    const years = rows.map((row) => row.film.year);
+    expect(years[0]).toBe(Math.max(...years));
+    expect(years.at(-1)).toBe(Math.min(...years));
+    // with only the ordering asked, match is the ordering score: the newest is 1 and the oldest 0
+    expect(rows[0].match).toBeCloseTo(1, 6);
+    expect(rows.at(-1)!.match).toBeCloseTo(0, 6);
+    // the direction the old span collapsed: the oldest film scored 0.05 instead of 1
+    const oldest = rank({ person: person({}, { ordering: "oldest" }), films, labels }).rows;
+    expect(oldest[0].match).toBeCloseTo(1, 6);
+  });
+
+  it("ranks the whole catalog fast enough to feel instant", () => {
     const read = person({ warmth: { probabilities: at(2), confidence: 0.7 } });
     const started = performance.now();
     for (let i = 0; i < 20; i += 1) rank({ person: read, films, labels });
     expect((performance.now() - started) / 20).toBeLessThan(16);
+  });
+});
+
+describe("what reaches the shelf", () => {
+  it("puts a title Jev named above every average, and shows it alone without a facet", () => {
+    const escape = byTitle("The Great Escape");
+    const toy = byTitle("Toy Story");
+    const ranking = rank({
+      person: person(
+        { warmth: { probabilities: at(3), confidence: 0.4 } },
+        { subject: { scores: { [escape.id]: 0.3, [toy.id]: 0.05 }, weight: 0.9, concentration: 1 } },
+      ),
+      films,
+      labels,
+    });
+    expect(ranking.mode).toBe("named");
+    expect(ranking.rows[0].film.title).toBe("The Great Escape");
+    expect(ranking.rows[0].tier).toBe("named");
+    expect(shortlist(ranking).map((row) => row.film.title)).toEqual(["The Great Escape"]);
+  });
+
+  it("removes the film someone wants something like, and ranks its neighbours by resemblance", () => {
+    const interstellar = byTitle("Interstellar");
+    const ranking = rank({
+      person: person({}, { subject: { scores: { [interstellar.id]: 1 }, weight: 0.99, concentration: 1 }, wantsSimilar: true }),
+      films,
+      labels,
+    });
+    expect(ranking.rows.some((row) => row.film.id === interstellar.id)).toBe(false);
+    expect(ranking.rows[0].film.title).toBe("Inception");
+    expect(ranking.rows.every((row) => row.tier === "kept")).toBe(true);
+  });
+
+  it("filters on a genre only when it was stated", () => {
+    const implied = rank({ person: person({}, { genres: ["Western"] }), films, labels });
+    expect(implied.rows).toHaveLength(films.length);
+    const stated = rank({ person: person({}, { genres: ["Western"], genreNamed: true }), films, labels });
+    expect(stated.mode).toBe("browse");
+    expect(stated.rows.length).toBeLessThan(20);
+    for (const row of stated.rows) expect(row.film.genres, row.film.title).toContain("Western");
+  });
+
+  it("keeps the country that made the film, and falls back to any credit when there are too few", () => {
+    const thai = rank({ person: person({}, { country: "Thailand" }), films, labels });
+    expect(thai.mode).toBe("browse");
+    for (const row of thai.rows) expect(row.film.countries[0], row.film.title).toBe("Thailand");
+    const noPrimary = films.filter((film) => film.countries[0] !== "Canada");
+    const canada = rank({ person: person({}, { country: "Canada" }), films: noPrimary, labels });
+    expect(canada.rows.length).toBeGreaterThan(0);
+    for (const row of canada.rows) expect(row.film.countries, row.film.title).toContain("Canada");
+  });
+
+  it("orders the best rated by votes as well as rating, so a niche 9.4 sits below a famous 9.3", () => {
+    const rows = rank({ person: person({}, { ordering: "best_rated" }), films, labels }).rows;
+    const place = (title: string) => rows.findIndex((row) => row.film.title === title);
+    expect(place("The Shawshank Redemption")).toBeLessThan(place("Planet Earth II"));
+    expect(place("The Shawshank Redemption")).toBeLessThan(5);
+  });
+
+  it("treats a stated length as a constraint, not a preference", () => {
+    const short = person({}, { runtime: { probabilities: at(0), confidence: 0.9, relevance: 1 } });
+    const ranking = rank({ person: short, films, labels });
+    for (const row of ranking.rows) {
+      expect(row.qualifies, row.film.title).toBe(row.film.runtime === 0 || row.film.runtime < 90);
+    }
+    for (const row of shortlist(ranking)) expect(row.film.runtime, row.film.title).toBeLessThan(90);
+  });
+
+  it("does not let being named excuse a stated constraint", () => {
+    const dark = byTitle("The Dark Knight");
+    const toy = byTitle("Toy Story");
+    const ranking = rank({
+      person: person(
+        {},
+        {
+          subject: { scores: { [dark.id]: 1, [toy.id]: 0.5 }, weight: 0.9, concentration: 1 },
+          runtime: { probabilities: at(0), confidence: 0.9, relevance: 1 },
+        },
+      ),
+      films,
+      labels,
+    });
+    expect(ranking.rows[0].film.title).toBe("The Dark Knight");
+    expect(ranking.rows[0].qualifies).toBe(false);
+    expect(shortlist(ranking).map((row) => row.film.title)).toEqual(["Toy Story"]);
+  });
+
+  it("does not let a narrowed shelf excuse a contradiction either", () => {
+    const scared = person(
+      { tension: { probabilities: at(3), confidence: 0.9 } },
+      { country: "Thailand", childrenWatching: true },
+    );
+    const ranking = rank({ person: scared, films, labels });
+    expect(ranking.mode).toBe("browse");
+    expect(ranking.rows.length).toBeGreaterThan(0);
+    expect(ranking.rows.every((row) => !row.qualifies)).toBe(true);
+    expect(shortlist(ranking)).toEqual([]);
+  });
+
+  it("returns nothing when too little was asked to rank on", () => {
+    const faint = rank({ person: person({ warmth: { probabilities: at(3), confidence: 0.7 } }), films, labels });
+    expect(faint.rows.every((row) => row.match === 0)).toBe(true);
+    expect(shortlist(faint)).toEqual([]);
+    const spoken = rank({ person: person({ warmth: { probabilities: at(3), confidence: 0.9 } }), films, labels });
+    expect(spoken.rows[0].match).toBeGreaterThan(0.9);
+    expect(shortlist(spoken)).toHaveLength(12);
+  });
+
+  it("prefers the primary country down to COUNTRY_MIN, then widens to any credit", () => {
+    const nz = rank({ person: person({}, { country: "New Zealand" }), films, labels });
+    expect(nz.rows).toHaveLength(4);
+    for (const row of nz.rows) expect(row.film.countries[0], row.film.title).toBe("New Zealand");
+    // one fewer leaves three primary, under the floor, so any credit counts
+    const fewer = films.filter((film) => film.id !== nz.rows[0].film.id);
+    const loose = rank({ person: person({}, { country: "New Zealand" }), films: fewer, labels });
+    expect(loose.rows.some((row) => row.film.countries[0] !== "New Zealand")).toBe(true);
+  });
+
+  it("falls back when nothing is the kind asked for, but never past a stated genre", () => {
+    const movies = films.filter((film) => film.kind === "movie");
+    expect(rank({ person: person({}, { wants: "series" }), films: movies, labels }).rows).toHaveLength(
+      movies.length,
+    );
+    // every Korean comedy on this shelf is a series, and "film" is not a near miss
+    const korean = rank({
+      person: person({}, { country: "South Korea", genres: ["Comedy"], genreNamed: true, wants: "movie" }),
+      films,
+      labels,
+    });
+    expect(korean.rows).toEqual([]);
+  });
+
+  it("narrows to a decade and browses it", () => {
+    const ranking = rank({ person: person({}, { decade: "1920s" }), films, labels });
+    expect(ranking.mode).toBe("browse");
+    const twenties = films.filter((film) => film.year >= 1920 && film.year < 1930);
+    expect(ranking.rows.map((row) => row.film.id).sort()).toEqual(twenties.map((film) => film.id).sort());
+  });
+
+  it("comes back empty for a contradiction, never with the least-bad thing in stock", () => {
+    const scared = person(
+      { tension: { probabilities: at(3), confidence: 0.9 } },
+      { childrenWatching: true },
+    );
+    expect(shortlist(rank({ person: scared, films, labels }))).toEqual([]);
   });
 });
 
@@ -276,7 +431,7 @@ describe("the labels the ranker reads", () => {
       person: person({ warmth: { probabilities: at(3), confidence: 0.8 } }),
       films,
       labels,
-    });
+    }).rows;
     const top = ranked.slice(0, 25).reduce((s, r) => s + entropy(labels.get(r.film.id)!), 0) / 25;
     const all = [...labels.values()].reduce((s, r) => s + entropy(r), 0) / labels.size;
     expect(top).toBeLessThan(all * 1.25);
