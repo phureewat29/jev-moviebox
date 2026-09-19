@@ -26,7 +26,7 @@ export const Footer = () => (
     {divider}
     <a
       className={iconButton}
-      href="https://github.com/phureewat29/jev-movie-box"
+      href="https://github.com/phureewat29/jev-moviebox"
       target="_blank"
       rel="noreferrer"
       aria-label="Source on GitHub"
