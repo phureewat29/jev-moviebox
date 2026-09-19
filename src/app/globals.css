@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/**
+ * A cinema is not a flat black room. It is warm dark with light thrown across it, so the ground
+ * carries a little red and the ink is bone rather than white — film prints never hit pure white.
+ * The one accent is the amber of a marquee bulb, spent on the single thing you press.
+ */
+@theme {
+  --color-ink: #f0eae0;
+  --color-ink-dim: #a09488;
+  --color-ink-faint: #6b6259;
+  --color-screen: #0a0908;
+  --color-screen-raised: #15120f;
+  --color-edge: #2a241e;
+  --color-marquee: #e0a94a;
+
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-sans), sans-serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+/**
+ * Tailwind 4 dropped `cursor: pointer` from its preflight, so a button looks like text until
+ * you press it. Every control here is a button, so every control needed this.
+ */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+body {
+  /** Cinema sets tight; default tracking on a grotesque this size reads as a spreadsheet. */
+  letter-spacing: -0.006em;
+}
+
+/**
+ * Film grain. Every frame ever projected had it, and its absence is most of why a dark page
+ * reads as software. Fixed so it sits still while the shelf scrolls under it, and faint enough
+ * that you only notice it when it is gone.
+ */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    opacity: 0.02;
+  }
+}
+
+::selection {
+  background: var(--color-marquee);
+  color: var(--color-screen);
+}
+
+/**
+ * The marquee: wide caps, the one place a display face belongs.
+ *
+ * No `text-indent`. It was here to re-centre text that letter-spacing had pushed left, by
+ * padding the front to match the trailing space after the last letter. Anything measuring
+ * against these letters wants their true extent, so the trailing space is cancelled with a
+ * negative right margin at the call site instead, and both sides stay honest.
+ */
+.marquee {
+  font-family: var(--font-display);
+  letter-spacing: 0.36em;
+}
+
+/** Marquee numerals: the rank badges and any figure meant to be read from across a foyer. */
+.numerals {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

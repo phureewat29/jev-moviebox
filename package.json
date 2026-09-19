@@ -1,0 +1,39 @@
+{
+  "name": "jev-moviebox",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "catalog": "node scripts/catalog.ts",
+    "label": "node scripts/label.ts",
+    "probe": "node scripts/probe.ts",
+    "spotcheck": "node scripts/spotcheck.ts",
+    "accuracy": "node scripts/accuracy.ts",
+    "tune": "node scripts/tune.ts"
+  },
+  "dependencies": {
+    "@effect/platform": "^0.97.2",
+    "@typesafe-ai/sdk": "^0.6.0",
+    "effect": "^3.22.2",
+    "lucide-react": "^1.47.0",
+    "next": "16.3.5",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@effect/platform-node": "^0.108.2",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^5.0.1"
+  },
+  "packageManager": "pnpm@11.7.0"
+}
