@@ -49,11 +49,7 @@ const countryOf = (answer: Classified<CountryId | "none">): CountryId | null => 
 
 const isShard = (key: string): key is ShardId => key.startsWith("subject_");
 
-/**
- * The catalog is supplied, not imported, so a script can point this at a fixture; the two
- * definitions are built once. Films ride with every other question and series follow in their
- * own request, because one request holds 64k tokens and the whole shelf no longer fits.
- */
+/** The catalog is supplied so a script can point this at a fixture. Two definitions, built once: one request holds 64k tokens. */
 export const makeReader = (films: readonly SubjectOption[]) => {
   const shardsOf = (kind: Kind) => subjectShards(films.filter((film) => film.kind === kind));
   const asked = personDecision(shardsOf("movie"));

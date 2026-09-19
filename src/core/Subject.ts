@@ -48,11 +48,10 @@ export const readSubject = (answer: {
 const leaderOf = (shard: Shard) => shard.mass * shard.concentration;
 
 /**
- * Weighed by that leader probability, so a merged score is a title's own probability against the
- * strongest one anywhere — the one quantity every shard reports on the same scale. Weighing by
- * mass alone credited a shard for what it failed to reject: the 254 best-reputed films hold no
- * zombie film, yet answered "zombie" with Star Wars at a quarter of the leader. Confidence still
- * never merges: a shard that confidently held nothing once outranked the one holding the title.
+ * Weighed by what a shard staked on its best answer, so a merged score is a title's probability
+ * against the strongest one anywhere. Mass alone (1 − none) credited a shard for what it failed
+ * to reject: the best-reputed shard holds no zombie film and named Star Wars anyway. Confidence
+ * never merges; it says how peaked a shard is, not how much of the answer it holds.
  */
 export const mergeSubjects = (shards: readonly Shard[]): Subject => {
   const strongest = shards.reduce((best, shard) => (leaderOf(shard) > leaderOf(best) ? shard : best), EMPTY);

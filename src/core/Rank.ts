@@ -79,18 +79,15 @@ export const KIDS_SAFE_THRESHOLD = 0.6;
 
 export const TOPICAL = 3;
 /**
- * Above this the answer is pointing at a title. Measured on the merged score — a title's probability
- * over the strongest one anywhere: a shard holding none of the answer still names a best guess, and
- * that lands at 0.06–0.12, while the weakest right answer sits at 0.15 and up. Anything from 0.12 to
- * 0.20 draws the same shelves.
+ * Named when a title's merged score is at least this share of the strongest anywhere. A shard
+ * holding none of the answer still names a best guess, at 0.06–0.12; the weakest right answer
+ * sits at 0.15+. Anything from 0.12 to 0.20 draws the same shelves.
  */
 export const SEED_FLOOR = 0.15;
 /**
- * Subject scores are scaled so the leader is always 1, so this gate is on the weight: how much
- * of the answer landed in a title at all. Re-measured at 2,061 titles — mood queries run
- * 0.03–0.17 and subject queries 0.21 and up. The bands drift upward as the catalog grows,
- * because a larger shelf always holds something that merely sounds like what was said, so this
- * needs re-measuring whenever it grows again.
+ * Gate on the subject's weight, how much of the answer landed in a title at all. Measured at
+ * 2,061 titles: mood queries 0.03–0.17, subject queries 0.21+. It drifts upward as the catalog
+ * grows, so measure again on every growth.
  */
 export const COMMITTED = 0.2;
 const DIFFUSE = 0.35;
@@ -260,10 +257,8 @@ const inCountry = (pool: readonly FilmCard[], country: CountryId | null): Facet 
  * Only a stated genre filters — "jail breaking" implies Crime, and filtering on that lost The
  * Shawshank Redemption. Several stated genres mean all of them while the shelf has enough, and a
  * stated genre never falls back: for a scary Thai film with a child in the room, none is the answer.
- * A genre the pool holds none of is that same answer whether or not it was named outright. The
- * kid-safe shelf carries no Crime, no Horror and no Thriller at all, so "crime" with a child in
- * the room is empty rather than twelve nature documentaries, and `genre_named` no longer decides
- * whether the contradiction is noticed — only whether the shelf is narrowed.
+ * A genre the pool holds none of empties the shelf whether or not it was named: `genre_named`
+ * decides only whether to narrow, never whether the contradiction is seen.
  */
 const inGenre = (pool: readonly FilmCard[], person: PersonRead): Facet => {
   if (person.genres.length === 0) return unasked(pool);
@@ -310,13 +305,10 @@ type Weights = {
 };
 
 /**
- * An axis counts only as far as the person spoke to it: a confident "no romance" from someone who
- * never raised romance steers nothing. Relevance is the only signal that says so. Over the cached
- * reads it tells a stated axis from an unraised one at AUC 0.98 where confidence manages 0.53 —
- * an unraised axis still gets a confident fallback level, and romance reads above 0.7 confidence
- * in 70% of the sentences that never mention it. Squaring is where the exponent sweep lands:
- * under 1.75 "horny" still returns a sitcom, over 2 "a prestige tv drama" loses its shelf.
- * Confidence stays, and stays first-power: it is the sharpness of the level, not the ask.
+ * Relevance squared, confidence first-power. Relevance says whether the person raised the axis
+ * (AUC 0.98 against unmentioned axes); confidence only says how sharp the level is (AUC 0.53 —
+ * Jev is confident in fallback levels too). The exponent is bounded both ways: under 1.75
+ * "horny" still returns a sitcom, over 2 "a prestige tv drama" loses its shelf.
  */
 const weightsOf = (person: PersonRead): Weights => {
   const wants = AXIS_IDS.map((axis) => ({

@@ -42,10 +42,7 @@ export function Shelf({ rows, pending }: { rows: readonly Ranked[]; pending: boo
 function Tile({ row: { film }, place }: { row: Ranked; place: number }) {
   const [arrived, setArrived] = useState(false);
 
-  /**
-   * A poster already in cache can be `complete` before React attaches the handler, so `onLoad`
-   * never fires and the tile would sit on its sleeve forever. The ref catches that one case.
-   */
+  /** A cached poster can be `complete` before `onLoad` attaches; the ref catches that case. */
   const settle = useCallback((node: HTMLImageElement | null) => {
     if (node?.complete) setArrived(true);
   }, []);

@@ -174,11 +174,6 @@ export const personDecision = (shards: Shards) => {
 };
 export type PersonDecision = ReturnType<typeof personDecision>;
 
-/**
- * The subject on its own. One request holds 64k tokens and the catalog no longer fits in it, so
- * the shelf is asked in two: the films alongside every other question, the series beside them.
- * Both carry the same `said`, both run at once, and the answers merge into one record — the
- * shards were always independent of each other, so nothing is lost by splitting them.
- */
+/** The subject alone: one request holds 64k tokens and the shelf outgrew it, so the series ride in a second request beside the films. */
 export const subjectDecision = (shards: Shards) => Decision.make({ input: Said, decisions: shards });
 export type SubjectDecision = ReturnType<typeof subjectDecision>;
