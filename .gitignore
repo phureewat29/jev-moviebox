@@ -47,6 +47,7 @@ CLAUDE.md
 AGENTS.md
 IDEAS.md
 design.html
+POST.md
 src/data/reads.cache.json
 
 # The data jobs and their credentials stay on the machine that builds the JSON.
