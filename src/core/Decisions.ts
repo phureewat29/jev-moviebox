@@ -115,7 +115,7 @@ const NOUN: Record<Kind, { plural: string; singular: string }> = {
 
 const shard = (kind: Kind, films: readonly SubjectOption[]) =>
   Decision.classify({
-    instructions: `Which of these ${NOUN[kind].plural} is this person asking for? Match on anything the person named: the subject, the theme, the story, a character, a director, an actor, a genre, a country or era, or the title itself. Ignore how the person says they feel.`,
+    instructions: `Which of these ${NOUN[kind].plural} is this person asking for? Match on anything the person named: the subject, the theme, the story, a character, a director, an actor, a genre, a country or era, or the title itself. Ignore how the person says they feel — a word that merely turns up in a title does not make it the answer, so a person saying how they want the evening to go has named nothing here.`,
     criteria: {
       ...Object.fromEntries(
         films.map((film) => [
@@ -173,3 +173,12 @@ export const personDecision = (shards: Shards) => {
   return Decision.make({ input: Said, decisions: { ...named, ...shards } as typeof named & Shards });
 };
 export type PersonDecision = ReturnType<typeof personDecision>;
+
+/**
+ * The subject on its own. One request holds 64k tokens and the catalog no longer fits in it, so
+ * the shelf is asked in two: the films alongside every other question, the series beside them.
+ * Both carry the same `said`, both run at once, and the answers merge into one record — the
+ * shards were always independent of each other, so nothing is lost by splitting them.
+ */
+export const subjectDecision = (shards: Shards) => Decision.make({ input: Said, decisions: shards });
+export type SubjectDecision = ReturnType<typeof subjectDecision>;

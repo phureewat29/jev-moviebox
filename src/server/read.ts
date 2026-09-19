@@ -3,10 +3,12 @@ import { DecisionModel, type AiError } from "effect/unstable/ai";
 import { COMPANY, SAID_LIMIT } from "../core/Company.ts";
 import {
   personDecision,
+  subjectDecision,
   subjectShards,
   type ShardId,
   type SubjectOption,
 } from "../core/Decisions.ts";
+import type { Kind } from "../core/Film.ts";
 import type { PersonRead } from "../core/Rank.ts";
 import { mergeSubjects, readSubject, weightOf } from "../core/Subject.ts";
 import { AXES, GENRES, RUNTIME_LEVELS, type AxisId, type CountryId } from "../core/Taste.ts";
@@ -47,16 +49,25 @@ const countryOf = (answer: Classified<CountryId | "none">): CountryId | null => 
 
 const isShard = (key: string): key is ShardId => key.startsWith("subject_");
 
-/** The catalog is supplied, not imported, so a script can point this at a fixture; the definition is built once. */
+/**
+ * The catalog is supplied, not imported, so a script can point this at a fixture; the two
+ * definitions are built once. Films ride with every other question and series follow in their
+ * own request, because one request holds 64k tokens and the whole shelf no longer fits.
+ */
 export const makeReader = (films: readonly SubjectOption[]) => {
-  const definition = personDecision(subjectShards(films));
-  const shardIds = Object.keys(definition.decisions).filter(isShard);
+  const shardsOf = (kind: Kind) => subjectShards(films.filter((film) => film.kind === kind));
+  const asked = personDecision(shardsOf("movie"));
+  const rest = subjectDecision(shardsOf("series"));
+  const shardIds = [...Object.keys(asked.decisions), ...Object.keys(rest.decisions)].filter(isShard);
 
   return (request: ReadRequest) =>
     Effect.gen(function* () {
-      const { answers } = yield* DecisionModel.decide(definition, {
-        input: { said: request.said.trim().slice(0, SAID_LIMIT) },
-      });
+      const input = { said: request.said.trim().slice(0, SAID_LIMIT) };
+      const [film, series] = yield* Effect.all(
+        [DecisionModel.decide(asked, { input }), DecisionModel.decide(rest, { input })],
+        { concurrency: "unbounded" },
+      );
+      const answers = { ...film.answers, ...series.answers };
 
       const axis = (id: AxisId) => ({
         probabilities: distribution(answers[id], AXES[id].levels),
