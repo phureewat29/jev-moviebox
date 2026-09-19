@@ -19,14 +19,29 @@ const bebas = Bebas_Neue({
 });
 
 const DESCRIPTION = "Say how the day went. Jev reads it; the box is ranked for it.";
+/** A stable path rather than the file convention, so the card can be linked from anywhere. */
+const CARD = { url: "/assets/og.jpg", width: 1200, height: 630, alt: "Movie Box" };
 
 export const metadata: Metadata = {
   metadataBase: SITE,
   title: "Movie Box",
   description: DESCRIPTION,
   alternates: { canonical: "/" },
-  openGraph: { title: "Movie Box", description: DESCRIPTION, url: "/", siteName: "Movie Box", type: "website" },
-  twitter: { card: "summary_large_image", title: "Movie Box", description: DESCRIPTION, creator: "@phureewat29" },
+  openGraph: {
+    title: "Movie Box",
+    description: DESCRIPTION,
+    url: "/",
+    siteName: "Movie Box",
+    type: "website",
+    images: [CARD],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Movie Box",
+    description: DESCRIPTION,
+    creator: "@phureewat29",
+    images: [CARD],
+  },
 };
 
 /** Tints the browser chrome and the notch strip to the same black the page is painted in. */
