@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   alternates: { canonical: "/" },
   openGraph: { title: "Movie Box", description: DESCRIPTION, url: "/", siteName: "Movie Box", type: "website" },
-  twitter: { card: "summary", title: "Movie Box", description: DESCRIPTION, creator: "@phureewat29" },
+  twitter: { card: "summary_large_image", title: "Movie Box", description: DESCRIPTION, creator: "@phureewat29" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
