@@ -91,6 +91,10 @@ body::after {
   body::after {
     opacity: 0.02;
   }
+
+  .sleeve::after {
+    animation: none;
+  }
 }
 
 ::selection {
@@ -116,6 +120,81 @@ body::after {
   font-family: var(--font-display);
   letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
+}
+
+/**
+ * A poster slot before its poster arrives: a strip of film standing in the sleeve — perforated
+ * margins down both edges, an Academy leader ring in the middle, and a marquee bulb travelling
+ * across the plastic.
+ *
+ * It sits *under* the image rather than in place of it, so the worst a mistimed load can do is
+ * leave it hidden behind something opaque, and a poster that never arrives leaves a film strip
+ * rather than a broken tile.
+ */
+.sleeve {
+  --strip: color-mix(in srgb, var(--color-screen) 65%, #000);
+  --hole: color-mix(in srgb, var(--color-ink) 7%, transparent);
+  --hair: color-mix(in srgb, var(--color-marquee) 16%, transparent);
+
+  background-color: var(--color-screen-raised);
+  background-image:
+    linear-gradient(var(--hole) 0 6px, transparent 6px),
+    linear-gradient(var(--hole) 0 6px, transparent 6px),
+    linear-gradient(var(--strip), var(--strip)),
+    linear-gradient(var(--strip), var(--strip));
+  background-repeat: repeat-y, repeat-y, no-repeat, no-repeat;
+  background-position:
+    left 5px top,
+    right 5px top,
+    left top,
+    right top;
+  background-size:
+    6px 15px,
+    6px 15px,
+    16px 100%,
+    16px 100%;
+}
+
+/** The leader ring: a circle with the frame's crosshair in it, clipped to the circle by its radius. */
+.sleeve::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--hair);
+  border-radius: 50%;
+  background:
+    linear-gradient(var(--hair), var(--hair)) center / 1px 100% no-repeat,
+    linear-gradient(var(--hair), var(--hair)) center / 100% 1px no-repeat;
+}
+
+/** Slow on purpose: a spinner says wait, this says film. Parked off to the left when it stops. */
+.sleeve::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 38%,
+    color-mix(in srgb, var(--color-marquee) 10%, transparent) 50%,
+    transparent 62%
+  );
+  transform: translateX(-100%);
+  animation: sheen 2.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+/** Once the poster is up the sleeve is behind it, so the bulb has nothing left to light. */
+.sleeve[data-loaded]::after {
+  animation: none;
+}
+
+@keyframes sheen {
+  to {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes fade-up {
