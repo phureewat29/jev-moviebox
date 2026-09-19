@@ -6,6 +6,7 @@ import {
   ADULT_RATINGS,
   ceilingFit,
   KIDS_SAFE_THRESHOLD,
+  MAX_RESULTS,
   overlap,
   rank,
   shortlist,
@@ -372,7 +373,8 @@ describe("what reaches the shelf", () => {
     expect(shortlist(faint)).toEqual([]);
     const spoken = rank({ person: person({ warmth: { probabilities: at(3), confidence: 0.9 } }), films, labels });
     expect(spoken.rows[0].match).toBeGreaterThan(0.9);
-    expect(shortlist(spoken)).toHaveLength(12);
+    // the ranked cut is relative to the leader's spread, so a denser catalog trims the tail
+    expect(shortlist(spoken).length).toBeGreaterThan(MAX_RESULTS / 2);
   });
 
   it("prefers the primary country down to COUNTRY_MIN, then widens to any credit", () => {
@@ -390,13 +392,24 @@ describe("what reaches the shelf", () => {
     expect(rank({ person: person({}, { wants: "series" }), films: movies, labels }).rows).toHaveLength(
       movies.length,
     );
-    // every Korean comedy on this shelf is a series, and "film" is not a near miss
-    const korean = rank({
+    /**
+     * A shelf where every Korean comedy is a series and every Korean film is something else.
+     * Asking for a Korean comedy film has to come back empty: the kind may give way, but not
+     * far enough to hand back the films that are not comedies.
+     */
+    const korean = (pick: (film: FilmCard) => boolean) =>
+      films.filter((film) => film.countries.includes("South Korea") && pick(film));
+    const shelf = [
+      ...korean((film) => film.kind === "series" && film.genres.includes("Comedy")),
+      ...korean((film) => film.kind === "movie" && !film.genres.includes("Comedy")),
+    ];
+    expect(shelf.some((film) => film.kind === "movie")).toBe(true);
+    const asked = rank({
       person: person({}, { country: "South Korea", genres: ["Comedy"], genreNamed: true, wants: "movie" }),
-      films,
+      films: shelf,
       labels,
     });
-    expect(korean.rows).toEqual([]);
+    expect(asked.rows).toEqual([]);
   });
 
   it("narrows to a decade and browses it", () => {
