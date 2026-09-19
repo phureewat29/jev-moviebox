@@ -5,6 +5,7 @@ import { Labels, type FilmLabels } from "@/core/Labels";
 import {
   ADULT_RATINGS,
   ceilingFit,
+  COUNTRY_MIN,
   KIDS_SAFE_THRESHOLD,
   MAX_RESULTS,
   overlap,
@@ -378,11 +379,14 @@ describe("what reaches the shelf", () => {
   });
 
   it("prefers the primary country down to COUNTRY_MIN, then widens to any credit", () => {
+    const primary = films.filter((film) => film.countries[0] === "New Zealand");
+    expect(primary.length).toBeGreaterThanOrEqual(COUNTRY_MIN);
     const nz = rank({ person: person({}, { country: "New Zealand" }), films, labels });
-    expect(nz.rows).toHaveLength(4);
+    expect(nz.rows).toHaveLength(primary.length);
     for (const row of nz.rows) expect(row.film.countries[0], row.film.title).toBe("New Zealand");
-    // one fewer leaves three primary, under the floor, so any credit counts
-    const fewer = films.filter((film) => film.id !== nz.rows[0].film.id);
+    // take it one under the floor, and any credit starts counting
+    const dropped = new Set(primary.slice(0, primary.length - COUNTRY_MIN + 1).map((film) => film.id));
+    const fewer = films.filter((film) => !dropped.has(film.id));
     const loose = rank({ person: person({}, { country: "New Zealand" }), films: fewer, labels });
     expect(loose.rows.some((row) => row.film.countries[0] !== "New Zealand")).toBe(true);
   });
