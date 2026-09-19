@@ -231,7 +231,7 @@ export const PERSON_SIGNALS = {
     instructions:
       "In `said`, does the person name a genre, format or kind of film outright, rather than describing a story, subject or mood and leaving the genre to be inferred?",
     criteria: {
-      true: 'They use a genre or format word for what they want: "a comedy", "horror", "a western", "a documentary", "anime", "something funny", "a romance".',
+      true: 'They use a genre or format word for what they want: "a comedy", "horror", "a western", "a documentary", "anime", "something funny", "something scary", "a romance". A plain feeling word standing in for the genre counts: "scary" is horror the way "funny" is comedy.',
       false: 'They describe a subject, plot, person, place or mood instead, and any genre has to be guessed from it: "jail breaking", "something like Interstellar", "batman", "a Kubrick film", "long day, I am wiped", "something from GDH".',
     },
   },
@@ -272,14 +272,14 @@ export const WANTS_QUESTION = "Is this person asking for a film or for a series?
  * credit "France" holds Terminator 2): countries with at least four titles, genres with at
  * least five. Re-derive when the catalog grows; they went stale once.
  */
-export const COUNTRIES = ["United States", "United Kingdom", "Japan", "South Korea", "Thailand", "Germany", "France", "Italy", "India", "Canada", "Ireland", "Denmark", "Mexico", "Spain", "Hong Kong", "Sweden", "New Zealand"] as const;
+export const COUNTRIES = ["United States", "United Kingdom", "Japan", "South Korea", "Thailand", "China", "Germany", "France", "Italy", "India", "Canada", "Ireland", "Denmark", "Mexico", "Spain", "Hong Kong", "Taiwan", "Sweden", "New Zealand"] as const;
 export type CountryId = (typeof COUNTRIES)[number];
 
 export const COUNTRY_QUESTION =
   "Which country's or region's films or series is this person asking for? Only answer with a country if they actually named one, or named a language, a people or a film industry that means one.";
 
 /** One probability each: genre is multi-valued, and "something funny about war" is two answers. */
-export const GENRES = ["Drama", "Comedy", "Crime", "Action", "Adventure", "Mystery", "Animation", "Thriller", "Romance", "Fantasy", "Sci-Fi", "Biography", "War", "Horror", "History", "Documentary", "Family", "Music", "Musical", "Sport", "Western"] as const;
+export const GENRES = ["Drama", "Comedy", "Crime", "Action", "Adventure", "Mystery", "Animation", "Thriller", "Romance", "Fantasy", "Sci-Fi", "Biography", "War", "Horror", "History", "Documentary", "Family", "Music", "Musical", "Sport", "Western", "Reality-TV"] as const;
 export type GenreId = (typeof GENRES)[number];
 
 export const genreQuestion = (genre: GenreId) => ({
