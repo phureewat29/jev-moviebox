@@ -1,20 +1,12 @@
 /**
- * The taste rubric: the one place a level is described. Each axis carries a question for the
- * film side and one for the person side over the *same* four levels, so the two answers are
- * distributions the ranker can lay on top of each other.
- *
- * This module holds data only. It imports nothing, so the browser can read a level's text for a
- * reason chip; the decisions built from it live in Decisions.ts, which the server and the
- * scripts own.
+ * The rubric: each axis asks the film and the person over the same four levels, so the two
+ * answers are distributions the ranker can lay on top of each other. Data only, no imports;
+ * Decisions.ts turns it into questions.
  */
 
 export type Levels = readonly [string, string, string, string];
 
-/**
- * A `match` axis wants the film to land where the person landed. A `ceiling` axis is a budget:
- * the person states the most they can take, and a film asking less is just as welcome. Someone
- * with energy to burn is not offended by an easy film, but symmetric scoring would punish it.
- */
+/** `match` wants the film where the person landed; `ceiling` is a budget, and asking less than it is fine. */
 export type AxisKind = "match" | "ceiling";
 
 export type Axis = {
@@ -32,11 +24,7 @@ export const AXES = {
     relevance: "how much attention they are willing to give a film",
     film: "How much attention does this film ask of the viewer?",
     person: "How much attention is this person willing to give a film tonight?",
-    /**
-     * Calibrated against a catalog of acclaimed films, where nothing is background viewing:
-     * the old level 0 held zero of 250 and the old level 2 held 223, so the axis ordered
-     * almost nothing. These four split that bulge.
-     */
+    // calibrated to a catalog of acclaimed films: the old levels put 223 of 250 on one step
     levels: [
       "Easy to follow; it survives being talked over",
       "Straightforward, though it is better if you watch it properly",
@@ -166,11 +154,7 @@ export const ENDINGS = {
 export type EndingId = keyof typeof ENDINGS;
 export const ENDING_IDS = Object.keys(ENDINGS) as readonly EndingId[];
 
-/**
- * Runtime is the one axis where the film side is a fact, not a judgment. The person is asked
- * how long an evening they have; code reads the minutes off the catalog. Jev is never asked to
- * compare numbers, which the model card lists as a weak spot.
- */
+/** The one axis whose film side is a fact: code reads the minutes; Jev is never asked to compare numbers. */
 export const RUNTIME_LEVELS = [
   "Under an hour and a half",
   "An hour and a half to two hours",
@@ -186,7 +170,7 @@ export const RUNTIME_RELEVANCE =
 export const runtimeBand = (minutes: number): 0 | 1 | 2 | 3 =>
   minutes < 90 ? 0 : minutes < 120 ? 1 : minutes < 150 ? 2 : 3;
 
-/** Judgments about a film that are facts rather than taste. Code uses them to filter, not to rank. */
+/** Facts rather than taste; code filters on them, never ranks. */
 export const FILM_FACTS = {
   kids_safe: {
     instructions: "Would most parents be comfortable with a nine-year-old in the room for this film?",
@@ -234,7 +218,6 @@ export const FILM_FACTS = {
 export type FilmFactId = keyof typeof FILM_FACTS;
 export const FILM_FACT_IDS = Object.keys(FILM_FACTS) as readonly FilmFactId[];
 
-/** What the person said, read as facts rather than taste. */
 export const PERSON_SIGNALS = {
   children_watching: {
     instructions: "Are children going to be watching along with this person tonight?",
@@ -243,12 +226,7 @@ export const PERSON_SIGNALS = {
       false: "The person is watching alone, or with other adults, or says nothing either way.",
     },
   },
-  /**
-   * Whether a genre came out of the person's mouth or out of the model's reading of their
-   * subject matter. It decides whether genre may filter the shelf. "A western" states one, so
-   * a non-western is simply wrong; "jail breaking" implies Crime, and filtering on that threw
-   * away The Shawshank Redemption, which is tagged Drama.
-   */
+  // decides whether genre may filter: "jail breaking" implies Crime, and filtering on that lost Shawshank
   genre_named: {
     instructions:
       "In `said`, does the person name a genre, format or kind of film outright, rather than describing a story, subject or mood and leaving the genre to be inferred?",
@@ -268,11 +246,7 @@ export const PERSON_SIGNALS = {
 export type PersonSignalId = keyof typeof PERSON_SIGNALS;
 export const PERSON_SIGNAL_IDS = Object.keys(PERSON_SIGNALS) as readonly PersonSignalId[];
 
-/**
- * Some questions are about the shelf rather than about a film: the best rated, the newest, a
- * particular decade. They are answered by sorting and filtering data we already hold, so Jev
- * only has to recognise the intent. Nothing here asks the model to compare a number.
- */
+/** Questions about the shelf, not a film: Jev names the intent, code sorts and filters. */
 export const ORDERING = {
   best_rated: "They want the most acclaimed or highest-rated, whatever those turn out to be.",
   newest: "They want recent films, the newer the better.",
@@ -294,17 +268,9 @@ export type WantsId = keyof typeof WANTS;
 export const WANTS_QUESTION = "Is this person asking for a film or for a series?";
 
 /**
- * Counted by *primary* country, not by any credit. OMDb's list is production finance, so
- * "France" by membership pulls in Terminator 2 and Ratatouille, and "China" has three entries
- * of which none is a Chinese film. A country only earns an option if three titles are actually
- * from there.
- *
- * Country and genre are on every catalog row, so Jev only has to recognise which one was asked
- * for and code does the filtering. Asking a 254-title classify decision to enumerate every Thai
- * film instead collapses onto one winner: it answers "which one", not "which ones".
- *
- * Both lists are the values that actually earn a place in the catalog — countries with at least
- * three titles, genres with at least five — so they move with the data instead of being guessed.
+ * Derived from the catalog, by primary country (OMDb's credits list co-producers, so by any
+ * credit "France" holds Terminator 2): countries with at least four titles, genres with at
+ * least five. Re-derive when the catalog grows; they went stale once.
  */
 export const COUNTRIES = ["United States", "United Kingdom", "Japan", "South Korea", "Thailand", "Germany", "France", "Italy", "India", "Canada", "Ireland", "Denmark", "Mexico", "Spain", "Hong Kong", "Sweden", "New Zealand"] as const;
 export type CountryId = (typeof COUNTRIES)[number];
@@ -312,7 +278,7 @@ export type CountryId = (typeof COUNTRIES)[number];
 export const COUNTRY_QUESTION =
   "Which country's or region's films or series is this person asking for? Only answer with a country if they actually named one, or named a language, a people or a film industry that means one.";
 
-/** One probability each, because genre is multi-valued: "something funny about war" is two answers. */
+/** One probability each: genre is multi-valued, and "something funny about war" is two answers. */
 export const GENRES = ["Drama", "Comedy", "Crime", "Action", "Adventure", "Mystery", "Animation", "Thriller", "Romance", "Fantasy", "Sci-Fi", "Biography", "War", "Horror", "History", "Documentary", "Family", "Music", "Musical", "Sport", "Western"] as const;
 export type GenreId = (typeof GENRES)[number];
 
@@ -334,12 +300,7 @@ export const decadeOf = (year: number): DecadeId => {
   return (DECADES as readonly string[]).includes(decade) ? decade : "none";
 };
 
-/**
- * Asked once per axis. Without it a confident "no romance wanted" reads as "romance matters a
- * great deal", and a query about prison escapes gets sorted by absence of romance. The criteria
- * carry the whole distinction: wanting none of something is still speaking to it; never
- * mentioning it is not.
- */
+/** Wanting none of something is still speaking to it; never mentioning it is not. Without this, "jail breaking" sorted by absence of romance. */
 export const relevanceCriteria = {
   true: "They said something bearing on it, directly or by implication. Wanting none of it counts.",
   false: "They said nothing bearing on it either way; it simply did not come up.",
@@ -348,18 +309,10 @@ export const relevanceCriteria = {
 export const relevanceInstruction = (axis: AxisId) =>
   `Does what this person said speak at all to ${AXES[axis].relevance}?`;
 
-/**
- * The fields of a film record that are sent to the model. Changing this pick invalidates every
- * label exactly as surely as rewording a level, so it is hashed alongside the questions.
- */
+/** Sent to the model, so hashed with the questions: changing the pick invalidates every label. */
 export const FILM_STATE_FIELDS = ["title", "year", "director", "starring", "genres", "plot"] as const;
 
-/**
- * Every word that reaches the model *about a film*, in a stable order. Labels record a hash of
- * this, so a reworded level shows up as stale data rather than as answers to a question nobody
- * asked. The relevance clauses and the person signals are deliberately outside it: they are only
- * ever put to a person, so adding or rewording one cannot invalidate a film's label.
- */
+/** Every word that reaches the model about a film. Person-side questions are outside it on purpose: rewording one cannot stale a film label. */
 export const canonicalRubric = () =>
   JSON.stringify([
     FILM_STATE_FIELDS,

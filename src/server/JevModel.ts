@@ -2,10 +2,10 @@ import { TypeSafeClient, TypeSafeDecisionModel } from "@effect/ai-typesafe";
 import { Effect, Layer, Record, type Redacted } from "effect";
 import { FetchHttpClient, Headers, HttpClient, HttpClientResponse } from "effect/unstable/http";
 
-/** The version the labels were made with. Person reads use the same one, or the two sides compare unlike with unlike. */
+/** The labels' model; a read from any other would be compared against answers from a different one. */
 export const PINNED_MODEL = "jev-1.13.0";
 
-/** How far from 1 a total may be and still count as rounding. Anything further is a real fault and stays visible. */
+/** Further than this from 1 is not rounding but a fault, and stays visible. */
 const ROUNDING = 0.05;
 
 const unit = (probabilities: Readonly<Record<string, number>>) => {
@@ -19,7 +19,6 @@ type Answer = { readonly probabilities?: Readonly<Record<string, number>> };
 const isAnswers = (value: unknown): value is Readonly<Record<string, Answer>> =>
   typeof value === "object" && value !== null;
 
-/** The furthest any distribution in a body sits from summing to 1. */
 export const drift = (body: unknown): number =>
   typeof body === "object" && body !== null && "answers" in body && isAnswers(body.answers)
     ? Math.max(
@@ -32,15 +31,13 @@ export const drift = (body: unknown): number =>
       )
     : 0;
 
-/** Rounding measured on 4-level answers stays under 0.01; a wider drift is worth knowing about before it hits `ROUNDING`. */
+/** Measured on 4-level answers; a wider drift is worth seeing before it reaches `ROUNDING`. */
 const EXPECTED_DRIFT = 0.01;
 
 /**
- * Jev rounds what it returns, so a distribution arrives summing to 0.99 or 1.00, and
- * `DecisionModel` refuses anything further than 1e-6 from 1. Renormalizing here, on the wire,
- * keeps the official provider unmodified and puts the rounding where it belongs: in transport.
- * Scores, nouls and confidences pass through untouched, and so does any total that is not
- * rounding-sized, so a truncated answer still fails as it should.
+ * Jev rounds, so a distribution arrives summing to 0.99 or 1.00, and `DecisionModel` refuses
+ * anything further than 1e-6 from 1. Renormalizing on the wire keeps the official provider
+ * untouched; a total that is not rounding-sized passes through and fails as it should.
  */
 export const renormalize = (body: unknown): unknown => {
   if (typeof body !== "object" || body === null || !("answers" in body) || !isAnswers(body.answers)) {
@@ -56,10 +53,7 @@ export const renormalize = (body: unknown): unknown => {
   };
 };
 
-/**
- * The provider applies `filterStatusOk` before this transform, so only a 2xx body is ever
- * parsed here and an auth or rate-limit failure passes through untouched.
- */
+/** The provider applies `filterStatusOk` first, so only a 2xx body is parsed here. */
 const renormalized = (client: HttpClient.HttpClient): HttpClient.HttpClient =>
   HttpClient.transformResponse(client, (response) =>
     Effect.flatMap(response, (incoming) =>
@@ -81,11 +75,7 @@ const renormalized = (client: HttpClient.HttpClient): HttpClient.HttpClient =>
     ),
   );
 
-/**
- * `DecisionModel` for Jev. With an `apiKey` the client is built from it (the data jobs hold
- * theirs as a constant); without one it reads `TYPESAFE_API_KEY` from the environment, which is
- * how the server runs.
- */
+/** With an `apiKey` (the data jobs hold theirs as a constant); without one, `TYPESAFE_API_KEY` from the environment. */
 export const layer = (options: { readonly model: string; readonly apiKey?: Redacted.Redacted<string> }) =>
   TypeSafeDecisionModel.layer({ model: options.model }).pipe(
     Layer.provide(

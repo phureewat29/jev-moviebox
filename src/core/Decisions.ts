@@ -27,15 +27,12 @@ import {
 } from "./Taste.ts";
 
 /**
- * The rubric in Taste.ts, expressed as Decisions: a Schema for the input and a record of
- * `rate`, `classify` and `probability` questions over it. One `DecisionModel.decide` answers a
- * whole record in one provider call, typed by the record, so nothing downstream casts.
- *
- * In Jev's own vocabulary a `classify` is a Choice, a `rate` a Score and a `probability` a Noul;
- * comments elsewhere use whichever reads better.
+ * The rubric as Decisions: a Schema for the input and a record of `rate`, `classify` and
+ * `probability` over it, answered whole by one `DecisionModel.decide` and typed by the record.
+ * In Jev's own words a classify is a Choice, a rate a Score, a probability a Noul.
  */
 
-/** Exactly what the model is told about a film. Hashed into the labels, so it is a Schema, not a comment. */
+/** Everything the model is told about a film; hashed into the labels. */
 export const FilmState = Schema.Struct({
   film: Schema.Struct({
     title: Schema.String,
@@ -48,11 +45,7 @@ export const FilmState = Schema.Struct({
 });
 export type FilmState = typeof FilmState.Type;
 
-/**
- * Only what the person typed. Putting who is watching in the state made Jev answer the situation
- * rather than the question — "scare me" with children present came back with tension relevance
- * near zero — so the audience is a filter in code, never a fact in front of the model.
- */
+/** Only what was typed: with the audience in the state, "scare me" for children read as tension irrelevant. */
 export const Said = Schema.Struct({ said: Schema.String });
 
 const rateAxes = (side: "film" | "person") =>
@@ -67,14 +60,13 @@ const relevance = (): Relevance =>
     ]),
   ) as Relevance;
 
-/** Always asked. Suppressing these once the subject had committed blanked "a western", which is both. */
+/** Always asked: suppressing these once the subject had committed blanked "a western", which is both. */
 type Genres = { readonly [G in GenreId as `genre_${G}`]: Decision.Probability };
 const genres = (): Genres =>
   Object.fromEntries(
     GENRES.map((genre) => [`genre_${genre}`, Decision.probability(genreQuestion(genre))]),
   ) as Genres;
 
-/** A closed set plus `none`, typed as such, so the answer's label stays a literal union. */
 const withNone = <const T extends string>(
   options: readonly T[],
   describe: (option: T) => string,
@@ -98,7 +90,7 @@ export const filmDecision = Decision.make({
 });
 export type FilmDecision = typeof filmDecision;
 
-/** A classify decision (a Jev Choice) takes at most 255 labels, and one of them is `none`. */
+/** A classify takes at most 255 labels, one of them `none`. */
 export const SHARD_SIZE = 254;
 export type ShardId = `subject_${Kind}_${number}`;
 
@@ -135,11 +127,7 @@ const shard = (kind: Kind, films: readonly SubjectOption[]) =>
     },
   });
 
-/**
- * The catalog as several classify decisions of at most 254 titles, split by kind and then by
- * size, each with its own `none`. The ceiling is per decision, and every decision in a
- * definition is answered in one call, so this is how a 744-title shelf costs one round trip.
- */
+/** The catalog as classify decisions of 254, split by kind then size, each with its own `none`; one call answers them all. */
 export const subjectShards = (
   films: readonly SubjectOption[],
 ): Record<ShardId, Decision.Classify<string>> =>
@@ -155,11 +143,7 @@ export const subjectShards = (
 
 type Shards = Record<ShardId, Decision.Classify<string>>;
 
-/**
- * Every question about a person. The shard keys are dynamic, so the one place the record is
- * assembled says so with a type intersection; everything reading the answers is then typed by
- * the definition and nothing downstream casts.
- */
+/** The shard keys are dynamic; the one cast, here, says so, and every reader of the answers is typed by the definition. */
 export const personDecision = (shards: Shards) => {
   const named = {
   ...rateAxes("person"),
