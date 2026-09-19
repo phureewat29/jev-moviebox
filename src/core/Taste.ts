@@ -272,7 +272,7 @@ export const WANTS_QUESTION = "Is this person asking for a film or for a series?
  * credit "France" holds Terminator 2): countries with at least four titles, genres with at
  * least five. Re-derive when the catalog grows; they went stale once.
  */
-export const COUNTRIES = ["United States", "United Kingdom", "Japan", "South Korea", "Thailand", "China", "Germany", "France", "Italy", "India", "Canada", "Ireland", "Denmark", "Mexico", "Spain", "Hong Kong", "Taiwan", "Sweden", "New Zealand"] as const;
+export const COUNTRIES = ["United States", "United Kingdom", "Japan", "South Korea", "Thailand", "China", "Germany", "France", "Italy", "India", "Canada", "Ireland", "Denmark", "Mexico", "Spain", "Hong Kong", "Taiwan", "Sweden", "New Zealand", "Australia", "Turkey", "Brazil", "Poland", "Norway"] as const;
 export type CountryId = (typeof COUNTRIES)[number];
 
 export const COUNTRY_QUESTION =
