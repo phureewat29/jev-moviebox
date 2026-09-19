@@ -106,8 +106,12 @@ export const DEALBREAKER_SHARE = 0.15;
 export const DEALBREAKER_FIT = 0.25;
 /** Past the leader, `match` values sit about 0.004 apart, so a fixed gap cuts arbitrarily; this is a fraction of the spread across the top fifty. */
 export const GAP_OF_SPREAD = 0.35;
-/** The floor under that fraction, for when the top fifty are flat. */
-const MIN_GAP = 0.05;
+/**
+ * The floor under that fraction, for when the top fifty are flat. 0.05 let a lone leader shrink a
+ * shelf of four hundred qualifying rows to two — "long day, I just want to switch off" showed one
+ * calm anime and nothing else. Measured: 0.10 fills every such shelf; 0.08 leaves one at eight.
+ */
+const MIN_GAP = 0.1;
 const SPREAD_ROW = 49;
 export const MAX_RESULTS = 12;
 /** `match` is a ratio; below this much ask, a tiny denominator turns noise into a score. */
@@ -261,12 +265,19 @@ const inCountry = (pool: readonly FilmCard[], country: CountryId | null): Facet 
  * decides only whether to narrow, never whether the contradiction is seen.
  */
 const inGenre = (pool: readonly FilmCard[], person: PersonRead): Facet => {
-  if (person.genres.length === 0) return unasked(pool);
-  const some = pool.filter((film) => person.genres.some((genre) => film.genres.includes(genre)));
+  // "for the family" says who is watching, and the audience is its own facet
+  const genres = person.genres.filter((genre) => genre !== "Family");
+  if (genres.length === 0) return unasked(pool);
+  const some = pool.filter((film) => genres.some((genre) => film.genres.includes(genre)));
   if (some.length === 0) return insist(some);
   if (!person.genreNamed) return unasked(pool);
-  const every = pool.filter((film) => person.genres.every((genre) => film.genres.includes(genre)));
-  return insist(every.length >= GENRE_MIN ? every : some);
+  // all of them while the shelf has enough; otherwise let the least certain go, one at a time,
+  // but never down to "any of them" — that put family comedies on a documentary shelf
+  const holding = (asked: readonly GenreId[]): readonly FilmCard[] => {
+    const every = pool.filter((film) => asked.every((genre) => film.genres.includes(genre)));
+    return every.length >= GENRE_MIN || asked.length === 1 ? every : holding(asked.slice(0, -1));
+  };
+  return insist(holding(genres));
 };
 
 /** A stated studio never falls back, like a stated genre: a Netflix original with a child in the room is the kid-safe Netflix shelf or nothing. */
@@ -561,7 +572,8 @@ export const rank = (input: RankInput): Ranking => {
 const aboveFloor = (rows: readonly Ranked[]) => {
   const qualified = rows.filter((row) => row.qualifies && row.match >= FLOOR);
   if (qualified.length === 0) return [];
-  const leader = qualified[0].match;
+  // measured from the second row: a leader far above a dense field is an outlier, not a sharp query
+  const leader = qualified[Math.min(1, qualified.length - 1)].match;
   const spread = leader - qualified[Math.min(SPREAD_ROW, qualified.length - 1)].match;
   const gap = Math.max(MIN_GAP, GAP_OF_SPREAD * spread);
   return qualified.filter((row) => row.match >= leader - gap);
@@ -573,7 +585,11 @@ const aboveFloor = (rows: readonly Ranked[]) => {
  * browse check: `kept` and `named` can only coexist when a facet fired.
  */
 const CUTS: Record<Mode, (rows: readonly Ranked[]) => readonly Ranked[]> = {
-  named: (rows) => [...rows.filter(isNamed), ...rows.filter((row) => row.tier === "kept")],
+  // the shelf is twelve: when the Choice named fewer, the rest is ranked like any other read
+  named: (rows) => {
+    const led = [...rows.filter(isNamed), ...rows.filter((row) => row.tier === "kept")];
+    return led.length >= MAX_RESULTS ? led : [...led, ...aboveFloor(rows.filter((row) => !led.includes(row)))];
+  },
   browse: (rows) => rows.filter((row) => row.qualifies),
   ranked: aboveFloor,
 };

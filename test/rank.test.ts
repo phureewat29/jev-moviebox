@@ -354,7 +354,11 @@ describe("what reaches the shelf", () => {
     });
     expect(ranking.rows[0].film.title).toBe("The Dark Knight");
     expect(ranking.rows[0].qualifies).toBe(false);
-    expect(shortlist(ranking).map((row) => row.film.title)).toEqual(["Toy Story"]);
+    const shelf = shortlist(ranking);
+    expect(shelf[0].film.title).toBe("Toy Story");
+    expect(shelf.map((row) => row.film.title)).not.toContain("The Dark Knight");
+    // the rows that fill in behind a named title are held to the same constraint
+    for (const row of shelf) expect(row.qualifies, row.film.title).toBe(true);
   });
 
   it("does not let a narrowed shelf excuse a contradiction either", () => {

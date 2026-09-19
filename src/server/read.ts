@@ -84,7 +84,10 @@ export const makeReader = (films: readonly SubjectOption[]) => {
         wants: gated(answers.wants, CONFIDENCE.wants, "either"),
         country: namedOf(answers.country),
         studio: namedOf(answers.studio),
-        genres: GENRES.filter((genre) => answers[`genre_${genre}`].probability > GENRE_THRESHOLD),
+        // strongest first, so a filter that has to give ground drops the least certain genre
+        genres: GENRES.filter((genre) => answers[`genre_${genre}`].probability > GENRE_THRESHOLD).sort(
+          (a, b) => answers[`genre_${b}`].probability - answers[`genre_${a}`].probability,
+        ),
         genreNamed: answers.genre_named.probability > SIGNAL,
         wantsSimilar: answers.names_reference.probability > SIGNAL,
         ordering: gated(answers.ordering, CONFIDENCE.ordering, "none"),

@@ -173,7 +173,7 @@ export const personDecision = (shards: Shards) => {
   ordering: Decision.classify({ instructions: ORDERING_QUESTION, criteria: ORDERING }),
   decade: Decision.classify({
     instructions: DECADE_QUESTION,
-    criteria: withNone(DECADES, (decade) => `Films from the ${decade}.`, "They named no decade or era."),
+    criteria: withNone(DECADES, (decade) => (decade === "2020s" ? "Films from the 2020s — this decade, the last few years." : `Films from the ${decade}.`), "They named no decade or era."),
   }),
   };
   return Decision.make({ input: Said, decisions: { ...named, ...shards } as typeof named & Shards });
