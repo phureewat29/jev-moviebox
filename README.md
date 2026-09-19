@@ -62,34 +62,6 @@ The catalog and its labels are committed, so a clone needs no OMDb key and runs 
 scripts that *build* them are deliberately not in this repository: they hold credentials and
 only ever run on one machine.
 
-## Deploy
-
-Built for Vercel. Import the repository with the Next.js preset and set:
-
-| variable | |
-| --- | --- |
-| `TYPESAFE_API_KEY` | required |
-| `TYPESAFE_TIMEOUT_MS` | optional, `12000` — the budget for one read; past it the page shows an empty shelf |
-
-The model is **not** configurable. The server reads people with the version the labels were made
-with (`jev-1.13.0`, pinned in `src/server/JevModel.ts`), because a read from a different model
-would be compared against film answers from another one. Upgrading is a relabel and a pin bump,
-together.
-
-Point a domain at Vercel with a CNAME to `cname.vercel-dns.com`. Posters load from IMDb's CDN
-and the data is committed, so nothing else needs provisioning.
-
-The built-in rate limiter is a courtesy control: it counts in one process, resets on a cold
-start, and assumes the platform overwrites `x-real-ip` — which Vercel does and a bare origin
-does not. For a hard limit use the Vercel Firewall, and cap spend at TypeSafe.
-
-## Credits
-
-The list starts from the IMDb Top 250 as captured by
-[toedter/movies-demo](https://github.com/toedter/movies-demo) (MIT). Titles, plots, posters and
-ratings come from [OMDb](https://www.omdbapi.com). Posters are the property of their owners and
-are shown here under fair use for identification.
-
 ## Licence
 
 [MIT](LICENSE) © 2026 Phureewat A
