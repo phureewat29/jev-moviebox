@@ -2,8 +2,10 @@ import { TypeSafeClient, TypeSafeDecisionModel } from "@effect/ai-typesafe";
 import { Effect, Layer, Record, type Redacted } from "effect";
 import { FetchHttpClient, Headers, HttpClient, HttpClientResponse } from "effect/unstable/http";
 
-/** The labels' model; a read from any other would be compared against answers from a different one. */
+/** The labels' model: relabelling is the only thing that may move it. */
 export const PINNED_MODEL = "jev-1.13.0";
+/** The reads follow the latest model, owner's call; a read from a newer model than the labels is accepted drift. */
+export const READ_MODEL = "jev-latest";
 
 /** Further than this from 1 is not rounding but a fault, and stays visible. */
 const ROUNDING = 0.05;
