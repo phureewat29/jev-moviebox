@@ -26,6 +26,8 @@
 html {
   color-scheme: dark;
   background-color: var(--color-screen);
+  /* a shelf that grows past the fold must not shift the page sideways when the scrollbar appears */
+  scrollbar-gutter: stable;
 }
 
 /**

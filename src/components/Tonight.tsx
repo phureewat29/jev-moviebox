@@ -121,8 +121,9 @@ export function Tonight({
             </p>
 
             {/* trouble shows nothing at all, never the previous query's shelf */}
+            {/* a floor under every state: eight ghosts swapping to one line collapsed the page and threw the footer up */}
             {asked && result.status !== "failed" && result.status !== "throttled" ? (
-              <div className="animate-[fade-up_600ms_ease-out] motion-reduce:animate-none">
+              <div className="min-h-[70vh] animate-[fade-up_600ms_ease-out] motion-reduce:animate-none">
                 <Shelf rows={rows} pending={pending} />
               </div>
             ) : null}
