@@ -2,35 +2,21 @@
 
 import { Baby, Heart, House, Play, Search, User, Users } from "lucide-react";
 import { useEffect, useState } from "react";
-import { SAID_LIMIT, type Company } from "@/core/Company";
+import { COMPANY, SAID_LIMIT, type Company } from "@/core/Company";
 
-/**
- * Who is watching is the one thing the person knows for certain and the model can only guess
- * at, so it is a control rather than a question. Each gets its own colour: the row reads as
- * five distinct choices at a glance instead of five grey icons.
- */
-const AUDIENCE: readonly {
-  id: Company;
-  label: string;
-  Icon: typeof User;
-  on: string;
-  off: string;
-}[] = [
-  { id: "solo", label: "Just me", Icon: User, on: "bg-sky-400/10 text-sky-200/90 ring-sky-400/25", off: "text-sky-300/35" },
-  { id: "couple", label: "Two of us", Icon: Heart, on: "bg-rose-400/10 text-rose-200/90 ring-rose-400/25", off: "text-rose-300/35" },
-  { id: "friends", label: "Friends", Icon: Users, on: "bg-amber-400/10 text-amber-200/90 ring-amber-400/25", off: "text-amber-300/35" },
-  { id: "family", label: "Family", Icon: House, on: "bg-emerald-400/10 text-emerald-200/90 ring-emerald-400/25", off: "text-emerald-300/35" },
-  { id: "kids", label: "Kids too", Icon: Baby, on: "bg-violet-400/10 text-violet-200/90 ring-violet-400/25", off: "text-violet-300/35" },
-];
+type Suggestion = { readonly said: string; readonly company: Company | null };
 
-/**
- * Answers to the question above, written the way someone would actually say them. One shows at
- * a time and they rotate, so the page suggests a tone of voice rather than a menu of tags.
- *
- * Each carries who is watching, because a suggestion that says "kids are up" and then leaves
- * the audience on "just me" is contradicting itself. Tapping sets both.
- */
-const SUGGESTIONS: readonly { said: string; company: Company | null }[] = [
+/** Who is watching is the one thing the person knows and the model can only guess, so it is a control, not a question. */
+const AUDIENCE: Record<Company, { label: string; Icon: typeof User; on: string; off: string }> = {
+  solo: { label: "Just me", Icon: User, on: "bg-sky-400/10 text-sky-200/90 ring-sky-400/25", off: "text-sky-300/35" },
+  couple: { label: "Two of us", Icon: Heart, on: "bg-rose-400/10 text-rose-200/90 ring-rose-400/25", off: "text-rose-300/35" },
+  friends: { label: "Friends", Icon: Users, on: "bg-amber-400/10 text-amber-200/90 ring-amber-400/25", off: "text-amber-300/35" },
+  family: { label: "Family", Icon: House, on: "bg-emerald-400/10 text-emerald-200/90 ring-emerald-400/25", off: "text-emerald-300/35" },
+  kids: { label: "Kids too", Icon: Baby, on: "bg-violet-400/10 text-violet-200/90 ring-violet-400/25", off: "text-violet-300/35" },
+};
+
+/** Each carries who is watching: "kids are up" with the audience left on "just me" contradicts itself. */
+const SUGGESTIONS: readonly Suggestion[] = [
   { said: "Long day. I just want to switch off.", company: "solo" },
   { said: "Rough week. I need to feel something.", company: "solo" },
   { said: "Good mood, got the whole evening.", company: "solo" },
@@ -195,8 +181,8 @@ const SUGGESTIONS: readonly { said: string; company: Company | null }[] = [
   { said: "The one nobody talks about any more.", company: null },
 ];
 
-/** A reel turning. A generic spinner says "loading"; this says what it is loading. */
-function Reel({ size = 16 }: { size?: number }) {
+/** A reel turning: it says what is loading, not just that something is. */
+function Reel({ size }: { size: number }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -214,10 +200,8 @@ function Reel({ size = 16 }: { size?: number }) {
 }
 
 const ROTATE_MS = 4000;
-/** Matches the opacity transition below, so the swap lands while the text is invisible. */
-const FADE_MS = 400;
 
-/** Fisher-Yates. A fresh order every visit, so the first thing you read is not always the same. */
+/** Fisher-Yates, so the first suggestion you read is not always the same one. */
 const shuffled = <T,>(items: readonly T[]): readonly T[] => {
   const out = [...items];
   for (let i = out.length - 1; i > 0; i -= 1) {
@@ -227,42 +211,19 @@ const shuffled = <T,>(items: readonly T[]): readonly T[] => {
   return out;
 };
 
-function Rotating({
-  onPick,
-}: {
-  onPick: (suggestion: { said: string; company: Company | null }) => void;
-}) {
-  /**
-   * Null until the browser takes over. The server cannot pick the same random order the client
-   * would, so it renders nothing and the first suggestion fades in already shuffled — which is
-   * also why there is no flash of whichever one happens to be first in the array.
-   */
-  const [order, setOrder] = useState<readonly { said: string; company: Company | null }[] | null>(
-    null,
-  );
+function Rotating({ onPick }: { onPick: (suggestion: Suggestion) => void }) {
+  // shuffled after mount: the server cannot draw the same order the client would
+  const [order, setOrder] = useState<readonly Suggestion[]>([]);
   const [index, setIndex] = useState(0);
-  const [visible, setVisible] = useState(false);
 
+  useEffect(() => setOrder(shuffled(SUGGESTIONS)), []);
   useEffect(() => {
-    setOrder(shuffled(SUGGESTIONS));
-    setVisible(true);
-  }, []);
+    if (order.length === 0) return;
+    const timer = setInterval(() => setIndex((current) => (current + 1) % order.length), ROTATE_MS);
+    return () => clearInterval(timer);
+  }, [order]);
 
-  useEffect(() => {
-    if (order === null) return;
-    const fade = setTimeout(() => setVisible(false), ROTATE_MS - FADE_MS);
-    const swap = setTimeout(() => {
-      setIndex((current) => (current + 1) % order.length);
-      setVisible(true);
-    }, ROTATE_MS);
-    return () => {
-      clearTimeout(fade);
-      clearTimeout(swap);
-    };
-  }, [index, order]);
-
-  const current = order?.[index];
-
+  const current = order[index];
   return (
     <button
       type="button"
@@ -271,17 +232,13 @@ function Rotating({
       aria-label={current === undefined ? "Suggestions" : `Use this suggestion: ${current.said}`}
       className="flex h-9 items-center text-lg text-ink underline decoration-edge underline-offset-[7px] transition-colors hover:decoration-marquee sm:text-2xl"
     >
-      <span
-        className={`transition-opacity duration-400 motion-reduce:transition-none ${
-          visible ? "opacity-100" : "opacity-0"
-        }`}
-      >
+      {/* keyed on the text, so each suggestion remounts and fades in on its own */}
+      <span key={current?.said} className="animate-[fade-in_400ms_ease-out] motion-reduce:animate-none">
         &ldquo;{current?.said ?? "\u00a0"}&rdquo;
       </span>
     </button>
   );
 }
-
 
 export function Ask({
   said,
@@ -298,10 +255,11 @@ export function Ask({
   onCompany: (value: Company | null) => void;
   onSubmit: () => void;
 }) {
-  const pick = (suggestion: { said: string; company: Company | null }) => {
+  const pick = (suggestion: Suggestion) => {
     onSaid(suggestion.said);
     onCompany(suggestion.company);
   };
+
 
   return (
     <section className="mx-auto flex w-full max-w-3xl flex-col items-center">
@@ -333,7 +291,7 @@ export function Ask({
           value={said}
           onChange={(event) => onSaid(event.target.value.slice(0, SAID_LIMIT))}
           onKeyDown={(event) => {
-            /** The button is disabled while a read is in flight; the keyboard must be too. */
+            // the button is disabled while a read is in flight; the keyboard must be too
             if (event.key === "Enter" && !pending) onSubmit();
           }}
           placeholder="Tell it how the day went…"
@@ -343,7 +301,7 @@ export function Ask({
         <button
           type="button"
           onClick={onSubmit}
-          disabled={pending}
+          disabled={pending || said.trim() === ""}
           aria-label={pending ? "Looking" : "Find something to watch"}
           className="flex size-10 shrink-0 items-center justify-center rounded-full bg-marquee text-screen transition-opacity hover:opacity-90 disabled:opacity-70"
         >
@@ -352,25 +310,26 @@ export function Ask({
       </div>
 
       <div className="flex flex-wrap justify-center gap-1.5 pt-4">
-        {AUDIENCE.map(({ id, label, Icon, on, off }) => (
-          <button
-            key={id}
-            type="button"
-            /** Tapping the selected one clears it, and nothing selected means anyone. */
-            onClick={() => onCompany(company === id ? null : id)}
-            aria-pressed={company === id}
-            className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs ring-1 transition-colors ${
-              company === id
-                ? `${on} font-medium`
-                : `${off} ring-transparent hover:bg-screen-raised hover:ring-edge`
-            }`}
-          >
-            <Icon size={14} aria-hidden />
-            <span className={company === id ? "" : "text-ink-dim"}>{label}</span>
-          </button>
-        ))}
+        {COMPANY.map((id) => {
+          const { label, Icon, on, off } = AUDIENCE[id];
+          const selected = company === id;
+          return (
+            <button
+              key={id}
+              type="button"
+              // tapping the selected one clears it; nothing selected means anyone
+              onClick={() => onCompany(selected ? null : id)}
+              aria-pressed={selected}
+              className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs ring-1 transition-colors ${
+                selected ? `${on} font-medium` : `${off} ring-transparent hover:bg-screen-raised hover:ring-edge`
+              }`}
+            >
+              <Icon size={14} aria-hidden />
+              <span className={selected ? "" : "text-ink-dim"}>{label}</span>
+            </button>
+          );
+        })}
       </div>
-
     </section>
   );
 }
