@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mark from "../../public/assets/moviebox-mark.png";
+import mark from "../../public/assets/moviebox.png";
 
 /**
  * A box built from strips of film. It came in as a black-on-transparent PNG and lives in
