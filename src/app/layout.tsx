@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, Bebas_Neue } from "next/font/google";
+import { Footer } from "@/components/Footer";
+import { SITE } from "@/core/Site";
 import "./globals.css";
 
 /**
@@ -16,15 +18,24 @@ const bebas = Bebas_Neue({
   display: "swap",
 });
 
+const DESCRIPTION = "Say how the day went. Jev reads it; the box is ranked for it.";
+
 export const metadata: Metadata = {
+  metadataBase: SITE,
   title: "Movie Box",
-  description: "Say how the day went. Jev reads it; the box is ranked for it.",
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: { title: "Movie Box", description: DESCRIPTION, url: "/", siteName: "Movie Box", type: "website" },
+  twitter: { card: "summary", title: "Movie Box", description: DESCRIPTION, creator: "@phureewat29" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${archivo.variable} ${bebas.variable} h-full antialiased`}>
-      <body className="min-h-full bg-screen font-sans text-ink">{children}</body>
+      <body className="flex min-h-full flex-col bg-screen font-sans text-ink">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
