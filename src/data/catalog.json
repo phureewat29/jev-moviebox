@@ -278,7 +278,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGU4YzhhMTAtNjg1MC00NzY2LTg0NGQtOWJmNGQwNzgyOGE0XkEyXkFqcGc@",
   "imdbRating": 8.9,
-  "imdbVotes": 35920
+  "imdbVotes": 35920,
+  "studio": "Netflix"
  },
  {
   "id": "tt0110912",
@@ -3644,7 +3645,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTY4MDgwOTI3M15BMl5BanBnXkFtZTgwNjYxMjU3NjE@",
   "imdbRating": 8.3,
-  "imdbVotes": 21234
+  "imdbVotes": 21234,
+  "studio": "Netflix"
  },
  {
   "id": "tt0033467",
@@ -5482,7 +5484,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjAwMjU5NTAzOF5BMl5BanBnXkFtZTgwMjQwODQxMDI@",
   "imdbRating": 8.2,
-  "imdbVotes": 39610
+  "imdbVotes": 39610,
+  "studio": "Netflix"
  },
  {
   "id": "tt15167890",
@@ -8256,7 +8259,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWU5OGMxYjktMWY5Ny00NDJhLTgwMDktNjVmMTExZGIyODljXkEyXkFqcGc@",
   "imdbRating": 8.1,
-  "imdbVotes": 68778
+  "imdbVotes": 68778,
+  "studio": "Netflix"
  },
  {
   "id": "tt14152756",
@@ -8285,7 +8289,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOWUzZDNjZTEtZDM1Mi00ODVkLWI4Y2UtYjAwZGVlM2YwNTg4XkEyXkFqcGc@",
   "imdbRating": 8.1,
-  "imdbVotes": 35046
+  "imdbVotes": 35046,
+  "studio": "Netflix"
  },
  {
   "id": "tt8637504",
@@ -8313,7 +8318,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWI3NmE0YWItNzg0Mi00NDcwLWFjNzAtNDM3MzZjMDcwNzMyXkEyXkFqcGc@",
   "imdbRating": 8.1,
-  "imdbVotes": 6394
+  "imdbVotes": 6394,
+  "studio": "Netflix"
  },
  {
   "id": "tt10851618",
@@ -8342,7 +8348,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmRhMWJlNTUtYWJlMS00NTc3LWE0NjktZjFjZjM5NDNhYTBjXkEyXkFqcGc@",
   "imdbRating": 8.1,
-  "imdbVotes": 1888
+  "imdbVotes": 1888,
+  "studio": "Netflix"
  },
  {
   "id": "tt0758758",
@@ -10794,7 +10801,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNGE4M2MxOWUtYmY2ZC00ZWYxLWIxZTAtNTNjYTZmYmUyOGY2XkEyXkFqcGc@",
   "imdbRating": 7.9,
-  "imdbVotes": 57237
+  "imdbVotes": 57237,
+  "studio": "Netflix"
  },
  {
   "id": "tt3500528",
@@ -12128,7 +12136,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTY2YThkNmQtOWJhYy00ZDc3LWEzOGEtMmQwNzM0YjFmZWIyXkEyXkFqcGc@",
   "imdbRating": 7.8,
-  "imdbVotes": 468945
+  "imdbVotes": 468945,
+  "studio": "Netflix"
  },
  {
   "id": "tt16277242",
@@ -12158,7 +12167,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODM1MWQ1MWUtMDM1ZS00ZjI3LTg4ZTMtNmI1ZDAwNmE4MTNiXkEyXkFqcGc@",
   "imdbRating": 7.8,
-  "imdbVotes": 170929
+  "imdbVotes": 170929,
+  "studio": "Netflix"
  },
  {
   "id": "tt1016150",
@@ -12191,7 +12201,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOWJiYWMyYTktZThhOS00ZjgxLWE0YTQtZDMyNTQxMjMyYjI2XkEyXkFqcGc@",
   "imdbRating": 7.8,
-  "imdbVotes": 310448
+  "imdbVotes": 310448,
+  "studio": "Netflix"
  },
  {
   "id": "tt21819228",
@@ -12219,7 +12230,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjZiMjQ4YzYtMWNhZi00NzBmLWE1YzEtMzQxZTRlMWZjNGU3XkEyXkFqcGc@",
   "imdbRating": 7.8,
-  "imdbVotes": 18204
+  "imdbVotes": 18204,
+  "studio": "Netflix"
  },
  {
   "id": "tt6168298",
@@ -13623,7 +13635,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjY2ZGFlOTgtOGQ1MS00YWJhLWIyZjQtNWNmNTQ0YTk0MTZjXkEyXkFqcGc@",
   "imdbRating": 7.7,
-  "imdbVotes": 204055
+  "imdbVotes": 204055,
+  "studio": "Netflix"
  },
  {
   "id": "tt1365050",
@@ -13653,7 +13666,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTYwMzMzMDI0NF5BMl5BanBnXkFtZTgwNDQ3NjI3NjE@",
   "imdbRating": 7.7,
-  "imdbVotes": 90320
+  "imdbVotes": 90320,
+  "studio": "Netflix"
  },
  {
   "id": "tt8923484",
@@ -13682,7 +13696,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYmI4ODAyMDctODU4My00MWFmLThiN2MtYTAwNWFiMzlhY2M5XkEyXkFqcGc@",
   "imdbRating": 7.7,
-  "imdbVotes": 8562
+  "imdbVotes": 8562,
+  "studio": "Netflix"
  },
  {
   "id": "tt6788942",
@@ -15152,7 +15167,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2NlYjdkOGEtMGYyOC00MzM5LWE5MzYtYzUyZjE3NTM5NGIyXkEyXkFqcGc@",
   "imdbRating": 7.6,
-  "imdbVotes": 145921
+  "imdbVotes": 145921,
+  "studio": "Netflix"
  },
  {
   "id": "tt7979580",
@@ -15184,7 +15200,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzAyOWNiMjAtNWUzMi00ZDk1LWE5NzYtNDUzMWE1Y2M0NDM2XkEyXkFqcGc@",
   "imdbRating": 7.6,
-  "imdbVotes": 140595
+  "imdbVotes": 140595,
+  "studio": "Netflix"
  },
  {
   "id": "tt1488589",
@@ -15217,7 +15234,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2I3NDQzZmQtODJmOS00M2QyLWIxZTItYTA1ZTYzOWJlM2ZmXkEyXkFqcGc@",
   "imdbRating": 7.6,
-  "imdbVotes": 142865
+  "imdbVotes": 142865,
+  "studio": "Netflix"
  },
  {
   "id": "tt11464826",
@@ -15246,7 +15264,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNGQyY2E1M2EtZTkzNy00YjYyLWFjMGQtNTI1OGE4Yjc4MTZiXkEyXkFqcGc@",
   "imdbRating": 7.6,
-  "imdbVotes": 93757
+  "imdbVotes": 93757,
+  "studio": "Netflix"
  },
  {
   "id": "tt11905462",
@@ -15276,7 +15295,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODg3MjFlOGMtMjI0Yi00ZWM1LTk4YzUtMzMwYzExMzE5YmMwXkEyXkFqcGc@",
   "imdbRating": 7.6,
-  "imdbVotes": 13126
+  "imdbVotes": 13126,
+  "studio": "Netflix"
  },
  {
   "id": "tt10147546",
@@ -15305,7 +15325,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDEzODFjZDUtYjFhMy00OTdiLThiMzctYzg5Yjc4ZTVkMmQ3XkEyXkFqcGc@",
   "imdbRating": 7.6,
-  "imdbVotes": 8308
+  "imdbVotes": 8308,
+  "studio": "Netflix"
  },
  {
   "id": "tt4284010",
@@ -15336,7 +15357,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGNmNTdiM2YtMDkyZC00OGFhLTgwNTktMDczODFjM2Y0MDVjXkEyXkFqcGc@",
   "imdbRating": 7.6,
-  "imdbVotes": 14993
+  "imdbVotes": 14993,
+  "studio": "Netflix"
  },
  {
   "id": "tt7212754",
@@ -15366,7 +15388,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYmI3ZDU2ODQtODBjYy00NDZiLTg4ZWEtMjAzZDI1OTY1OGY4XkEyXkFqcGc@",
   "imdbRating": 7.6,
-  "imdbVotes": 45011
+  "imdbVotes": 45011,
+  "studio": "Netflix"
  },
  {
   "id": "tt0345549",
@@ -16770,7 +16793,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGYyNGJmNzctYzZjZi00MzUzLTg3YTYtYjk0OTNjMzA1OTE4XkEyXkFqcGc@",
   "imdbRating": 7.5,
-  "imdbVotes": 125341
+  "imdbVotes": 125341,
+  "studio": "Netflix"
  },
  {
   "id": "tt19500164",
@@ -16802,7 +16826,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjIyMmY0MWYtZGRkMC00MjhhLTgwNGUtYWVjZmQ4YjhjZWRmXkEyXkFqcGc@",
   "imdbRating": 7.5,
-  "imdbVotes": 59981
+  "imdbVotes": 59981,
+  "studio": "Netflix"
  },
  {
   "id": "tt9806192",
@@ -16834,7 +16859,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzI5ZmNmMmUtYTc2NS00OTNjLThiNGQtYjRjMDJjYzk3ZWQyXkEyXkFqcGc@",
   "imdbRating": 7.5,
-  "imdbVotes": 37311
+  "imdbVotes": 37311,
+  "studio": "Netflix"
  },
  {
   "id": "tt6073176",
@@ -16865,7 +16891,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjVlNzYxMmUtNzY0OS00OGQzLTk5ODctN2UyNTdmZTEwYTQ5XkEyXkFqcGc@",
   "imdbRating": 7.5,
-  "imdbVotes": 8559
+  "imdbVotes": 8559,
+  "studio": "Netflix"
  },
  {
   "id": "tt27726927",
@@ -16896,7 +16923,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOWIzMTFiNWMtMzZmOC00YWJlLTgwOGItMTcwMzFkNDhmMTAxXkEyXkFqcGc@",
   "imdbRating": 7.5,
-  "imdbVotes": 10247
+  "imdbVotes": 10247,
+  "studio": "Netflix"
  },
  {
   "id": "tt1869682",
@@ -18207,7 +18235,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzYzNDYxMTQtMTU4OS00MTdlLThhMTQtZjI4NGJmMTZmNmRiXkEyXkFqcGc@",
   "imdbRating": 7.4,
-  "imdbVotes": 308622
+  "imdbVotes": 308622,
+  "studio": "Netflix"
  },
  {
   "id": "tt2396589",
@@ -18236,7 +18265,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMGJmNWIzYjMtMzg0ZC00YmU1LThmZDctYWM4MzBlMWQ1OTg3XkEyXkFqcGc@",
   "imdbRating": 7.4,
-  "imdbVotes": 55422
+  "imdbVotes": 55422,
+  "studio": "Netflix"
  },
  {
   "id": "tt9351980",
@@ -18265,7 +18295,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2I1ZWJmNDUtMzc5OC00YzVmLTliZWItNTczZDQ0YTNiOTZjXkEyXkFqcGc@",
   "imdbRating": 7.4,
-  "imdbVotes": 24863
+  "imdbVotes": 24863,
+  "studio": "Netflix"
  },
  {
   "id": "tt11388580",
@@ -18295,7 +18326,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWY3ODNlZjEtZWU4Zi00YzBhLWE3YWMtMmMyMzZkZmYxOTMyXkEyXkFqcGc@",
   "imdbRating": 7.4,
-  "imdbVotes": 26475
+  "imdbVotes": 26475,
+  "studio": "Netflix"
  },
  {
   "id": "tt9358052",
@@ -18323,7 +18355,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzZmZjhiMzItZDk5NC00Y2U3LTkzOGQtZjJjMWM2MmViZDBiXkEyXkFqcGc@",
   "imdbRating": 7.4,
-  "imdbVotes": 10577
+  "imdbVotes": 10577,
+  "studio": "Netflix"
  },
  {
   "id": "tt15340724",
@@ -18352,7 +18385,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjA4NzYxNWItZWJmNi00ODE2LTgwZDgtMzBkN2MzOGZhNDEzXkEyXkFqcGc@",
   "imdbRating": 7.4,
-  "imdbVotes": 13992
+  "imdbVotes": 13992,
+  "studio": "Netflix"
  },
  {
   "id": "tt0332452",
@@ -19691,7 +19725,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzA4ODRlMjktMDEyNS00NTg5LWEwYTAtNTExODI1ZDE2ZmYwXkEyXkFqcGc@",
   "imdbRating": 7.3,
-  "imdbVotes": 160921
+  "imdbVotes": 160921,
+  "studio": "Netflix"
  },
  {
   "id": "tt21059520",
@@ -19721,7 +19756,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjcyMjhkNmQtNzM5OS00NGE3LWE0OTktMDBiZDIzNzA1MzUxXkEyXkFqcGc@",
   "imdbRating": 7.3,
-  "imdbVotes": 24032
+  "imdbVotes": 24032,
+  "studio": "Netflix"
  },
  {
   "id": "tt7472352",
@@ -19750,7 +19786,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMWFkOGUwNjktNjQxNS00YTQ5LWE2NGQtN2QzODNiMWIyNzU1XkEyXkFqcGc@",
   "imdbRating": 7.3,
-  "imdbVotes": 5774
+  "imdbVotes": 5774,
+  "studio": "Netflix"
  },
  {
   "id": "tt12680684",
@@ -19780,7 +19817,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNmNlMDAxZDktY2Y5OS00ZmZmLWI0YzktMTRjNGU5ODQzOGE0XkEyXkFqcGc@",
   "imdbRating": 7.3,
-  "imdbVotes": 55104
+  "imdbVotes": 55104,
+  "studio": "Netflix"
  },
  {
   "id": "tt0066026",
@@ -20971,7 +21009,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTYyNGU3MDctZWU1NS00N2Y5LWE2MDUtOWFlMmVmM2IzNDQ5XkEyXkFqcGc@",
   "imdbRating": 7.2,
-  "imdbVotes": 66957
+  "imdbVotes": 66957,
+  "studio": "Netflix"
  },
  {
   "id": "tt6412452",
@@ -21002,7 +21041,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTc0MzZjYTktYzBlZC00MmViLTgyNDYtNjljNTcxMzdjODRkXkEyXkFqcGc@",
   "imdbRating": 7.2,
-  "imdbVotes": 177474
+  "imdbVotes": 177474,
+  "studio": "Netflix"
  },
  {
   "id": "tt5536610",
@@ -21031,7 +21071,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDBlOWZmZDItYjNlZi00ZDk3LTgyZGQtYzJhNjJhZDk3MTcyXkEyXkFqcGc@",
   "imdbRating": 7.2,
-  "imdbVotes": 23186
+  "imdbVotes": 23186,
+  "studio": "Netflix"
  },
  {
   "id": "tt4882376",
@@ -21064,7 +21105,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTgzOTQ1NDUwOF5BMl5BanBnXkFtZTgwNjAwNTkwMzI@",
   "imdbRating": 7.2,
-  "imdbVotes": 21999
+  "imdbVotes": 21999,
+  "studio": "Netflix"
  },
  {
   "id": "tt5562070",
@@ -21097,7 +21139,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMWM1YmJmYWMtMDM1Ni00ZGM2LTkxODYtOTU1ZjA4MTFkMDM1XkEyXkFqcGc@",
   "imdbRating": 7.2,
-  "imdbVotes": 36843
+  "imdbVotes": 36843,
+  "studio": "Netflix"
  },
  {
   "id": "tt15654328",
@@ -21127,7 +21170,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDk5ODNjNzMtYzI5Yy00NmI3LWIwYzctMTFjZjcwN2I2Yzk2XkEyXkFqcGc@",
   "imdbRating": 7.2,
-  "imdbVotes": 73373
+  "imdbVotes": 73373,
+  "studio": "Netflix"
  },
  {
   "id": "tt7978758",
@@ -21158,7 +21202,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjhjMDc0MGItZjMzMC00ZGIxLWIwODYtZWUwNjllOGI3NzhlXkEyXkFqcGc@",
   "imdbRating": 7.2,
-  "imdbVotes": 12859
+  "imdbVotes": 12859,
+  "studio": "Netflix"
  },
  {
   "id": "tt9412098",
@@ -21188,7 +21233,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjQ2NzE1MjYxMV5BMl5BanBnXkFtZTgwMjM3MDQxNzM@",
   "imdbRating": 7.2,
-  "imdbVotes": 54460
+  "imdbVotes": 54460,
+  "studio": "Netflix"
  },
  {
   "id": "tt12987894",
@@ -21217,7 +21263,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDM3OTlhM2EtNjQ3Ni00MmM1LTgzZDgtMGYxNGM4NjdmNDgxXkEyXkFqcGc@",
   "imdbRating": 7.2,
-  "imdbVotes": 37470
+  "imdbVotes": 37470,
+  "studio": "Netflix"
  },
  {
   "id": "tt21816824",
@@ -21246,7 +21293,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmQwNWQ5NDctMjM0Ny00Mzk4LWIxN2ItMmUxNzYwZjlkNTQ1XkEyXkFqcGc@",
   "imdbRating": 7.2,
-  "imdbVotes": 3943
+  "imdbVotes": 3943,
+  "studio": "Netflix"
  },
  {
   "id": "tt0368909",
@@ -23052,7 +23100,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOWUyNDEyMDgtM2IwNy00MTllLWJiMzUtODQ2ODcxZjk4N2ExXkEyXkFqcGc@",
   "imdbRating": 7.1,
-  "imdbVotes": 67626
+  "imdbVotes": 67626,
+  "studio": "Netflix"
  },
  {
   "id": "tt11286314",
@@ -23083,7 +23132,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjhhNWFjNzctYTJjOS00MDc0LThiNjItZmM0ZDVmMWViY2UzXkEyXkFqcGc@",
   "imdbRating": 7.1,
-  "imdbVotes": 669471
+  "imdbVotes": 669471,
+  "studio": "Netflix"
  },
  {
   "id": "tt5302918",
@@ -23114,7 +23164,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjBmNGY5YWUtNzg0Ny00YTQ2LWIwNjctOTMzOGI3Y2E1YzFiXkEyXkFqcGc@",
   "imdbRating": 7.1,
-  "imdbVotes": 43322
+  "imdbVotes": 43322,
+  "studio": "Netflix"
  },
  {
   "id": "tt7395114",
@@ -23144,7 +23195,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYmExOWUxZDMtZmM1ZS00NjQ4LWEwODAtY2E0N2Y1Y2MzZTkwXkEyXkFqcGc@",
   "imdbRating": 7.1,
-  "imdbVotes": 167659
+  "imdbVotes": 167659,
+  "studio": "Netflix"
  },
  {
   "id": "tt11151792",
@@ -23173,7 +23225,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzBlNTdjZTctZTEzZi00MjY0LTgyNzMtNTk2ODI0Mjc3ZDQ5XkEyXkFqcGc@",
   "imdbRating": 7.1,
-  "imdbVotes": 1702
+  "imdbVotes": 1702,
+  "studio": "Netflix"
  },
  {
   "id": "tt14992922",
@@ -23202,7 +23255,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTQ5YzM2YzQtNGY0ZS00ZjUyLThmN2YtYzlmNTEzMmQ0YzgyXkEyXkFqcGc@",
   "imdbRating": 7.1,
-  "imdbVotes": 77120
+  "imdbVotes": 77120,
+  "studio": "Netflix"
  },
  {
   "id": "tt9495224",
@@ -23233,7 +23287,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjM5MzgzMjM3OF5BMl5BanBnXkFtZTgwMzQ2MzQwNzM@",
   "imdbRating": 7.1,
-  "imdbVotes": 142846
+  "imdbVotes": 142846,
+  "studio": "Netflix"
  },
  {
   "id": "tt10530176",
@@ -23263,7 +23318,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzZlOGEyZTMtYmIxYS00NmIxLWIwNjYtMzY3Yjg2OThjODU2XkEyXkFqcGc@",
   "imdbRating": 7.1,
-  "imdbVotes": 51687
+  "imdbVotes": 51687,
+  "studio": "Netflix"
  },
  {
   "id": "tt14168118",
@@ -23297,7 +23353,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDQ1MTljNGQtMzg3Mi00YWUxLTllMDEtYzE0ZWNmN2NmZWQwXkEyXkFqcGc@",
   "imdbRating": 7.1,
-  "imdbVotes": 10051
+  "imdbVotes": 10051,
+  "studio": "Netflix"
  },
  {
   "id": "tt0440803",
@@ -24450,7 +24507,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzY0Njg2OWMtYzA2My00NmJjLTk1ZDgtZDZhNTA4M2UzNDkwXkEyXkFqcGc@",
   "imdbRating": 7,
-  "imdbVotes": 58903
+  "imdbVotes": 58903,
+  "studio": "Netflix"
  },
  {
   "id": "tt3846674",
@@ -24480,7 +24538,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjQ3NjM5MTAzN15BMl5BanBnXkFtZTgwODQzMDAwNjM@",
   "imdbRating": 7,
-  "imdbVotes": 138522
+  "imdbVotes": 138522,
+  "studio": "Netflix"
  },
  {
   "id": "tt2990140",
@@ -24513,7 +24572,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTA3NjU3OTM2MV5BMl5BanBnXkFtZTgwNjQ2MzE1NjM@",
   "imdbRating": 7,
-  "imdbVotes": 93790
+  "imdbVotes": 93790,
+  "studio": "Netflix"
  },
  {
   "id": "tt9288046",
@@ -24544,7 +24604,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDhjZmY1ZDEtNGQ1ZC00ZDgwLWI2YjEtMWFiOGY3M2Q2YWViXkEyXkFqcGc@",
   "imdbRating": 7,
-  "imdbVotes": 64140
+  "imdbVotes": 64140,
+  "studio": "Netflix"
  },
  {
   "id": "tt4736550",
@@ -24574,7 +24635,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDhmODFlMTQtYzU0YS00YTg4LWEyMTctZmRkZWYxMzgxMDFhXkEyXkFqcGc@",
   "imdbRating": 7,
-  "imdbVotes": 25928
+  "imdbVotes": 25928,
+  "studio": "Netflix"
  },
  {
   "id": "tt8228288",
@@ -24606,7 +24668,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjUyZjNmYmMtNjA1My00ZWMyLTliZGQtODgzZjIxM2Y4NGI1XkEyXkFqcGc@",
   "imdbRating": 7,
-  "imdbVotes": 321353
+  "imdbVotes": 321353,
+  "studio": "Netflix"
  },
  {
   "id": "tt15748830",
@@ -24636,7 +24699,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMGIzNTI0ODktMWE1NS00MTdlLWJlZjYtN2ExNTFlMTBhOWEwXkEyXkFqcGc@",
   "imdbRating": 7,
-  "imdbVotes": 16208
+  "imdbVotes": 16208,
+  "studio": "Netflix"
  },
  {
   "id": "tt0929425",
@@ -25726,7 +25790,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzgwOGYwYzktNTBiMi00ZjlkLTliNDEtZDI1ZWFlZWE0NWJiXkEyXkFqcGc@",
   "imdbRating": 6.9,
-  "imdbVotes": 67304
+  "imdbVotes": 67304,
+  "studio": "Netflix"
  },
  {
   "id": "tt9683478",
@@ -25755,7 +25820,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2Y0NWUzNmEtMDM4My00ODQyLTg1NGItOGViYjg0MzNlYTQwXkEyXkFqcGc@",
   "imdbRating": 6.9,
-  "imdbVotes": 46874
+  "imdbVotes": 46874,
+  "studio": "Netflix"
  },
  {
   "id": "tt9471678",
@@ -25787,7 +25853,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzlhM2QwZDktNTdhOS00NGFjLTkxMzQtZmVmZDFlYzgxZjUxXkEyXkFqcGc@",
   "imdbRating": 6.9,
-  "imdbVotes": 7019
+  "imdbVotes": 7019,
+  "studio": "Netflix"
  },
  {
   "id": "tt11027830",
@@ -25817,7 +25884,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDg0NGU2ZjgtM2M0YS00NWM2LTkwNjAtYWY5YTY0N2IzYWUwXkEyXkFqcGc@",
   "imdbRating": 6.9,
-  "imdbVotes": 32650
+  "imdbVotes": 32650,
+  "studio": "Netflix"
  },
  {
   "id": "tt11651796",
@@ -25847,7 +25915,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNGM2ZWM0NTgtZTAwMi00NzNmLTgwZmEtMzEyZTgxNTYwZDFlXkEyXkFqcGc@",
   "imdbRating": 6.9,
-  "imdbVotes": 15741
+  "imdbVotes": 15741,
+  "studio": "Netflix"
  },
  {
   "id": "tt13109952",
@@ -25880,7 +25949,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzE0MzFkOWUtMDFhNC00YjQxLTk3NDQtNzkzOTU1NmRhZTE0XkEyXkFqcGc@",
   "imdbRating": 6.9,
-  "imdbVotes": 32134
+  "imdbVotes": 32134,
+  "studio": "Netflix"
  },
  {
   "id": "tt13412252",
@@ -25912,7 +25982,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzc5ZDMzNzItODY2MC00MzBiLWJjODgtNmVmMGM5ZWYyYmM3XkEyXkFqcGc@",
   "imdbRating": 6.9,
-  "imdbVotes": 15425
+  "imdbVotes": 15425,
+  "studio": "Netflix"
  },
  {
   "id": "tt18357588",
@@ -26766,7 +26837,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzgyMzA2NDEtZWUxNy00MDNmLTllMDYtNzZmNTU5ZWVmMzhlXkEyXkFqcGc@",
   "imdbRating": 6.8,
-  "imdbVotes": 202835
+  "imdbVotes": 202835,
+  "studio": "Netflix"
  },
  {
   "id": "tt10618286",
@@ -26797,7 +26869,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTA0NTI1ODYtZDVkMy00ZDU5LThiODgtYjEzYmNlZmUyYTg0XkEyXkFqcGc@",
   "imdbRating": 6.8,
-  "imdbVotes": 103814
+  "imdbVotes": 103814,
+  "studio": "Netflix"
  },
  {
   "id": "tt20215968",
@@ -26827,7 +26900,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzFhMDZmYTctOTNmZi00MjVjLThkNGItMTJhOTI2NDkzMTFiXkEyXkFqcGc@",
   "imdbRating": 6.8,
-  "imdbVotes": 128641
+  "imdbVotes": 128641,
+  "studio": "Netflix"
  },
  {
   "id": "tt11301886",
@@ -26857,7 +26931,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTE4ZDE5ZTktZWZkMC00MGY4LWFkZDUtZTc5YWU3NzM2YmM3XkEyXkFqcGc@",
   "imdbRating": 6.8,
-  "imdbVotes": 99463
+  "imdbVotes": 99463,
+  "studio": "Netflix"
  },
  {
   "id": "tt10627584",
@@ -26888,7 +26963,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMWM2YzA3YmUtN2EwMi00OTMxLWJmMDUtZGE1MWVkYzkzZWY0XkEyXkFqcGc@",
   "imdbRating": 6.8,
-  "imdbVotes": 15748
+  "imdbVotes": 15748,
+  "studio": "Netflix"
  },
  {
   "id": "tt8936646",
@@ -26925,7 +27001,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDBhMmI3OWYtZTA2Ny00Y2RjLTliMWQtYWY5MGIwN2RlZGFjXkEyXkFqcGc@",
   "imdbRating": 6.8,
-  "imdbVotes": 287244
+  "imdbVotes": 287244,
+  "studio": "Netflix"
  },
  {
   "id": "tt14855468",
@@ -26955,7 +27032,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWRkZjQwNDctOWY2Yy00ZTczLTg2ZTMtMDBlYTVhNGE1OGYzXkEyXkFqcGc@",
   "imdbRating": 6.8,
-  "imdbVotes": 18006
+  "imdbVotes": 18006,
+  "studio": "Netflix"
  },
  {
   "id": "tt28865980",
@@ -26985,7 +27063,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTU5MTY2ZWEtZWMzYy00NmIyLWFlNTQtMmQ3MjUwZWVhNGRlXkEyXkFqcGc@",
   "imdbRating": 6.8,
-  "imdbVotes": 4405
+  "imdbVotes": 4405,
+  "studio": "Netflix"
  },
  {
   "id": "tt12792418",
@@ -27015,7 +27094,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWFkN2RmMjQtZDc2Yy00MDgwLTk1ZmItYjFiNGRiN2I2MWE1XkEyXkFqcGc@",
   "imdbRating": 6.8,
-  "imdbVotes": 11048
+  "imdbVotes": 11048,
+  "studio": "Netflix"
  },
  {
   "id": "tt15445056",
@@ -27045,7 +27125,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWI5YjU4M2MtMzJiYS00NWNkLWE0YjgtZmFlOTVkZTcxNjA1XkEyXkFqcGc@",
   "imdbRating": 6.8,
-  "imdbVotes": 26096
+  "imdbVotes": 26096,
+  "studio": "Netflix"
  },
  {
   "id": "tt1588895",
@@ -27821,7 +27902,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGQ2OTNiNzMtMjA5Ny00Zjg4LWE1NTMtZDJlMWEyMDhhYmU4XkEyXkFqcGc@",
   "imdbRating": 6.7,
-  "imdbVotes": 80018
+  "imdbVotes": 80018,
+  "studio": "Netflix"
  },
  {
   "id": "tt13651794",
@@ -27850,7 +27932,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjA0ODViOWUtYzFjYy00ZDZlLWFlMmMtMjU2NzFmNWNlZmFhXkEyXkFqcGc@",
   "imdbRating": 6.7,
-  "imdbVotes": 72412
+  "imdbVotes": 72412,
+  "studio": "Netflix"
  },
  {
   "id": "tt1136617",
@@ -27880,7 +27963,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzU2MTlkMTctNWI3MC00ODUzLTlmYzQtMzZjYjVmMmYwZGU0XkEyXkFqcGc@",
   "imdbRating": 6.7,
-  "imdbVotes": 219122
+  "imdbVotes": 219122,
+  "studio": "Netflix"
  },
  {
   "id": "tt14176542",
@@ -27910,7 +27994,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDgxNjdhZWMtYjNjMi00YTE3LTg1OTItMTU5NmViMDRjNDg5XkEyXkFqcGc@",
   "imdbRating": 6.7,
-  "imdbVotes": 16368
+  "imdbVotes": 16368,
+  "studio": "Netflix"
  },
  {
   "id": "tt24458622",
@@ -27941,7 +28026,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDdhYTY4ZTEtZTlhZS00ZWI1LWFjYzQtMWRkMjIzN2E5NjBjXkEyXkFqcGc@",
   "imdbRating": 6.7,
-  "imdbVotes": 30061
+  "imdbVotes": 30061,
+  "studio": "Netflix"
  },
  {
   "id": "tt5541240",
@@ -27969,7 +28055,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTU1MTQ0NDAyNV5BMl5BanBnXkFtZTgwNjQ4MjE4MjI@",
   "imdbRating": 6.7,
-  "imdbVotes": 57110
+  "imdbVotes": 57110,
+  "studio": "Netflix"
  },
  {
   "id": "tt7556122",
@@ -28003,7 +28090,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzMwNjVjNTEtZDVhOC00NzQzLTg0MGYtMGI1Yzc0Nzg2MjNmXkEyXkFqcGc@",
   "imdbRating": 6.7,
-  "imdbVotes": 208963
+  "imdbVotes": 208963,
+  "studio": "Netflix"
  },
  {
   "id": "tt2463208",
@@ -28033,7 +28121,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNWU1NDJlYWUtYWE1OC00MGVlLTliNzYtMjg4OTk0MWE4MDQ4XkEyXkFqcGc@",
   "imdbRating": 6.7,
-  "imdbVotes": 257238
+  "imdbVotes": 257238,
+  "studio": "Netflix"
  },
  {
   "id": "tt7374948",
@@ -28062,7 +28151,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjUxMDEzMWItN2Y2OS00ZTNmLThhYTEtZDAzYWFiMzQ0MTlkXkEyXkFqcGc@",
   "imdbRating": 6.7,
-  "imdbVotes": 67134
+  "imdbVotes": 67134,
+  "studio": "Netflix"
  },
  {
   "id": "tt4614584",
@@ -28093,7 +28183,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNmQ4NzU3MTktZTYzOC00OWU4LWI2MWUtYWViYjI3MTc0YTRhXkEyXkFqcGc@",
   "imdbRating": 6.7,
-  "imdbVotes": 67081
+  "imdbVotes": 67081,
+  "studio": "Netflix"
  },
  {
   "id": "tt6338498",
@@ -28126,7 +28217,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzMyNzUyNWQtNzU4Ni00ZTkxLWIwMzctODNhOTNlN2QyYTM3XkEyXkFqcGc@",
   "imdbRating": 6.7,
-  "imdbVotes": 23324
+  "imdbVotes": 23324,
+  "studio": "Netflix"
  },
  {
   "id": "tt9701940",
@@ -28156,7 +28248,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWUxNGRjZTgtNTYxNC00YTA4LTkwODktOWEwZDMwNzc4NDkzXkEyXkFqcGc@",
   "imdbRating": 6.7,
-  "imdbVotes": 88622
+  "imdbVotes": 88622,
+  "studio": "Netflix"
  },
  {
   "id": "tt10228168",
@@ -28387,9 +28480,9 @@
   "actors": [
    "Park Hae-il",
    "Byun Yo-han",
-   "Allen Chan"
+   "Ahn Sung-ki"
   ],
-  "plot": "Follow-up to 2014's The Admiral: Roaring Currents, which explores the historic Battle of Hansan Island.",
+  "plot": "In 1592, Admiral Yi Sun-sin and his fleet face off against the might of the invading Japanese navy and its formidable warships. As the Korean forces fall into crisis, the admiral resorts to using his secret weapon, the turtle ship, in order to change the tide of this epic battle at sea.",
   "languages": [
    "Korean",
    "Japanese"
@@ -28399,7 +28492,7 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDVhNTY4OTUtYzYwMi00MzRjLWFhZWYtYWM3NTIwNzk1MTdhXkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 2335
+  "imdbVotes": 2653
  },
  {
   "id": "tt13086266",
@@ -28837,7 +28930,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTc5ZDZjMzMtMDk4MC00N2NlLTg2MjAtOGI5OTcxNzZhMGNlXkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 43177
+  "imdbVotes": 43177,
+  "studio": "Netflix"
  },
  {
   "id": "tt8893974",
@@ -28869,7 +28963,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTc3YjlkMTAtYjc1OC00M2QzLWJhNDItNGMwOTY3ZjA0M2UxXkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 17403
+  "imdbVotes": 17403,
+  "studio": "Netflix"
  },
  {
   "id": "tt10696784",
@@ -28899,7 +28994,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDBjOTQyZTEtZTdhYS00ZTNlLWE3NTgtZGY3YmZlZTdhYjUxXkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 75400
+  "imdbVotes": 75400,
+  "studio": "Netflix"
  },
  {
   "id": "tt30446847",
@@ -28930,7 +29026,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMWRlNDM1NjktZDkyYi00Zjk0LWE5MTQtNWEyNzMwODY1Njc5XkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 34597
+  "imdbVotes": 34597,
+  "studio": "Netflix"
  },
  {
   "id": "tt7133686",
@@ -28963,7 +29060,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTU0MjAwMDkxNV5BMl5BanBnXkFtZTgwMTA4ODIxNjM@",
   "imdbRating": 6.6,
-  "imdbVotes": 20683
+  "imdbVotes": 20683,
+  "studio": "Netflix"
  },
  {
   "id": "tt2737304",
@@ -28993,7 +29091,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjAzMTI1MjMyN15BMl5BanBnXkFtZTgwNzU5MTE2NjM@",
   "imdbRating": 6.6,
-  "imdbVotes": 416211
+  "imdbVotes": 416211,
+  "studio": "Netflix"
  },
  {
   "id": "tt5022702",
@@ -29023,7 +29122,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjQ0YTU4OTQtMTU3Zi00OTdlLTkzN2EtZjlmOTZhNjIwN2VkXkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 165156
+  "imdbVotes": 165156,
+  "studio": "Netflix"
  },
  {
   "id": "tt9701942",
@@ -29052,7 +29152,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzk2ODhhOTMtOGYzYS00NWU4LThjYjQtNTVhYzVjZmIxMTlkXkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 74088
+  "imdbVotes": 74088,
+  "studio": "Netflix"
  },
  {
   "id": "tt14577874",
@@ -29082,7 +29183,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDkxOTZmZTYtYTNmNS00MDk3LWE0MDAtMzY5M2Y5YmU1MmI2XkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 46759
+  "imdbVotes": 46759,
+  "studio": "Netflix"
  },
  {
   "id": "tt16900880",
@@ -29112,7 +29214,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjkyOTBlMmItYTFmNS00ZDZkLTk5OTktODEwZWJhOGQ3OTI0XkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 15838
+  "imdbVotes": 15838,
+  "studio": "Netflix"
  },
  {
   "id": "tt14599938",
@@ -29141,7 +29244,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMWE1MTNlMzQtMjExNy00YmNlLWFhZWItNjhhNzhmMDEwZTFjXkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 3880
+  "imdbVotes": 3880,
+  "studio": "Netflix"
  },
  {
   "id": "tt14152140",
@@ -29171,7 +29275,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOWU5ZmQ1MjctODI4Zi00NTA0LWFjNmYtNDc0MjIxMDI5M2IyXkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 22014
+  "imdbVotes": 22014,
+  "studio": "Netflix"
  },
  {
   "id": "tt12393526",
@@ -29201,7 +29306,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNGMzNGE1YTEtNjg1NS00N2Q3LWJhOWItZDFmOWE2NjU4OGY3XkEyXkFqcGc@",
   "imdbRating": 6.6,
-  "imdbVotes": 16330
+  "imdbVotes": 16330,
+  "studio": "Netflix"
  },
  {
   "id": "tt5442430",
@@ -29764,7 +29870,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjIwN2IxODEtNDhhMi00NDEwLWIwODEtYjIzZDVhZjg0Y2MyXkEyXkFqcGc@",
   "imdbRating": 6.5,
-  "imdbVotes": 56595
+  "imdbVotes": 56595,
+  "studio": "Netflix"
  },
  {
   "id": "tt5535276",
@@ -29795,7 +29902,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2M1MWUyYzctMzk1Zi00M2RkLTkwY2YtMzE4MDhiZGQwZmU5XkEyXkFqcGc@",
   "imdbRating": 6.5,
-  "imdbVotes": 67592
+  "imdbVotes": 67592,
+  "studio": "Netflix"
  },
  {
   "id": "tt14160834",
@@ -29825,7 +29933,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNmU0YTliNzItZmM0MS00YTg4LTg3NzMtN2U3OTAwZGIwNGM1XkEyXkFqcGc@",
   "imdbRating": 6.5,
-  "imdbVotes": 14268
+  "imdbVotes": 14268,
+  "studio": "Netflix"
  },
  {
   "id": "tt1649418",
@@ -29863,7 +29972,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmFhZTNlNzctZGQzZi00MTA3LThiNjMtYWQzNjUzMjNjZjA3XkEyXkFqcGc@",
   "imdbRating": 6.5,
-  "imdbVotes": 274877
+  "imdbVotes": 274877,
+  "studio": "Netflix"
  },
  {
   "id": "tt1488606",
@@ -29896,7 +30006,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODU4MzM2MDAxMl5BMl5BanBnXkFtZTgwNDEzNjM0NzM@",
   "imdbRating": 6.5,
-  "imdbVotes": 157291
+  "imdbVotes": 157291,
+  "studio": "Netflix"
  },
  {
   "id": "tt21382296",
@@ -29926,7 +30037,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTNkMjQzNmQtNzE4ZC00NDlmLTkyYjAtZDZkYTQ5NjBmYThlXkEyXkFqcGc@",
   "imdbRating": 6.5,
-  "imdbVotes": 190718
+  "imdbVotes": 190718,
+  "studio": "Netflix"
  },
  {
   "id": "tt5304992",
@@ -29955,7 +30067,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTk0MDUyMzA1OF5BMl5BanBnXkFtZTgwNzA4NzE1NTM@",
   "imdbRating": 6.5,
-  "imdbVotes": 74721
+  "imdbVotes": 74721,
+  "studio": "Netflix"
  },
  {
   "id": "tt9288748",
@@ -29986,7 +30099,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzAxMGZiNzgtOTZmNS00M2Y4LWJjNGUtZDNmYTJhM2YyYTk2XkEyXkFqcGc@",
   "imdbRating": 6.5,
-  "imdbVotes": 3867
+  "imdbVotes": 3867,
+  "studio": "Netflix"
  },
  {
   "id": "tt3748172",
@@ -30016,7 +30130,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDA2ZjU5ZWMtMmQ4OS00ZTQzLWIwOWMtYTBmOTljYTIwNjM3XkEyXkFqcGc@",
   "imdbRating": 6.5,
-  "imdbVotes": 140266
+  "imdbVotes": 140266,
+  "studio": "Netflix"
  },
  {
   "id": "tt7939766",
@@ -30046,7 +30161,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTgxNWU0MGMtMDI1Ny00NDIwLTllYzYtZDkyOTVmYmFhZGM0XkEyXkFqcGc@",
   "imdbRating": 6.5,
-  "imdbVotes": 109113
+  "imdbVotes": 109113,
+  "studio": "Netflix"
  },
  {
   "id": "tt6341832",
@@ -30077,7 +30193,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2IyZTFkZGEtM2JiOC00NDMyLThmOTktZDEzYzFlZTc4YzJkXkEyXkFqcGc@",
   "imdbRating": 6.5,
-  "imdbVotes": 47343
+  "imdbVotes": 47343,
+  "studio": "Netflix"
  },
  {
   "id": "tt4900708",
@@ -30430,7 +30547,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2U3ZWFjNzMtNzU2NC00MjBiLThmYzItOTMxODQ5ZTI2ZDM1XkEyXkFqcGc@",
   "imdbRating": 6.4,
-  "imdbVotes": 14640
+  "imdbVotes": 14640,
+  "studio": "Netflix"
  },
  {
   "id": "tt9893250",
@@ -30461,7 +30579,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTg5M2NlZDItMmI5Yi00N2VmLTgyYmMtNDgzMzQ2ZjlmNzg5XkEyXkFqcGc@",
   "imdbRating": 6.4,
-  "imdbVotes": 157584
+  "imdbVotes": 157584,
+  "studio": "Netflix"
  },
  {
   "id": "tt13024674",
@@ -30496,7 +30615,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjA5NTk2MmEtMDUzMy00NDYwLTkzY2EtNmFlODQxNjg3ZjE4XkEyXkFqcGc@",
   "imdbRating": 6.4,
-  "imdbVotes": 96719
+  "imdbVotes": 96719,
+  "studio": "Netflix"
  },
  {
   "id": "tt7736496",
@@ -30526,7 +30646,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmI4MDQ0ZDQtMTRhOC00ZDU4LTg5MTItZTZmOTU4ZDE1YTUzXkEyXkFqcGc@",
   "imdbRating": 6.4,
-  "imdbVotes": 21636
+  "imdbVotes": 21636,
+  "studio": "Netflix"
  },
  {
   "id": "tt5206260",
@@ -30558,7 +30679,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BM2Y3MjZkYzYtMjcwMS00ZWQxLWJhOWMtYWM3OWUyZDQ3MDJmXkEyXkFqcGc@",
   "imdbRating": 6.4,
-  "imdbVotes": 22652
+  "imdbVotes": 22652,
+  "studio": "Netflix"
  },
  {
   "id": "tt8508734",
@@ -30590,7 +30712,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDBjNmYxMjctMjViNC00NmRlLWJkZWYtOTE2ZmY4ZDg3NmMyXkEyXkFqcGc@",
   "imdbRating": 6.4,
-  "imdbVotes": 51937
+  "imdbVotes": 51937,
+  "studio": "Netflix"
  },
  {
   "id": "tt12747748",
@@ -30620,7 +30743,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjI0YzhjZjAtMzg3ZS00NTFhLWFkYjctMjE5ZGExNTk1MmJkXkEyXkFqcGc@",
   "imdbRating": 6.4,
-  "imdbVotes": 238837
+  "imdbVotes": 238837,
+  "studio": "Netflix"
  },
  {
   "id": "tt5638642",
@@ -30652,7 +30776,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjAzMzAyMDI4Ml5BMl5BanBnXkFtZTgwODMwOTY2NDM@",
   "imdbRating": 6.4,
-  "imdbVotes": 138326
+  "imdbVotes": 138326,
+  "studio": "Netflix"
  },
  {
   "id": "tt9806322",
@@ -30682,7 +30807,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDVjY2JhYWQtNjZkMi00NWU1LTljZTctNWEzYWExOTFiMjJjXkEyXkFqcGc@",
   "imdbRating": 6.4,
-  "imdbVotes": 11118
+  "imdbVotes": 11118,
+  "studio": "Netflix"
  },
  {
   "id": "tt0495596",
@@ -31052,7 +31178,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDg4ODc0M2UtM2Y5YS00YjdjLThiNDQtMWRkOWQ1ODQwMzYwXkEyXkFqcGc@",
   "imdbRating": 6.3,
-  "imdbVotes": 10420
+  "imdbVotes": 10420,
+  "studio": "Netflix"
  },
  {
   "id": "tt7991608",
@@ -31087,7 +31214,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGNjNGQ3MmItYTM5NS00NjBiLWI0ZTItZDE5ZjQyNjg3ODBjXkEyXkFqcGc@",
   "imdbRating": 6.3,
-  "imdbVotes": 353719
+  "imdbVotes": 353719,
+  "studio": "Netflix"
  },
  {
   "id": "tt5519340",
@@ -31122,7 +31250,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTcyNzk5NDg1Nl5BMl5BanBnXkFtZTgwNTM5MDQxNDM@",
   "imdbRating": 6.3,
-  "imdbVotes": 209069
+  "imdbVotes": 209069,
+  "studio": "Netflix"
  },
  {
   "id": "tt4139588",
@@ -31154,7 +31283,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmEzNzU2MDUtZmJiNi00ZGI0LWFiNjItYWQzNGIxY2I2MGZjXkEyXkFqcGc@",
   "imdbRating": 6.3,
-  "imdbVotes": 104870
+  "imdbVotes": 104870,
+  "studio": "Netflix"
  },
  {
   "id": "tt10676012",
@@ -31185,7 +31315,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTVlNWI4NzMtNTIxYi00NmQzLTliMjAtMjU3YjU3OTc2OTRjXkEyXkFqcGc@",
   "imdbRating": 6.3,
-  "imdbVotes": 37385
+  "imdbVotes": 37385,
+  "studio": "Netflix"
  },
  {
   "id": "tt10714856",
@@ -31216,7 +31347,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDdmNTk4ODEtYjQwMS00MzllLWI0YTEtNjEyMDQ0NGVlYTBlXkEyXkFqcGc@",
   "imdbRating": 6.3,
-  "imdbVotes": 14201
+  "imdbVotes": 14201,
+  "studio": "Netflix"
  },
  {
   "id": "tt10752004",
@@ -31245,7 +31377,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmI5OWQ3MGMtMTVlNy00YzE5LThmYzgtYzI2MzNjYjg1ZWRjXkEyXkFqcGc@",
   "imdbRating": 6.3,
-  "imdbVotes": 65861
+  "imdbVotes": 65861,
+  "studio": "Netflix"
  },
  {
   "id": "tt14298328",
@@ -31275,7 +31408,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWNmNTEzMGItNmEzZS00NTdiLTgxZjctMzU5YWEwOWI1MDc3XkEyXkFqcGc@",
   "imdbRating": 6.3,
-  "imdbVotes": 26401
+  "imdbVotes": 26401,
+  "studio": "Netflix"
  },
  {
   "id": "tt7488208",
@@ -31306,7 +31440,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTA5NTA4ZWEtODMwNS00MjhiLTgyOTAtNWE4ZWY2NTk3NjQ1XkEyXkFqcGc@",
   "imdbRating": 6.3,
-  "imdbVotes": 27417
+  "imdbVotes": 27417,
+  "studio": "Netflix"
  },
  {
   "id": "tt28066777",
@@ -31337,7 +31472,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzgwNGU0NzEtZjMyMy00Mjc5LWFiMmYtMzIxNmY1OTIwYmU3XkEyXkFqcGc@",
   "imdbRating": 6.3,
-  "imdbVotes": 18691
+  "imdbVotes": 18691,
+  "studio": "Netflix"
  },
  {
   "id": "tt6217306",
@@ -31369,7 +31505,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTY1NDk0NjI4MV5BMl5BanBnXkFtZTgwNjUyNzMwNjM@",
   "imdbRating": 6.3,
-  "imdbVotes": 65016
+  "imdbVotes": 65016,
+  "studio": "Netflix"
  },
  {
   "id": "tt3860916",
@@ -31403,7 +31540,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTE2MTg0NWQtNDgxZS00NWUxLWEyMzYtNDNjMzQwNzVhMGZhXkEyXkFqcGc@",
   "imdbRating": 6.3,
-  "imdbVotes": 51929
+  "imdbVotes": 51929,
+  "studio": "Netflix"
  },
  {
   "id": "tt9421570",
@@ -31434,7 +31572,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmVjNzM0YmItZGQwYy00MzA4LTkwYjAtMmJkNWVmOTRkZGRkXkEyXkFqcGc@",
   "imdbRating": 6.3,
-  "imdbVotes": 172587
+  "imdbVotes": 172587,
+  "studio": "Netflix"
  },
  {
   "id": "tt0049782",
@@ -31740,7 +31879,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzQzOWY5ZmUtNGVkNi00NWIzLTliMWMtNDNkYmRjMTBiOTVlXkEyXkFqcGc@",
   "imdbRating": 6.2,
-  "imdbVotes": 5198
+  "imdbVotes": 5198,
+  "studio": "Netflix"
  },
  {
   "id": "tt8629748",
@@ -31771,7 +31911,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDFiNmViNGUtMWI2NC00OTI0LTg5NjMtZGYwOTlkM2JlZGRmXkEyXkFqcGc@",
   "imdbRating": 6.2,
-  "imdbVotes": 104112
+  "imdbVotes": 104112,
+  "studio": "Netflix"
  },
  {
   "id": "tt8075260",
@@ -31800,7 +31941,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjI5MzQ0NjA5Ml5BMl5BanBnXkFtZTgwNjA1MTg1NzM@",
   "imdbRating": 6.2,
-  "imdbVotes": 27803
+  "imdbVotes": 27803,
+  "studio": "Netflix"
  },
  {
   "id": "tt9866072",
@@ -31830,7 +31972,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjExN2ZiNjQtYmEyYy00YzQ5LTg4OTAtOTBjMWMwMTgxNmFhXkEyXkFqcGc@",
   "imdbRating": 6.2,
-  "imdbVotes": 88836
+  "imdbVotes": 88836,
+  "studio": "Netflix"
  },
  {
   "id": "tt14315756",
@@ -31860,7 +32003,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmVmNzBjMGEtZWQzNS00M2FkLWIzZDEtMThkZjBiMzkyMTE5XkEyXkFqcGc@",
   "imdbRating": 6.2,
-  "imdbVotes": 19983
+  "imdbVotes": 19983,
+  "studio": "Netflix"
  },
  {
   "id": "tt6566576",
@@ -31890,7 +32034,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWViZDRiMGYtZTlmMS00ZDM2LWIzNWUtYmNjYzBiYjJkNTk3XkEyXkFqcGc@",
   "imdbRating": 6.2,
-  "imdbVotes": 109099
+  "imdbVotes": 109099,
+  "studio": "Netflix"
  },
  {
   "id": "tt14509110",
@@ -31920,7 +32065,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjJhYzMwMjItYTI4MC00N2MxLThhN2UtNjY1MjNiOTE5N2JkXkEyXkFqcGc@",
   "imdbRating": 6.2,
-  "imdbVotes": 77737
+  "imdbVotes": 77737,
+  "studio": "Netflix"
  },
  {
   "id": "tt9845564",
@@ -31950,7 +32096,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDc5ZTc0OGYtNGRjMC00MDI0LWI3ZDQtZmU4ODc4NDRjZWQwXkEyXkFqcGc@",
   "imdbRating": 6.2,
-  "imdbVotes": 22471
+  "imdbVotes": 22471,
+  "studio": "Netflix"
  },
  {
   "id": "tt5862312",
@@ -31979,7 +32126,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDI3MjMxYTktZjQ0My00MDVlLWE1MzYtYjliNjFmNmNjMzQxXkEyXkFqcGc@",
   "imdbRating": 6.2,
-  "imdbVotes": 50898
+  "imdbVotes": 50898,
+  "studio": "Netflix"
  },
  {
   "id": "tt3845670",
@@ -32231,7 +32379,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTNmZDgzMmMtMzJhMy00NGI3LWI5YTktYjg5MTllZmYyYTMxXkEyXkFqcGc@",
   "imdbRating": 6.1,
-  "imdbVotes": 210891
+  "imdbVotes": 210891,
+  "studio": "Netflix"
  },
  {
   "id": "tt13452446",
@@ -32261,7 +32410,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTAzODc1ZjUtNGQwZS00YTc2LTliNzQtMDdlNzllNmU5Yzk4XkEyXkFqcGc@",
   "imdbRating": 6.1,
-  "imdbVotes": 120759
+  "imdbVotes": 120759,
+  "studio": "Netflix"
  },
  {
   "id": "tt9354842",
@@ -32291,7 +32441,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGVlMGUwNmYtZjY2YS00NGUwLWE2NjYtZThlMzVjMzRkYjM0XkEyXkFqcGc@",
   "imdbRating": 6.1,
-  "imdbVotes": 52772
+  "imdbVotes": 52772,
+  "studio": "Netflix"
  },
  {
   "id": "tt1618434",
@@ -32326,7 +32477,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzg4NDFjNmYtZjQxMy00MDY4LWEyZjUtYzRjNjNkNjJiZTZhXkEyXkFqcGc@",
   "imdbRating": 6.1,
-  "imdbVotes": 189570
+  "imdbVotes": 189570,
+  "studio": "Netflix"
  },
  {
   "id": "tt10276470",
@@ -32355,7 +32507,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNWQ5ZmFlZWEtYjU4My00NjgyLWFlZmUtZDZkMjEzMzFmNGI4XkEyXkFqcGc@",
   "imdbRating": 6.1,
-  "imdbVotes": 17739
+  "imdbVotes": 17739,
+  "studio": "Netflix"
  },
  {
   "id": "tt8954732",
@@ -32385,7 +32538,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTYyMjYxMjEzOF5BMl5BanBnXkFtZTgwMjAwNDE3NjM@",
   "imdbRating": 6.1,
-  "imdbVotes": 34296
+  "imdbVotes": 34296,
+  "studio": "Netflix"
  },
  {
   "id": "tt6333052",
@@ -32417,7 +32571,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDgwODk5ODk4OV5BMl5BanBnXkFtZTgwNzA3MzU4MTI@",
   "imdbRating": 6.1,
-  "imdbVotes": 5812
+  "imdbVotes": 5812,
+  "studio": "Netflix"
  },
  {
   "id": "tt2235695",
@@ -32448,7 +32603,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNWQ5ODFkNTAtYzNiMC00MDQzLTgyMmUtYWEyOTc3ZWNmMWQ2XkEyXkFqcGc@",
   "imdbRating": 6.1,
-  "imdbVotes": 49927
+  "imdbVotes": 49927,
+  "studio": "Netflix"
  },
  {
   "id": "tt0280380",
@@ -32700,7 +32856,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYmI5MTM0ZDgtMTAzMy00YzQ5LWIyZWQtNTU1NDJhYzg5MjY0XkEyXkFqcGc@",
   "imdbRating": 6,
-  "imdbVotes": 16351
+  "imdbVotes": 16351,
+  "studio": "Netflix"
  },
  {
   "id": "tt7605074",
@@ -32855,7 +33012,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjQ0Mzk0OTE5MF5BMl5BanBnXkFtZTgwNDkyOTI0NTM@",
   "imdbRating": 5.9,
-  "imdbVotes": 102962
+  "imdbVotes": 102962,
+  "studio": "Netflix"
  },
  {
   "id": "tt8361028",
@@ -32885,7 +33043,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmEyNzUwNmItOTI1Mi00ZmVlLTkxZWEtOGY0Y2Y2YzU0YzRkXkEyXkFqcGc@",
   "imdbRating": 5.9,
-  "imdbVotes": 38609
+  "imdbVotes": 38609,
+  "studio": "Netflix"
  },
  {
   "id": "tt6890582",
@@ -32915,7 +33074,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGRjMzcxZTgtODg3NC00MWJjLTlkNjQtMzVjNmY1OTRlMGNhXkEyXkFqcGc@",
   "imdbRating": 5.9,
-  "imdbVotes": 6472
+  "imdbVotes": 6472,
+  "studio": "Netflix"
  },
  {
   "id": "tt13206532",
@@ -33039,7 +33199,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjc0MDFjZmQtMWMxZi00YzY4LWI5N2EtOGQwM2IzZjRkYmY1XkEyXkFqcGc@",
   "imdbRating": 5.8,
-  "imdbVotes": 198860
+  "imdbVotes": 198860,
+  "studio": "Netflix"
  },
  {
   "id": "tt8201170",
@@ -33068,7 +33229,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzc4ZWJmYTEtYTA2Yy00ZDBiLTk5NzQtNWIxN2NiYjBiZGUyXkEyXkFqcGc@",
   "imdbRating": 5.8,
-  "imdbVotes": 46111
+  "imdbVotes": 46111,
+  "studio": "Netflix"
  },
  {
   "id": "tt9619798",
@@ -33097,7 +33259,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzlhOGQ0YzEtNTgzOS00NGZjLWFkMmEtOGU1MWU0ZWEzOTZhXkEyXkFqcGc@",
   "imdbRating": 5.8,
-  "imdbVotes": 49735
+  "imdbVotes": 49735,
+  "studio": "Netflix"
  },
  {
   "id": "tt7608418",
@@ -33127,7 +33290,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGNkZDMwZjItNWU0Ny00YjM5LTgxYWMtZDIyM2Y4NWQ2NDI4XkEyXkFqcGc@",
   "imdbRating": 5.8,
-  "imdbVotes": 23096
+  "imdbVotes": 23096,
+  "studio": "Netflix"
  },
  {
   "id": "tt15326988",
@@ -33157,7 +33321,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDI0YzJjZTctNjU0MS00Y2Y3LThkNDgtNWMxYWVlZjVkYzYwXkEyXkFqcGc@",
   "imdbRating": 5.8,
-  "imdbVotes": 78844
+  "imdbVotes": 78844,
+  "studio": "Netflix"
  },
  {
   "id": "tt5294518",
@@ -33187,7 +33352,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzJmNjc2ODctNTc5NC00ZjJjLTg4MWEtMjE5ZDYxYjY5MmNmXkEyXkFqcGc@",
   "imdbRating": 5.8,
-  "imdbVotes": 43067
+  "imdbVotes": 45780,
+  "studio": "Netflix"
  },
  {
   "id": "tt10230422",
@@ -33217,7 +33383,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTllY2RiOTItMDg1My00NzcyLTlmOGUtODI3OTkzZjc1N2U2XkEyXkFqcGc@",
   "imdbRating": 5.8,
-  "imdbVotes": 6057
+  "imdbVotes": 6057,
+  "studio": "Netflix"
  },
  {
   "id": "tt11116912",
@@ -33248,7 +33415,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmFmMTJkOGMtZjhkNS00YzE1LWEyZGMtZDMyNjI1ODE0Mzc5XkEyXkFqcGc@",
   "imdbRating": 5.8,
-  "imdbVotes": 58200
+  "imdbVotes": 58200,
+  "studio": "Netflix"
  },
  {
   "id": "tt0450996",
@@ -33309,7 +33477,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDVmYTZmODMtNDU4YS00MzExLThmZTItOTM1ZDRiNmFmYWVhXkEyXkFqcGc@",
   "imdbRating": 5.7,
-  "imdbVotes": 47234
+  "imdbVotes": 47234,
+  "studio": "Netflix"
  },
  {
   "id": "tt11097384",
@@ -33340,7 +33509,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNGY0NDk5YjYtMTI0Zi00ZDc4LTk3NzEtYmUyNDNlN2U1ZmYwXkEyXkFqcGc@",
   "imdbRating": 5.7,
-  "imdbVotes": 45545
+  "imdbVotes": 45545,
+  "studio": "Netflix"
  },
  {
   "id": "tt13603966",
@@ -33370,7 +33540,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTM5OTQ2ZTYtY2EzMC00Zjc3LTg3NWEtZWI4OTdlMjcwMGFlXkEyXkFqcGc@",
   "imdbRating": 5.7,
-  "imdbVotes": 66187
+  "imdbVotes": 66187,
+  "studio": "Netflix"
  },
  {
   "id": "tt9784456",
@@ -33400,7 +33571,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2IzODA4YTktZDkwOS00MTRkLWE3NjgtYjMwZTFlNTBhNjhjXkEyXkFqcGc@",
   "imdbRating": 5.7,
-  "imdbVotes": 43289
+  "imdbVotes": 43289,
+  "studio": "Netflix"
  },
  {
   "id": "tt15255288",
@@ -33430,7 +33602,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMWU3OWYwNjAtNWExZS00ODY4LTgwMGQtNzliMzM2MjEyNDBkXkEyXkFqcGc@",
   "imdbRating": 5.7,
-  "imdbVotes": 79556
+  "imdbVotes": 79556,
+  "studio": "Netflix"
  },
  {
   "id": "tt3120280",
@@ -33460,7 +33633,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTU5Mjc4NTM2Ml5BMl5BanBnXkFtZTgwMjMzMzA5NTM@",
   "imdbRating": 5.7,
-  "imdbVotes": 42960
+  "imdbVotes": 42960,
+  "studio": "Netflix"
  },
  {
   "id": "tt8521876",
@@ -33490,7 +33664,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjNmYThjN2UtODc3YS00ZDMxLTk1OGItZmM2OTFiMzJiNDg2XkEyXkFqcGc@",
   "imdbRating": 5.7,
-  "imdbVotes": 35840
+  "imdbVotes": 35840,
+  "studio": "Netflix"
  },
  {
   "id": "tt14227048",
@@ -33519,7 +33694,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjYwNWMyNzgtYzZiNS00MjA3LWJmYTQtZGFlN2I5NzBhZDM4XkEyXkFqcGc@",
   "imdbRating": 5.7,
-  "imdbVotes": 28052
+  "imdbVotes": 28052,
+  "studio": "Netflix"
  },
  {
   "id": "tt14900738",
@@ -33550,7 +33726,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWIxNDIwYzMtOWYyOC00MDE3LWE2YmQtNGY2YTVkMjBjOGYzXkEyXkFqcGc@",
   "imdbRating": 5.7,
-  "imdbVotes": 14687
+  "imdbVotes": 14687,
+  "studio": "Netflix"
  },
  {
   "id": "tt12877640",
@@ -33581,7 +33758,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTg5ZDgxNDAtMzFkNS00M2UwLWI4N2EtOTczYjM0MjYwZDRjXkEyXkFqcGc@",
   "imdbRating": 5.7,
-  "imdbVotes": 25381
+  "imdbVotes": 25381,
+  "studio": "Netflix"
  },
  {
   "id": "tt6317962",
@@ -33641,7 +33819,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTRmOTk2ZDYtY2Q3Mi00MGYwLWFjNDQtYTliODc3NzM1ZjBlXkEyXkFqcGc@",
   "imdbRating": 5.6,
-  "imdbVotes": 139637
+  "imdbVotes": 139637,
+  "studio": "Netflix"
  },
  {
   "id": "tt14856980",
@@ -33671,7 +33850,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDUwNTFkNzYtMGM5NS00NTc4LWEwMDUtMmE5MzgyMjcwOWM4XkEyXkFqcGc@",
   "imdbRating": 5.6,
-  "imdbVotes": 58980
+  "imdbVotes": 58980,
+  "studio": "Netflix"
  },
  {
   "id": "tt6968614",
@@ -33700,7 +33880,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzBmNjg0YWEtMTdlNS00OTMxLWI0MDAtODgzNmEyMWEyY2YxXkEyXkFqcGc@",
   "imdbRating": 5.6,
-  "imdbVotes": 52153
+  "imdbVotes": 52153,
+  "studio": "Netflix"
  },
  {
   "id": "tt10350626",
@@ -33730,7 +33911,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWQwYzY1MjEtOTczOS00YzU1LTkyYWEtOTYxNWQwZTYwZTI4XkEyXkFqcGc@",
   "imdbRating": 5.6,
-  "imdbVotes": 36171
+  "imdbVotes": 36171,
+  "studio": "Netflix"
  },
  {
   "id": "tt8850222",
@@ -33823,7 +34005,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2I0YmNiNmEtNWI2My00NDU5LWIwZWItNWNkNjFmYWJjNTMxXkEyXkFqcGc@",
   "imdbRating": 5.5,
-  "imdbVotes": 56631
+  "imdbVotes": 56631,
+  "studio": "Netflix"
  },
  {
   "id": "tt14371878",
@@ -33854,7 +34037,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2FkMDJmNWItYzBlYy00ZDQ0LTgyMzEtZTA2N2U0ZTY5OGMyXkEyXkFqcGc@",
   "imdbRating": 5.5,
-  "imdbVotes": 50602
+  "imdbVotes": 50602,
+  "studio": "Netflix"
  },
  {
   "id": "tt11199410",
@@ -33884,7 +34068,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODc5MzUyMzgtY2QwNS00OTVlLWIyMDEtOWVjYzM5MGY1OTY1XkEyXkFqcGc@",
   "imdbRating": 5.5,
-  "imdbVotes": 15394
+  "imdbVotes": 15394,
+  "studio": "Netflix"
  },
  {
   "id": "tt7215232",
@@ -33915,7 +34100,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTU4NWFlMjEtZGFhMi00NzkxLWJkODQtOWExNDQ2NGVjM2RjXkEyXkFqcGc@",
   "imdbRating": 5.5,
-  "imdbVotes": 8275
+  "imdbVotes": 8275,
+  "studio": "Netflix"
  },
  {
   "id": "tt4687108",
@@ -33946,7 +34132,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2YyZTk3ZjUtMTgxYS00NGVlLThmNDQtMjRjNmMwOTc0MzdhXkEyXkFqcGc@",
   "imdbRating": 5.5,
-  "imdbVotes": 72772
+  "imdbVotes": 72772,
+  "studio": "Netflix"
  },
  {
   "id": "tt9783600",
@@ -33976,7 +34163,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BM2VkZjczZjItYWI1ZS00NDU0LWE4NDItMzczNzc5ZDJkNTQ2XkEyXkFqcGc@",
   "imdbRating": 5.5,
-  "imdbVotes": 70709
+  "imdbVotes": 70709,
+  "studio": "Netflix"
  },
  {
   "id": "tt13611770",
@@ -34006,7 +34194,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDAzMDE2N2MtMGJiMC00MjM0LTg4ODEtZmM3NjcyMDU5ZWVjXkEyXkFqcGc@",
   "imdbRating": 5.5,
-  "imdbVotes": 2237
+  "imdbVotes": 2237,
+  "studio": "Netflix"
  },
  {
   "id": "tt22352848",
@@ -34036,7 +34225,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTMyNGY3NjMtNTRkMS00OWMwLWExNWEtMWJiZmI3MDExOWZhXkEyXkFqcGc@",
   "imdbRating": 5.5,
-  "imdbVotes": 11614
+  "imdbVotes": 11614,
+  "studio": "Netflix"
  },
  {
   "id": "tt14463484",
@@ -34068,7 +34258,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BM2E1NDViNmItMzU5Yy00YWRiLTg4OTItM2VkZmQyMTdkNzY0XkEyXkFqcGc@",
   "imdbRating": 5.5,
-  "imdbVotes": 23657
+  "imdbVotes": 23657,
+  "studio": "Netflix"
  },
  {
   "id": "tt1099212",
@@ -34186,7 +34377,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDllNjNhMWYtZTg0ZC00ZTE3LWI3MDgtMThiOTY0NTBmOGI4XkEyXkFqcGc@",
   "imdbRating": 5.4,
-  "imdbVotes": 77747
+  "imdbVotes": 77747,
+  "studio": "Netflix"
  },
  {
   "id": "tt20221436",
@@ -34219,7 +34411,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjBhMWVmYjQtYmI2NC00NjdiLTliMjQtODliYjI5OTZmMzczXkEyXkFqcGc@",
   "imdbRating": 5.4,
-  "imdbVotes": 92044
+  "imdbVotes": 92044,
+  "studio": "Netflix"
  },
  {
   "id": "tt8709036",
@@ -34249,7 +34442,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODU5M2FmMmUtMjQ1ZC00YTAzLWJiYjEtMTk5ZjI3MTYzZWQ0XkEyXkFqcGc@",
   "imdbRating": 5.4,
-  "imdbVotes": 13053
+  "imdbVotes": 13053,
+  "studio": "Netflix"
  },
  {
   "id": "tt10006006",
@@ -34278,7 +34472,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzEyM2UyMTYtZDI4ZS00MzM2LWE0MjgtMTU4YjI5NmNkMjU2XkEyXkFqcGc@",
   "imdbRating": 5.4,
-  "imdbVotes": 8602
+  "imdbVotes": 8602,
+  "studio": "Netflix"
  },
  {
   "id": "tt21051906",
@@ -34308,7 +34503,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDQyMWFkMGMtNjhiMS00MzgyLWFmOGYtNzA3MGNjNGVhMGI4XkEyXkFqcGc@",
   "imdbRating": 5.4,
-  "imdbVotes": 39511
+  "imdbVotes": 39511,
+  "studio": "Netflix"
  },
  {
   "id": "tt11274492",
@@ -34338,7 +34534,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDZmMTczYTgtYzA5MS00ODI5LTk0OWYtYzlkN2ZlYTJjNzBhXkEyXkFqcGc@",
   "imdbRating": 5.4,
-  "imdbVotes": 40815
+  "imdbVotes": 40815,
+  "studio": "Netflix"
  },
  {
   "id": "tt7315484",
@@ -34370,7 +34567,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzY2ZjM0NTgtNDc3OS00YmQwLTlkN2YtMmRmMDAxMmM0NTliXkEyXkFqcGc@",
   "imdbRating": 5.4,
-  "imdbVotes": 55446
+  "imdbVotes": 55446,
+  "studio": "Netflix"
  },
  {
   "id": "tt3540136",
@@ -34431,7 +34629,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGYzMDQ1ZWItNjMyYi00ZjM4LWE5YTctYTJhNTYxZDI4OTU0XkEyXkFqcGc@",
   "imdbRating": 5.3,
-  "imdbVotes": 63128
+  "imdbVotes": 63128,
+  "studio": "Netflix"
  },
  {
   "id": "tt14400246",
@@ -34465,7 +34664,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDkzZWQ1YjctNTUyZi00NmM4LTljNTEtNWFiMzQwM2YzNGZiXkEyXkFqcGc@",
   "imdbRating": 5.3,
-  "imdbVotes": 27962
+  "imdbVotes": 27962,
+  "studio": "Netflix"
  },
  {
   "id": "tt10962368",
@@ -34495,7 +34695,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTFlOThmZWYtYTk4Yi00MzFlLWJhOTEtMTU0NTcxNWJiZjRhXkEyXkFqcGc@",
   "imdbRating": 5.3,
-  "imdbVotes": 40153
+  "imdbVotes": 40153,
+  "studio": "Netflix"
  },
  {
   "id": "tt13446126",
@@ -34587,7 +34788,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNmUwYzA0MzQtMjU2ZS00OWI0LWEzZjctYWE0NDdhOTFiNDc4XkEyXkFqcGc@",
   "imdbRating": 5.2,
-  "imdbVotes": 29339
+  "imdbVotes": 29339,
+  "studio": "Netflix"
  },
  {
   "id": "tt21245882",
@@ -34617,7 +34819,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYmE1ZWZlNmQtYTdkNC00MjliLTlmYWYtOWNiMGFiMjg4NDg3XkEyXkFqcGc@",
   "imdbRating": 5.2,
-  "imdbVotes": 9574
+  "imdbVotes": 9574,
+  "studio": "Netflix"
  },
  {
   "id": "tt11284280",
@@ -34647,7 +34850,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGNkYWJhZDAtZTk3Ni00MGRkLTgzMzYtNDc1NWYyZjQzMTZmXkEyXkFqcGc@",
   "imdbRating": 5.2,
-  "imdbVotes": 13729
+  "imdbVotes": 13729,
+  "studio": "Netflix"
  },
  {
   "id": "tt1325004",
@@ -34708,7 +34912,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmFhNWY1MjEtZTkyZS00ZWIzLTk4ZWItMDM0MzliNmE1ZGZhXkEyXkFqcGc@",
   "imdbRating": 5.1,
-  "imdbVotes": 44143
+  "imdbVotes": 44143,
+  "studio": "Netflix"
  },
  {
   "id": "tt21237030",
@@ -34738,7 +34943,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjFkYTU1Y2UtNzg2ZS00OTlhLWE5NzUtMWEwMzMyYThkY2Q4XkEyXkFqcGc@",
   "imdbRating": 5.1,
-  "imdbVotes": 10607
+  "imdbVotes": 10607,
+  "studio": "Netflix"
  },
  {
   "id": "tt1420771",
@@ -34828,7 +35034,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTk4NzQ4MjMtYzFjMC00YjhjLTkyYjEtMzYyNmYxMWRkYTU4XkEyXkFqcGc@",
   "imdbRating": 4.9,
-  "imdbVotes": 21791
+  "imdbVotes": 21791,
+  "studio": "Netflix"
  },
  {
   "id": "tt2386237",
@@ -34858,7 +35065,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTkwMWNlODQtNzViNi00ZjVjLTg2NjItZTE2MTViM2IyNDI1XkEyXkFqcGc@",
   "imdbRating": 4.9,
-  "imdbVotes": 17821
+  "imdbVotes": 17821,
+  "studio": "Netflix"
  },
  {
   "id": "tt10418662",
@@ -34890,7 +35098,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzU2ZTZhY2EtY2EzYi00OWI4LTg2MWQtZTg1NmNjN2NiYjcwXkEyXkFqcGc@",
   "imdbRating": 4.9,
-  "imdbVotes": 28087
+  "imdbVotes": 28087,
+  "studio": "Netflix"
  },
  {
   "id": "tt1259571",
@@ -34951,7 +35160,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNWQyMTJiZWYtNzQ2Mi00Y2E1LThmNzgtNGU0ZjQ3NTg5YWRhXkEyXkFqcGc@",
   "imdbRating": 4.8,
-  "imdbVotes": 26511
+  "imdbVotes": 26511,
+  "studio": "Netflix"
  },
  {
   "id": "tt12441478",
@@ -35012,7 +35222,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmIwM2E0NWQtMTZmYy00ZmEyLWJiNjAtOTQ3MzNiMTYyOGU1XkEyXkFqcGc@",
   "imdbRating": 4.7,
-  "imdbVotes": 29153
+  "imdbVotes": 29153,
+  "studio": "Netflix"
  },
  {
   "id": "tt16085592",
@@ -35042,7 +35253,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjBiOTE5NDQtMmJkNC00NzIxLWE2ZTYtYTY4ZTRlMjZiOGViXkEyXkFqcGc@",
   "imdbRating": 4.7,
-  "imdbVotes": 7063
+  "imdbVotes": 7063,
+  "studio": "Netflix"
  },
  {
   "id": "tt13323118",
@@ -35072,7 +35284,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2YyMTIyZDItMjhlYy00ZTVjLTk2NjEtNjhkZWYzNjNmMjI1XkEyXkFqcGc@",
   "imdbRating": 4.6,
-  "imdbVotes": 5011
+  "imdbVotes": 5011,
+  "studio": "Netflix"
  },
  {
   "id": "tt0460749",
@@ -35164,7 +35377,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTg5N2U4ZTItMjc2NC00NDg2LWIzODYtOWZmNzY5Yzc5MzUxXkEyXkFqcGc@",
   "imdbRating": 3.3,
-  "imdbVotes": 106045
+  "imdbVotes": 106045,
+  "studio": "Netflix"
  },
  {
   "id": "tt21106646",
@@ -35195,7 +35409,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODRlZGMyZDQtZmM1OC00MzUxLWEyMWMtMzhlNTU4NzkxZDMxXkEyXkFqcGc@",
   "imdbRating": 2.9,
-  "imdbVotes": 12011
+  "imdbVotes": 12011,
+  "studio": "Netflix"
  },
  {
   "id": "tt12996154",
@@ -35228,7 +35443,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzJhYmNkNTctM2MxNS00NzY4LWFkYjYtNjFiODhjYzg4MDRhXkEyXkFqcGc@",
   "imdbRating": 2.7,
-  "imdbVotes": 27939
+  "imdbVotes": 27939,
+  "studio": "Netflix"
  },
  {
   "id": "tt30765859",
@@ -35256,7 +35472,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2M3OWI0NzMtYzAwOS00OWFjLWIyMjctZDk3ZWFiYjdhMDMyXkEyXkFqcGc@",
   "imdbRating": 2.7,
-  "imdbVotes": 41
+  "imdbVotes": 41,
+  "studio": "Netflix"
  },
  {
   "id": "tt0903747",
@@ -35809,7 +36026,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTBhZTcwNWUtOTZjMi00ZjI2LWEzMzMtNWJkMWQ2ZDA0NTU3XkEyXkFqcGc@",
   "imdbRating": 9.1,
   "imdbVotes": 30993,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt0386676",
@@ -36247,7 +36465,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2U5MjY1NWEtZDI2MS00NTlhLWEyODQtYzE0MzY3NDUyNzE3XkEyXkFqcGc@",
   "imdbRating": 9,
   "imdbVotes": 93393,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt0098904",
@@ -38318,7 +38537,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2E4ZGIwZWYtMGRiMS00NGI2LTgwYzAtZGY5NGVhNzY3Yjk0XkEyXkFqcGc@",
   "imdbRating": 8.7,
   "imdbVotes": 101210,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt0096697",
@@ -39741,7 +39961,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYmI2ZGE3ODQtYzk1ZC00ZDY3LWI3YzItNjhiOGE2OTM3NjVhXkEyXkFqcGc@",
   "imdbRating": 8.6,
   "imdbVotes": 15919,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt0112159",
@@ -41303,7 +41524,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjE1MzYzNjk3OF5BMl5BanBnXkFtZTgwMzk0MzYwNzE@",
   "imdbRating": 8.5,
   "imdbVotes": 186546,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt8289930",
@@ -41333,7 +41555,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTkyYzhiYzctZGRiOC00ODM1LTg0MDQtYzVmMzcyNTI5MDEwXkEyXkFqcGc@",
   "imdbRating": 8.5,
   "imdbVotes": 59202,
-  "seasons": 8
+  "seasons": 8,
+  "studio": "Netflix"
  },
  {
   "id": "tt33040785",
@@ -41363,7 +41586,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTBkNDkwMjctOTc5ZC00MDUxLWJjYjctMDJkM2MzZDA5OWZmXkEyXkFqcGc@",
   "imdbRating": 8.5,
   "imdbVotes": 5353,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt6077448",
@@ -41396,7 +41620,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2EyODc1MDAtNTg0ZC00MjRhLTg1NzctM2NjYTlmOGMwYWNiXkEyXkFqcGc@",
   "imdbRating": 8.5,
   "imdbVotes": 98921,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt9398466",
@@ -41428,7 +41653,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDljNWNkNWItNjI0My00M2ViLThkODctYmMwMDRjYTExN2VhXkEyXkFqcGc@",
   "imdbRating": 8.5,
   "imdbVotes": 27723,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt16296870",
@@ -41459,7 +41685,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDBkZjhhYWEtZTgwZS00OWY3LWJkNzYtNTkxNWY1MDhjMDk2XkEyXkFqcGc@",
   "imdbRating": 8.5,
   "imdbVotes": 25273,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt1124373",
@@ -41490,7 +41717,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWNiZjFiNGEtNGZmMS00YTBlLWJlNmQtZTA2NzEzZWE4ZGQyXkEyXkFqcGc@",
   "imdbRating": 8.5,
   "imdbVotes": 352705,
-  "seasons": 7
+  "seasons": 7,
+  "studio": "Netflix"
  },
  {
   "id": "tt0475784",
@@ -42248,39 +42476,9 @@
   "seasons": 1
  },
  {
-  "id": "tt7622902",
-  "kind": "series",
-  "imdbRank": 224,
-  "title": "Prison Playbook",
-  "year": 2017,
-  "rated": "Not Rated",
-  "runtime": 90,
-  "genres": [
-   "Comedy",
-   "Drama"
-  ],
-  "director": "",
-  "actors": [
-   "Park Hae-soo",
-   "Jung Kyung-ho",
-   "Krystal Jung"
-  ],
-  "plot": "Baseball pitcher Kim Je-hyeok becomes a convict overnight after being sent to prison for defending his sister from a sexual assault, days before he was due to fly to the US to join the Boston Red Sox.",
-  "languages": [
-   "Korean"
-  ],
-  "countries": [
-   "South Korea"
-  ],
-  "posterBase": "https://m.media-amazon.com/images/M/MV5BZDY0NzM1YTAtNDQ0NC00YTI1LTg5NzctMzcwNDMzOGEzODVmXkEyXkFqcGc@",
-  "imdbRating": 8.4,
-  "imdbVotes": 5590,
-  "seasons": 1
- },
- {
   "id": "tt6461346",
   "kind": "series",
-  "imdbRank": 225,
+  "imdbRank": 224,
   "title": "Stranger",
   "year": 2017,
   "rated": "TV-14",
@@ -42311,7 +42509,7 @@
  {
   "id": "tt13433812",
   "kind": "series",
-  "imdbRank": 226,
+  "imdbRank": 225,
   "title": "Vincenzo",
   "year": 2021,
   "rated": "Not Rated",
@@ -42342,7 +42540,7 @@
  {
   "id": "tt14134550",
   "kind": "series",
-  "imdbRank": 227,
+  "imdbRank": 226,
   "title": "Odd Taxi",
   "year": 2021,
   "rated": "TV-14",
@@ -42373,7 +42571,7 @@
  {
   "id": "tt5249462",
   "kind": "series",
-  "imdbRank": 228,
+  "imdbRank": 227,
   "title": "Erased",
   "year": 2016,
   "rated": "TV-14",
@@ -42405,7 +42603,7 @@
  {
   "id": "tt7078180",
   "kind": "series",
-  "imdbRank": 229,
+  "imdbRank": 228,
   "title": "Violet Evergarden",
   "year": 2018,
   "rated": "TV-14",
@@ -42437,7 +42635,7 @@
  {
   "id": "tt1119644",
   "kind": "series",
-  "imdbRank": 230,
+  "imdbRank": 229,
   "title": "Fringe",
   "year": 2008,
   "rated": "TV-14",
@@ -42469,7 +42667,7 @@
  {
   "id": "tt0491738",
   "kind": "series",
-  "imdbRank": 231,
+  "imdbRank": 230,
   "title": "Psych",
   "year": 2006,
   "rated": "TV-PG",
@@ -42500,7 +42698,7 @@
  {
   "id": "tt1632701",
   "kind": "series",
-  "imdbRank": 232,
+  "imdbRank": 231,
   "title": "Suits",
   "year": 2011,
   "rated": "TV-14",
@@ -42530,7 +42728,7 @@
  {
   "id": "tt0460681",
   "kind": "series",
-  "imdbRank": 233,
+  "imdbRank": 232,
   "title": "Supernatural",
   "year": 2005,
   "rated": "TV-14",
@@ -42561,7 +42759,7 @@
  {
   "id": "tt0409591",
   "kind": "series",
-  "imdbRank": 234,
+  "imdbRank": 233,
   "title": "Naruto",
   "year": 2002,
   "rated": "TV-PG",
@@ -42592,7 +42790,7 @@
  {
   "id": "tt0142183",
   "kind": "series",
-  "imdbRank": 235,
+  "imdbRank": 234,
   "title": "Super Dimension Fortress Macross",
   "year": 1982,
   "rated": "TV-PG",
@@ -42624,7 +42822,7 @@
  {
   "id": "tt2930136",
   "kind": "series",
-  "imdbRank": 236,
+  "imdbRank": 235,
   "title": "Hanzawa Naoki",
   "year": 2013,
   "rated": "Not Rated",
@@ -42655,7 +42853,7 @@
  {
   "id": "tt0209631",
   "kind": "series",
-  "imdbRank": 237,
+  "imdbRank": 236,
   "title": "GTO: Great Teacher Onizuka",
   "year": 1998,
   "rated": "Not Rated",
@@ -42686,7 +42884,7 @@
  {
   "id": "tt0409546",
   "kind": "series",
-  "imdbRank": 238,
+  "imdbRank": 237,
   "title": "Jewel in the Palace",
   "year": 2003,
   "rated": "Not Rated",
@@ -42717,7 +42915,7 @@
  {
   "id": "tt27042206",
   "kind": "series",
-  "imdbRank": 239,
+  "imdbRank": 238,
   "title": "The Good Bad Mother",
   "year": 2023,
   "rated": "TV-MA",
@@ -42748,7 +42946,7 @@
  {
   "id": "tt8948436",
   "kind": "series",
-  "imdbRank": 240,
+  "imdbRank": 239,
   "title": "Soul Land",
   "year": 2018,
   "rated": "TV-14",
@@ -42780,7 +42978,7 @@
  {
   "id": "tt10384610",
   "kind": "series",
-  "imdbRank": 241,
+  "imdbRank": 240,
   "title": "Scissor Seven",
   "year": 2018,
   "rated": "TV-MA",
@@ -42814,7 +43012,7 @@
  {
   "id": "tt0843199",
   "kind": "series",
-  "imdbRank": 242,
+  "imdbRank": 241,
   "title": "War and Beauty",
   "year": 2004,
   "rated": "Not Rated",
@@ -42843,7 +43041,7 @@
  {
   "id": "tt16359870",
   "kind": "series",
-  "imdbRank": 243,
+  "imdbRank": 242,
   "title": "My School President",
   "year": 2022,
   "rated": "Not Rated",
@@ -42874,7 +43072,7 @@
  {
   "id": "tt0408381",
   "kind": "series",
-  "imdbRank": 244,
+  "imdbRank": 243,
   "title": "Doc Martin",
   "year": 2004,
   "rated": "TV-14",
@@ -42905,7 +43103,7 @@
  {
   "id": "tt0387199",
   "kind": "series",
-  "imdbRank": 245,
+  "imdbRank": 244,
   "title": "Entourage",
   "year": 2004,
   "rated": "TV-MA",
@@ -42935,7 +43133,7 @@
  {
   "id": "tt7221388",
   "kind": "series",
-  "imdbRank": 246,
+  "imdbRank": 245,
   "title": "Cobra Kai",
   "year": 2018,
   "rated": "TV-14",
@@ -42967,7 +43165,7 @@
  {
   "id": "tt0060028",
   "kind": "series",
-  "imdbRank": 247,
+  "imdbRank": 246,
   "title": "Star Trek",
   "year": 1966,
   "rated": "TV-PG",
@@ -42998,7 +43196,7 @@
  {
   "id": "tt10183988",
   "kind": "series",
-  "imdbRank": 248,
+  "imdbRank": 247,
   "title": "Julie and the Phantoms",
   "year": 2020,
   "rated": "TV-G",
@@ -43024,12 +43222,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNWIxNzllYjEtZmM3ZS00NjNlLWIxODAtNTIyOWJhZWVhY2FlXkEyXkFqcGc@",
   "imdbRating": 8.4,
   "imdbVotes": 13598,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt1830379",
   "kind": "series",
-  "imdbRank": 249,
+  "imdbRank": 248,
   "title": "Top Boy",
   "year": 2011,
   "rated": "TV-MA",
@@ -43055,12 +43254,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzIxNjNkYjctMzkyYy00ZGE0LTgzMTQtZDczZWY5NWEwNDdjXkEyXkFqcGc@",
   "imdbRating": 8.4,
   "imdbVotes": 46706,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt5675620",
   "kind": "series",
-  "imdbRank": 250,
+  "imdbRank": 249,
   "title": "The Punisher",
   "year": 2017,
   "rated": "TV-MA",
@@ -43086,12 +43286,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTI2NDllMjgtOWEyYi00Y2YxLThhYjQtNTQ0NTgwNDE1YmYzXkEyXkFqcGc@",
   "imdbRating": 8.4,
   "imdbVotes": 293826,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt5863126",
   "kind": "series",
-  "imdbRank": 251,
+  "imdbRank": 250,
   "title": "Last Chance U",
   "year": 2016,
   "rated": "TV-MA",
@@ -43116,12 +43317,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODFhMWQwMDItZmM2Yy00YTVmLTk2YjEtYTFlNjg5YmRhZGE1XkEyXkFqcGc@",
   "imdbRating": 8.4,
   "imdbVotes": 7641,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt1734135",
   "kind": "series",
-  "imdbRank": 252,
+  "imdbRank": 251,
   "title": "Trollhunters: Tales of Arcadia",
   "year": 2016,
   "rated": "TV-Y7",
@@ -43152,12 +43354,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTU1YTQwNDctOTlhZC00NDg3LTg2ZWYtZjgzNWZjOTUzM2VjXkEyXkFqcGc@",
   "imdbRating": 8.4,
   "imdbVotes": 20861,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt6150576",
   "kind": "series",
-  "imdbRank": 253,
+  "imdbRank": 252,
   "title": "Midnight Diner: Tokyo Stories",
   "year": 2016,
   "rated": "TV-14",
@@ -43181,12 +43384,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGYwOTEwMTAtYjY1NC00NTY1LWFiYzUtODQyY2FiMWMyMzg1XkEyXkFqcGc@",
   "imdbRating": 8.4,
   "imdbVotes": 5092,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt15289042",
   "kind": "series",
-  "imdbRank": 254,
+  "imdbRank": 253,
   "title": "First Love",
   "year": 2022,
   "rated": "TV-MA",
@@ -43211,12 +43415,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzlkNjU0NzUtMmNkNi00OTBiLWEyN2YtNjkxNzc0ODhkYjExXkEyXkFqcGc@",
   "imdbRating": 8.4,
   "imdbVotes": 6239,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11301642",
   "kind": "series",
-  "imdbRank": 255,
+  "imdbRank": 254,
   "title": "Ethos",
   "year": 2020,
   "rated": "TV-MA",
@@ -43240,12 +43445,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNWJlNTIxODUtMTY4NC00NWM5LTlmMTctZmMzYzdiYWQ4ZWRiXkEyXkFqcGc@",
   "imdbRating": 8.4,
   "imdbVotes": 31210,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt5348176",
   "kind": "series",
-  "imdbRank": 256,
+  "imdbRank": 255,
   "title": "Barry",
   "year": 2018,
   "rated": "TV-MA",
@@ -43276,7 +43482,7 @@
  {
   "id": "tt5834204",
   "kind": "series",
-  "imdbRank": 257,
+  "imdbRank": 256,
   "title": "The Handmaid's Tale",
   "year": 2017,
   "rated": "TV-MA",
@@ -43308,7 +43514,7 @@
  {
   "id": "tt0411008",
   "kind": "series",
-  "imdbRank": 258,
+  "imdbRank": 257,
   "title": "Lost",
   "year": 2004,
   "rated": "TV-14",
@@ -43348,7 +43554,7 @@
  {
   "id": "tt0118276",
   "kind": "series",
-  "imdbRank": 259,
+  "imdbRank": 258,
   "title": "Buffy the Vampire Slayer",
   "year": 1997,
   "rated": "TV-14",
@@ -43380,7 +43586,7 @@
  {
   "id": "tt1466074",
   "kind": "series",
-  "imdbRank": 260,
+  "imdbRank": 259,
   "title": "Columbo",
   "year": 1971,
   "rated": "TV-PG",
@@ -43411,7 +43617,7 @@
  {
   "id": "tt0496424",
   "kind": "series",
-  "imdbRank": 261,
+  "imdbRank": 260,
   "title": "30 Rock",
   "year": 2006,
   "rated": "TV-14",
@@ -43441,7 +43647,7 @@
  {
   "id": "tt0460649",
   "kind": "series",
-  "imdbRank": 262,
+  "imdbRank": 261,
   "title": "How I Met Your Mother",
   "year": 2005,
   "rated": "TV-14",
@@ -43474,7 +43680,7 @@
  {
   "id": "tt2249364",
   "kind": "series",
-  "imdbRank": 263,
+  "imdbRank": 262,
   "title": "Broadchurch",
   "year": 2013,
   "rated": "TV-MA",
@@ -43505,7 +43711,7 @@
  {
   "id": "tt7909970",
   "kind": "series",
-  "imdbRank": 264,
+  "imdbRank": 263,
   "title": "Unbelievable",
   "year": 2019,
   "rated": "TV-MA",
@@ -43535,7 +43741,7 @@
  {
   "id": "tt6611916",
   "kind": "series",
-  "imdbRank": 265,
+  "imdbRank": 264,
   "title": "Kingdom",
   "year": 2019,
   "rated": "TV-MA",
@@ -43566,7 +43772,7 @@
  {
   "id": "tt0455275",
   "kind": "series",
-  "imdbRank": 266,
+  "imdbRank": 265,
   "title": "Prison Break",
   "year": 2005,
   "rated": "TV-14",
@@ -43599,7 +43805,7 @@
  {
   "id": "tt2699128",
   "kind": "series",
-  "imdbRank": 267,
+  "imdbRank": 266,
   "title": "The Leftovers",
   "year": 2014,
   "rated": "TV-MA",
@@ -43630,7 +43836,7 @@
  {
   "id": "tt2183404",
   "kind": "series",
-  "imdbRank": 268,
+  "imdbRank": 267,
   "title": "Rectify",
   "year": 2013,
   "rated": "TV-14",
@@ -43659,7 +43865,7 @@
  {
   "id": "tt1796960",
   "kind": "series",
-  "imdbRank": 269,
+  "imdbRank": 268,
   "title": "Homeland",
   "year": 2011,
   "rated": "TV-MA",
@@ -43690,7 +43896,7 @@
  {
   "id": "tt5875444",
   "kind": "series",
-  "imdbRank": 270,
+  "imdbRank": 269,
   "title": "Slow Horses",
   "year": 2022,
   "rated": "TV-MA",
@@ -43721,7 +43927,7 @@
  {
   "id": "tt1442462",
   "kind": "series",
-  "imdbRank": 271,
+  "imdbRank": 270,
   "title": "The Good Wife",
   "year": 2009,
   "rated": "TV-14",
@@ -43752,7 +43958,7 @@
  {
   "id": "tt0098898",
   "kind": "series",
-  "imdbRank": 272,
+  "imdbRank": 271,
   "title": "Prime Suspect",
   "year": 1991,
   "rated": "TV-14",
@@ -43783,7 +43989,7 @@
  {
   "id": "tt2396135",
   "kind": "series",
-  "imdbRank": 273,
+  "imdbRank": 272,
   "title": "Shetland",
   "year": 2013,
   "rated": "TV-14",
@@ -43814,7 +44020,7 @@
  {
   "id": "tt8681148",
   "kind": "series",
-  "imdbRank": 274,
+  "imdbRank": 273,
   "title": "This Is Going to Hurt",
   "year": 2022,
   "rated": "TV-14",
@@ -43845,7 +44051,7 @@
  {
   "id": "tt4565380",
   "kind": "series",
-  "imdbRank": 275,
+  "imdbRank": 274,
   "title": "Fauda",
   "year": 2015,
   "rated": "TV-MA",
@@ -43873,6 +44079,36 @@
   "imdbRating": 8.3,
   "imdbVotes": 42483,
   "seasons": 5
+ },
+ {
+  "id": "tt7622902",
+  "kind": "series",
+  "imdbRank": 275,
+  "title": "Prison Playbook",
+  "year": 2017,
+  "rated": "Not Rated",
+  "runtime": 90,
+  "genres": [
+   "Comedy",
+   "Drama"
+  ],
+  "director": "",
+  "actors": [
+   "Park Hae-soo",
+   "Jung Kyung-ho",
+   "Krystal Jung"
+  ],
+  "plot": "Baseball pitcher Kim Je-hyeok becomes a convict overnight after being sent to prison for defending his sister from a sexual assault, days before he was due to fly to the US to join the Boston Red Sox.",
+  "languages": [
+   "Korean"
+  ],
+  "countries": [
+   "South Korea"
+  ],
+  "posterBase": "https://m.media-amazon.com/images/M/MV5BZDY0NzM1YTAtNDQ0NC00YTI1LTg5NzctMzcwNDMzOGEzODVmXkEyXkFqcGc@",
+  "imdbRating": 8.3,
+  "imdbVotes": 6460,
+  "seasons": 1
  },
  {
   "id": "tt0948103",
@@ -44581,7 +44817,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNGQ2NWU5YmQtZWJjMS00N2VkLTljMTItZDM4ZWRhM2FkYTNmXkEyXkFqcGc@",
   "imdbRating": 8.3,
   "imdbVotes": 115584,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt1836037",
@@ -44613,7 +44850,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTcxMzIwNzI3M15BMl5BanBnXkFtZTgwODgxMTU5OTE@",
   "imdbRating": 8.3,
   "imdbVotes": 43344,
-  "seasons": 6
+  "seasons": 6,
+  "studio": "Netflix"
  },
  {
   "id": "tt11737520",
@@ -44647,7 +44885,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDk5MDFlYjYtZjQ5ZS00ZjhkLWJkYmMtYzhmZjkyOWExY2M3XkEyXkFqcGc@",
   "imdbRating": 8.3,
   "imdbVotes": 204416,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt6333098",
@@ -44676,7 +44915,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTUyMDU4NzE0Nl5BMl5BanBnXkFtZTgwMzg0MDQyMTI@",
   "imdbRating": 8.3,
   "imdbVotes": 6130,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt10482560",
@@ -44708,7 +44948,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2JiNGIxMzQtZjI0ZC00YTEyLWJjZGYtMjQzMDQ0YzA5OWYyXkEyXkFqcGc@",
   "imdbRating": 8.3,
   "imdbVotes": 8275,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt6517102",
@@ -44740,7 +44981,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjAzMjU2MjYzMl5BMl5BanBnXkFtZTgwNTQ4Nzk1NjM@",
   "imdbRating": 8.3,
   "imdbVotes": 93521,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt15490038",
@@ -44776,7 +45018,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOWViYWUzNWQtZjQ0OC00MjU5LTg1YjAtZjI0OGYxMmI4OTAyXkEyXkFqcGc@",
   "imdbRating": 8.3,
   "imdbVotes": 5696,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8714904",
@@ -44807,7 +45050,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BM2FkZGQyODItOGFlNy00ZDA1LWFjMTEtMGUyYzk0ZDYzNmRjXkEyXkFqcGc@",
   "imdbRating": 8.3,
   "imdbVotes": 100243,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt4277922",
@@ -44837,7 +45081,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTJkZDVkMWEtZmNmMC00YjRhLWFjOGEtZWMzNDFkZDdjZmQ3XkEyXkFqcGc@",
   "imdbRating": 8.3,
   "imdbVotes": 17887,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt6468322",
@@ -46391,7 +46636,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjA4MTEyMzcwMl5BMl5BanBnXkFtZTgwMTIwODczNTM@",
   "imdbRating": 8.2,
   "imdbVotes": 170731,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt9145758",
@@ -46423,7 +46669,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDI2ZjQyMzItYjg4NS00ZWYzLWE2M2EtYTNiN2Y4Mzc5Y2EwXkEyXkFqcGc@",
   "imdbRating": 8.2,
   "imdbVotes": 20108,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt3609352",
@@ -46453,7 +46700,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjgwMTg2NTAzOV5BMl5BanBnXkFtZTgwOTc0MTI1NTE@",
   "imdbRating": 8.2,
   "imdbVotes": 61507,
-  "seasons": 7
+  "seasons": 7,
+  "studio": "Netflix"
  },
  {
   "id": "tt4635276",
@@ -46483,7 +46731,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjI1MDgyMTMwMF5BMl5BanBnXkFtZTgwMDU5MzAxNzE@",
   "imdbRating": 8.2,
   "imdbVotes": 78581,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt7255502",
@@ -46513,7 +46762,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjUzNDU1MDM0NF5BMl5BanBnXkFtZTgwOTM5NzI1NjM@",
   "imdbRating": 8.2,
   "imdbVotes": 46529,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt6315640",
@@ -46543,7 +46793,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTJiY2ZiNjEtMjk1MS00Yzk0LThiNGMtMGUzZjRlNjc1OTU2XkEyXkFqcGc@",
   "imdbRating": 8.2,
   "imdbVotes": 111120,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt8688814",
@@ -46575,7 +46826,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDg2YjI2YjYtYjY2Ny00ODg2LWIxNWQtODM3NjE1MzNkNjExXkEyXkFqcGc@",
   "imdbRating": 8.2,
   "imdbVotes": 30993,
-  "seasons": 7
+  "seasons": 7,
+  "studio": "Netflix"
  },
  {
   "id": "tt9348716",
@@ -46606,7 +46858,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BM2RhMTEwNWItMDQzNC00YjgyLThmYzUtNzk3OGQ3MGNhOGMyXkEyXkFqcGc@",
   "imdbRating": 8.2,
   "imdbVotes": 1933,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt6494622",
@@ -46637,7 +46890,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNmZmYzQzMTktOWJjMi00Mzk1LWIyZjgtZmNiMWRiZmNjYjU4XkEyXkFqcGc@",
   "imdbRating": 8.2,
   "imdbVotes": 15121,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt6522580",
@@ -46668,7 +46922,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjE1YzUxNGYtMjVhZi00NWNjLTlmYzEtMzI3YTdhMGEwMjNkXkEyXkFqcGc@",
   "imdbRating": 8.2,
   "imdbVotes": 8073,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt14664414",
@@ -46700,7 +46955,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzdmMWY1MzItM2Y3My00OTcwLTkwMTQtNTg0YjI0NzM2YTc5XkEyXkFqcGc@",
   "imdbRating": 8.2,
   "imdbVotes": 51023,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt7016936",
@@ -48359,7 +48615,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzU4YTYzY2UtNGM5Yi00NzYyLTliOWItZDBjYjhjY2U1NzNmXkEyXkFqcGc@",
   "imdbRating": 8.1,
   "imdbVotes": 34698,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt7889220",
@@ -48389,7 +48646,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNmM1NzNlMDEtZjIwOC00ZTczLTgwZWUtZTg0MWRjYmRiZmI2XkEyXkFqcGc@",
   "imdbRating": 8.1,
   "imdbVotes": 10642,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt11822998",
@@ -48419,7 +48677,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjhjZjg0NzAtZjI2Ny00NmVkLWFiNzUtZjQ1YTE3Y2E1ZjhjXkEyXkFqcGc@",
   "imdbRating": 8.1,
   "imdbVotes": 15246,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt14524712",
@@ -48451,7 +48710,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmNmZTU5ZTUtZTc0NS00ZWJlLWFlMzUtMDRmZDgzMDhjNmM0XkEyXkFqcGc@",
   "imdbRating": 8.1,
   "imdbVotes": 39736,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8200004",
@@ -48482,7 +48742,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTYxNjQ2MTA1MF5BMl5BanBnXkFtZTgwOTQyODQxNTM@",
   "imdbRating": 8.1,
   "imdbVotes": 2135,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8914684",
@@ -48512,7 +48773,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNGNlYzNmMzEtZGQ3ZC00MGFjLWJmNjUtYTI4MDMzYjQ1MGVhXkEyXkFqcGc@",
   "imdbRating": 8.1,
   "imdbVotes": 10244,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt18750552",
@@ -48539,7 +48801,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTY1NGJhN2MtNDY3Zi00YTkzLTgzZjMtMTVjOWE1ODIxZjIyXkEyXkFqcGc@",
   "imdbRating": 8.1,
   "imdbVotes": 3168,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt7745956",
@@ -48571,7 +48834,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjI3MTI2NzY0M15BMl5BanBnXkFtZTgwNDY3MjA1NjM@",
   "imdbRating": 8.1,
   "imdbVotes": 21354,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt4651448",
@@ -48602,7 +48866,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWI3OTM0ZWMtMWU3OC00MjU1LWE5ZWUtOTkyYWVjYTM1NmIyXkEyXkFqcGc@",
   "imdbRating": 8.1,
   "imdbVotes": 3489,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt26737616",
@@ -48635,7 +48900,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYmY3NDZjYzctMWEyYS00NzM1LTg5ZDYtYTA5ZDc5NWJjNjhkXkEyXkFqcGc@",
   "imdbRating": 8.1,
   "imdbVotes": 18572,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt26315487",
@@ -48666,7 +48932,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjhjZmYwYjItYjA1Yy00NzkwLTk1OWMtZjYzZTg2MWFiYmFjXkEyXkFqcGc@",
   "imdbRating": 8.1,
   "imdbVotes": 26563,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt27539317",
@@ -48697,7 +48964,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODcyYTEwYTctMTY4Mi00OGZjLThmODAtODVkNmM0NTVjMGY4XkEyXkFqcGc@",
   "imdbRating": 8.1,
   "imdbVotes": 10250,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt23037654",
@@ -48729,7 +48997,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2QzNDZkMWUtZTBkNy00MzMzLWIzMmEtZWFlNzRiZTdhNzFjXkEyXkFqcGc@",
   "imdbRating": 8.1,
   "imdbVotes": 13891,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt0084988",
@@ -49447,7 +49716,7 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODUwODg2ZTEtZDJlOC00MzZlLWFkZDMtYzBlMjMyZjA4MTk1XkEyXkFqcGc@",
   "imdbRating": 8,
-  "imdbVotes": 2468,
+  "imdbVotes": 2642,
   "seasons": 3
  },
  {
@@ -49948,7 +50217,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzMwNzI3MWItZTIzYi00YjkxLThhOWQtYmUwYjg4NWM0ZWI1XkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 389333,
-  "seasons": 6
+  "seasons": 6,
+  "studio": "Netflix"
  },
  {
   "id": "tt6257970",
@@ -49979,7 +50249,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTVkZTI3MmMtMDY1Yi00NjJhLTgyYTctNWE1OTJkNmZiZjdlXkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 237714,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt5770786",
@@ -50013,7 +50284,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2RlNTc4NzMtNTNjZC00NWEyLTlhMWItMDdkM2E2ZTdkZWIyXkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 53457,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt5651844",
@@ -50045,7 +50317,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjUzOTQwOTg1MF5BMl5BanBnXkFtZTgwNzE4NzQ3NjM@",
   "imdbRating": 8,
   "imdbVotes": 71612,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt24069848",
@@ -50076,7 +50349,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDQ5ZDVkOWUtZTM2NC00MDcxLTgzY2ItNmJkOGVkMTRmZmQxXkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 85060,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt6792200",
@@ -50107,7 +50381,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODgwNDM1Mzg4NF5BMl5BanBnXkFtZTgwOTQ5NzQwMjI@",
   "imdbRating": 8,
   "imdbVotes": 27955,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11318602",
@@ -50138,7 +50413,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNmJhMjdhMmYtNTI0NS00OGIzLWIzZGItZTQ4NzI4ZWU0ZjYyXkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 68155,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11426660",
@@ -50168,7 +50444,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDhmMDZmNDItNzUwMy00YjJjLWE0NTQtM2E2YmFlMWRlYzU4XkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 7141,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt17050700",
@@ -50199,7 +50476,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2NjMDMwODUtOGI1MC00Y2I0LThkYjMtMjBlNTU5YTc0NDk5XkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 4785,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt26777035",
@@ -50229,7 +50507,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjFhOTczNjEtZjljZC00N2UxLTg2MmQtNjUwNTNlY2MyMjZlXkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 5693,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt13972246",
@@ -50259,7 +50538,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzA3YzEzZGItYTZiNy00MmI4LTg1ODYtOWQxZDc5MzY2MGUyXkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 1597,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt13660958",
@@ -50290,7 +50570,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODg4MzZhODctNzEzMi00Njk4LWJhYWMtNzlkNmI4ZGZlMzA4XkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 9245,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8005374",
@@ -50319,7 +50600,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYmM0ZGQ4Y2UtNjJhOC00YTAzLWEyMzgtNmJiNmY1MGNhMGM0XkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 10274,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt5347906",
@@ -50346,7 +50628,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWYzYWRjOWItNTljOC00MTk0LTk0NWEtMGU1N2JjZmFjY2UyXkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 3232,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt4326894",
@@ -50379,7 +50662,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTI1YTZiMTItOGM1NC00ZTAzLTk2MTgtMmVmYjQ5NWRhNDk0XkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 44140,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt9248538",
@@ -50408,7 +50692,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTczZTE2MDItODM0Mi00NjdiLTg5NjktYTk5OTcwNDIzNTNhXkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 2091,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt8019444",
@@ -50440,7 +50725,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNmJiMWI4YmMtMDg4Ny00YTNmLWFlZWMtYTMyMzE3ZDg1NWJmXkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 8138,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt8045690",
@@ -50471,7 +50757,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDY3Y2FmOWYtMzc3Yy00Y2FhLTk3M2YtNTE5M2E4ZDU4NDE0XkEyXkFqcGc@",
   "imdbRating": 8,
   "imdbVotes": 5566,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt10919420",
@@ -51532,7 +51819,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTcwMDU5NzMzOV5BMl5BanBnXkFtZTgwNzk5NTE0MzE@",
   "imdbRating": 7.9,
   "imdbVotes": 83035,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt8064302",
@@ -51563,7 +51851,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODFhNzI1ZjgtMTFmNC00MTkyLTg0NTItMTkzYzk4MDFjNzdhXkEyXkFqcGc@",
   "imdbRating": 7.9,
   "imdbVotes": 107943,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt2261227",
@@ -51597,7 +51886,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTY4MWY1ZDktZjQxZS00ZDc5LWE3OTctZDU5MzQ2ZWU5ZTJkXkEyXkFqcGc@",
   "imdbRating": 7.9,
   "imdbVotes": 201167,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt11252254",
@@ -51627,7 +51917,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzVkNWY5M2EtZjk0NC00MjY2LTgzNzYtMjZhMTI1NzAxMDBhXkEyXkFqcGc@",
   "imdbRating": 7.9,
   "imdbVotes": 19575,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt15567174",
@@ -51658,7 +51949,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2RiMjhkMzYtOWFmYS00YmRkLWIxYmYtN2FmZDEwODllYzA3XkEyXkFqcGc@",
   "imdbRating": 7.9,
   "imdbVotes": 130001,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt7042146",
@@ -51690,7 +51982,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGNmYmI2MmQtY2Q3Yy00MzBiLTk4YzMtYWJkNDEwNTA1YWU0XkEyXkFqcGc@",
   "imdbRating": 7.9,
   "imdbVotes": 8704,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt7197684",
@@ -51721,7 +52014,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWYyZDNmMzQtZTUyZi00YzkxLWI4MzctOGIwODU5YzQ4ODlmXkEyXkFqcGc@",
   "imdbRating": 7.9,
   "imdbVotes": 17444,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt10795658",
@@ -52782,7 +53076,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTU4OTY0MzM1OV5BMl5BanBnXkFtZTgwMjkxMzE0MjI@",
   "imdbRating": 7.8,
   "imdbVotes": 62592,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt4635282",
@@ -52813,7 +53108,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTY5OTkwNDkzOF5BMl5BanBnXkFtZTgwMDEyNzI1NzM@",
   "imdbRating": 7.8,
   "imdbVotes": 124749,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt7879820",
@@ -52843,7 +53139,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWEwM2U3NjktNWZkYS00ZmMyLTk1MTAtZmYzNWY3NTExNTk0XkEyXkFqcGc@",
   "imdbRating": 7.8,
   "imdbVotes": 22590,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt13720112",
@@ -52876,7 +53173,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYmU0NTk2YWQtOWM5MC00MGIwLWExYTgtYzY1ZGMxNzdlN2UzXkEyXkFqcGc@",
   "imdbRating": 7.8,
   "imdbVotes": 20249,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt10147644",
@@ -52907,7 +53205,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTEyOTdhNWQtNjg1YS00NGZjLTkwZTQtNTAxNTM5MTg2YzgyXkEyXkFqcGc@",
   "imdbRating": 7.8,
   "imdbVotes": 41407,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt2357547",
@@ -52938,7 +53237,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDhhY2VlMWItMjM3Yi00MDc1LTlmYjctNjMzNDIxZjc5NGEwXkEyXkFqcGc@",
   "imdbRating": 7.8,
   "imdbVotes": 237839,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt10050778",
@@ -52967,7 +53267,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmFmYWVmNWEtYzU1MS00NDU5LWJhYWItZjQ4NmFiMWNhMzljXkEyXkFqcGc@",
   "imdbRating": 7.8,
   "imdbVotes": 3351,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9184994",
@@ -52999,7 +53300,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWE3YmU3MTUtN2QwNy00ODQ4LThlMWQtMGExMTA5NWI2OTVjXkEyXkFqcGc@",
   "imdbRating": 7.8,
   "imdbVotes": 46546,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt13317582",
@@ -53030,7 +53332,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BM2VjMThiN2YtOWNjOS00YmVmLTk2NjgtYzk2OWM3M2Y5NmZlXkEyXkFqcGc@",
   "imdbRating": 7.8,
   "imdbVotes": 12142,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt0368530",
@@ -53061,7 +53364,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzk2YjJiNzMtZjk2Mi00ZGU5LWI1ZTUtNjIwMGI2NjZiMTVjXkEyXkFqcGc@",
   "imdbRating": 7.8,
   "imdbVotes": 93148,
-  "seasons": 9
+  "seasons": 9,
+  "studio": "Netflix"
  },
  {
   "id": "tt3741634",
@@ -54069,7 +54373,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDY3OWExOWEtMjI1Mi00NzQzLWE5ZTktZDM2Nzc4MjU3NjcwXkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 39762,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt12809988",
@@ -54100,7 +54405,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWUxZWVhMTItOWQ1MS00OWFhLThkNzMtN2ZkN2EyMGI4M2M3XkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 77189,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt15054962",
@@ -54131,7 +54437,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNGNmMDBlNjEtZDYyMC00MWE2LTliOTEtMThiN2UzOWE2YjBhXkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 15500,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt9348692",
@@ -54165,7 +54472,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODdkNzE3ZTQtZTRmOC00M2RlLWJiYWEtN2RkMGQyOWNhMmNlXkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 22419,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt10574558",
@@ -54196,7 +54504,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWFjMDM5MzgtZWI3OC00ZWRmLThlNTktN2ZkMTc3ZTA5NGEzXkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 165644,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt6297682",
@@ -54226,7 +54535,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDdhNzA2NzktNTUxMS00Yzc5LWFlMDktMjk1ZjQxOWJkZmJjXkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 23325,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8740614",
@@ -54257,7 +54567,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNmJlOWFiNGEtZGYyMy00ZWY5LWJlMjMtYjgzZTViNDI3NzUxXkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 60888,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt26933824",
@@ -54288,7 +54599,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGEyNWU3M2EtY2QzNy00NmFmLWI0MDQtMWQzNzdlZjE4MWRiXkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 81339,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt18082212",
@@ -54318,7 +54630,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMGY5ODlkNTgtNTU2YS00NDhlLThkZGYtNGRhNWM3ZGRlNzdmXkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 2814,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8201618",
@@ -54347,7 +54660,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2Y2NzEzY2QtOTgwOS00OGU2LTgyZTctZDZmY2I1ZGNmY2I1XkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 1411,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt14540468",
@@ -54377,7 +54691,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTkxZmY4MmEtZDBiYy00NmQxLWJmNzQtNDE0ZjYxZTIyYzQzXkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 949,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt10231312",
@@ -54408,7 +54723,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjJkMjhhNzctNjMxOS00M2Y1LWFiMmMtZjQ5ZjllM2UxYjAzXkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 37624,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt14069590",
@@ -54439,7 +54755,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMGQ2YjcwZDUtNDQ4YS00MThjLWJlMjYtZjkxMTYxNmU4MGY0XkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 23281,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt8328460",
@@ -54469,7 +54786,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2Y1YmI2NjUtZTQyMC00OWRiLWE5NWUtNDhmZDYxMmNlZjFkXkEyXkFqcGc@",
   "imdbRating": 7.7,
   "imdbVotes": 1363,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt17524566",
@@ -54499,7 +54817,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDRkYjcxNjktMTk3ZS00ZjQ2LWI3ZDMtMWM2NTI1ZWYzYjA4XkEyXkFqcGc@",
   "imdbRating": 7.7,
-  "imdbVotes": 19226
+  "imdbVotes": 19226,
+  "studio": "Netflix"
  },
  {
   "id": "tt8824648",
@@ -55220,7 +55539,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMGZiMTFjZDUtYWI1MS00YjFkLWFhMGUtZTdkY2YxY2M2MzJkXkEyXkFqcGc@",
   "imdbRating": 7.6,
   "imdbVotes": 42370,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt7985576",
@@ -55257,7 +55577,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGM1NzFjNDYtYTZjMS00NjdhLWEyMjUtZGExMDczNzViMTA0XkEyXkFqcGc@",
   "imdbRating": 7.6,
   "imdbVotes": 54323,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt5580146",
@@ -55288,7 +55609,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDA0OWI5YzgtOGYzNy00ODdhLTk0ZGQtNDY4ODFiNTAyOGQ4XkEyXkFqcGc@",
   "imdbRating": 7.6,
   "imdbVotes": 91594,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt4061080",
@@ -55307,9 +55629,9 @@
   "actors": [
    "Gillian Jacobs",
    "Paul Rust",
-   "Claudia O'Doherty"
+   "Claudia O&apos;Doherty"
   ],
-  "plot": "When his cheating girlfriend leaves him, people-pleasing nice-guy Gus (Paul Rust, \"I Love You, Beth Cooper\" and \"Inglorious Basterds\") moves into a trendy apartment complex inhabited by lots of college students. A chance encounter introduces him to wild-child Mickey (Gillian Jacobs, \"Community\"), also recently single, and who despises her job in radio. Though wildly different, the two are drawn to each other, and that relationship is the basis for the Judd Apatow-helmed Netflix original series. And in the end, their differences may be what help them figure out just what love is.",
+  "plot": "When his cheating girlfriend leaves him, people-pleasing nice-guy Gus (Paul Rust, \"I Love You, Beth Cooper\" and \"Inglourious Basterds\") moves into a trendy apartment complex inhabited by lots of college students. A chance encounter introduces him to wild-child Mickey (Gillian Jacobs, \"Community\"), also recently single, who despises her job in radio. Though wildly different, the two are drawn to each other, and that relationship is the basis for the Judd Apatow-helmed Netflix original series. In the end, their differences might be what help them figure out just what love is.",
   "languages": [
    "English"
   ],
@@ -55318,8 +55640,9 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWNjMzk1MmMtMTllMi00NTNjLTg2YzQtYmFmN2RmZDAyOGUxXkEyXkFqcGc@",
   "imdbRating": 7.6,
-  "imdbVotes": 47415,
-  "seasons": 3
+  "imdbVotes": 48884,
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt9381622",
@@ -55349,7 +55672,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjcyYjQ0Y2UtZTQzNC00ODEzLWI2MDItZGUxOTA0MjdhNGQ5XkEyXkFqcGc@",
   "imdbRating": 7.6,
   "imdbVotes": 10520,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt12754910",
@@ -55374,7 +55698,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2ZmYzAxY2UtYTZiYy00Mjg2LTk2Y2EtZDYyMDczNjc2ZmI0XkEyXkFqcGc@",
   "imdbRating": 7.6,
   "imdbVotes": 1280,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10919290",
@@ -55405,7 +55730,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNGQ5YWFiZTMtNzExMC00ODUxLWExYjEtZTkxMDBlMGI0NmJkXkEyXkFqcGc@",
   "imdbRating": 7.6,
   "imdbVotes": 3115,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt11043632",
@@ -55437,7 +55763,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDRlMDA0MTctYjNmYy00MzRhLWEwYjEtYmYxZTI5YTdjMTgyXkEyXkFqcGc@",
   "imdbRating": 7.6,
   "imdbVotes": 14807,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt9278032",
@@ -55467,7 +55794,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjE1M2FlMjctNDNiZi00ODhkLTlmMmMtNTA3MjlhNTFjMWY3XkEyXkFqcGc@",
   "imdbRating": 7.6,
   "imdbVotes": 1852,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt10262630",
@@ -55497,7 +55825,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmNhNWFiM2ItMTA4ZC00YmNiLTk0NmMtNjcxYTNiNjY4MzJmXkEyXkFqcGc@",
   "imdbRating": 7.6,
   "imdbVotes": 11063,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9050352",
@@ -55526,8 +55855,9 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzI4NzMxYjEtM2ZhZS00Y2VkLWExNjYtZWE4YTYzOTk5ZDAxXkEyXkFqcGc@",
   "imdbRating": 7.6,
-  "imdbVotes": 6353,
-  "seasons": 1
+  "imdbVotes": 6554,
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10540276",
@@ -55558,7 +55888,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzNhZmY1NWItMzg2Ny00ODJhLWE5YjYtODZlODc4N2I0M2JjXkEyXkFqcGc@",
   "imdbRating": 7.6,
   "imdbVotes": 13526,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt2531336",
@@ -56145,7 +56476,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNGY4NjYzYTYtMDhjYy00MmQ2LTkwNDktNzUxMGNkMDI5MmZhXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 103432,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt9446688",
@@ -56176,7 +56508,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTVkYzBlNjMtNmMyMi00ZDM3LWFlMDctZmMxOWU5NWM2MmRhXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 79563,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt2403776",
@@ -56207,7 +56540,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWM1NTJiNzUtYTJlYy00NWYyLTliNjUtN2FjNzdkOWQxNWRjXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 122591,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt8690518",
@@ -56238,7 +56572,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTBmZjg4MDUtNTNhMi00MjFjLWI5MWItNDNiNjY0N2M4ZjcyXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 5519,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt13016388",
@@ -56271,7 +56606,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDdkYWZiZWYtMzA0Yi00NzNlLThkODktY2Q3N2NjN2ExZmMwXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 177200,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9827854",
@@ -56300,7 +56636,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOWJkZjc0ZGQtZmFmNC00ZWE4LTlhNWYtYjQyYzI2ZjcwOTJjXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 42417,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt3339966",
@@ -56329,7 +56666,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTgyNTQyNjUwN15BMl5BanBnXkFtZTgwNjMwNjUzNzM@",
   "imdbRating": 7.5,
   "imdbVotes": 82744,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt10098620",
@@ -56360,7 +56698,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmUyNjc4ZTYtMDA0ZC00NjJhLWJiNTctODFjOGEzYjUxOTIwXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 14552,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt17361756",
@@ -56390,7 +56729,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTdjNWMzM2YtMGY4Zi00ODc2LWE1NjctNmQyMWZmNzM1NTIwXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 7391,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt11823076",
@@ -56421,7 +56761,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzVjMzM0MDMtMjFlZS00NTE1LTg1NDAtNDkwNzFiNzk2MWFhXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 91536,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt8342862",
@@ -56451,7 +56792,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjFjYzk3N2MtMDg1OC00NmIxLTkzNjEtNDM4ZmQ3YmNhMTE4XkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 32279,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11165002",
@@ -56485,7 +56827,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzIwNTU4YTgtYjgwMi00M2NmLTllMDktOTIxYjM4YmIyZTg5XkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 15460,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt13651632",
@@ -56517,7 +56860,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzljMDY4YmYtYjcyMS00YjU3LWFjNzUtMjQ4MzgxNDZhY2IwXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 33319,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt7349602",
@@ -56547,7 +56891,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BM2Y4YzNlMmQtZjkzNS00NzVjLTgzNzAtZDhkYmZmMjc4ZDk2XkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 5752,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt22797582",
@@ -56578,7 +56923,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzZmZGU4YjYtZjE5Ni00MDZjLTllN2MtNjhhMDkxMDRiNWFlXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 23725,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt21822078",
@@ -56609,7 +56955,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWM5NmY2YzEtNzc4Ni00YTc0LWExMjUtNzRlYjk4Yjk4YjAxXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 4854,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt14460684",
@@ -56639,7 +56986,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTkyNmQwMjAtZmI3Ny00ZjE5LWIwNmEtY2Q1YWMxMTUxNDRmXkEyXkFqcGc@",
   "imdbRating": 7.5,
-  "imdbVotes": 6207
+  "imdbVotes": 6207,
+  "studio": "Netflix"
  },
  {
   "id": "tt5674718",
@@ -56669,7 +57017,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTExZmFjOGMtNzRiZC00MmJkLTk3NjgtMWEwZDEyZjYzYjAwXkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 17637,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt8387348",
@@ -56699,7 +57048,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjI0Njk0NDM2NF5BMl5BanBnXkFtZTgwNDY4ODA3NTM@",
   "imdbRating": 7.5,
   "imdbVotes": 9288,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt6839788",
@@ -56730,7 +57080,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTY4MTczNzkyOF5BMl5BanBnXkFtZTgwNTUxMzQ4NjM@",
   "imdbRating": 7.5,
   "imdbVotes": 15196,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt27853283",
@@ -56762,7 +57113,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGJiMDAwOTctM2M2ZS00MjQzLWIzMmItNmRmZjUzNTU2YzA0XkEyXkFqcGc@",
   "imdbRating": 7.5,
   "imdbVotes": 12570,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt6704972",
@@ -56829,44 +57181,9 @@
   "seasons": 4
  },
  {
-  "id": "tt0466352",
-  "kind": "series",
-  "imdbRank": 690,
-  "title": "The Prince of Tennis",
-  "year": 2001,
-  "rated": "TV-PG",
-  "runtime": 22,
-  "genres": [
-   "Animation",
-   "Action",
-   "Comedy"
-  ],
-  "director": "",
-  "actors": [
-   "Jun'ichi Suwabe",
-   "Erik Davies",
-   "Jacob Hopkins"
-  ],
-  "plot": "Prince of Tennis follows the story of a 12 year old boy Ryoma Echizen who won four consecutive titles in the American Junior Tennis tournaments. He's an amazing tennis player and is considered a prodigy. He moved from America to Japan and attends Seishun Academy Middle School or Seigaku as it is commonly referred to in the anime. The anime follows the matches between Seigaku and other middle schools such as Hyotei and Fudomine, and Seigaku's preparations for the matches.",
-  "languages": [
-   "English",
-   "Japanese",
-   "Portuguese",
-   "Spanish"
-  ],
-  "countries": [
-   "Japan",
-   "United States"
-  ],
-  "posterBase": "https://m.media-amazon.com/images/M/MV5BYzY4NGEwYTgtMjg0ZS00MWUxLWIxMjQtZTJiMTlhMGExMzJmXkEyXkFqcGc@",
-  "imdbRating": 7.4,
-  "imdbVotes": 1051,
-  "seasons": 1
- },
- {
   "id": "tt1086236",
   "kind": "series",
-  "imdbRank": 691,
+  "imdbRank": 690,
   "title": "Lucky Star",
   "year": 2007,
   "rated": "TV-PG",
@@ -56898,7 +57215,7 @@
  {
   "id": "tt0210418",
   "kind": "series",
-  "imdbRank": 692,
+  "imdbRank": 691,
   "title": "Digimon Adventure",
   "year": 1999,
   "rated": "TV-Y7",
@@ -56929,7 +57246,7 @@
  {
   "id": "tt2404115",
   "kind": "series",
-  "imdbRank": 693,
+  "imdbRank": 692,
   "title": "Rich Man, Poor Woman",
   "year": 2012,
   "rated": "Not Rated",
@@ -56959,7 +57276,7 @@
  {
   "id": "tt1666217",
   "kind": "series",
-  "imdbRank": 694,
+  "imdbRank": 693,
   "title": "Personal Taste",
   "year": 2010,
   "rated": "Not Rated",
@@ -56990,7 +57307,7 @@
  {
   "id": "tt22352854",
   "kind": "series",
-  "imdbRank": 695,
+  "imdbRank": 694,
   "title": "Gyeongseong Creature",
   "year": 2023,
   "rated": "TV-MA",
@@ -57022,7 +57339,7 @@
  {
   "id": "tt6859260",
   "kind": "series",
-  "imdbRank": 696,
+  "imdbRank": 695,
   "title": "The King's Avatar",
   "year": 2017,
   "rated": "TV-13",
@@ -57054,7 +57371,7 @@
  {
   "id": "tt1311356",
   "kind": "series",
-  "imdbRank": 697,
+  "imdbRank": 696,
   "title": "Devil Beside You",
   "year": 2005,
   "rated": "Not Rated",
@@ -57085,7 +57402,7 @@
  {
   "id": "tt14086344",
   "kind": "series",
-  "imdbRank": 698,
+  "imdbRank": 697,
   "title": "Fish Upon the Sky",
   "year": 2021,
   "rated": "Not Rated",
@@ -57116,7 +57433,7 @@
  {
   "id": "tt27040867",
   "kind": "series",
-  "imdbRank": 699,
+  "imdbRank": 698,
   "title": "Bed Friend",
   "year": 2023,
   "rated": "18+",
@@ -57145,7 +57462,7 @@
  {
   "id": "tt29634949",
   "kind": "series",
-  "imdbRank": 700,
+  "imdbRank": 699,
   "title": "My Love Mix-Up!",
   "year": 2024,
   "rated": "Not Rated",
@@ -57175,7 +57492,7 @@
  {
   "id": "tt0157246",
   "kind": "series",
-  "imdbRank": 701,
+  "imdbRank": 700,
   "title": "Will & Grace",
   "year": 1998,
   "rated": "TV-PG",
@@ -57205,7 +57522,7 @@
  {
   "id": "tt0165581",
   "kind": "series",
-  "imdbRank": 702,
+  "imdbRank": 701,
   "title": "The King of Queens",
   "year": 1998,
   "rated": "TV-PG",
@@ -57234,7 +57551,7 @@
  {
   "id": "tt3228904",
   "kind": "series",
-  "imdbRank": 703,
+  "imdbRank": 702,
   "title": "Empire",
   "year": 2015,
   "rated": "TV-14",
@@ -57264,7 +57581,7 @@
  {
   "id": "tt0159206",
   "kind": "series",
-  "imdbRank": 704,
+  "imdbRank": 703,
   "title": "Sex and the City",
   "year": 1998,
   "rated": "TV-MA",
@@ -57295,7 +57612,7 @@
  {
   "id": "tt1723816",
   "kind": "series",
-  "imdbRank": 705,
+  "imdbRank": 704,
   "title": "Girls",
   "year": 2012,
   "rated": "TV-MA",
@@ -57325,7 +57642,7 @@
  {
   "id": "tt1043813",
   "kind": "series",
-  "imdbRank": 706,
+  "imdbRank": 705,
   "title": "Titans",
   "year": 2018,
   "rated": "TV-MA",
@@ -57356,7 +57673,7 @@
  {
   "id": "tt10160804",
   "kind": "series",
-  "imdbRank": 707,
+  "imdbRank": 706,
   "title": "Hawkeye",
   "year": 2021,
   "rated": "TV-14",
@@ -57388,7 +57705,7 @@
  {
   "id": "tt9077530",
   "kind": "series",
-  "imdbRank": 708,
+  "imdbRank": 707,
   "title": "Virgin River",
   "year": 2019,
   "rated": "TV-14",
@@ -57413,12 +57730,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMWYyOTU0ZWMtMzEzOS00NWZlLTg2NzYtNTk5ZWQyZmVmOTk4XkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 57217,
-  "seasons": 7
+  "seasons": 7,
+  "studio": "Netflix"
  },
  {
   "id": "tt7971476",
   "kind": "series",
-  "imdbRank": 709,
+  "imdbRank": 708,
   "title": "The Politician",
   "year": 2019,
   "rated": "TV-14",
@@ -57443,12 +57761,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTkxNjAyZGQtNWI5NS00Y2RmLWEwNjMtNzlhYWY3NDk1MjUxXkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 25678,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt9569546",
   "kind": "series",
-  "imdbRank": 710,
+  "imdbRank": 709,
   "title": "Halston",
   "year": 2021,
   "rated": "TV-MA",
@@ -57473,12 +57792,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BM2NjMDE5YTAtNDA3ZS00YWRjLTllZWItMzkxYTczZTVhNTY4XkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 18419,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt13918776",
   "kind": "series",
-  "imdbRank": 711,
+  "imdbRank": 710,
   "title": "The Night Agent",
   "year": 2023,
   "rated": "TV-MA",
@@ -57504,12 +57824,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDU5ZjhhNWMtMjM2MC00OWNmLTlmYTMtOTQ5OTBlZjc2NTdhXkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 151290,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt7569592",
   "kind": "series",
-  "imdbRank": 712,
+  "imdbRank": 711,
   "title": "Chilling Adventures of Sabrina",
   "year": 2018,
   "rated": "TV-14",
@@ -57535,12 +57856,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTQyMDYwNDMyOV5BMl5BanBnXkFtZTgwMjM4NTIzNjM@",
   "imdbRating": 7.4,
   "imdbVotes": 118072,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt16030542",
   "kind": "series",
-  "imdbRank": 713,
+  "imdbRank": 712,
   "title": "The Recruit",
   "year": 2022,
   "rated": "TV-MA",
@@ -57566,12 +57888,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTgyOGQ3ZTEtMGQ0Ni00YjI1LTgxYjItOTJjMjhiZWE1YWZkXkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 62723,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt8550732",
   "kind": "series",
-  "imdbRank": 714,
+  "imdbRank": 713,
   "title": "Kaos",
   "year": 2024,
   "rated": "TV-MA",
@@ -57597,12 +57920,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjczMDQ5MTEtYzY1Ni00M2FlLWI2NGMtYTYyZjM1ZGNkNGQyXkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 47810,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11816814",
   "kind": "series",
-  "imdbRank": 715,
+  "imdbRank": 714,
   "title": "Painkiller",
   "year": 2023,
   "rated": "TV-MA",
@@ -57627,12 +57951,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjhjYjBkNzItOTE5MC00MTY0LTgzOGItM2EyNGZhNzYwZWE1XkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 34374,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10970552",
   "kind": "series",
-  "imdbRank": 716,
+  "imdbRank": 715,
   "title": "The Haunting of Bly Manor",
   "year": 2020,
   "rated": "TV-MA",
@@ -57658,12 +57983,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTkwYzExODYtYmI2OS00MmM1LWI5M2MtNzYyOTIxMmI1NTc5XkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 139295,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt21217912",
   "kind": "series",
-  "imdbRank": 717,
+  "imdbRank": 716,
   "title": "Trainwreck: Woodstock '99",
   "year": 2022,
   "rated": "TV-MA",
@@ -57689,12 +58015,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTg5MzEzNGQtM2QwZi00MTlkLTk1NWUtNDRjMzY3YTEyMzRhXkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 24322,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt15213278",
   "kind": "series",
-  "imdbRank": 718,
+  "imdbRank": 717,
   "title": "LuLaRich",
   "year": 2021,
   "rated": "TV-14",
@@ -57719,12 +58046,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWIyN2QzNDItOWEwYy00MzQwLWFlODMtOWVkNzFjMDgwODE2XkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 4287,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10611608",
   "kind": "series",
-  "imdbRank": 719,
+  "imdbRank": 718,
   "title": "The Cuphead Show!",
   "year": 2022,
   "rated": "TV-Y7",
@@ -57752,12 +58080,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDA2Zjg3YmEtNGIzMS00YjM3LWJmZmUtNTc2ZDYzY2U5OTdlXkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 11290,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt8036272",
   "kind": "series",
-  "imdbRank": 720,
+  "imdbRank": 719,
   "title": "Tuca & Bertie",
   "year": 2019,
   "rated": "TV-MA",
@@ -57782,12 +58111,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjhhYTBkOWEtODZkMC00NmRjLTkxMTYtMzJhOWQ5ZjYyMzc4XkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 9180,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt6987788",
   "kind": "series",
-  "imdbRank": 721,
+  "imdbRank": 720,
   "title": "Nailed It!",
   "year": 2018,
   "rated": "TV-PG",
@@ -57812,12 +58142,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzA1NDA4MTQtZGUwMC00YzBlLTg1YmQtOWNhYmI1OWFmYzk1XkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 5796,
-  "seasons": 7
+  "seasons": 7,
+  "studio": "Netflix"
  },
  {
   "id": "tt26315488",
   "kind": "series",
-  "imdbRank": 722,
+  "imdbRank": 721,
   "title": "Celebrity",
   "year": 2023,
   "rated": "TV-MA",
@@ -57843,12 +58174,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzQ4ZmUyNzItNWVlNy00MzlmLWI5OTItODkyODIwZGYwOThmXkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 7698,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10423460",
   "kind": "series",
-  "imdbRank": 723,
+  "imdbRank": 722,
   "title": "Family Business",
   "year": 2019,
   "rated": "TV-MA",
@@ -57872,12 +58204,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2VlNGZiZTEtODZjNy00YzY5LWFiMGEtYWM4YmQxMWQwYTY5XkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 5475,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt10516352",
   "kind": "series",
-  "imdbRank": 724,
+  "imdbRank": 723,
   "title": "Love 101",
   "year": 2020,
   "rated": "TV-14",
@@ -57903,12 +58236,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWRiM2I1ZTItZDVjNi00MGEwLWExNGUtZWEyZTdlOTY5Yjk1XkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 17896,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt11961378",
   "kind": "series",
-  "imdbRank": 725,
+  "imdbRank": 724,
   "title": "Fatma",
   "year": 2021,
   "rated": "TV-MA",
@@ -57933,12 +58267,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGQzZjRiYjItNmUyNC00ZWM0LTlhZGUtZWQ2NGY5M2E5NGMzXkEyXkFqcGc@",
   "imdbRating": 7.4,
   "imdbVotes": 10416,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt7340738",
   "kind": "series",
-  "imdbRank": 726,
+  "imdbRank": 725,
   "title": "Quicksand",
   "year": 2019,
   "rated": "TV-MA",
@@ -57963,12 +58298,13 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmU1MTk1MWMtMDYzZC00OTU5LWI5YmUtMTk0NWRjMDdiYmExXkEyXkFqcGc@",
   "imdbRating": 7.4,
-  "imdbVotes": 28423
+  "imdbVotes": 28423,
+  "studio": "Netflix"
  },
  {
   "id": "tt5435008",
   "kind": "series",
-  "imdbRank": 727,
+  "imdbRank": 726,
   "title": "Gilmore Girls: A Year in the Life",
   "year": 2016,
   "rated": "TV-14",
@@ -57993,12 +58329,13 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODM1OTk4MDY2M15BMl5BanBnXkFtZTgwOTEwNzczMDI@",
   "imdbRating": 7.4,
   "imdbVotes": 49091,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11822994",
   "kind": "series",
-  "imdbRank": 728,
+  "imdbRank": 727,
   "title": "Sleepless Society: Insomnia",
   "year": 2020,
   "rated": "Not Rated",
@@ -58029,7 +58366,7 @@
  {
   "id": "tt9319668",
   "kind": "series",
-  "imdbRank": 729,
+  "imdbRank": 728,
   "title": "1899",
   "year": 2022,
   "rated": "TV-MA",
@@ -58068,7 +58405,7 @@
  {
   "id": "tt9251798",
   "kind": "series",
-  "imdbRank": 730,
+  "imdbRank": 729,
   "title": "Ragnarok",
   "year": 2020,
   "rated": "TV-MA",
@@ -58100,7 +58437,7 @@
  {
   "id": "tt26258200",
   "kind": "series",
-  "imdbRank": 731,
+  "imdbRank": 730,
   "title": "Mask Girl",
   "year": 2023,
   "rated": "TV-MA",
@@ -58131,7 +58468,7 @@
  {
   "id": "tt1578873",
   "kind": "series",
-  "imdbRank": 732,
+  "imdbRank": 731,
   "title": "Pretty Little Liars",
   "year": 2010,
   "rated": "TV-14",
@@ -58162,7 +58499,7 @@
  {
   "id": "tt0115167",
   "kind": "series",
-  "imdbRank": 733,
+  "imdbRank": 732,
   "title": "Everybody Loves Raymond",
   "year": 1996,
   "rated": "TV-PG",
@@ -58187,6 +58524,38 @@
   "imdbRating": 7.3,
   "imdbVotes": 82476,
   "seasons": 9
+ },
+ {
+  "id": "tt0466352",
+  "kind": "series",
+  "imdbRank": 733,
+  "title": "The Prince of Tennis",
+  "year": 2001,
+  "rated": "TV-PG",
+  "runtime": 22,
+  "genres": [
+   "Animation",
+   "Action",
+   "Comedy"
+  ],
+  "director": "",
+  "actors": [
+   "Jun&apos;ichi Suwabe",
+   "Erik Davies",
+   "Kenjiro Tsuda"
+  ],
+  "plot": "At the request of his father, tennis prodigy Ryouma Echizen has returned from America and is ready to take the Japanese tennis scene by storm. Aiming to become the best tennis player in the country, he enrolls in Seishun Academy-home to one of the best middle school tennis teams in Japan. After Ryouma catches the captain's eye, he finds himself playing for a spot on the starting lineup in the intra-school ranking matches despite only being a freshman. Due to his age, the rest of the Seishun Boys' Tennis Team are initially reluctant to accept him, but his skill and determination convinces them to let him in. Armed with their new \"super rookie,\" Seishun sets out to claim a spot in the National Tournament, hoping to take the coveted title for themselves. In order to do so, the team must qualify by playing through the Tokyo Prefectural and Kanto Regionals. Yet, the road ahead of them is shared by a plethora of strong schools, each playing tennis in unique ways for their own reasons. Ryouma and his teammates must learn to cooperate if they want to become the champions they aspire to be.",
+  "languages": [
+   "English",
+   "Japanese"
+  ],
+  "countries": [
+   "Japan"
+  ],
+  "posterBase": "https://m.media-amazon.com/images/M/MV5BYzY4NGEwYTgtMjg0ZS00MWUxLWIxMjQtZTJiMTlhMGExMzJmXkEyXkFqcGc@",
+  "imdbRating": 7.3,
+  "imdbVotes": 1196,
+  "seasons": 1
  },
  {
   "id": "tt8364802",
@@ -58338,7 +58707,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDg3YzU0YzItNTAwNC00MjNkLThhZmItNDI3NWY3ZDdhN2Q2XkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 106801,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt9077540",
@@ -58368,7 +58738,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDRmZWEyY2MtMmM5Mi00N2UwLWE2MzQtZGU0OWJhY2IxNThmXkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 27427,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt5232792",
@@ -58399,7 +58770,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTU1MzAwODM4OF5BMl5BanBnXkFtZTgwMjA4OTY5NDM@",
   "imdbRating": 7.3,
   "imdbVotes": 111568,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt18347622",
@@ -58430,7 +58802,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjA1NzVlZTctMTA4ZS00OWJhLTg0MGYtNGFhYzVmN2U1ZmJjXkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 66600,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt13365348",
@@ -58461,7 +58834,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjMzOTk2NzktNzYxNy00YTY4LTg1NTgtYWY5NmIzNzdiMzllXkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 65050,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt17048442",
@@ -58492,7 +58866,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmQ5ODVhMWItNWY0OS00Mzc4LWIyZjMtYWRiZDMwOGFjOWVhXkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 4743,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt8300324",
@@ -58522,7 +58897,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2ViMTdkOTUtYTk4Zi00MWFiLWFhNzktNWIzODI4MWNmNTZhXkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 5478,
-  "seasons": 6
+  "seasons": 6,
+  "studio": "Netflix"
  },
  {
   "id": "tt13357124",
@@ -58554,7 +58930,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMWNmNDc5MDktNzc5Mi00ZTQ3LThhODktMjRjMzc2NzMxYzg5XkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 7696,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt21216104",
@@ -58585,7 +58962,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNWI0MDNmNTEtMWVmZS00YTc4LThlNGEtMDdkMzIyZTc4YmI1XkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 2512,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt16283666",
@@ -58614,7 +58992,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYmY0M2YyMDUtZTAxOS00N2IwLTg2MzUtNGFlNjRkODBkMDc4XkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 4412,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt14518692",
@@ -58646,7 +59025,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTI3ZjdmNjQtODZlOC00OGFiLTljZTMtNzc0MmQ0OWJkN2JmXkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 5721,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10875696",
@@ -58677,7 +59057,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGZjYmQ4NzItMDA4Mi00ZjRjLWE3Y2ItYmY2ZTJkNmNhYTVmXkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 22865,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt20863760",
@@ -58708,7 +59089,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmM4NTQ4NTAtMDU0Yi00ZWRiLThlMGQtMjU5ODI0ZjhhMWJkXkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 33981,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt12304420",
@@ -58745,7 +59127,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTIyMDAyMjMtZTJhZC00NDdlLTliZGItMDgyNzk3ZjQ3OGRhXkEyXkFqcGc@",
   "imdbRating": 7.3,
   "imdbVotes": 16731,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11612120",
@@ -58928,7 +59311,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTU2YjcwNzQtMzE0Ni00M2MwLThhZDgtMjZlNjcxYzBlN2FhXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 76871,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10888878",
@@ -58960,7 +59344,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmVhMjY0YmYtMTk0YS00NzU2LTg3MTEtOWZlZjAxNDBlOTM2XkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 65197,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt27995113",
@@ -58991,7 +59376,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDQyNzE2NmYtMzExMy00NTBjLWE4ODItNjI1OTNkZWVjNDUyXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 73778,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt15837600",
@@ -59023,7 +59409,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzdlNGU1MmItZDFhMi00YzQ1LTkyMDMtNWI4MDM5MDE3ZDg1XkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 49010,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9698442",
@@ -59054,7 +59441,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTYzZjMzMTctNWZjYy00MGYxLWEzZTAtOTc5ZTcxNDAzNGUxXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 91835,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt3322314",
@@ -59087,7 +59475,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTcyMzc1MjI5MF5BMl5BanBnXkFtZTgwMzE4ODY2OTE@",
   "imdbRating": 7.2,
   "imdbVotes": 146890,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt4230076",
@@ -59120,7 +59509,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTUwMjA5NTg4MF5BMl5BanBnXkFtZTgwODUyODkwMzI@",
   "imdbRating": 7.2,
   "imdbVotes": 125292,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9018736",
@@ -59151,7 +59541,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2Y5OTM0MDAtOWZkNS00MWIyLWIxMzItYzY3ODljMTY3ODNlXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 88733,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt30428143",
@@ -59183,7 +59574,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODVhYTMwMzQtODA2Zi00MTEwLTgyYWItZmM0OTJiMjczNWVmXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 16916,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11834150",
@@ -59213,7 +59605,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzgxZjk4MDUtZWE4ZS00MTIzLWJmNWQtMjA4MGNkMWM1M2YwXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 19525,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt7763662",
@@ -59242,7 +59635,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWIzM2QxNTMtYjM5OC00NDcxLWI2NzctNTNjM2NiYmRlZjllXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 4231,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt28197236",
@@ -59274,7 +59668,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWZlMDZmZjktNzBiMC00NzkwLTliZGMtMTAxNTBjZTk4NDUyXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 6384,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt5363918",
@@ -59305,7 +59700,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjVmODJmMDYtZjU4MS00MWIxLTk1ZmQtZGRhZTM3ZDhjMTEwXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 78137,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt13664452",
@@ -59336,7 +59732,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGRiMWNhYWMtNjIzNC00MDE1LTg0NzktZTI1OWQyYjc0YjFhXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 9729,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9581768",
@@ -59367,7 +59764,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjFlY2RjMDUtZTA4OC00YjM3LWIxZTQtZWFiYjMwNjRiY2ZlXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 9221,
-  "seasons": 7
+  "seasons": 7,
+  "studio": "Netflix"
  },
  {
   "id": "tt9908860",
@@ -59396,7 +59794,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTNkZWQ4MTMtZTk5Yy00ZTEwLWJkMTItMDcxYmM1MjcyNTg4XkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 4220,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt21627436",
@@ -59427,7 +59826,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTc4ODRiMDItN2Y2NS00YWFjLWI0MzctODc5NzczOTQ4YWUyXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 2934,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt30423279",
@@ -59458,7 +59858,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjIxNmYxMmUtNGNiMC00ODIyLThhMWEtZWYwNTdiYzFiNDY3XkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 18481,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9184986",
@@ -59490,7 +59891,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjAwODM2NmEtMjZjMS00Mzc3LWE2ZTktNjRkZmY3NGVkNDhjXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 32552,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt14418368",
@@ -59519,7 +59921,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOWRmZjEyNjItMzMwYS00OWQ1LTlhZTMtYjM5ZjQ2YTRmMzAwXkEyXkFqcGc@",
   "imdbRating": 7.2,
   "imdbVotes": 762,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt7134908",
@@ -59703,7 +60106,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmNlZDcwNjYtOWY3ZC00NGY4LTlkYTktMTAxZjFjNjRhYjJiXkEyXkFqcGc@",
   "imdbRating": 7.1,
   "imdbVotes": 41672,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt7826108",
@@ -59733,7 +60137,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTE1NmU1OTAtOGZhNC00ZmU4LWJiYWMtNGIzMjEzNzg0MGFmXkEyXkFqcGc@",
   "imdbRating": 7.1,
   "imdbVotes": 17548,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt8880894",
@@ -59764,7 +60169,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOWRiNzE2YTQtYzc3NS00MzZmLWFmZTAtMTBiZmEwYzlkYzczXkEyXkFqcGc@",
   "imdbRating": 7.1,
   "imdbVotes": 37769,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt12312250",
@@ -59794,7 +60200,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNWZkZTczZmItZThmNy00MjRjLTgwZGQtZmE0YThhNjFkYmE3XkEyXkFqcGc@",
   "imdbRating": 7.1,
   "imdbVotes": 33302,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11963042",
@@ -59824,7 +60231,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMzgxMTZkMWItN2ExNC00NmUyLTgyZmUtYzZjNDJkNWIyYjkwXkEyXkFqcGc@",
   "imdbRating": 7.1,
   "imdbVotes": 3826,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11092142",
@@ -59855,7 +60263,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDI1ZDI1ODctODBjMy00NjNhLTg4YWUtNjhkZWU2MjhiZDI5XkEyXkFqcGc@",
   "imdbRating": 7.1,
   "imdbVotes": 12625,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt14272628",
@@ -59886,7 +60295,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGZkZmRjNGItZDUyMC00MjNjLTg1MjEtNTJhNjVlYjc0NmM0XkEyXkFqcGc@",
   "imdbRating": 7.1,
   "imdbVotes": 3791,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt17216636",
@@ -59915,7 +60325,8 @@
   ],
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzRjYWZkMGMtNzZkYS00ZTRhLThkZDItYzc4YjMwM2FjOTBkXkEyXkFqcGc@",
   "imdbRating": 7.1,
-  "imdbVotes": 1059
+  "imdbVotes": 1059,
+  "studio": "Netflix"
  },
  {
   "id": "tt28642796",
@@ -59946,7 +60357,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYmU3MjZhNjYtODI2Yi00Nzg4LTg0NTctNWNmZDhhNmNiNWQ2XkEyXkFqcGc@",
   "imdbRating": 7.1,
   "imdbVotes": 9411,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt21874396",
@@ -59977,7 +60389,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDYwNWNmNzUtNmY1Yy00ZDliLThjYTQtYTFhMDE4NWI4YTM4XkEyXkFqcGc@",
   "imdbRating": 7.1,
   "imdbVotes": 16090,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt17329616",
@@ -60009,7 +60422,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BN2U4NjJmNjItNTBhOS00YTRlLTllZWMtMDkwNTg1MjA2MWY0XkEyXkFqcGc@",
   "imdbRating": 7.1,
   "imdbVotes": 793,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt8747928",
@@ -60131,7 +60545,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTFlNjg0YjAtYzMwOC00Zjc0LTkwYjAtZmRiYzdjNjcyYjc2XkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 103401,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt2309295",
@@ -60162,7 +60577,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjc3NjgwZDktZGNlZS00YzA5LWEyMTctYjVhMGU3Yjg1N2ZiXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 43314,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt9134194",
@@ -60193,7 +60609,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMWNmZTI3MzgtMWQ1Zi00MTg0LWJkMTMtOTFiNGE0MmYxY2JiXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 13837,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt12748084",
@@ -60225,7 +60642,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGQ0MDZiM2EtNThlOC00ODdkLTk2ZjMtOGRjZDM5YzQxOWJmXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 39526,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt16283758",
@@ -60256,7 +60674,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjk1MGM0ZmMtOGYwYS00ZTdiLTgxYzItOGM1NTZmNGEwMGI4XkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 21397,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9059350",
@@ -60287,7 +60706,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNWNmYjRiOGEtMDRiZS00ZTYwLThhNmUtYWQ1MmQzZDdjNTczXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 58258,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt15466144",
@@ -60318,7 +60738,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODNiNTVhYmItNjZhMS00NmIwLTkxYjMtODkyZDEyNDJhOTg5XkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 19106,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt23872886",
@@ -60348,7 +60769,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmYwNWM3ZWEtMmRlMi00MTA5LWFlY2QtMGI2MTdjOWFiZjgxXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 61835,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10945036",
@@ -60377,7 +60799,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWY2MWQ5ZGQtMGM3OC00YzRiLWJiN2EtNGI0NGNhMDhhOWM2XkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 4597,
-  "seasons": 6
+  "seasons": 6,
+  "studio": "Netflix"
  },
  {
   "id": "tt7306056",
@@ -60407,7 +60830,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTIyNzQxNjczM15BMl5BanBnXkFtZTgwODUzNDEzNDM@",
   "imdbRating": 7,
   "imdbVotes": 4912,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt13540900",
@@ -60437,7 +60861,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODFiODJhNTItYWI2MS00NzUwLTk3YzMtNzcyNGMxOGZmNDAyXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 2549,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt23022276",
@@ -60467,7 +60892,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjM4MTM4N2ItZDhhZi00MWViLTlkODItYjkzYTlmOWEyY2EzXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 13389,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt26687196",
@@ -60497,7 +60923,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDQ2YWNmN2ItOTZkMy00MzU3LThlYmEtNGI5NjFmNDhiZDZjXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 9472,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9288848",
@@ -60529,7 +60956,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjU0OWMwMDQtZjI5MS00NjY3LThlYjktZWMxOGMyZTA5NGRhXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 6671,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt13357234",
@@ -60562,7 +60990,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzBkMDEwNzgtNmJhNS00NjQ5LTg4YmQtYWVkODAwYjk3ODJjXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 1555,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10619444",
@@ -60594,7 +61023,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNGMyYWRlYmYtYzU0NC00OTU3LTlhMTUtZWI5MTc4ZGEyMGEwXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 758,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt6495756",
@@ -60625,7 +61055,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTU4NjMxOTQ5MV5BMl5BanBnXkFtZTgwNDUzMTgxNjM@",
   "imdbRating": 7,
   "imdbVotes": 3660,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt16288804",
@@ -60656,7 +61087,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjEwNjFmNjMtMGYzNy00MzBiLWJlYjAtMGJjNTEwZGFhMjNlXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 38499,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9421868",
@@ -60688,7 +61120,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGVkMzkzNGYtMjNjYS00NWVlLTk3MzMtNjgyZTc1Mjg0NjdkXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 5384,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt5909930",
@@ -60721,7 +61154,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjAyMDMzNTU5M15BMl5BanBnXkFtZTgwMjg2NjExNjM@",
   "imdbRating": 7,
   "imdbVotes": 15442,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt15471900",
@@ -60752,7 +61186,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGRjMmQzMjQtMzViYi00YjIxLTkwYWMtOTJjNDFhMzA3NzNmXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 12215,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt10075318",
@@ -60786,7 +61221,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjJhMjZmNmQtNTc2MS00NGEwLTg3Y2MtMDFkOGU4ZjNjMjdmXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 24772,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt13317508",
@@ -60817,7 +61253,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTIwNzcwYmItZjY0NS00NzE5LWJkZDAtZmI5YTQzMDZhMDBjXkEyXkFqcGc@",
   "imdbRating": 7,
   "imdbVotes": 11977,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt8740976",
@@ -60846,7 +61283,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOWY5OTVjNGItNjQ4Yy00NTU1LTgxMDgtNTVkMzdmYTFhMGQzXkEyXkFqcGc@",
   "imdbRating": 6.9,
   "imdbVotes": 89180,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt21072112",
@@ -60878,7 +61316,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDIxYmRkZTMtZTJmNi00Y2M0LWJhOWItYjJkYjQyY2Q2Njg3XkEyXkFqcGc@",
   "imdbRating": 6.9,
   "imdbVotes": 21778,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt16283824",
@@ -60910,7 +61349,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTkwZDFjOTUtYTA4My00MjgzLTlhMGQtMGYwNTNmYTkzODgzXkEyXkFqcGc@",
   "imdbRating": 6.9,
   "imdbVotes": 40747,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt3713588",
@@ -60939,7 +61379,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTA5OTg5Nzk5ODleQTJeQWpwZ15BbWU4MDYxOTQ5NTcz",
   "imdbRating": 6.9,
   "imdbVotes": 5097,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt15479704",
@@ -60969,7 +61410,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZWRhYTRkYWItZjFjYS00NWE2LWE1YTctMTc3M2M2MjcwNDQ5XkEyXkFqcGc@",
   "imdbRating": 6.9,
   "imdbVotes": 8371,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt12923792",
@@ -61000,7 +61442,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzVhYjEzMzItNjgzNC00ZWE0LWEzNDMtYzM0MDA2MDc3YWM1XkEyXkFqcGc@",
   "imdbRating": 6.9,
   "imdbVotes": 5412,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11570202",
@@ -61031,7 +61474,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmRmN2JiMDktNWRkNS00NGYwLWI2ZGEtZTE0ZTc0ZWIwMTUxXkEyXkFqcGc@",
   "imdbRating": 6.9,
   "imdbVotes": 28362,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt4003966",
@@ -61060,7 +61504,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjMwNTY0NjU5N15BMl5BanBnXkFtZTgwODYyNzc3NDM@",
   "imdbRating": 6.9,
   "imdbVotes": 5686,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt7645192",
@@ -61089,7 +61534,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODA3N2MwMGQtYmZhNC00MmUxLThiN2UtZjhjMDE2ZTNlNDNhXkEyXkFqcGc@",
   "imdbRating": 6.9,
   "imdbVotes": 14758,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt8962124",
@@ -61245,7 +61691,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzJiMzhlNWYtMzhlYi00YWZlLThmMzUtOWE4MDI0ZDg0ZjEzXkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 66420,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8179402",
@@ -61277,7 +61724,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTM3ZWIxYzItYmYyNC00MzZiLTkzZWItOWFlZjVkMzg5ODk3XkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 63897,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt11937662",
@@ -61307,7 +61755,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjk0M2RlYzItMjY1OS00OTAzLTkxNWMtYTkxYmJiZGQzNDhkXkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 12069,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt28703559",
@@ -61338,7 +61787,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNmIzZjVhMTgtNWYyZS00Mzg4LWEwZDItYzRmMzU1ZjRhOTZlXkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 7092,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt11097240",
@@ -61369,7 +61819,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDY5YTNmYTMtOTMxZS00ZTdhLTk5ZDktOTMxYjRmMGI3OTg1XkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 23623,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9139220",
@@ -61400,7 +61851,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjFiNzI2ZjctOTQ3OS00OThhLWI3OWItZmJiMmY0NmU0MTEyXkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 56630,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt19734104",
@@ -61430,7 +61882,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDJkOTBmNjUtM2MzMy00YmZjLWFiZTktMzk0NzM0MjU3NTNiXkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 4472,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8699270",
@@ -61462,7 +61915,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTY2ZmE3ZWQtMzEzYi00NTJhLTkwZmEtZWFhZTc4OWE5YzA0XkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 2892,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt10011306",
@@ -61494,7 +61948,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTlmOGM4N2EtNDBhYy00ZGY2LTg5YzYtNzBhMzRhMGZlYzhkXkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 1809,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt22301234",
@@ -61525,7 +61980,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjJjZDM1NjktNDZhNi00OWZmLWI3NzEtOTMzMmZhMjc4MjQ3XkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 3274,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8961508",
@@ -61556,7 +62012,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDg2MzU0MGUtMTNjNC00ZTQ2LTgwN2ItNGRmMTVjNjRmZTFlXkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 8888,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt9849210",
@@ -61587,7 +62044,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDJhYjU1ZDItMDM1ZC00YWZkLTk4YjctM2ZhNTQ3ZjcyMjYwXkEyXkFqcGc@",
   "imdbRating": 6.8,
   "imdbVotes": 12025,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt5774002",
@@ -61618,7 +62076,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODM3NjdkN2UtOTFiZi00Zjg2LWIwYWMtZGQ0YjZjNWFjYjUxXkEyXkFqcGc@",
   "imdbRating": 6.7,
   "imdbVotes": 42616,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt1267295",
@@ -61650,7 +62109,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjY4Yjk5MmEtYmNjYy00MjI1LWJlZjktMWRkYmU0YThlZWVjXkEyXkFqcGc@",
   "imdbRating": 6.7,
   "imdbVotes": 45990,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8755226",
@@ -61681,7 +62141,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMmJhMTg2MTItODRmNy00MGM5LWFlOTMtMmYzYTNjNjZmNjM5XkEyXkFqcGc@",
   "imdbRating": 6.7,
   "imdbVotes": 26626,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt31429675",
@@ -61711,7 +62172,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTQ1NzBmOGYtNWVjZC00OWFlLTgwNjMtM2NhM2VjYjdhYzI2XkEyXkFqcGc@",
   "imdbRating": 6.7,
   "imdbVotes": 35443,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9612516",
@@ -61741,7 +62203,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYzFiODc5Y2YtMDZlMS00ZTk4LWIzYTEtYzAyMjU2NmQ2MjQ0XkEyXkFqcGc@",
   "imdbRating": 6.7,
   "imdbVotes": 74069,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt29388212",
@@ -61771,7 +62234,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWZkMmMyYzEtMTA3NC00NDRjLTgwNzItM2U4MjE1YWY0NWIwXkEyXkFqcGc@",
   "imdbRating": 6.7,
   "imdbVotes": 5350,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10140028",
@@ -61802,7 +62266,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BM2Q5ODVkYjMtZGMxYy00MzNhLWJhYWQtNzAzMTM2MTc5ZmU0XkEyXkFqcGc@",
   "imdbRating": 6.7,
   "imdbVotes": 6884,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9731288",
@@ -61833,7 +62298,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYWE5M2U2NmItMTUwMy00Yzc1LTk5YmItY2NmOTBhMzM3MDA4XkEyXkFqcGc@",
   "imdbRating": 6.7,
   "imdbVotes": 9296,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt9184982",
@@ -61865,7 +62331,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BM2FmMzM0ZjAtY2ZkZC00Yzc1LTljOTktOTFkODU1YzRkOGRkXkEyXkFqcGc@",
   "imdbRating": 6.7,
   "imdbVotes": 14855,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt3986586",
@@ -61896,7 +62363,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjAxMzU5MzA0MF5BMl5BanBnXkFtZTgwODgyOTg1MzI@",
   "imdbRating": 6.7,
   "imdbVotes": 31562,
-  "seasons": 5
+  "seasons": 5,
+  "studio": "Netflix"
  },
  {
   "id": "tt12235718",
@@ -61988,7 +62456,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmE4ZGMzMzktYzkwMy00NTZiLWFjYzktNzA4MmI4NGEyZTkzXkEyXkFqcGc@",
   "imdbRating": 6.6,
   "imdbVotes": 46300,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8787802",
@@ -62020,7 +62489,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BY2NhZjQ4YTUtOTIwNC00NDljLWE0NWItNzRjZDk0YmY3MjhjXkEyXkFqcGc@",
   "imdbRating": 6.6,
   "imdbVotes": 27278,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9073958",
@@ -62053,7 +62523,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMWIzYjk4ZDEtN2EyZC00OGZkLWJkYWYtY2M0NWIxODJlZjRlXkEyXkFqcGc@",
   "imdbRating": 6.6,
   "imdbVotes": 19355,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10545250",
@@ -62085,7 +62556,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmJhMTUyNTgtNTE4Ny00ODNlLTk4NWEtZmY1YTk1MGVhOGVmXkEyXkFqcGc@",
   "imdbRating": 6.6,
   "imdbVotes": 1526,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt8690776",
@@ -62116,7 +62588,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDRmYWZhMWItZDRmYy00NjE3LThjYzktNWMxNjhhZDMwMWNiXkEyXkFqcGc@",
   "imdbRating": 6.6,
   "imdbVotes": 11887,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt4057258",
@@ -62207,7 +62680,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOTRhNjhhMTEtY2U4Ni00Mzc4LTkwNzgtYmFmYmUzYWJkNzVmXkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 90995,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt13064902",
@@ -62238,7 +62712,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNWJkMGJlNjEtOGE0MC00ZWE0LTkwMGQtM2ZhMjQ1ZWNlN2I0XkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 45634,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt11514868",
@@ -62269,7 +62744,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTRmNDBjNWEtODc5My00YjEyLWJlY2EtODhmYTcxYTcyMzRkXkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 70200,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt13315156",
@@ -62300,7 +62776,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjVlOTAzN2ItNDhkYy00MmFjLWFlNTAtYmZmMzJmYzEyZGJhXkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 29880,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt14490706",
@@ -62331,7 +62808,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjRkYjNhY2EtNmNiOS00ZDFkLTlmZGMtMTk1OTcxYzg5NTI3XkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 22644,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt13444912",
@@ -62363,7 +62841,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BODZiOWMxZmItMjBiZS00NzExLTkxOWUtNDY4YjkzZjFjNmE3XkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 39980,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt6487482",
@@ -62394,7 +62873,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTAyZGMyMDYtYTIzYi00ZDViLWFmNzAtMDk5N2Y0YzU4YzMzXkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 34835,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt13676344",
@@ -62431,7 +62911,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjQ5NWY2OWEtMDdjNC00N2YxLTkxYTctNDJlNmE1MmMzYzU5XkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 10772,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt13229934",
@@ -62463,7 +62944,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTg1YmRlMzctMjczMS00ZWYyLWEzYmQtYTQ2NGM2ZjhlNDQ0XkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 2722,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt14825954",
@@ -62495,7 +62977,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BM2U5MWI4NjktZTZmYS00YWI4LWIzMDMtNjA4OTE1MGMzY2I4XkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 1317,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9817298",
@@ -62524,7 +63007,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTdhOWRmMzctYWVlYi00NzIzLWE0MjItZDE3YWQzOGEyZTYwXkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 8872,
-  "seasons": 9
+  "seasons": 9,
+  "studio": "Netflix"
  },
  {
   "id": "tt9145880",
@@ -62555,7 +63039,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjMyNmI4NzAtOTlmNy00NGMwLWE0YjUtYjkwNzA3MzExMzA0XkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 10036,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt8667956",
@@ -62586,7 +63071,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjg4YTI3NTAtMzQzYS00YjRiLWJhYzctOGJiZTdlNGU1ZDI0XkEyXkFqcGc@",
   "imdbRating": 6.5,
   "imdbVotes": 13724,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt5420376",
@@ -62648,7 +63134,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTE1OTU1MjAtNmEzZC00ODgzLWI2ZjAtZTExYWYzOTQ1ZDI5XkEyXkFqcGc@",
   "imdbRating": 6.4,
   "imdbVotes": 17382,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt5707802",
@@ -62678,7 +63165,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjQwYjE0M2MtZWQzOS00OWZhLWI5NzUtNmEyMjhiODA0YjQ4XkEyXkFqcGc@",
   "imdbRating": 6.4,
   "imdbVotes": 26606,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt3322310",
@@ -62713,7 +63201,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjI5Mjg1NDcyOV5BMl5BanBnXkFtZTgwMjAxOTQ5MTI@",
   "imdbRating": 6.4,
   "imdbVotes": 147761,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt10715148",
@@ -62743,7 +63232,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDkxNDI0MWEtMDY2My00OTE4LTgwZjktZTI1ZTc2MDg1N2FmXkEyXkFqcGc@",
   "imdbRating": 6.4,
   "imdbVotes": 4119,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt12031040",
@@ -62774,7 +63264,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNWRiYmFkNTctZDBkNC00NWVkLWIwZDAtMjlkZjJmOWRkOGJiXkEyXkFqcGc@",
   "imdbRating": 6.4,
   "imdbVotes": 3755,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt9654080",
@@ -62800,7 +63291,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDBhMjU3NzYtYjQyZS00NDJhLThjZjItY2MyMWQ1ODIxZDdjXkEyXkFqcGc@",
   "imdbRating": 6.4,
   "imdbVotes": 1332,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt17013106",
@@ -62831,7 +63323,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjRhMDYyZjItYWJkZC00ZWI0LWE5NzMtYmM4MDQ0MTE3MDZlXkEyXkFqcGc@",
   "imdbRating": 6.4,
   "imdbVotes": 9178,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt14153686",
@@ -62862,7 +63355,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTE3NjY5ZWQtYzZmMS00MjYyLWJkMzEtZjQxMmU0ZGI3MzFlXkEyXkFqcGc@",
   "imdbRating": 6.4,
   "imdbVotes": 7331,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt8693266",
@@ -62893,7 +63387,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmUxMTg5MTctZDU5Ni00OGZkLWJiMDMtNWU4OTQyZWRlMzkwXkEyXkFqcGc@",
   "imdbRating": 6.4,
   "imdbVotes": 8882,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt7668518",
@@ -62924,7 +63419,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjIxYzYyNTctOWFmNy00YzUxLTllMGEtZWZlZTExNDFmYjc5XkEyXkFqcGc@",
   "imdbRating": 6.4,
   "imdbVotes": 37373,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt22696582",
@@ -63048,7 +63544,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTU2MjMwNDI2OV5BMl5BanBnXkFtZTgwMDU2NzczNTM@",
   "imdbRating": 6.3,
   "imdbVotes": 45630,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt12580168",
@@ -63081,7 +63578,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYTgwYTVhMTUtMjAyMi00Y2MxLTg4NWQtNjU1Nzg1NTkyNmEzXkEyXkFqcGc@",
   "imdbRating": 6.3,
   "imdbVotes": 4477,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt9310400",
@@ -63206,7 +63704,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZGU1OGI2OWItNGU3Yi00YjlmLWIzNDAtODQxZmVhNzU3MjQzXkEyXkFqcGc@",
   "imdbRating": 6.2,
   "imdbVotes": 6894,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt10011298",
@@ -63233,7 +63732,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjJlYTllODktMzExZC00ZjIxLWFkNjQtMTFmY2Q2NTE5M2U4XkEyXkFqcGc@",
   "imdbRating": 6.2,
   "imdbVotes": 4560,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt22479848",
@@ -63264,7 +63764,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMGIxNTJmZWYtZTdjZS00M2YyLTgwYWItYzhiZmMzMGNmNWYzXkEyXkFqcGc@",
   "imdbRating": 6.2,
   "imdbVotes": 3428,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt22297684",
@@ -63295,7 +63796,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMThkYmU2MDktZGUxMC00MTI1LTkxNjYtYmZiMDQyZjVmMTBjXkEyXkFqcGc@",
   "imdbRating": 6.2,
   "imdbVotes": 4128,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt18314214",
@@ -63326,7 +63828,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjQ5Mjg0ODQtMjZlOS00YTY3LTgzNGUtZmY0NzliZWMxNzAxXkEyXkFqcGc@",
   "imdbRating": 6.1,
   "imdbVotes": 4928,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt12313914",
@@ -63359,7 +63862,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BYjhhMWY4ZTctMmJiMC00M2NmLTllNjItMzNkN2UzYzFiZWIxXkEyXkFqcGc@",
   "imdbRating": 6.1,
   "imdbVotes": 5692,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt13837672",
@@ -63391,7 +63895,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNzk3NGI3ODQtMjQ0My00ODllLWE4NTAtZDI0YmUxOGRmOWY2XkEyXkFqcGc@",
   "imdbRating": 6,
   "imdbVotes": 21832,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt27763561",
@@ -63422,7 +63927,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjgyZWE4NDUtNWVkMC00NjcxLTkxNWEtMGE5Mjc3ZWEwYTcxXkEyXkFqcGc@",
   "imdbRating": 6,
   "imdbVotes": 3959,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt12719250",
@@ -63453,7 +63959,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNjBkOGQ1OWYtMTg3NC00MTRmLWFhNGMtNDkyMzFmZDliMDlmXkEyXkFqcGc@",
   "imdbRating": 6,
   "imdbVotes": 6256,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt28104766",
@@ -63549,7 +64056,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjUxZTEzMWYtOTg0Zi00MDRiLWIwNDktNjc5MTdmOTYyNTkyXkEyXkFqcGc@",
   "imdbRating": 5.9,
   "imdbVotes": 21620,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt18260538",
@@ -63579,7 +64087,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNDk3MDZhOWQtZGIzYS00MThlLWI2YzYtM2EzNzgyM2Q3YmJkXkEyXkFqcGc@",
   "imdbRating": 5.9,
   "imdbVotes": 8961,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt14202282",
@@ -63638,7 +64147,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BNTdlZmRjZGUtMWU3My00ZTQxLWE5NGEtOWJhYmYxMGY1OTAwXkEyXkFqcGc@",
   "imdbRating": 5.8,
   "imdbVotes": 3872,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt23731242",
@@ -63668,7 +64178,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZmZkNDlmZjYtNjQxMS00M2QyLWFlMGYtZTMwMzJjYTYxMGRkXkEyXkFqcGc@",
   "imdbRating": 5.8,
   "imdbVotes": 2786,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt9048368",
@@ -63698,7 +64209,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMWUxOTc2MzAtNzllNy00N2E5LTk5MjUtNjExZTY1MzAzNTY2XkEyXkFqcGc@",
   "imdbRating": 5.8,
   "imdbVotes": 832,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt11698590",
@@ -63729,7 +64241,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjk2YjQ1YTYtMzQ2NC00NTQ3LWEyMmEtNDZiNjdlNTg1ZDQ5XkEyXkFqcGc@",
   "imdbRating": 5.8,
   "imdbVotes": 2371,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt7043380",
@@ -63759,7 +64272,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMjRhNTI4ODAtZTlmOS00OTYwLTlhZmItZDIxMjE3YTRmYWUxXkEyXkFqcGc@",
   "imdbRating": 5.8,
   "imdbVotes": 3616,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt15907000",
@@ -63788,7 +64302,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMDY5MWE1ZWYtZGM3Yi00NDg2LWFiZDktYTQ2NGY3MDFkNzU5XkEyXkFqcGc@",
   "imdbRating": 5.7,
   "imdbVotes": 1984,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt10839422",
@@ -63819,7 +64334,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTllYjYzMDgtNDZiZi00MjBkLWFkYWYtZTBlZDc3N2E0MTczXkEyXkFqcGc@",
   "imdbRating": 5.6,
   "imdbVotes": 33897,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt18396952",
@@ -63848,7 +64364,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BOGU3MjJiYWQtNjFkYi00NDg4LWFjMTMtY2ExM2RiYTdiNjVhXkEyXkFqcGc@",
   "imdbRating": 5.5,
   "imdbVotes": 3131,
-  "seasons": 4
+  "seasons": 4,
+  "studio": "Netflix"
  },
  {
   "id": "tt12370124",
@@ -63879,7 +64396,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMTVmN2RiN2MtZTE3My00NDA1LWFhMDQtYjllZjBhZGY4MGE3XkEyXkFqcGc@",
   "imdbRating": 5.4,
   "imdbVotes": 3117,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt16913068",
@@ -63910,7 +64428,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjQwNDg4MzktMjhkMS00MWU0LTg4MmUtMGM0NTI0YzRhNmVjXkEyXkFqcGc@",
   "imdbRating": 5.4,
   "imdbVotes": 17867,
-  "seasons": 2
+  "seasons": 2,
+  "studio": "Netflix"
  },
  {
   "id": "tt4770018",
@@ -64006,7 +64525,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZjNiYjc1ODItNmYyMi00OWRiLThiN2ItNjY2YTYwNTExNTQ0XkEyXkFqcGc@",
   "imdbRating": 5,
   "imdbVotes": 48009,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt12004280",
@@ -64037,7 +64557,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZTMxYjFhYTQtMDM1Yy00YmY5LTg5ZWEtZTBmOTEwYjIxZTUxXkEyXkFqcGc@",
   "imdbRating": 4.8,
   "imdbVotes": 15972,
-  "seasons": 6
+  "seasons": 6,
+  "studio": "Netflix"
  },
  {
   "id": "tt0319931",
@@ -64099,7 +64620,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BMGI5NGE2ZWMtM2M5OC00NDY0LWJjMzAtYjU5NWRhZTQyY2U0XkEyXkFqcGc@",
   "imdbRating": 4.2,
   "imdbVotes": 49490,
-  "seasons": 1
+  "seasons": 1,
+  "studio": "Netflix"
  },
  {
   "id": "tt13452100",
@@ -64131,7 +64653,8 @@
   "posterBase": "https://m.media-amazon.com/images/M/MV5BZDAxZDJkZDAtNTFjOC00N2U1LTk1NjEtZGQ1MjZlMTNhZTY4XkEyXkFqcGc@",
   "imdbRating": 4.2,
   "imdbVotes": 10518,
-  "seasons": 3
+  "seasons": 3,
+  "studio": "Netflix"
  },
  {
   "id": "tt0313038",

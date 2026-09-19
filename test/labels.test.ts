@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { Catalog, toState } from "@/core/Film";
 import { Labels } from "@/core/Labels";
 import { ADULT_RATINGS, KIDS_SAFE_THRESHOLD } from "@/core/Rank";
-import { PINNED_MODEL } from "@/server/JevModel";
+import { MODEL } from "@/server/JevModel";
 import { AXIS_IDS, canonicalRubric, ENDING_IDS, FILM_FACT_IDS } from "@/core/Taste";
 import catalog from "@/data/catalog.json";
 import labels from "@/data/labels.json";
@@ -24,7 +24,7 @@ describe("the generated labels", () => {
   });
 
   it("was made with the model the server reads people with", () => {
-    expect(decoded.model).toBe(PINNED_MODEL);
+    expect(decoded.model).toBe(MODEL);
   });
 
   it("records the catalog the answers describe, so a re-fetched plot shows up as stale", () => {
