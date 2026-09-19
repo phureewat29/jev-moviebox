@@ -37,13 +37,13 @@ describe("reading one subject shard", () => {
 });
 
 describe("merging shards", () => {
-  it("weighs shards by mass, never by confidence", () => {
+  it("weighs shards by what they staked on their best answer, never by confidence", () => {
     const merged = mergeSubjects([
       { scores: { a: 1 }, weight: 0.5, concentration: 1, mass: 0.9 },
       { scores: { b: 1 }, weight: 0.7, concentration: 0.6, mass: 0.3 },
     ]);
     expect(merged.scores.a).toBe(1);
-    expect(merged.scores.b).toBeCloseTo(0.3 / 0.9, 9);
+    expect(merged.scores.b).toBeCloseTo((0.3 * 0.6) / (0.9 * 1), 9);
     expect(merged.weight).toBe(0.7);
     expect(merged.concentration).toBe(1);
   });

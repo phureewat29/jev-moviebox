@@ -78,8 +78,13 @@ export const ADULT_RATINGS: ReadonlySet<string> = new Set(["R", "NC-17", "X", "T
 export const KIDS_SAFE_THRESHOLD = 0.6;
 
 export const TOPICAL = 3;
-/** Above this the Choice is pointing at a title; below it is the tail of a distribution that must sum to one. */
-export const SEED_FLOOR = 0.08;
+/**
+ * Above this the answer is pointing at a title. Measured on the merged score — a title's probability
+ * over the strongest one anywhere: a shard holding none of the answer still names a best guess, and
+ * that lands at 0.06–0.12, while the weakest right answer sits at 0.15 and up. Anything from 0.12 to
+ * 0.20 draws the same shelves.
+ */
+export const SEED_FLOOR = 0.15;
 /**
  * Subject scores are scaled so the leader is always 1, so this gate is on the weight: how much
  * of the answer landed in a title at all. Re-measured at 2,061 titles — mood queries run
