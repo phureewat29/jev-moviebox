@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Archivo, Bebas_Neue } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { SITE } from "@/core/Site";
@@ -27,6 +27,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: { title: "Movie Box", description: DESCRIPTION, url: "/", siteName: "Movie Box", type: "website" },
   twitter: { card: "summary_large_image", title: "Movie Box", description: DESCRIPTION, creator: "@phureewat29" },
+};
+
+/** Tints the browser chrome and the notch strip to the same black the page is painted in. */
+export const viewport: Viewport = {
+  themeColor: "#0a0908",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

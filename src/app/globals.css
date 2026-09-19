@@ -18,8 +18,14 @@
   --font-display: var(--font-display), var(--font-sans), sans-serif;
 }
 
+/**
+ * The background belongs on `html`, not only on `body`. A phone with a notch paints the safe
+ * areas from the canvas background, and the canvas takes it from `html` first — left to `body`
+ * alone, the strip behind the notch came out the browser's default, not the room's.
+ */
 html {
   color-scheme: dark;
+  background-color: var(--color-screen);
 }
 
 /**

@@ -21,7 +21,7 @@ const divider = (
 );
 
 export const Footer = () => (
-  <footer className="flex flex-wrap items-center justify-center gap-x-1 gap-y-2 px-4 pb-8 pt-4 text-xs text-ink-faint">
+  <footer className="flex flex-wrap items-center justify-center gap-x-1 gap-y-2 px-4 pt-4 pb-[max(2rem,env(safe-area-inset-bottom))] text-xs text-ink-faint">
     <span>Phureewat A</span>
     {divider}
     <a
