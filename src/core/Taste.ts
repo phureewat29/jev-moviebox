@@ -251,6 +251,7 @@ export const ORDERING = {
   best_rated: "They want the most acclaimed or highest-rated, whatever those turn out to be.",
   newest: "They want recent films, the newer the better.",
   oldest: "They want old films, classics, or the early days of cinema.",
+  anything: "They asked for anything at all — surprise me, whatever is good — and stated no preference of any kind: no mood, no genre, no country, no title.",
   none: "They did not ask for any particular ordering; they described a kind of film.",
 } as const;
 export type OrderingId = keyof typeof ORDERING;

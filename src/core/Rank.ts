@@ -404,6 +404,8 @@ const yearSpan = (pool: readonly FilmCard[]) => {
 /** An ordering is a sort, not a preference; stats are computed for the ordering asked, only. */
 const SCORERS: Record<OrderingId, (pool: readonly FilmCard[]) => OrderingScore> = {
   none: () => () => 0,
+  // "surprise me" is a request for anything: browse the best of the box rather than invent a taste
+  anything: (pool) => SCORERS.best_rated(pool),
   best_rated: (pool) => {
     const ratings = pool.map((film) => film.imdbRating);
     const mean = ratings.reduce((sum, r) => sum + r, 0) / Math.max(1, ratings.length);
