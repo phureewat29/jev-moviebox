@@ -11,8 +11,7 @@ import {
   type DecadeId,
   type GenreId,
   type OrderingId,
-  type WantsId,
-} from "./Taste.ts";
+  type WantsId, studioOf, type StudioId } from "./Taste.ts";
 
 /**
  * Ranking, in pure code: Jev supplies every judgment, this file does the arithmetic. It reads
@@ -43,6 +42,7 @@ export type PersonRead = {
   readonly runtime: AxisRead;
   readonly subject: Subject;
   readonly country: CountryId | null;
+  readonly studio: StudioId | null;
   readonly genres: readonly GenreId[];
   readonly genreNamed: boolean;
   readonly wantsSimilar: boolean;
@@ -269,6 +269,10 @@ const inGenre = (pool: readonly FilmCard[], person: PersonRead): Facet => {
   return insist(every.length >= GENRE_MIN ? every : some);
 };
 
+/** A stated studio never falls back, like a stated genre: a Netflix original with a child in the room is the kid-safe Netflix shelf or nothing. */
+const inStudio = (pool: readonly FilmCard[], studio: StudioId | null): Facet =>
+  studio === null ? unasked(pool) : insist(pool.filter((film) => studioOf(film.studio) === studio));
+
 const inDecade = (pool: readonly FilmCard[], decade: DecadeId): Facet =>
   decade === "none" ? unasked(pool) : narrow(pool, (film) => decadeOf(film.year) === decade);
 
@@ -281,9 +285,11 @@ const poolOf = ({ person, films, labels }: RankInput, anchorId: string | null): 
   const admit = admitted(films, labels, person.childrenWatching);
   const eligible = admit.pool.filter((film) => film.id !== anchorId);
   const country = inCountry(ofKind(eligible, person.wants), person.country);
-  const genre = inGenre(country.pool, person);
+  // reads cached before the field existed carry no studio
+  const studio = inStudio(country.pool, person.studio ?? null);
+  const genre = inGenre(studio.pool, person);
   const decade = inDecade(genre.pool, person.decade);
-  return { films: decade.pool, faceted: allKept([admit, country, genre, decade]) };
+  return { films: decade.pool, faceted: allKept([admit, country, studio, genre, decade]) };
 };
 
 /** Weights */

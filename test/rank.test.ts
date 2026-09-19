@@ -14,7 +14,7 @@ import {
   type Dist,
   type PersonRead,
 } from "@/core/Rank";
-import { AXIS_IDS, type AxisId } from "@/core/Taste";
+import { AXIS_IDS, studioOf, type AxisId } from "@/core/Taste";
 import cards from "@/data/films.json";
 import labelsFile from "@/data/labels.json";
 
@@ -46,6 +46,7 @@ const person = (
   runtime: { probabilities: flat, confidence: 0, relevance: 0 },
   subject: { scores: {}, weight: 0, concentration: 0 },
   country: null,
+  studio: null,
   genres: [],
   genreNamed: false,
   wantsSimilar: false,
@@ -414,6 +415,17 @@ describe("what reaches the shelf", () => {
       labels,
     });
     expect(asked.rows).toEqual([]);
+  });
+
+  it("a stated studio filters the shelf and never falls back", () => {
+    const netflix = rank({ person: person({}, { studio: "Netflix" }), films, labels });
+    expect(netflix.rows.length).toBeGreaterThan(50);
+    for (const row of netflix.rows) expect(studioOf(row.film.studio), row.film.title).toBe("Netflix");
+    expect(netflix.mode).toBe("browse");
+    // GTH is GDH's earlier name, so both spellings land on one shelf
+    expect(rank({ person: person({}, { studio: "GDH" }), films, labels }).rows.length).toBeGreaterThanOrEqual(30);
+    // a French shelf holds no Nadao title, and the studio does not give way to find one
+    expect(rank({ person: person({}, { studio: "Nadao Bangkok", country: "France" }), films, labels }).rows).toEqual([]);
   });
 
   it("narrows to a decade and browses it", () => {

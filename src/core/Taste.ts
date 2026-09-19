@@ -276,6 +276,19 @@ export const WANTS_QUESTION = "Is this person asking for a film or for a series?
 export const COUNTRIES = ["United States", "United Kingdom", "Japan", "South Korea", "Thailand", "China", "Germany", "France", "Italy", "India", "Canada", "Ireland", "Denmark", "Mexico", "Spain", "Hong Kong", "Taiwan", "Sweden", "New Zealand", "Australia", "Turkey", "Brazil", "Poland", "Norway"] as const;
 export type CountryId = (typeof COUNTRIES)[number];
 
+/** Studios and platforms with enough titles to browse; matched by name inside the studio field. GTH is GDH's earlier name. */
+export const STUDIOS = ["Netflix", "GDH", "Nadao Bangkok", "Sahamongkol"] as const;
+export type StudioId = (typeof STUDIOS)[number];
+
+export const STUDIO_QUESTION =
+  "Which studio or streaming platform's films or series is this person asking for? Only answer with one if they actually named it.";
+
+export const studioOf = (studio: string | undefined): StudioId | null => {
+  const text = (studio ?? "").toLowerCase();
+  if (text.includes("gdh") || text.includes("gth")) return "GDH";
+  return STUDIOS.find((name) => text.includes(name.toLowerCase())) ?? null;
+};
+
 export const COUNTRY_QUESTION =
   "Which country's or region's films or series is this person asking for? Only answer with a country if they actually named one, or named a language, a people or a film industry that means one.";
 

@@ -57,7 +57,7 @@ export const Catalog = Schema.Array(Film);
 
 /** What the browser needs to rank and draw a tile. Plot and credits stay on the server. */
 export const FilmCard = Schema.Struct(
-  Struct.pick(Film.fields, ["id", "kind", "imdbRank", "title", "year", "rated", "runtime", "genres", "countries", "director", "posterBase", "imdbRating", "imdbVotes"]),
+  Struct.pick(Film.fields, ["id", "kind", "imdbRank", "title", "year", "rated", "runtime", "genres", "countries", "director", "posterBase", "imdbRating", "imdbVotes", "studio"]),
 );
 export type FilmCard = typeof FilmCard.Type;
 
@@ -146,4 +146,5 @@ export const toCard = (film: Film): FilmCard => ({
   posterBase: film.posterBase,
   imdbRating: film.imdbRating,
   imdbVotes: film.imdbVotes,
+  studio: film.studio,
 });

@@ -11,7 +11,7 @@ import {
 import type { Kind } from "../core/Film.ts";
 import type { PersonRead } from "../core/Rank.ts";
 import { mergeSubjects, readSubject, weightOf } from "../core/Subject.ts";
-import { AXES, GENRES, RUNTIME_LEVELS, type AxisId, type CountryId } from "../core/Taste.ts";
+import { AXES, GENRES, RUNTIME_LEVELS, type AxisId } from "../core/Taste.ts";
 
 export const ReadRequest = Schema.Struct({
   said: Schema.String.check(Schema.isMaxLength(4000)),
@@ -40,7 +40,8 @@ const distribution = <L extends string>(
 const gated = <L extends string, F extends L>(answer: Classified<L>, min: number, fallback: F) =>
   answer.label === fallback || (answer.confidence ?? 0) < min ? fallback : answer.label;
 
-const countryOf = (answer: Classified<CountryId | "none">): CountryId | null => {
+/** A named option counts only on its own mass against `none`, for country and studio alike. */
+const namedOf = <L extends string>(answer: Classified<L | "none">): L | null => {
   if (answer.label === "none") return null;
   const mine = answer.probabilities[answer.label];
   const none = answer.probabilities.none;
@@ -81,7 +82,8 @@ export const makeReader = (films: readonly SubjectOption[]) => {
         subject: mergeSubjects(shardIds.map((id) => readSubject(answers[id]))),
         // "anime" means neither film nor series; a guess there cuts half the right answers
         wants: gated(answers.wants, CONFIDENCE.wants, "either"),
-        country: countryOf(answers.country),
+        country: namedOf(answers.country),
+        studio: namedOf(answers.studio),
         genres: GENRES.filter((genre) => answers[`genre_${genre}`].probability > GENRE_THRESHOLD),
         genreNamed: answers.genre_named.probability > SIGNAL,
         wantsSimilar: answers.names_reference.probability > SIGNAL,

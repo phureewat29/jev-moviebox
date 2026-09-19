@@ -100,7 +100,7 @@ describe("the decisions put to Jev", () => {
     // ten axes and runtime, each with a relevance noul; a noul per genre; the signals;
     // and four questions about the shelf rather than a title: film-or-series, country, ordering, decade
     expect(Object.keys(person)).toHaveLength(
-      (AXIS_IDS.length + 1) * 2 + GENRES.length + 4 + PERSON_SIGNAL_IDS.length,
+      (AXIS_IDS.length + 1) * 2 + GENRES.length + 5 + PERSON_SIGNAL_IDS.length,
     );
     for (const id of AXIS_IDS) {
       expect(person[id]._tag, id).toBe("Rate");
