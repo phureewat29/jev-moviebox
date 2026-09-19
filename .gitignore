@@ -53,5 +53,7 @@ src/data/reads.cache.json
 scripts/
 
 src/data/golden.json
-test/__snapshots__/golden.json
 src/data/.labels.jsonl
+
+# Generated from the local read cache, not from anything in the repository.
+test/__snapshots__/
