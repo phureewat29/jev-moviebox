@@ -4,7 +4,7 @@ import { Baby, Heart, House, Play, Search, User, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { COMPANY, SAID_LIMIT, type Company } from "@/core/Company";
 import { draw, EMPTY_DECK, type Deck } from "@/core/Deck";
-import type { Suggestion } from "@/core/Suggestions";
+import { SUGGESTIONS, type Suggestion } from "@/core/Suggestions";
 
 /** Who is watching is the one thing the person knows and the model can only guess, so it is a control, not a question. */
 const AUDIENCE: Record<Company, { label: string; Icon: typeof User; on: string; off: string }> = {
@@ -37,21 +37,15 @@ function Reel({ size }: { size: number }) {
 const ROTATE_MS = 4000;
 
 
-function Rotating({
-  suggestions,
-  onPick,
-}: {
-  suggestions: readonly Suggestion[];
-  onPick: (suggestion: Suggestion) => void;
-}) {
+function Rotating({ onPick }: { onPick: (suggestion: Suggestion) => void }) {
   // dealt after mount: the server cannot draw the order the client would
   const [deck, setDeck] = useState<Deck>(EMPTY_DECK);
 
-  useEffect(() => setDeck(draw(EMPTY_DECK, suggestions)), [suggestions]);
+  useEffect(() => setDeck(draw(EMPTY_DECK, SUGGESTIONS)), []);
   useEffect(() => {
-    const timer = setInterval(() => setDeck((current) => draw(current, suggestions)), ROTATE_MS);
+    const timer = setInterval(() => setDeck((current) => draw(current, SUGGESTIONS)), ROTATE_MS);
     return () => clearInterval(timer);
-  }, [suggestions]);
+  }, []);
 
   const current = deck.shown;
   return (
@@ -74,7 +68,6 @@ export function Ask({
   said,
   company,
   pending,
-  suggestions,
   onSaid,
   onCompany,
   onSubmit,
@@ -82,7 +75,6 @@ export function Ask({
   said: string;
   company: Company | null;
   pending: boolean;
-  suggestions: readonly Suggestion[];
   onSaid: (value: string) => void;
   onCompany: (value: Company | null) => void;
   onSubmit: () => void;
@@ -100,7 +92,7 @@ export function Ask({
       </h1>
 
       <div className="pt-2 pb-7">
-        <Rotating suggestions={suggestions} onPick={pick} />
+        <Rotating onPick={pick} />
       </div>
 
       <div className="flex w-full items-center gap-3 rounded-full border border-edge bg-screen-raised py-1.5 pr-1.5 pl-5 transition-colors focus-within:border-marquee/50">

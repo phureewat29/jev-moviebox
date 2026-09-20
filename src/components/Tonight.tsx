@@ -7,7 +7,6 @@ import { Mark } from "@/components/Mark";
 import { Shelf } from "@/components/Shelf";
 import type { Company } from "@/core/Company";
 import type { FilmCard } from "@/core/Film";
-import type { Suggestion } from "@/core/Suggestions";
 import type { Labels } from "@/core/Labels";
 import { rank, shortlist } from "@/core/Rank";
 import { ReadResponse, type PersonRead, type ReadRequest } from "@/core/Read";
@@ -42,13 +41,7 @@ const TROUBLE = {
 
 const trouble = (message: string): Press => ({ status: "trouble", message });
 
-export function Tonight({
-  films,
-  suggestions,
-}: {
-  films: readonly FilmCard[];
-  suggestions: readonly Suggestion[];
-}) {
+export function Tonight({ films }: { films: readonly FilmCard[] }) {
   const [said, setSaid] = useState("");
   const [company, setCompany] = useState<Company | null>(null);
   const [press, setPress] = useState<Press>(null);
@@ -120,7 +113,6 @@ export function Tonight({
               said={said}
               company={company}
               pending={pending}
-              suggestions={suggestions}
               onSaid={setSaid}
               onCompany={setCompany}
               onSubmit={() => void recommend()}
