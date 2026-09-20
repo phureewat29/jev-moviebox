@@ -1,17 +1,23 @@
 import type { FilmCard, Kind } from "./Film.ts";
 import type { FilmLabels } from "./Labels.ts";
+import type { Subject } from "./Subject.ts";
 import {
+  ADULT_RATINGS,
   AXES,
   AXIS_IDS,
   decadeOf,
+  KIDS_SAFE_THRESHOLD,
   runtimeBand,
+  studioOf,
   type AxisId,
   type AxisKind,
   type CountryId,
   type DecadeId,
   type GenreId,
   type OrderingId,
-  type WantsId, studioOf, type StudioId } from "./Taste.ts";
+  type StudioId,
+  type WantsId,
+} from "./Taste.ts";
 
 /**
  * Ranking, in pure code: Jev supplies every judgment, this file does the arithmetic. It reads
@@ -28,13 +34,6 @@ export type AxisRead = {
   readonly probabilities: Dist;
   readonly confidence: number;
   readonly relevance: number;
-};
-
-export type Subject = {
-  /** Scaled so the leader is 1 and an uninformative probability is 0. */
-  readonly scores: Readonly<Record<string, number>>;
-  readonly weight: number;
-  readonly concentration: number;
 };
 
 export type PersonRead = {
@@ -73,9 +72,6 @@ export type RankInput = {
 };
 
 /** Tuning */
-
-export const ADULT_RATINGS: ReadonlySet<string> = new Set(["R", "NC-17", "X", "TV-MA"]);
-export const KIDS_SAFE_THRESHOLD = 0.6;
 
 export const TOPICAL = 3;
 /**
@@ -296,8 +292,7 @@ const poolOf = ({ person, films, labels }: RankInput, anchorId: string | null): 
   const admit = admitted(films, labels, person.childrenWatching);
   const eligible = admit.pool.filter((film) => film.id !== anchorId);
   const country = inCountry(ofKind(eligible, person.wants), person.country);
-  // reads cached before the field existed carry no studio
-  const studio = inStudio(country.pool, person.studio ?? null);
+  const studio = inStudio(country.pool, person.studio);
   const genre = inGenre(studio.pool, person);
   const decade = inDecade(genre.pool, person.decade);
   return { films: decade.pool, faceted: allKept([admit, country, studio, genre, decade]) };

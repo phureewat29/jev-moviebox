@@ -1,13 +1,19 @@
-import type { Subject } from "./Rank.ts";
-
 /** The subject shards folded into one `Subject`: pure arithmetic, tested with numbers rather than a model. */
+
+export type Subject = {
+  /** Scaled so the leader is 1 and an uninformative probability is 0. */
+  readonly scores: Readonly<Record<string, number>>;
+  readonly weight: number;
+  readonly concentration: number;
+};
 
 export type Shard = Subject & {
   /** One minus the shard's `none`: how much of the answer landed in it. */
   readonly mass: number;
 };
 
-const EMPTY: Shard = { scores: {}, weight: 0, concentration: 0, mass: 0 };
+const EMPTY_SUBJECT: Subject = { scores: {}, weight: 0, concentration: 0 };
+const EMPTY: Shard = { ...EMPTY_SUBJECT, mass: 0 };
 
 /** A missing confidence as a weight means unweighted, not worthless: `?? 0` would silently zero the whole signal. */
 export const weightOf = (answer: { readonly confidence?: number | undefined }) => answer.confidence ?? 1;
@@ -56,7 +62,7 @@ const leaderOf = (shard: Shard) => shard.mass * shard.concentration;
 export const mergeSubjects = (shards: readonly Shard[]): Subject => {
   const strongest = shards.reduce((best, shard) => (leaderOf(shard) > leaderOf(best) ? shard : best), EMPTY);
   const leader = leaderOf(strongest);
-  if (leader <= 0) return { scores: {}, weight: 0, concentration: 0 };
+  if (leader <= 0) return EMPTY_SUBJECT;
   return {
     scores: Object.fromEntries(
       shards.flatMap((shard) =>

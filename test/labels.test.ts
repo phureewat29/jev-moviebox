@@ -3,9 +3,8 @@ import { Schema } from "effect";
 import { describe, expect, it } from "vitest";
 import { Catalog, toState } from "@/core/Film";
 import { Labels } from "@/core/Labels";
-import { ADULT_RATINGS, KIDS_SAFE_THRESHOLD } from "@/core/Rank";
 import { MODEL } from "@/server/JevModel";
-import { AXIS_IDS, canonicalRubric, ENDING_IDS, FILM_FACT_IDS } from "@/core/Taste";
+import { ADULT_RATINGS, AXIS_IDS, canonicalRubric, ENDING_IDS, FILM_FACT_IDS, KIDS_SAFE_THRESHOLD } from "@/core/Taste";
 import catalog from "@/data/catalog.json";
 import labels from "@/data/labels.json";
 

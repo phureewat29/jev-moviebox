@@ -3,10 +3,8 @@ import { describe, expect, it } from "vitest";
 import { Cards, type FilmCard } from "@/core/Film";
 import { Labels, type FilmLabels } from "@/core/Labels";
 import {
-  ADULT_RATINGS,
   ceilingFit,
   COUNTRY_MIN,
-  KIDS_SAFE_THRESHOLD,
   MAX_RESULTS,
   overlap,
   rank,
@@ -14,7 +12,7 @@ import {
   type Dist,
   type PersonRead,
 } from "@/core/Rank";
-import { AXIS_IDS, studioOf, type AxisId } from "@/core/Taste";
+import { ADULT_RATINGS, AXIS_IDS, KIDS_SAFE_THRESHOLD, studioOf, type AxisId } from "@/core/Taste";
 import cards from "@/data/films.json";
 import labelsFile from "@/data/labels.json";
 

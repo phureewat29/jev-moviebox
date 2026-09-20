@@ -218,6 +218,10 @@ export const FILM_FACTS = {
 export type FilmFactId = keyof typeof FILM_FACTS;
 export const FILM_FACT_IDS = Object.keys(FILM_FACTS) as readonly FilmFactId[];
 
+/** The kids gate, beside the Noul it thresholds: a rating alone is no defence — M is "Passed" and Grave of the Fireflies "Not Rated". */
+export const ADULT_RATINGS: ReadonlySet<string> = new Set(["R", "NC-17", "X", "TV-MA"]);
+export const KIDS_SAFE_THRESHOLD = 0.6;
+
 export const PERSON_SIGNALS = {
   children_watching: {
     instructions: "Are children going to be watching along with this person tonight?",
