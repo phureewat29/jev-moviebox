@@ -3,7 +3,8 @@
 import { Baby, Heart, House, Play, Search, User, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { COMPANY, SAID_LIMIT, type Company } from "@/core/Company";
-import { draw, EMPTY_DECK, type Deck, type Suggestion } from "@/core/Suggestions";
+import { draw, EMPTY_DECK, type Deck } from "@/core/Deck";
+import type { Suggestion } from "@/core/Suggestions";
 
 /** Who is watching is the one thing the person knows and the model can only guess, so it is a control, not a question. */
 const AUDIENCE: Record<Company, { label: string; Icon: typeof User; on: string; off: string }> = {
