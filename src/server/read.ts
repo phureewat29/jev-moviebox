@@ -1,5 +1,5 @@
 import { Config, Effect, Record } from "effect";
-import { DecisionModel, type AiError, type Decision } from "effect/unstable/ai";
+import { DecisionModel, type Decision } from "effect/unstable/ai";
 import { SAID_LIMIT } from "../core/Company.ts";
 import {
   personDecision,
@@ -88,19 +88,15 @@ export const makeReader = (films: readonly SubjectOption[]) => {
     });
 };
 
-/** The page wants an answer or null, never an error; every failure is logged first, so a rejected answer leaves a trace. */
-const BUDGET_MS = Config.Int("TYPESAFE_TIMEOUT_MS").pipe(Config.withDefault(12_000));
+/** Resolved once, at import: a malformed budget must stop the process, not quietly empty every shelf. */
+const BUDGET_MS = Effect.runSync(Config.Int("TYPESAFE_TIMEOUT_MS").pipe(Config.withDefault(12_000)));
 
-export const readOrNull = (
-  read: (request: ReadRequest) => Effect.Effect<PersonRead, AiError.AiError, DecisionModel.DecisionModel>,
-  request: ReadRequest,
-) =>
-  Effect.gen(function* () {
-    const budget = yield* BUDGET_MS;
-    return yield* read(request).pipe(
-      Effect.timeoutOrElse({ duration: `${budget} millis`, orElse: () => Effect.succeed(null) }),
-    );
-  }).pipe(
+export type Reader = ReturnType<typeof makeReader>;
+
+/** Every failure is logged, then handed over as a Result: the route decides what the wire says. */
+export const readResult = (reader: Reader, request: ReadRequest) =>
+  reader(request).pipe(
+    Effect.timeout(BUDGET_MS),
     Effect.tapError((error) => Effect.logError(error)),
-    Effect.orElseSucceed(() => null),
+    Effect.result,
   );

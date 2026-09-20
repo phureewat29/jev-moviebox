@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 import { Catalog } from "@/core/Film";
 import { ReadRequest, type ReadResponse } from "@/core/Read";
 import { allow, callerOf } from "@/server/RateLimiter";
-import { makeReader, readOrNull } from "@/server/read";
+import { makeReader, readResult } from "@/server/read";
 import { runtime } from "@/server/runtime";
 import catalog from "@/data/catalog.json";
 
@@ -27,9 +27,9 @@ export async function POST(request: NextRequest) {
   if (Result.isFailure(parsed)) {
     return Response.json({ read: null, error: "bad_request" } satisfies ReadResponse, { status: 400 });
   }
-  const person = await runtime.runPromise(readOrNull(read, parsed.success)).catch((error: unknown) => {
+  const outcome = await runtime.runPromise(readResult(read, parsed.success)).catch((error: unknown) => {
     console.error(error);
-    return null;
+    return Result.fail(error);
   });
-  return Response.json({ read: person } satisfies ReadResponse);
+  return Response.json({ read: Result.getOrNull(outcome) } satisfies ReadResponse);
 }
