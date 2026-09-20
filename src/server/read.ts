@@ -1,10 +1,11 @@
 import { Config, Effect, Record, Schema } from "effect";
-import { DecisionModel, type AiError } from "effect/unstable/ai";
+import { DecisionModel, type AiError, type Decision } from "effect/unstable/ai";
 import { COMPANY, SAID_LIMIT } from "../core/Company.ts";
 import {
   personDecision,
   subjectDecision,
   subjectShards,
+  type Distribution,
   type ShardId,
   type SubjectOption,
 } from "../core/Decisions.ts";
@@ -25,23 +26,15 @@ const COUNTRY_RATIO = 0.5;
 const GENRE_THRESHOLD = 0.45;
 const SIGNAL = 0.5;
 
-type Classified<L extends string> = {
-  readonly label: L;
-  readonly probabilities: Readonly<Record<L, number>>;
-  readonly confidence?: number | undefined;
-};
-
-const distribution = <L extends string>(
-  answer: { readonly probabilities: Readonly<Record<L, number>> },
-  levels: readonly L[],
-) => levels.map((level) => answer.probabilities[level] ?? 0);
+const ordered = <L extends string>(answer: Distribution<L>, levels: readonly L[]) =>
+  levels.map((level) => answer.probabilities[level] ?? 0);
 
 /** Here a missing confidence means the answer cannot be trusted, so the gate falls back. */
-const gated = <L extends string, F extends L>(answer: Classified<L>, min: number, fallback: F) =>
+const gated = <L extends string, F extends L>(answer: Decision.ClassifyAnswer<L>, min: number, fallback: F) =>
   answer.label === fallback || (answer.confidence ?? 0) < min ? fallback : answer.label;
 
 /** A named option counts only on its own mass against `none`, for country and studio alike. */
-const namedOf = <L extends string>(answer: Classified<L | "none">): L | null => {
+const namedOf = <L extends string>(answer: Decision.ClassifyAnswer<L | "none">): L | null => {
   if (answer.label === "none") return null;
   const mine = answer.probabilities[answer.label];
   const none = answer.probabilities.none;
@@ -67,7 +60,7 @@ export const makeReader = (films: readonly SubjectOption[]) => {
       const answers = { ...film.answers, ...series.answers };
 
       const axis = (id: AxisId) => ({
-        probabilities: distribution(answers[id], AXES[id].levels),
+        probabilities: ordered(answers[id], AXES[id].levels),
         confidence: weightOf(answers[id]),
         relevance: answers[`relevance_${id}`].probability,
       });
@@ -75,7 +68,7 @@ export const makeReader = (films: readonly SubjectOption[]) => {
       return {
         axes: Record.map(AXES, (_axis, id) => axis(id)),
         runtime: {
-          probabilities: distribution(answers.runtime, RUNTIME_LEVELS),
+          probabilities: ordered(answers.runtime, RUNTIME_LEVELS),
           confidence: weightOf(answers.runtime),
           relevance: answers.relevance_runtime.probability,
         },

@@ -1,3 +1,5 @@
+import type { Distribution } from "./Decisions.ts";
+
 /** The subject shards folded into one `Subject`: pure arithmetic, tested with numbers rather than a model. */
 
 export type Subject = {
@@ -16,13 +18,10 @@ const EMPTY_SUBJECT: Subject = { scores: {}, weight: 0, concentration: 0 };
 const EMPTY: Shard = { ...EMPTY_SUBJECT, mass: 0 };
 
 /** A missing confidence as a weight means unweighted, not worthless: `?? 0` would silently zero the whole signal. */
-export const weightOf = (answer: { readonly confidence?: number | undefined }) => answer.confidence ?? 1;
+export const weightOf = (answer: Pick<Distribution, "confidence">) => answer.confidence ?? 1;
 
 /** The top three carry the weight: a franchise splits its mass across its films and is still a committed answer. */
-export const readSubject = (answer: {
-  readonly probabilities: Readonly<Record<string, number>>;
-  readonly confidence?: number | undefined;
-}): Shard => {
+export const readSubject = (answer: Distribution): Shard => {
   const none = answer.probabilities.none ?? 0;
   const films = Object.entries(answer.probabilities)
     .filter(([id]) => id !== "none")

@@ -50,6 +50,9 @@ export type FilmState = typeof FilmState.Type;
 /** Only what was typed: with the audience in the state, "scare me" for children read as tension irrelevant. */
 export const Said = Schema.Struct({ said: Schema.String });
 
+/** What a Choice or a Score answer carries once the label is spent; derived from the SDK so the seam cannot drift. */
+export type Distribution<L extends string = string> = Pick<Decision.ClassifyAnswer<L>, "probabilities" | "confidence">;
+
 const rateAxes = (side: "film" | "person") =>
   Record.map(AXES, (axis) => Decision.rate({ instructions: axis[side], criteria: axis.levels }));
 
