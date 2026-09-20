@@ -1,5 +1,6 @@
 "use client";
 
+import { Result, Schema } from "effect";
 import { useMemo, useRef, useState } from "react";
 import { Ask } from "@/components/Ask";
 import { Mark } from "@/components/Mark";
@@ -9,7 +10,7 @@ import type { FilmCard } from "@/core/Film";
 import type { Suggestion } from "@/core/Suggestions";
 import type { Labels } from "@/core/Labels";
 import { rank, shortlist } from "@/core/Rank";
-import type { PersonRead, ReadRequest, ReadResponse } from "@/core/Read";
+import { ReadResponse, type PersonRead, type ReadRequest } from "@/core/Read";
 import labelsFile from "@/data/labels.json";
 
 const labels = new Map((labelsFile as unknown as Labels).films.map((row) => [row.id, row]));
@@ -28,17 +29,18 @@ const LIFT = `translateY(${-LOCKUP_HEIGHT * (1 - SHELF_SCALE)}px)`;
 const REST = "translateY(calc(20vh - 2rem))";
 
 /** Null until the first press: a search page shows nothing until you search. */
-type Result =
+type Press =
   | null
   | { status: "loading" }
   | { status: "ok"; read: PersonRead }
-  | { status: "failed" }
-  | { status: "throttled"; retryAfter: number };
+  | { status: "trouble"; message: string };
 
-const TROUBLE: Record<"failed" | "throttled", (retryAfter: number) => string> = {
-  failed: () => "couldn’t read that just now.",
-  throttled: (retryAfter) => `too many tries — try again in ${retryAfter}s.`,
-};
+const TROUBLE = {
+  failed: "couldn’t read that just now.",
+  throttled: (retryAfter: number) => `too many tries — try again in ${retryAfter}s.`,
+} as const;
+
+const trouble = (message: string): Press => ({ status: "trouble", message });
 
 export function Tonight({
   films,
@@ -49,18 +51,18 @@ export function Tonight({
 }) {
   const [said, setSaid] = useState("");
   const [company, setCompany] = useState<Company | null>(null);
-  const [result, setResult] = useState<Result>(null);
+  const [press, setPress] = useState<Press>(null);
   /**
    * The newest press supersedes the one before it: the old request is aborted, and only the
    * newest may set state. One mechanism, so a slow answer can never paint over a newer one.
    */
   const inFlight = useRef<AbortController | null>(null);
 
-  const asked = result !== null;
-  const pending = result?.status === "loading";
+  const asked = press !== null;
+  const pending = press?.status === "loading";
   const rows = useMemo(
-    () => (result?.status === "ok" ? shortlist(rank({ person: result.read, films, labels })) : []),
-    [result, films],
+    () => (press?.status === "ok" ? shortlist(rank({ person: press.read, films, labels })) : []),
+    [press, films],
   );
 
   const recommend = async () => {
@@ -68,7 +70,10 @@ export function Tonight({
     inFlight.current?.abort();
     const controller = new AbortController();
     inFlight.current = controller;
-    setResult({ status: "loading" });
+    const settle = (next: Press) => {
+      if (!controller.signal.aborted) setPress(next);
+    };
+    setPress({ status: "loading" });
     try {
       const response = await fetch("/api/read", {
         method: "POST",
@@ -77,13 +82,18 @@ export function Tonight({
         signal: controller.signal,
       });
       if (response.status === 429) {
-        setResult({ status: "throttled", retryAfter: Number(response.headers.get("retry-after") ?? 10) });
+        settle(trouble(TROUBLE.throttled(Number(response.headers.get("retry-after") ?? 10))));
         return;
       }
-      const body = (await response.json()) as ReadResponse;
-      setResult(body.read === null ? { status: "failed" } : { status: "ok", read: body.read });
+      const body = Schema.decodeUnknownResult(ReadResponse)(await response.json());
+      settle(
+        Result.match({
+          onFailure: () => trouble(TROUBLE.failed),
+          onSuccess: ({ read }: ReadResponse): Press => (read === null ? trouble(TROUBLE.failed) : { status: "ok", read }),
+        })(body),
+      );
     } catch {
-      if (!controller.signal.aborted) setResult({ status: "failed" });
+      settle(trouble(TROUBLE.failed));
     }
   };
 
@@ -117,13 +127,12 @@ export function Tonight({
             />
 
             <p aria-live="polite" className="pt-4 text-center text-xs text-ink-faint">
-              {result?.status === "failed" ? TROUBLE.failed(0) : null}
-              {result?.status === "throttled" ? TROUBLE.throttled(result.retryAfter) : null}
+              {press?.status === "trouble" ? press.message : null}
             </p>
 
             {/* trouble shows nothing at all, never the previous query's shelf */}
             {/* a floor under every state: eight ghosts swapping to one line collapsed the page and threw the footer up */}
-            {asked && result.status !== "failed" && result.status !== "throttled" ? (
+            {asked && press.status !== "trouble" ? (
               <div className="min-h-[70vh] animate-[fade-up_600ms_ease-out] motion-reduce:animate-none">
                 <Shelf rows={rows} pending={pending} />
               </div>
