@@ -1,8 +1,9 @@
 import { Result, Schema } from "effect";
 import type { NextRequest } from "next/server";
 import { Catalog } from "@/core/Film";
+import { ReadRequest, type ReadResponse } from "@/core/Read";
 import { allow, callerOf } from "@/server/RateLimiter";
-import { makeReader, ReadRequest, readOrNull } from "@/server/read";
+import { makeReader, readOrNull } from "@/server/read";
 import { runtime } from "@/server/runtime";
 import catalog from "@/data/catalog.json";
 
@@ -17,18 +18,18 @@ export async function POST(request: NextRequest) {
   const limit = allow(callerOf(request.headers));
   if (!limit.ok) {
     return Response.json(
-      { read: null, error: "rate_limited" },
+      { read: null, error: "rate_limited" } satisfies ReadResponse,
       { status: 429, headers: { "retry-after": String(limit.retryAfter) } },
     );
   }
   const body = await request.json().catch(() => null);
   const parsed = Schema.decodeUnknownResult(ReadRequest)(body);
   if (Result.isFailure(parsed)) {
-    return Response.json({ read: null, error: "bad_request" }, { status: 400 });
+    return Response.json({ read: null, error: "bad_request" } satisfies ReadResponse, { status: 400 });
   }
   const person = await runtime.runPromise(readOrNull(read, parsed.success)).catch((error: unknown) => {
     console.error(error);
     return null;
   });
-  return Response.json({ read: person });
+  return Response.json({ read: person } satisfies ReadResponse);
 }

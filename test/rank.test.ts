@@ -10,8 +10,8 @@ import {
   rank,
   shortlist,
   type Dist,
-  type PersonRead,
 } from "@/core/Rank";
+import type { PersonRead } from "@/core/Read";
 import { ADULT_RATINGS, AXIS_IDS, KIDS_SAFE_THRESHOLD, studioOf, type AxisId } from "@/core/Taste";
 import cards from "@/data/films.json";
 import labelsFile from "@/data/labels.json";

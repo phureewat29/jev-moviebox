@@ -1,13 +1,15 @@
+import { Schema } from "effect";
 import type { Distribution } from "./Decisions.ts";
 
 /** The subject shards folded into one `Subject`: pure arithmetic, tested with numbers rather than a model. */
 
-export type Subject = {
+export const Subject = Schema.Struct({
   /** Scaled so the leader is 1 and an uninformative probability is 0. */
-  readonly scores: Readonly<Record<string, number>>;
-  readonly weight: number;
-  readonly concentration: number;
-};
+  scores: Schema.Record(Schema.String, Schema.Number),
+  weight: Schema.Number,
+  concentration: Schema.Number,
+});
+export type Subject = typeof Subject.Type;
 
 export type Shard = Subject & {
   /** One minus the shard's `none`: how much of the answer landed in it. */

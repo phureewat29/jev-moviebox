@@ -259,6 +259,7 @@ export const ORDERING = {
   none: "They did not ask for any particular ordering; they described a kind of film.",
 } as const;
 export type OrderingId = keyof typeof ORDERING;
+export const ORDERING_IDS = Object.keys(ORDERING) as readonly OrderingId[];
 
 export const ORDERING_QUESTION =
   "Is this person asking for the shelf to be ordered a particular way, rather than for a kind of film?";
@@ -269,6 +270,7 @@ export const WANTS = {
   either: "They did not say, or they do not mind.",
 } as const;
 export type WantsId = keyof typeof WANTS;
+export const WANTS_IDS = Object.keys(WANTS) as readonly WantsId[];
 
 export const WANTS_QUESTION = "Is this person asking for a film or for a series?";
 

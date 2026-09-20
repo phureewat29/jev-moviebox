@@ -8,7 +8,8 @@ import type { Company } from "@/core/Company";
 import type { FilmCard } from "@/core/Film";
 import type { Suggestion } from "@/core/Suggestions";
 import type { Labels } from "@/core/Labels";
-import { rank, shortlist, type PersonRead } from "@/core/Rank";
+import { rank, shortlist } from "@/core/Rank";
+import type { PersonRead, ReadRequest, ReadResponse } from "@/core/Read";
 import labelsFile from "@/data/labels.json";
 
 const labels = new Map((labelsFile as unknown as Labels).films.map((row) => [row.id, row]));
@@ -72,14 +73,14 @@ export function Tonight({
       const response = await fetch("/api/read", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ said, company }),
+        body: JSON.stringify({ said, company } satisfies ReadRequest),
         signal: controller.signal,
       });
       if (response.status === 429) {
         setResult({ status: "throttled", retryAfter: Number(response.headers.get("retry-after") ?? 10) });
         return;
       }
-      const body = (await response.json()) as { read: PersonRead | null };
+      const body = (await response.json()) as ReadResponse;
       setResult(body.read === null ? { status: "failed" } : { status: "ok", read: body.read });
     } catch {
       if (!controller.signal.aborted) setResult({ status: "failed" });

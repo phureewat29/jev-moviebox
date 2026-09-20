@@ -3,7 +3,8 @@ import { Schema } from "effect";
 import { describe, expect, it } from "vitest";
 import { Cards } from "@/core/Film";
 import { Labels } from "@/core/Labels";
-import { rank, shortlist, type PersonRead } from "@/core/Rank";
+import { rank, shortlist } from "@/core/Rank";
+import { Cached } from "@/core/Read";
 import cards from "@/data/films.json";
 import labelsFile from "@/data/labels.json";
 
@@ -17,11 +18,10 @@ const labels = new Map(
   Schema.decodeUnknownSync(Labels)(labelsFile).films.map((row) => [row.id, row]),
 );
 
-type Cached = { said: string; company: string | null; read: PersonRead };
 /** Built by `node scripts/tune.ts --read`, and not in the repository: without it there is nothing to freeze. */
 const CACHE = "src/data/reads.cache.json";
 const cache = existsSync(CACHE)
-  ? (JSON.parse(readFileSync(CACHE, "utf8")) as readonly Cached[])
+  ? Schema.decodeUnknownSync(Schema.Array(Cached))(JSON.parse(readFileSync(CACHE, "utf8")))
   : [];
 
 describe.skipIf(cache.length === 0)("the golden shelves", () => {

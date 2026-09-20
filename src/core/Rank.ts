@@ -1,6 +1,6 @@
 import type { FilmCard, Kind } from "./Film.ts";
 import type { FilmLabels } from "./Labels.ts";
-import type { Subject } from "./Subject.ts";
+import type { PersonRead } from "./Read.ts";
 import {
   ADULT_RATINGS,
   AXES,
@@ -29,27 +29,6 @@ import {
 /** Types */
 
 export type Dist = readonly number[];
-
-export type AxisRead = {
-  readonly probabilities: Dist;
-  readonly confidence: number;
-  readonly relevance: number;
-};
-
-export type PersonRead = {
-  readonly axes: Readonly<Record<AxisId, AxisRead>>;
-  readonly runtime: AxisRead;
-  readonly subject: Subject;
-  readonly country: CountryId | null;
-  readonly studio: StudioId | null;
-  readonly genres: readonly GenreId[];
-  readonly genreNamed: boolean;
-  readonly wantsSimilar: boolean;
-  readonly wants: WantsId;
-  readonly ordering: OrderingId;
-  readonly decade: DecadeId;
-  readonly childrenWatching: boolean;
-};
 
 export type Tier = "named" | "kept" | "rest";
 

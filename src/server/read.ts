@@ -1,6 +1,6 @@
-import { Config, Effect, Record, Schema } from "effect";
+import { Config, Effect, Record } from "effect";
 import { DecisionModel, type AiError, type Decision } from "effect/unstable/ai";
-import { COMPANY, SAID_LIMIT } from "../core/Company.ts";
+import { SAID_LIMIT } from "../core/Company.ts";
 import {
   personDecision,
   subjectDecision,
@@ -10,15 +10,9 @@ import {
   type SubjectOption,
 } from "../core/Decisions.ts";
 import type { Kind } from "../core/Film.ts";
-import type { PersonRead } from "../core/Rank.ts";
+import type { PersonRead, ReadRequest } from "../core/Read.ts";
 import { mergeSubjects, readSubject, weightOf } from "../core/Subject.ts";
 import { AXES, GENRES, RUNTIME_LEVELS, type AxisId } from "../core/Taste.ts";
-
-export const ReadRequest = Schema.Struct({
-  said: Schema.String.check(Schema.isMaxLength(4000)),
-  company: Schema.NullOr(Schema.Literals(COMPANY)),
-});
-export type ReadRequest = typeof ReadRequest.Type;
 
 /** Country is gated on its own mass against `none`: confidence is confidence in the argmax, and an argmax of `none` reads as certainty about the opposite. */
 const CONFIDENCE = { wants: 0.75, ordering: 0.4, decade: 0.4 } as const;
