@@ -73,35 +73,35 @@ export type RankInput = {
 
 /** Tuning */
 
-export const TOPICAL = 3;
+const TOPICAL = 3;
 /**
  * Named when a title's merged score is at least this share of the strongest anywhere. A shard
  * holding none of the answer still names a best guess, at 0.06–0.12; the weakest right answer
  * sits at 0.15+. Anything from 0.12 to 0.20 draws the same shelves.
  */
-export const SEED_FLOOR = 0.15;
+const SEED_FLOOR = 0.15;
 /**
  * Gate on the subject's weight, how much of the answer landed in a title at all. Measured at
  * 2,061 titles: mood queries 0.03–0.17, subject queries 0.21+. It drifts upward as the catalog
  * grows, so measure again on every growth.
  */
-export const COMMITTED = 0.2;
+const COMMITTED = 0.2;
 const DIFFUSE = 0.35;
 
 export const COUNTRY_MIN = 4;
-export const GENRE_MIN = 3;
+const GENRE_MIN = 3;
 
-export const PRIOR = 0.4;
-export const FLOOR = 0.3;
+const PRIOR = 0.4;
+const FLOOR = 0.3;
 /**
  * "Scare me" with children watching: tension carries a quarter of the weight and every kid-safe
  * film scores zero on it. A total score cannot catch that — it scores 0.47 against 0.49 for a
  * query that works — so an axis carrying this share of the ask is a must-have, not a preference.
  */
-export const DEALBREAKER_SHARE = 0.15;
-export const DEALBREAKER_FIT = 0.25;
+const DEALBREAKER_SHARE = 0.15;
+const DEALBREAKER_FIT = 0.25;
 /** Past the leader, `match` values sit about 0.004 apart, so a fixed gap cuts arbitrarily; this is a fraction of the spread across the top fifty. */
-export const GAP_OF_SPREAD = 0.35;
+const GAP_OF_SPREAD = 0.35;
 /**
  * The floor under that fraction, for when the top fifty are flat. 0.05 let a lone leader shrink a
  * shelf of four hundred qualifying rows to two — "long day, I just want to switch off" showed one
@@ -111,10 +111,10 @@ const MIN_GAP = 0.1;
 const SPREAD_ROW = 49;
 export const MAX_RESULTS = 12;
 /** `match` is a ratio; below this much ask, a tiny denominator turns noise into a score. */
-export const MIN_ASKED = 0.8;
-export const ORDERING_WEIGHT = 4;
+const MIN_ASKED = 0.8;
+const ORDERING_WEIGHT = 4;
 /** A stated length pulls as hard as a named subject: at its bare relevance it was worth 0.6 against a subject's 2.3, and "like Interstellar, but shorter" led with a 149-minute film. */
-export const RUNTIME_STATED = 3;
+const RUNTIME_STATED = 3;
 const STATED_RELEVANCE = 0.7;
 const STATED_CONFIDENCE = 0.5;
 const WANT_MIN = 0.01;
@@ -129,6 +129,8 @@ const normalize = (distribution: Dist, levels = LEVELS): Dist => {
   if (total <= 0) return Array.from({ length: levels }, () => 1 / levels);
   return Array.from({ length: levels }, (_, i) => (distribution[i] ?? 0) / total);
 };
+
+const clamp01 = (value: number) => (value < 0 ? 0 : value > 1 ? 1 : value);
 
 type Mass = (person: Dist, film: Dist) => number;
 
@@ -146,11 +148,12 @@ const ceilingMass: Mass = (person, film) => {
     fit += film[asked] * budget;
     budget -= person[asked];
   }
-  return fit < 0 ? 0 : fit > 1 ? 1 : fit;
+  return clamp01(fit);
 };
 
 const MASS: Record<AxisKind, Mass> = { match: sharedMass, ceiling: ceilingMass };
 
+// exported for the property tests
 export const overlap = (person: Dist, film: Dist, levels = LEVELS) =>
   sharedMass(normalize(person, levels), normalize(film, levels));
 
@@ -417,7 +420,7 @@ const SCORERS: Record<OrderingId, (pool: readonly FilmCard[]) => OrderingScore> 
     const ratings = pool.map((film) => film.imdbRating);
     const mean = ratings.reduce((sum, r) => sum + r, 0) / Math.max(1, ratings.length);
     const median = pool.map((film) => film.imdbVotes).sort((a, b) => a - b)[Math.floor(pool.length / 2)] ?? 0;
-    return (film) => Math.max(0, Math.min(1, (weightedRating(film, mean, median) - RATING_FLOOR) / RATING_SPAN));
+    return (film) => clamp01((weightedRating(film, mean, median) - RATING_FLOOR) / RATING_SPAN);
   },
   newest: (pool) => {
     const { oldest, newest } = yearSpan(pool);
