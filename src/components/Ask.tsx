@@ -16,7 +16,7 @@ const AUDIENCE: Record<Company, { label: string; Icon: typeof User; on: string; 
 };
 
 
-/** A reel turning: it says what is loading, not just that something is. */
+/** Says what is loading, not just that something is. */
 function Reel({ size }: { size: number }) {
   return (
     <svg

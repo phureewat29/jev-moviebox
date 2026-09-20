@@ -43,7 +43,7 @@ export function Shelf({ rows, pending }: { rows: readonly Ranked[]; pending: boo
   );
 }
 
-/** Eight empty sleeves: the shelf while it waits and, gone still and dim, the shelf when nothing fits. */
+/** The shelf while it waits and, gone still and dim, the shelf when nothing fits. */
 function Sleeves({ still }: { still: boolean }) {
   return Array.from({ length: 8 }, (_, i) => (
     <div key={i} className={`flex flex-col gap-2.5 ${still ? "opacity-40" : ""}`}>
@@ -67,7 +67,7 @@ function Tile({ row: { film }, place }: { row: Ranked; place: number }) {
   return (
     <article className="flex flex-col gap-2.5">
       <div className="relative aspect-[2/3] overflow-hidden rounded-sm bg-screen-raised ring-1 ring-edge/60">
-        {/** Under the poster, not in place of it: an opaque poster hides it without being told to. */}
+        {/* under the poster, not in place of it: an opaque poster hides it without being told to */}
         <div aria-hidden className="sleeve absolute inset-0" data-loaded={arrived || undefined} />
         <Image
           ref={settle}

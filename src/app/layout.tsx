@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
 };
 
-/** Tints the browser chrome and the notch strip to the same black the page is painted in. */
+/** The same black the page is painted in. */
 export const viewport: Viewport = {
   themeColor: "#0a0908",
   colorScheme: "dark",
