@@ -24,8 +24,6 @@ import {
   RUNTIME_RELEVANCE,
   WANTS,
   WANTS_QUESTION,
-  type AxisId,
-  type GenreId,
 } from "./Taste.ts";
 
 /**
@@ -56,21 +54,15 @@ export type Distribution<L extends string = string> = Pick<Decision.ClassifyAnsw
 const rateAxes = (side: "film" | "person") =>
   Record.map(AXES, (axis) => Decision.rate({ instructions: axis[side], criteria: axis.levels }));
 
-type Relevance = { readonly [K in AxisId as `relevance_${K}`]: Decision.Probability };
-const relevance = (): Relevance =>
-  Object.fromEntries(
-    AXIS_IDS.map((axis) => [
-      `relevance_${axis}`,
-      Decision.probability({ instructions: relevanceInstruction(axis), criteria: relevanceCriteria }),
-    ]),
-  ) as Relevance;
-
-/** Always asked: suppressing these once the subject had committed blanked "a western", which is both. */
-type Genres = { readonly [G in GenreId as `genre_${G}`]: Decision.Probability };
-const genres = (): Genres =>
-  Object.fromEntries(
-    GENRES.map((genre) => [`genre_${genre}`, Decision.probability(genreQuestion(genre))]),
-  ) as Genres;
+/** One Noul per key under a prefix; the reader indexes the answers by these keys. */
+const prefixed = <P extends string, K extends string>(
+  prefix: P,
+  keys: readonly K[],
+  ask: (key: K) => Decision.Probability,
+) =>
+  Object.fromEntries(keys.map((key) => [`${prefix}_${key}`, ask(key)])) as {
+    readonly [Key in K as `${P}_${Key}`]: Decision.Probability;
+  };
 
 const withNone = <const T extends string>(
   options: readonly T[],
@@ -148,11 +140,13 @@ export const subjectShards = (
 
 type Shards = Record<ShardId, Decision.Classify<string>>;
 
-/** The shard keys are dynamic; the one cast, here, says so, and every reader of the answers is typed by the definition. */
+/** The shard keys are dynamic, so the merged record is asserted; every reader of the answers is typed by the definition. */
 export const personDecision = (shards: Shards) => {
   const named = {
   ...rateAxes("person"),
-  ...relevance(),
+  ...prefixed("relevance", AXIS_IDS, (axis) =>
+    Decision.probability({ instructions: relevanceInstruction(axis), criteria: relevanceCriteria }),
+  ),
   runtime: Decision.rate({ instructions: RUNTIME_QUESTION, criteria: RUNTIME_LEVELS }),
   relevance_runtime: Decision.probability({
     instructions: RUNTIME_RELEVANCE,
@@ -172,7 +166,8 @@ export const personDecision = (shards: Shards) => {
     instructions: STUDIO_QUESTION,
     criteria: withNone(STUDIOS, (studio) => `Films and series from ${studio}.`, "They named no studio or platform."),
   }),
-  ...genres(),
+  // always asked: suppressing these once the subject had committed blanked "a western", which is both
+  ...prefixed("genre", GENRES, (genre) => Decision.probability(genreQuestion(genre))),
   ordering: Decision.classify({ instructions: ORDERING_QUESTION, criteria: ORDERING }),
   decade: Decision.classify({
     instructions: DECADE_QUESTION,

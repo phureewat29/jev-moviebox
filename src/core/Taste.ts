@@ -314,8 +314,8 @@ export type DecadeId = (typeof DECADES)[number] | "none";
 export const DECADE_QUESTION = "Which decade is this person asking for, if they named one at all?";
 
 export const decadeOf = (year: number): DecadeId => {
-  const decade = `${Math.floor(year / 10) * 10}s` as DecadeId;
-  return (DECADES as readonly string[]).includes(decade) ? decade : "none";
+  const decade = `${Math.floor(year / 10) * 10}s`;
+  return DECADES.find((named) => named === decade) ?? "none";
 };
 
 /** Wanting none of something is still speaking to it; never mentioning it is not. Without this, "jail breaking" sorted by absence of romance. */
