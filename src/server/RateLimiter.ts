@@ -16,16 +16,6 @@ const BUCKETS = 5_000;
 type Bucket = { count: number; resetAt: number };
 type Verdict = { readonly ok: true } | { readonly ok: false; readonly retryAfter: number };
 
-const callers = new Map<string, Bucket>();
-/** Outside the swept map: sweeping it away would disarm the ceiling under the very attack it is for. */
-let crowd: Bucket | undefined;
-
-const sweep = (now: number) => {
-  if (callers.size < BUCKETS) return;
-  for (const [key, bucket] of callers) if (now >= bucket.resetAt) callers.delete(key);
-  if (callers.size >= BUCKETS) callers.clear();
-};
-
 const live = (bucket: Bucket | undefined, now: number): bucket is Bucket =>
   bucket !== undefined && now < bucket.resetAt;
 
@@ -37,27 +27,45 @@ const peek = (bucket: Bucket | undefined, window: Window, now: number): Verdict 
 const charge = (bucket: Bucket | undefined, window: Window, now: number): Bucket =>
   live(bucket, now) ? { ...bucket, count: bucket.count + 1 } : { count: 1, resetAt: now + window.ms };
 
-/**
- * Every window is charged, but only once all three have agreed. Charging as we went let a
- * caller who was already being refused keep spending the shared ceiling, so one script could
- * lock out every other visitor for the rest of the minute.
- */
-export const allow = (caller: string, now = Date.now()): Verdict => {
-  const burst = callers.get(`${caller}:burst`);
-  const sustained = callers.get(`${caller}:minute`);
-  const refused = [
-    peek(burst, BURST, now),
-    peek(sustained, SUSTAINED, now),
-    peek(crowd, EVERYONE, now),
-  ].find((verdict) => !verdict.ok);
-  if (refused !== undefined) return refused;
+/** A limiter's state lives in its closure, so a test starts from nothing. */
+export const make = () => {
+  const callers = new Map<string, Bucket>();
+  /** Outside the swept map: sweeping it away would disarm the ceiling under the very attack it is for. */
+  let crowd: Bucket | undefined;
 
-  sweep(now);
-  callers.set(`${caller}:burst`, charge(burst, BURST, now));
-  callers.set(`${caller}:minute`, charge(sustained, SUSTAINED, now));
-  crowd = charge(crowd, EVERYONE, now);
-  return { ok: true };
+  const sweep = (now: number) => {
+    if (callers.size < BUCKETS) return;
+    for (const [key, bucket] of callers) if (now >= bucket.resetAt) callers.delete(key);
+    if (callers.size >= BUCKETS) callers.clear();
+  };
+
+  /**
+   * Every window is charged, but only once all three have agreed. Charging as we went let a
+   * caller who was already being refused keep spending the shared ceiling, so one script could
+   * lock out every other visitor for the rest of the minute.
+   */
+  const allow = (caller: string, now = Date.now()): Verdict => {
+    const burst = callers.get(`${caller}:burst`);
+    const sustained = callers.get(`${caller}:minute`);
+    const refused = [
+      peek(burst, BURST, now),
+      peek(sustained, SUSTAINED, now),
+      peek(crowd, EVERYONE, now),
+    ].find((verdict) => !verdict.ok);
+    if (refused !== undefined) return refused;
+
+    sweep(now);
+    callers.set(`${caller}:burst`, charge(burst, BURST, now));
+    callers.set(`${caller}:minute`, charge(sustained, SUSTAINED, now));
+    crowd = charge(crowd, EVERYONE, now);
+    return { ok: true };
+  };
+
+  return { allow } as const;
 };
+
+/** One limiter per process: the route handler is not inside an Effect, so it holds the instance directly. */
+export const { allow } = make();
 
 /**
  * Whatever the proxy in front of us wrote. On Vercel the edge overwrites both headers, so this
