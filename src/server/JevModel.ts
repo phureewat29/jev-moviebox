@@ -8,25 +8,29 @@ export const MODEL = "jev-latest";
 /** Further than this from 1 is not rounding but a fault, and stays visible. */
 const ROUNDING = 0.05;
 
-const unit = (probabilities: Readonly<Record<string, number>>) => {
-  const total = Object.values(probabilities).reduce((sum, p) => sum + p, 0);
+type Probabilities = Readonly<Record<string, number>>;
+type Answer = { readonly probabilities?: Probabilities };
+type Answers = Readonly<Record<string, Answer>>;
+
+const sumOf = (probabilities: Probabilities) => Object.values(probabilities).reduce((sum, p) => sum + p, 0);
+
+const unit = (probabilities: Probabilities) => {
+  const total = sumOf(probabilities);
   return total > 0 && Math.abs(total - 1) <= ROUNDING
     ? Record.map(probabilities, (p) => p / total)
     : probabilities;
 };
 
-type Answer = { readonly probabilities?: Readonly<Record<string, number>> };
-const isAnswers = (value: unknown): value is Readonly<Record<string, Answer>> =>
-  typeof value === "object" && value !== null;
+const isAnswers = (value: unknown): value is Answers => typeof value === "object" && value !== null;
+const hasAnswers = (body: unknown): body is { readonly answers: Answers } =>
+  typeof body === "object" && body !== null && "answers" in body && isAnswers(body.answers);
 
 export const drift = (body: unknown): number =>
-  typeof body === "object" && body !== null && "answers" in body && isAnswers(body.answers)
+  hasAnswers(body)
     ? Math.max(
         0,
         ...Object.values(body.answers).map((answer) =>
-          answer.probabilities === undefined
-            ? 0
-            : Math.abs(Object.values(answer.probabilities).reduce((sum, p) => sum + p, 0) - 1),
+          answer.probabilities === undefined ? 0 : Math.abs(sumOf(answer.probabilities) - 1),
         ),
       )
     : 0;
@@ -40,9 +44,7 @@ const EXPECTED_DRIFT = 0.01;
  * untouched; a total that is not rounding-sized passes through and fails as it should.
  */
 export const renormalize = (body: unknown): unknown => {
-  if (typeof body !== "object" || body === null || !("answers" in body) || !isAnswers(body.answers)) {
-    return body;
-  }
+  if (!hasAnswers(body)) return body;
   return {
     ...body,
     answers: Record.map(body.answers, (answer) =>
@@ -56,26 +58,23 @@ export const renormalize = (body: unknown): unknown => {
 /** The provider applies `filterStatusOk` first, so only a 2xx body is parsed here. */
 const renormalized = (client: HttpClient.HttpClient): HttpClient.HttpClient =>
   HttpClient.transformResponse(client, (response) =>
-    Effect.flatMap(response, (incoming) =>
-      Effect.flatMap(incoming.json, (body) =>
-        Effect.as(
-          drift(body) > EXPECTED_DRIFT
-            ? Effect.logDebug(`jev distribution drift ${drift(body).toFixed(3)}`)
-            : Effect.void,
-          HttpClientResponse.fromWeb(
-            incoming.request,
-            new Response(JSON.stringify(renormalize(body)), {
-              status: incoming.status,
-              // the body was re-encoded, so what described the old one must not travel with it
-              headers: Headers.removeMany(incoming.headers, ["content-length", "content-encoding"]),
-            }),
-          ),
-        ),
-      ),
-    ),
+    Effect.gen(function* () {
+      const incoming = yield* response;
+      const body = yield* incoming.json;
+      const drifted = drift(body);
+      if (drifted > EXPECTED_DRIFT) yield* Effect.logDebug(`jev distribution drift ${drifted.toFixed(3)}`);
+      return HttpClientResponse.fromWeb(
+        incoming.request,
+        new Response(JSON.stringify(renormalize(body)), {
+          status: incoming.status,
+          // the body was re-encoded, so what described the old one must not travel with it
+          headers: Headers.removeMany(incoming.headers, ["content-length", "content-encoding"]),
+        }),
+      );
+    }),
   );
 
-/** With an `apiKey` (the data jobs hold theirs as a constant); without one, `TYPESAFE_API_KEY` from the environment. */
+/** Without an `apiKey`, `TYPESAFE_API_KEY` from the environment; the data jobs pass theirs as a constant. */
 export const layer = (options: { readonly model: string; readonly apiKey?: Redacted.Redacted<string> }) =>
   TypeSafeDecisionModel.layer({ model: options.model }).pipe(
     Layer.provide(
