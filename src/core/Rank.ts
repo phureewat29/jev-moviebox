@@ -232,13 +232,8 @@ const admitted = (
 ): Facet => {
   const labelled = films.filter((film) => labels.has(film.id));
   if (!childrenWatching) return unasked(labelled);
-  return insist(
-    labelled.filter(
-      (film) =>
-        !ADULT_RATINGS.has(film.rated) &&
-        labels.get(film.id)!.facts.kids_safe >= KIDS_SAFE_THRESHOLD,
-    ),
-  );
+  const kidSafe = (film: FilmCard) => (labels.get(film.id)?.facts.kids_safe ?? 0) >= KIDS_SAFE_THRESHOLD;
+  return insist(labelled.filter((film) => !ADULT_RATINGS.has(film.rated) && kidSafe(film)));
 };
 
 /** Dropping the outcome is the rule: the kind always falls back and never counts toward `faceted`, unlike a stated genre. */
@@ -439,7 +434,6 @@ const SCORERS: Record<OrderingId, (pool: readonly FilmCard[]) => OrderingScore> 
 type Scored = Ranked & { readonly seed: number; readonly genreFit: number; readonly sortKey: number };
 
 type Scoring = {
-  readonly labels: ReadonlyMap<string, FilmLabels>;
   readonly weights: Weights;
   readonly seeds: Readonly<Record<string, number>>;
   readonly genres: readonly GenreId[];
@@ -459,10 +453,8 @@ const countOfKind = (films: readonly FilmCard[]): Record<Kind, number> => {
 };
 
 const scoreFilm =
-  ({ labels, weights, seeds, genres, anchored, faceted, resembles, orderingScore, countOfKind }: Scoring) =>
-  (film: FilmCard): Scored => {
-    const mine = normalizedAxes(labels).get(film.id)!;
-
+  ({ weights, seeds, genres, anchored, faceted, resembles, orderingScore, countOfKind }: Scoring) =>
+  (film: FilmCard, mine: Readonly<Record<AxisId, Dist>>): Scored => {
     let mood = 0;
     for (const want of weights.wants) mood += want.weight * want.mass(want.normalized, mine[want.axis]);
     const qualifiesOnMood = weights.mustHave.every(
@@ -542,20 +534,23 @@ export const rank = (input: RankInput): Ranking => {
   const anchorId = anchorOf(person);
   const pool = poolOf(input, anchorId);
   const weights = weightsOf(person);
+  const normalized = normalizedAxes(labels);
+  const score = scoreFilm({
+    weights,
+    seeds: seedsOf(person),
+    genres: person.genres,
+    anchored: anchorId !== null,
+    faceted: pool.faceted,
+    resembles: resemblanceTo(anchorId, films, labels),
+    orderingScore: SCORERS[person.ordering](pool.films),
+    countOfKind: countOfKind(films),
+  });
+  // a title without labels is not eligible, the rule the pool already applies
   const rows = pool.films
-    .map(
-      scoreFilm({
-        labels,
-        weights,
-        seeds: seedsOf(person),
-        genres: person.genres,
-        anchored: anchorId !== null,
-        faceted: pool.faceted,
-        resembles: resemblanceTo(anchorId, films, labels),
-        orderingScore: SCORERS[person.ordering](pool.films),
-        countOfKind: countOfKind(films),
-      }),
-    )
+    .flatMap((film) => {
+      const mine = normalized.get(film.id);
+      return mine === undefined ? [] : [score(film, mine)];
+    })
     .sort(lexicographic(weights.ordering > 0 ? ORDERED : MATCHED))
     .map(toRanked);
   return { rows, mode: modeOf(rows, browsing(person, weights, pool)) };
