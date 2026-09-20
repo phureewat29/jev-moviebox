@@ -32,7 +32,22 @@ describe("the deck", () => {
     expect(turn(EMPTY_DECK, items.length, fixed).shown).toEqual(turn(EMPTY_DECK, items.length, fixed).shown);
   });
 
+  it("keeps what just went by to the back of a fresh deal", () => {
+    // seven cards: the last three shown cannot return within the next four draws, cycle after cycle
+    const last = new Map<string, number>();
+    let deck = EMPTY_DECK;
+    let gap = Infinity;
+    for (let t = 0; t < items.length * 20; t += 1) {
+      deck = draw(deck, items, Math.random);
+      const said = deck.shown?.said ?? "";
+      const seen = last.get(said);
+      if (seen !== undefined) gap = Math.min(gap, t - seen);
+      last.set(said, t);
+    }
+    expect(gap).toBeGreaterThan(Math.floor(items.length / 2));
+  });
+
   it("is empty when there is nothing to deal", () => {
-    expect(draw(EMPTY_DECK, [], Math.random)).toEqual({ shown: null, left: [] });
+    expect(draw(EMPTY_DECK, [], Math.random)).toEqual(EMPTY_DECK);
   });
 });

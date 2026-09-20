@@ -1,9 +1,16 @@
 import type { Suggestion } from "./Suggestions.ts";
 
-/** The deck the page deals suggestions from: no card comes up twice until every card has come up. */
+/** The deck the page deals suggestions from: every card comes up once before any comes up again, and none comes back within half a cycle. */
 
-export type Deck = { readonly shown: Suggestion | null; readonly left: readonly Suggestion[] };
-export const EMPTY_DECK: Deck = { shown: null, left: [] };
+export type Deck = {
+  readonly shown: Suggestion | null;
+  readonly left: readonly Suggestion[];
+  /** The last half-cycle shown, so a fresh deal cannot open on what just went by. */
+  readonly recent: readonly Suggestion[];
+};
+export const EMPTY_DECK: Deck = { shown: null, left: [], recent: [] };
+
+const RECENT_SHARE = 0.5;
 
 /** Fisher-Yates; `random` is a parameter so a test can deal the same deck twice. */
 const shuffled = <T,>(items: readonly T[], random: () => number): readonly T[] => {
@@ -15,14 +22,18 @@ const shuffled = <T,>(items: readonly T[], random: () => number): readonly T[] =
   return out;
 };
 
-/** A fresh shuffle, cut so the first card up is never the one still on the table. */
-const deal = (items: readonly Suggestion[], shown: Suggestion | null, random: () => number) => {
+/** A fresh shuffle with the cards seen most recently moved to the back. */
+const deal = (items: readonly Suggestion[], recent: readonly Suggestion[], random: () => number) => {
+  const seen = new Set(recent.map((card) => card.said));
   const cards = shuffled(items, random);
-  return cards.length > 1 && cards[0].said === shown?.said ? [...cards.slice(1), cards[0]] : cards;
+  return [...cards.filter((card) => !seen.has(card.said)), ...cards.filter((card) => seen.has(card.said))];
 };
 
 /** Turns the next card; a spent deck is dealt afresh. */
 export const draw = (deck: Deck, items: readonly Suggestion[], random: () => number = Math.random): Deck => {
-  const [card, ...left] = deck.left.length > 0 ? deck.left : deal(items, deck.shown, random);
-  return { shown: card ?? null, left };
+  const [card, ...left] = deck.left.length > 0 ? deck.left : deal(items, deck.recent, random);
+  const shown = card ?? null;
+  const keep = Math.floor(items.length * RECENT_SHARE);
+  const recent = shown === null || keep === 0 ? [] : [...deck.recent, shown].slice(-keep);
+  return { shown, left, recent };
 };
