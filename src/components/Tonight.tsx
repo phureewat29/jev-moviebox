@@ -10,6 +10,7 @@ import type { FilmCard } from "@/core/Film";
 import type { Labels } from "@/core/Labels";
 import { rank, shortlist } from "@/core/Rank";
 import { ReadResponse, type PersonRead, type ReadRequest } from "@/core/Read";
+import type { Suggestion } from "@/core/Suggestions";
 import labelsFile from "@/data/labels.json";
 
 const labels = new Map((labelsFile as unknown as Labels).films.map((row) => [row.id, row]));
@@ -58,8 +59,8 @@ export function Tonight({ films }: { films: readonly FilmCard[] }) {
     [press, films],
   );
 
-  const recommend = async () => {
-    if (said.trim() === "") return;
+  const recommend = async (ask: ReadRequest) => {
+    if (ask.said.trim() === "") return;
     inFlight.current?.abort();
     const controller = new AbortController();
     inFlight.current = controller;
@@ -71,7 +72,7 @@ export function Tonight({ films }: { films: readonly FilmCard[] }) {
       const response = await fetch("/api/read", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ said, company } satisfies ReadRequest),
+        body: JSON.stringify(ask),
         signal: controller.signal,
       });
       if (response.status === 429) {
@@ -88,6 +89,13 @@ export function Tonight({ films }: { films: readonly FilmCard[] }) {
     } catch {
       settle(trouble(TROUBLE.failed));
     }
+  };
+
+  /** A dead end offers a way on: the line taken replaces what was asked and presses with it. */
+  const tryInstead = (suggestion: Suggestion) => {
+    setSaid(suggestion.said);
+    setCompany(suggestion.company);
+    void recommend(suggestion);
   };
 
   return (
@@ -115,7 +123,7 @@ export function Tonight({ films }: { films: readonly FilmCard[] }) {
               pending={pending}
               onSaid={setSaid}
               onCompany={setCompany}
-              onSubmit={() => void recommend()}
+              onSubmit={() => void recommend({ said, company })}
             />
 
             <p aria-live="polite" className="pt-4 text-center text-xs text-ink-faint">
@@ -126,7 +134,7 @@ export function Tonight({ films }: { films: readonly FilmCard[] }) {
             {/* a floor under every state: eight ghosts swapping to one line collapsed the page and threw the footer up */}
             {asked && press.status !== "trouble" ? (
               <div className="min-h-[70vh] animate-[fade-up_600ms_ease-out] motion-reduce:animate-none">
-                <Shelf rows={rows} pending={pending} />
+                <Shelf rows={rows} pending={pending} onTry={tryInstead} />
               </div>
             ) : null}
           </div>

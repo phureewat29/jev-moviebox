@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { draw, EMPTY_DECK, type Deck } from "@/core/Deck";
+import { draw, drawHand, EMPTY_DECK, type Deck } from "@/core/Deck";
 import { SUGGESTIONS } from "@/core/Suggestions";
 
 describe("the deck", () => {
@@ -49,5 +49,22 @@ describe("the deck", () => {
 
   it("is empty when there is nothing to deal", () => {
     expect(draw(EMPTY_DECK, [], Math.random)).toEqual(EMPTY_DECK);
+  });
+});
+
+describe("a hand", () => {
+  it("deals as many different cards as it is asked for", () => {
+    const hand = drawHand(SUGGESTIONS, 3);
+    expect(hand).toHaveLength(3);
+    expect(new Set(hand.map((card) => card.said)).size).toBe(3);
+  });
+
+  it("deals what there is when the hand is larger than the deck", () => {
+    expect(drawHand(SUGGESTIONS.slice(0, 2), 3)).toHaveLength(2);
+  });
+
+  it("deals the same hand for the same random", () => {
+    const fixed = () => 0.5;
+    expect(drawHand(SUGGESTIONS, 3, fixed)).toEqual(drawHand(SUGGESTIONS, 3, fixed));
   });
 });

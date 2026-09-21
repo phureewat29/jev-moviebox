@@ -3,16 +3,28 @@
 import { PackageOpen } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useState } from "react";
+import { drawHand } from "@/core/Deck";
 import { posterUrl } from "@/core/Film";
 import type { Ranked } from "@/core/Rank";
+import { SUGGESTIONS, type Suggestion } from "@/core/Suggestions";
 
 /** One geometry for waiting, empty and full, so swapping states moves nothing around the shelf. */
 const GRID = "grid grid-cols-2 gap-x-4 gap-y-8 pt-12 pb-24 sm:grid-cols-3 sm:pt-16 lg:grid-cols-4";
 
+const OFFERED = 3;
+
 const minutes = (runtime: number) =>
   runtime >= 60 ? `${Math.floor(runtime / 60)}h ${runtime % 60}m` : `${runtime}m`;
 
-export function Shelf({ rows, pending }: { rows: readonly Ranked[]; pending: boolean }) {
+export function Shelf({
+  rows,
+  pending,
+  onTry,
+}: {
+  rows: readonly Ranked[];
+  pending: boolean;
+  onTry: (suggestion: Suggestion) => void;
+}) {
   if (pending) {
     return (
       <section className={GRID}>
@@ -26,10 +38,7 @@ export function Shelf({ rows, pending }: { rows: readonly Ranked[]; pending: boo
     return (
       <section className={`${GRID} relative`}>
         <Sleeves still />
-        <div className="absolute inset-x-0 top-0 flex h-[60vh] max-h-full flex-col items-center justify-center gap-3 pt-12 text-center sm:pt-16">
-          <PackageOpen size={28} strokeWidth={1.5} className="text-ink-faint" aria-hidden />
-          <p className="text-base text-ink-dim">nothing in the box fits that.</p>
-        </div>
+        <Empty onTry={onTry} />
       </section>
     );
   }
@@ -40,6 +49,40 @@ export function Shelf({ rows, pending }: { rows: readonly Ranked[]; pending: boo
         <Tile key={row.film.id} row={row} place={index + 1} />
       ))}
     </section>
+  );
+}
+
+/** A dead end still offers a way on: three lines to try, each one a whole press. */
+function Empty({ onTry }: { onTry: (suggestion: Suggestion) => void }) {
+  /**
+   * Dealt once, at mount. The shelf appears only after a press, so the server never renders
+   * this and a shuffle here cannot come out different on the client.
+   */
+  const [hand] = useState(() => drawHand(SUGGESTIONS, OFFERED));
+
+  return (
+    <div className="absolute inset-x-0 top-0 flex min-h-[60vh] items-center justify-center pt-12 sm:pt-16">
+      <div className="flex w-full max-w-md flex-col items-center gap-5 rounded-sm bg-screen/85 px-6 py-8 text-center backdrop-blur-sm">
+        <PackageOpen size={28} strokeWidth={1.5} className="text-ink-faint" aria-hidden />
+        <p role="status" className="text-base text-balance text-ink-dim">
+          nothing in the box fits that. try one of these:
+        </p>
+        <ul className="flex flex-col gap-3">
+          {hand.map((suggestion) => (
+            <li key={suggestion.said}>
+              <button
+                type="button"
+                onClick={() => onTry(suggestion)}
+                aria-label={`Try this instead: ${suggestion.said}`}
+                className="text-sm leading-snug text-balance text-ink underline decoration-edge underline-offset-4 transition-colors hover:decoration-marquee sm:text-base"
+              >
+                &ldquo;{suggestion.said}&rdquo;
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
 

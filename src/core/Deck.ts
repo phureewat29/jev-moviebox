@@ -37,3 +37,10 @@ export const draw = (deck: Deck, items: readonly Suggestion[], random: () => num
   const recent = shown === null || keep === 0 ? [] : [...deck.recent, shown].slice(-keep);
   return { shown, left, recent };
 };
+
+/** A hand dealt off one shuffle, for a shelf that offers a few cards at once rather than turning one. */
+export const drawHand = (
+  items: readonly Suggestion[],
+  count: number,
+  random: () => number = Math.random,
+): readonly Suggestion[] => shuffled(items, random).slice(0, count);
