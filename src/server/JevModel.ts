@@ -2,8 +2,8 @@ import { TypeSafeClient, TypeSafeDecisionModel } from "@effect/ai-typesafe";
 import { Effect, Layer, Record, type Redacted } from "effect";
 import { FetchHttpClient, Headers, HttpClient, HttpClientResponse } from "effect/unstable/http";
 
-/** Reads and labels alike follow the latest model, owner's call; the label file records which one answered. */
-export const MODEL = "jev-latest";
+/** Pinned rather than `jev-latest`, so a new Jev arrives when this line moves and not before; the label file records it. */
+export const MODEL = "jev-1.13.0";
 
 /** Further than this from 1 is not rounding but a fault, and stays visible. */
 const ROUNDING = 0.05;
